@@ -1,0 +1,48 @@
+<main class="settings-container">
+  <header class="settings-header">
+    <h1>Settings</h1>
+  </header>
+
+  <section class="settings-section">
+    <h2>Theme</h2>
+    <div class="settings-options" role="radiogroup" aria-label="Theme selection">
+      @for (theme of themes; track theme.value) {
+        <label class="radio-option">
+          <input
+            type="radio"
+            name="theme"
+            [value]="theme.value"
+            [checked]="currentTheme() === theme.value"
+            (change)="setTheme(theme.value)"
+            [attr.aria-label]="'Select ' + theme.label + ' theme'"
+          />
+          <span>{{ theme.label }}</span>
+        </label>
+      }
+    </div>
+  </section>
+
+  <section class="settings-section">
+    <h2>Font Size</h2>
+    <div class="settings-options" role="radiogroup" aria-label="Font size selection">
+      @for (fontSize of fontSizes; track fontSize.value) {
+        <label class="radio-option">
+          <input
+            type="radio"
+            name="fontSize"
+            [value]="fontSize.value"
+            [checked]="currentFontSize() === fontSize.value"
+            (change)="setFontSize(fontSize.value)"
+            [attr.aria-label]="'Select ' + fontSize.label + ' font size'"
+          />
+          <span>{{ fontSize.label }}</span>
+        </label>
+      }
+    </div>
+  </section>
+
+  <nav class="settings-navigation">
+    <a routerLink="/" class="back-link">← Back to Home</a>
+  </nav>
+</main>
+

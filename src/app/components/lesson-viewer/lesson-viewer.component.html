@@ -1,0 +1,103 @@
+@if (lesson) {
+  <main class="lesson-viewer-container">
+    <header class="lesson-viewer-header">
+      <button 
+        class="back-button" 
+        (click)="goToLessonList()"
+        aria-label="Go back to lesson list"
+      >
+        ← Back
+      </button>
+      <div class="lesson-type-badge" aria-label="Lesson type: {{ lesson.type }}">
+        {{ getLessonTypeLabel(lesson.type) }}
+      </div>
+    </header>
+
+    <section class="lesson-content">
+      <div 
+        class="gurmukhi-text" 
+        [class]="getFontSizeClass()"
+        [attr.aria-label]="'Gurmukhi text: ' + lesson.gurmukhi"
+      >
+        {{ lesson.gurmukhi }}
+      </div>
+
+      @if (showTransliteration()) {
+        <div 
+          class="transliteration-text"
+          [attr.aria-label]="'Transliteration: ' + lesson.transliteration"
+        >
+          {{ lesson.transliteration }}
+        </div>
+      }
+
+      @if (showMeaning() && lesson.meaning) {
+        <div 
+          class="meaning-text"
+          [attr.aria-label]="'Meaning: ' + lesson.meaning"
+        >
+          {{ lesson.meaning }}
+        </div>
+      }
+    </section>
+
+    <section class="lesson-controls" role="toolbar" aria-label="Lesson controls">
+      <button 
+        class="control-button play-button"
+        (click)="playAudio()"
+        [attr.aria-label]="isPlaying() ? 'Stop audio' : 'Play audio'"
+        [attr.aria-pressed]="isPlaying()"
+      >
+        @if (isPlaying()) {
+          <span aria-hidden="true">⏸</span> Stop
+        } @else {
+          <span aria-hidden="true">▶</span> Play Audio
+        }
+      </button>
+
+      <button 
+        class="control-button toggle-button"
+        (click)="toggleTransliteration()"
+        [attr.aria-label]="showTransliteration() ? 'Hide transliteration' : 'Show transliteration'"
+        [attr.aria-pressed]="showTransliteration()"
+      >
+        {{ showTransliteration() ? 'Hide' : 'Show' }} Transliteration
+      </button>
+
+      @if (lesson.meaning) {
+        <button 
+          class="control-button toggle-button"
+          (click)="toggleMeaning()"
+          [attr.aria-label]="showMeaning() ? 'Hide meaning' : 'Show meaning'"
+          [attr.aria-pressed]="showMeaning()"
+        >
+          {{ showMeaning() ? 'Hide' : 'Show' }} Meaning
+        </button>
+      }
+    </section>
+
+    <nav class="lesson-navigation" aria-label="Lesson navigation">
+      <button 
+        class="nav-button prev-button"
+        (click)="goToPrevious()"
+        [disabled]="!hasPrevious()"
+        aria-label="Previous lesson"
+      >
+        ← Previous
+      </button>
+      <button 
+        class="nav-button next-button"
+        (click)="goToNext()"
+        [disabled]="!hasNext()"
+        aria-label="Next lesson"
+      >
+        Next →
+      </button>
+    </nav>
+  </main>
+} @else {
+  <div class="loading" role="status" aria-live="polite">
+    <p>Loading lesson...</p>
+  </div>
+}
+

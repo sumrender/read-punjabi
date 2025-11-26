@@ -1,0 +1,283 @@
+[
+  {
+    "id": "letter-1",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ੳ",
+    "transliteration": "Oora",
+    "audioSrc": "assets/audio/letters/oora.mp3"
+  },
+  {
+    "id": "letter-2",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਅ",
+    "transliteration": "Airra",
+    "audioSrc": "assets/audio/letters/airra.mp3"
+  },
+  {
+    "id": "letter-3",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ੲ",
+    "transliteration": "Eeri",
+    "audioSrc": "assets/audio/letters/eeri.mp3"
+  },
+  {
+    "id": "letter-4",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਸ",
+    "transliteration": "Sassa",
+    "audioSrc": "assets/audio/letters/sassa.mp3"
+  },
+  {
+    "id": "letter-5",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਹ",
+    "transliteration": "Haha",
+    "audioSrc": "assets/audio/letters/haha.mp3"
+  },
+  {
+    "id": "letter-6",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਕ",
+    "transliteration": "Kakka",
+    "audioSrc": "assets/audio/letters/kakka.mp3"
+  },
+  {
+    "id": "letter-7",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਖ",
+    "transliteration": "Khakha",
+    "audioSrc": "assets/audio/letters/khakha.mp3"
+  },
+  {
+    "id": "letter-8",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਗ",
+    "transliteration": "Gagga",
+    "audioSrc": "assets/audio/letters/gagga.mp3"
+  },
+  {
+    "id": "letter-9",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਘ",
+    "transliteration": "Ghagha",
+    "audioSrc": "assets/audio/letters/ghagha.mp3"
+  },
+  {
+    "id": "letter-10",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਙ",
+    "transliteration": "Ngannga",
+    "audioSrc": "assets/audio/letters/ngannga.mp3"
+  },
+  {
+    "id": "letter-11",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਚ",
+    "transliteration": "Chacha",
+    "audioSrc": "assets/audio/letters/chacha.mp3"
+  },
+  {
+    "id": "letter-12",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਛ",
+    "transliteration": "Chhachha",
+    "audioSrc": "assets/audio/letters/chhachha.mp3"
+  },
+  {
+    "id": "letter-13",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਜ",
+    "transliteration": "Jajja",
+    "audioSrc": "assets/audio/letters/jajja.mp3"
+  },
+  {
+    "id": "letter-14",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਝ",
+    "transliteration": "Jhajjha",
+    "audioSrc": "assets/audio/letters/jhajjha.mp3"
+  },
+  {
+    "id": "letter-15",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਞ",
+    "transliteration": "Nyanja",
+    "audioSrc": "assets/audio/letters/nyanja.mp3"
+  },
+  {
+    "id": "letter-16",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਟ",
+    "transliteration": "Tainka",
+    "audioSrc": "assets/audio/letters/tainka.mp3"
+  },
+  {
+    "id": "letter-17",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਠ",
+    "transliteration": "Thaththa",
+    "audioSrc": "assets/audio/letters/thaththa.mp3"
+  },
+  {
+    "id": "letter-18",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਡ",
+    "transliteration": "Dadda",
+    "audioSrc": "assets/audio/letters/dadda.mp3"
+  },
+  {
+    "id": "letter-19",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਢ",
+    "transliteration": "Dhadhda",
+    "audioSrc": "assets/audio/letters/dhadhda.mp3"
+  },
+  {
+    "id": "letter-20",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਣ",
+    "transliteration": "Nhanha",
+    "audioSrc": "assets/audio/letters/nhanha.mp3"
+  },
+  {
+    "id": "letter-21",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਤ",
+    "transliteration": "Tatta",
+    "audioSrc": "assets/audio/letters/tatta.mp3"
+  },
+  {
+    "id": "letter-22",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਥ",
+    "transliteration": "Thaththa",
+    "audioSrc": "assets/audio/letters/thaththa2.mp3"
+  },
+  {
+    "id": "letter-23",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਦ",
+    "transliteration": "Dadda",
+    "audioSrc": "assets/audio/letters/dadda2.mp3"
+  },
+  {
+    "id": "letter-24",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਧ",
+    "transliteration": "Dhadhda",
+    "audioSrc": "assets/audio/letters/dhadhda2.mp3"
+  },
+  {
+    "id": "letter-25",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਨ",
+    "transliteration": "Nana",
+    "audioSrc": "assets/audio/letters/nana.mp3"
+  },
+  {
+    "id": "letter-26",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਪ",
+    "transliteration": "Pappa",
+    "audioSrc": "assets/audio/letters/pappa.mp3"
+  },
+  {
+    "id": "letter-27",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਫ",
+    "transliteration": "Phapha",
+    "audioSrc": "assets/audio/letters/phapha.mp3"
+  },
+  {
+    "id": "letter-28",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਬ",
+    "transliteration": "Baba",
+    "audioSrc": "assets/audio/letters/baba.mp3"
+  },
+  {
+    "id": "letter-29",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਭ",
+    "transliteration": "Bhabha",
+    "audioSrc": "assets/audio/letters/bhabha.mp3"
+  },
+  {
+    "id": "letter-30",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਮ",
+    "transliteration": "Mama",
+    "audioSrc": "assets/audio/letters/mama.mp3"
+  },
+  {
+    "id": "letter-31",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਯ",
+    "transliteration": "Yayya",
+    "audioSrc": "assets/audio/letters/yayya.mp3"
+  },
+  {
+    "id": "letter-32",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਰ",
+    "transliteration": "Rara",
+    "audioSrc": "assets/audio/letters/rara.mp3"
+  },
+  {
+    "id": "letter-33",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਲ",
+    "transliteration": "Lalla",
+    "audioSrc": "assets/audio/letters/lalla.mp3"
+  },
+  {
+    "id": "letter-34",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ਵ",
+    "transliteration": "Vava",
+    "audioSrc": "assets/audio/letters/vava.mp3"
+  },
+  {
+    "id": "letter-35",
+    "level": 1,
+    "type": "letter",
+    "gurmukhi": "ੜ",
+    "transliteration": "Rharha",
+    "audioSrc": "assets/audio/letters/rharha.mp3"
+  }
+]
+

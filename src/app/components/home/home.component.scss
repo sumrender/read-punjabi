@@ -1,0 +1,92 @@
+.home-container {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-header {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+  }
+}
+
+.levels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.level-card {
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+
+  &:hover,
+  &:focus {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px var(--shadow-color);
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+  }
+
+  &:active {
+    transform: translateY(-2px);
+  }
+}
+
+.level-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.level-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.level-description {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 1rem;
+  }
+
+  .home-header h1 {
+    font-size: 2rem;
+  }
+
+  .levels-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .level-card {
+    padding: 1.5rem;
+  }
+}
+
