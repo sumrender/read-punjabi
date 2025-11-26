@@ -7,21 +7,21 @@
     >
       ← Back
     </button>
-    <h1>{{ levelTitle }}</h1>
+    <h1>{{ levelTitle() }}</h1>
   </header>
 
-  @if (loading) {
+  @if (loading()) {
     <div class="loading" role="status" aria-live="polite">
       <p>Loading lessons...</p>
     </div>
-  } @else if (lessons.length === 0) {
+  } @else if (lessons().length === 0) {
     <div class="empty-state">
       <p>No lessons available for this level.</p>
       <button class="button-primary" (click)="goToHome()">Go to Home</button>
     </div>
   } @else {
     <section class="lessons-grid" role="list">
-      @for (lesson of lessons; track lesson.id) {
+      @for (lesson of lessons(); track lesson.id) {
         <article 
           class="lesson-card" 
           role="listitem"

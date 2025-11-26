@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { LessonService } from '../../services/lesson.service';
@@ -12,54 +12,57 @@ import { LessonItem } from '../../models/lesson-item.interface';
   styleUrl: './lesson-list.component.scss'
 })
 export class LessonListComponent implements OnInit {
-  level: number = 1;
-  lessons: LessonItem[] = [];
-  loading: boolean = false;
-  levelTitle: string = '';
+  private route = inject(ActivatedRoute);
+  private router = inject(Router);
+  private lessonService = inject(LessonService);
 
-  private readonly levelTitles: Record<number, string> = {
+  level = signal<number>(1);
+  lessons = signal<LessonItem[]>([]);
+  loading = signal<boolean>(false);
+  
+  readonly levelTitles = signal<Record<number, string>>({
     1: 'Alphabet Recognition',
     2: 'Words',
     3: 'Short Sentences',
     4: 'Paragraphs',
     5: 'Stories'
-  };
+  });
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private lessonService: LessonService
-  ) {}
+  readonly lessonTypeLabels = signal<Record<string, string>>({
+    letter: 'Letter',
+    word: 'Word',
+    sentence: 'Sentence',
+    paragraph: 'Paragraph',
+    story: 'Story'
+  });
+
+  levelTitle = computed(() => this.levelTitles()[this.level()] || `Level ${this.level()}`);
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       const levelParam = params['levelId'];
-      this.level = parseInt(levelParam, 10);
+      const newLevel = parseInt(levelParam, 10);
       
-      if (isNaN(this.level) || this.level < 1 || this.level > 5) {
+      if (isNaN(newLevel) || newLevel < 1 || newLevel > 5) {
         this.router.navigate(['/']);
         return;
       }
 
-      this.levelTitle = this.levelTitles[this.level] || `Level ${this.level}`;
+      this.level.set(newLevel);
       this.loadLessons();
     });
   }
 
   loadLessons(): void {
-    console.log('Loading lessons for level:', this.level);
-    this.loading = true;
-    this.lessonService.getLessonsByLevel(this.level).subscribe({
+    this.loading.set(true);
+    this.lessonService.getLessonsByLevel(this.level()).subscribe({
       next: (lessons) => {
-        console.log('Lessons loaded:', lessons);
-        this.lessons = lessons;
-        this.loading = false;
-        console.log('loading state: ', this.loading);
+        this.lessons.set(lessons);
+        this.loading.set(false);
       },
       error: (error) => {
-        console.error('Error loading lessons:', error);
-        this.lessons = [];
-        this.loading = false;
+        this.lessons.set([]);
+        this.loading.set(false);
       }
     });
   }
@@ -73,14 +76,6 @@ export class LessonListComponent implements OnInit {
   }
 
   getLessonTypeLabel(type: LessonItem['type']): string {
-    const labels: Record<LessonItem['type'], string> = {
-      letter: 'Letter',
-      word: 'Word',
-      sentence: 'Sentence',
-      paragraph: 'Paragraph',
-      story: 'Story'
-    };
-    return labels[type] || type;
+    return this.lessonTypeLabels()[type] || type;
   }
 }
-

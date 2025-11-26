@@ -1,4 +1,4 @@
-@if (lesson) {
+@if (lesson(); as lesson) {
   <main class="lesson-viewer-container">
     <header class="lesson-viewer-header">
       <button 
@@ -16,7 +16,7 @@
     <section class="lesson-content">
       <div 
         class="gurmukhi-text" 
-        [class]="getFontSizeClass()"
+        [ngClass]="fontSizeClass()"
         [attr.aria-label]="'Gurmukhi text: ' + lesson.gurmukhi"
       >
         {{ lesson.gurmukhi }}

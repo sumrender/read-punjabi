@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
@@ -16,7 +16,9 @@ interface LevelInfo {
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  readonly levels: LevelInfo[] = [
+  private router = inject(Router);
+
+  readonly levels = signal<LevelInfo[]>([
     {
       level: 1,
       title: 'Alphabet Recognition',
@@ -42,12 +44,9 @@ export class HomeComponent {
       title: 'Stories',
       description: 'Read complete stories'
     }
-  ];
-
-  constructor(private router: Router) {}
+  ]);
 
   selectLevel(level: number): void {
     this.router.navigate(['/level', level]);
   }
 }
-

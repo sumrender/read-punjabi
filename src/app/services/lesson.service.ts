@@ -1,4 +1,4 @@
-import { Injectable, signal, computed } from '@angular/core';
+import { Injectable, signal, computed, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map, forkJoin, of } from 'rxjs';
 import { LessonItem } from '../models/lesson-item.interface';
@@ -7,11 +7,12 @@ import { LessonItem } from '../models/lesson-item.interface';
   providedIn: 'root'
 })
 export class LessonService {
+  private readonly http = inject(HttpClient);
   private readonly lessonsCache = new Map<number, LessonItem[]>();
   private readonly currentLessonId = signal<string | null>(null);
   private readonly allLessons = signal<LessonItem[]>([]);
 
-  constructor(private http: HttpClient) {
+  constructor() {
     this.loadAllLessons();
   }
 
@@ -36,16 +37,13 @@ export class LessonService {
     forkJoin(requests).subscribe({
       next: (results) => {
         const allLessons: LessonItem[] = [];
+        
         results.forEach((lessons, index) => {
-          lessons.forEach(lesson => {
-            allLessons.push(lesson);
-            const level = index + 1;
-            if (!this.lessonsCache.has(level)) {
-              this.lessonsCache.set(level, []);
-            }
-            this.lessonsCache.get(level)?.push(lesson);
-          });
+          const level = index + 1;
+          this.lessonsCache.set(level, lessons);
+          allLessons.push(...lessons);
         });
+
         this.allLessons.set(allLessons);
       },
       error: (error) => {
@@ -59,16 +57,17 @@ export class LessonService {
    * Get all lessons for a specific level
    */
   getLessonsByLevel(level: number): Observable<LessonItem[]> {
-    if (this.lessonsCache.has(level)) {
-      console.log('Lessons cache hit for level:', level);
+    if (this.lessonsCache.has(level) && this.lessonsCache.get(level)!.length > 0) {
       return of(this.lessonsCache.get(level) || []);
     }
-    console.log('Lessons cache miss for level:', level);
+    
     const filePath = `assets/lessons/level-${level}.json`;
     return this.http.get<LessonItem[]>(filePath).pipe(
       map(lessons => {
         const lessonArray = lessons || [];
-        this.lessonsCache.set(level, lessonArray);
+        if (!this.lessonsCache.has(level)) {
+            this.lessonsCache.set(level, lessonArray);
+        }
         return lessonArray;
       })
     );

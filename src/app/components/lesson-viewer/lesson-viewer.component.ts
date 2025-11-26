@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, signal } from '@angular/core';
+import { Component, OnInit, OnDestroy, signal, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { LessonService } from '../../services/lesson.service';
@@ -14,21 +14,40 @@ import { LessonItem } from '../../models/lesson-item.interface';
   styleUrl: './lesson-viewer.component.scss'
 })
 export class LessonViewerComponent implements OnInit, OnDestroy {
-  lesson: LessonItem | null = null;
-  showTransliteration = signal<boolean>(false);
-  showMeaning = signal<boolean>(false);
-  isPlaying = signal<boolean>(false);
-  hasNext = signal<boolean>(false);
-  hasPrevious = signal<boolean>(false);
-  currentLevel: number = 1;
+  private route = inject(ActivatedRoute);
+  private router = inject(Router);
+  private lessonService = inject(LessonService);
+  private audioService = inject(AudioService);
+  private themeService = inject(ThemeService);
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private lessonService: LessonService,
-    private audioService: AudioService,
-    private themeService: ThemeService
-  ) {}
+  readonly lesson = signal<LessonItem | null>(null);
+  readonly currentLevel = signal<number>(1);
+  readonly showTransliteration = signal<boolean>(false);
+  readonly showMeaning = signal<boolean>(false);
+  
+  readonly isPlaying = this.audioService.isPlaying;
+  readonly hasNext = signal<boolean>(false);
+  readonly hasPrevious = signal<boolean>(false);
+
+  readonly fontSizeClass = computed(() => {
+    const multiplier = this.themeService.getFontSizeMultiplier();
+    if (multiplier <= 0.875) {
+      return 'font-small';
+    } else if (multiplier >= 1.5) {
+      return 'font-xlarge';
+    } else if (multiplier >= 1.25) {
+      return 'font-large';
+    }
+    return 'font-medium';
+  });
+
+  readonly lessonTypeLabels = signal<Record<string, string>>({
+    letter: 'Letter',
+    word: 'Word',
+    sentence: 'Sentence',
+    paragraph: 'Paragraph',
+    story: 'Story'
+  });
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -50,8 +69,8 @@ export class LessonViewerComponent implements OnInit, OnDestroy {
       return;
     }
 
-    this.lesson = loadedLesson;
-    this.currentLevel = loadedLesson.level;
+    this.lesson.set(loadedLesson);
+    this.currentLevel.set(loadedLesson.level);
     this.lessonService.setCurrentLesson(lessonId);
     
     this.hasNext.set(this.lessonService.hasNextLesson());
@@ -59,35 +78,27 @@ export class LessonViewerComponent implements OnInit, OnDestroy {
   }
 
   toggleTransliteration(): void {
-    this.showTransliteration.set(!this.showTransliteration());
+    this.showTransliteration.update(v => !v);
   }
 
   toggleMeaning(): void {
-    this.showMeaning.set(!this.showMeaning());
+    this.showMeaning.update(v => !v);
   }
 
   playAudio(): void {
-    if (!this.lesson) {
+    const currentLesson = this.lesson();
+    if (!currentLesson) {
       return;
     }
 
-    if (this.audioService.isPlaying()) {
+    if (this.isPlaying()) {
       this.audioService.stop();
-      this.isPlaying.set(false);
       return;
     }
 
-    this.isPlaying.set(true);
-    this.audioService.play(this.lesson.audioSrc)
-      .then(() => {
-        // Audio will play, check when it ends
-        setTimeout(() => {
-          this.isPlaying.set(false);
-        }, 2000); // Approximate, actual duration would need audio element events
-      })
+    this.audioService.play(currentLesson.audioSrc)
       .catch((error) => {
         console.error('Error playing audio:', error);
-        this.isPlaying.set(false);
       });
   }
 
@@ -106,30 +117,10 @@ export class LessonViewerComponent implements OnInit, OnDestroy {
   }
 
   goToLessonList(): void {
-    this.router.navigate(['/level', this.currentLevel]);
-  }
-
-  getFontSizeClass(): string {
-    const multiplier = this.themeService.getFontSizeMultiplier();
-    if (multiplier <= 0.875) {
-      return 'font-small';
-    } else if (multiplier >= 1.5) {
-      return 'font-xlarge';
-    } else if (multiplier >= 1.25) {
-      return 'font-large';
-    }
-    return 'font-medium';
+    this.router.navigate(['/level', this.currentLevel()]);
   }
 
   getLessonTypeLabel(type: LessonItem['type']): string {
-    const labels: Record<LessonItem['type'], string> = {
-      letter: 'Letter',
-      word: 'Word',
-      sentence: 'Sentence',
-      paragraph: 'Paragraph',
-      story: 'Story'
-    };
-    return labels[type] || type;
+    return this.lessonTypeLabels()[type] || type;
   }
 }
-

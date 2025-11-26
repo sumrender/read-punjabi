@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -6,6 +6,9 @@ import { Injectable } from '@angular/core';
 export class AudioService {
   private audioElement: HTMLAudioElement | null = null;
   private currentAudioSrc: string | null = null;
+  private readonly _isPlaying = signal(false);
+  
+  readonly isPlaying = this._isPlaying.asReadonly();
 
   /**
    * Play audio from the given source
@@ -15,7 +18,15 @@ export class AudioService {
       // If same audio is already playing, restart it
       if (this.audioElement && this.currentAudioSrc === audioSrc) {
         this.audioElement.currentTime = 0;
-        this.audioElement.play().then(resolve).catch(reject);
+        this.audioElement.play()
+          .then(() => {
+            this._isPlaying.set(true);
+            resolve();
+          })
+          .catch((err) => {
+            this._isPlaying.set(false);
+            reject(err);
+          });
         return;
       }
 
@@ -31,12 +42,26 @@ export class AudioService {
 
       // Handle successful playback
       const canPlayHandler = () => {
-        this.audioElement?.play().then(resolve).catch(reject);
+        this.audioElement?.play()
+          .then(() => {
+            this._isPlaying.set(true);
+            resolve();
+          })
+          .catch((err) => {
+            this._isPlaying.set(false);
+            reject(err);
+          });
       };
       this.audioElement.addEventListener('canplaythrough', canPlayHandler, { once: true });
 
+      // Handle when audio ends
+      this.audioElement.addEventListener('ended', () => {
+        this._isPlaying.set(false);
+      });
+
       // Handle errors
       const errorHandler = () => {
+        this._isPlaying.set(false);
         reject(new Error('Failed to load audio'));
       };
       this.audioElement.addEventListener('error', errorHandler, { once: true });
@@ -56,6 +81,7 @@ export class AudioService {
       this.audioElement = null;
       this.currentAudioSrc = null;
     }
+    this._isPlaying.set(false);
   }
 
   /**
@@ -65,13 +91,6 @@ export class AudioService {
     if (this.audioElement) {
       this.audioElement.pause();
     }
-  }
-
-  /**
-   * Check if audio is currently playing
-   */
-  isPlaying(): boolean {
-    return this.audioElement !== null && !this.audioElement.paused;
+    this._isPlaying.set(false);
   }
 }
-

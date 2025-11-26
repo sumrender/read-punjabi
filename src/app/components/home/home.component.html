@@ -5,7 +5,7 @@
   </header>
 
   <section class="levels-grid" role="list">
-    @for (levelInfo of levels; track levelInfo.level) {
+    @for (levelInfo of levels(); track levelInfo.level) {
       <article 
         class="level-card" 
         role="listitem"
