@@ -5,6 +5,7 @@ export interface LessonItem {
   gurmukhi: string;
   transliteration: string;
   meaning?: string; // Optional for letters
+  title?: string; // Optional title for paragraphs/stories
   audioSrc: string; // Path to audio file
 }
 
