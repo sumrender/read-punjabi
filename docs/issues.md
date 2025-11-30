@@ -8,3 +8,4 @@
 6. Mostly all the first option is the correct answer, need to change it
 7. For all blank questions, transliterations should have complete sentences 
 8. The reordering story quiz is not working properly I think
+9. Centralize all fonts
