@@ -1,6 +1,8 @@
+@use "../../../styles.scss" as *;
+
 .quiz-container {
   min-height: 100vh;
-  background: var(--background);
+  background: $color-background;
   padding: 1rem;
 }
 
@@ -15,24 +17,24 @@
 
   p {
     font-size: 1.5rem;
-    color: var(--text-primary);
+    color: $color-text-primary;
   }
 
   .btn-primary {
     padding: 1rem 2rem;
     font-size: 1.125rem;
     font-weight: 600;
-    background: var(--primary);
-    color: white;
-    border: none;
+    background: $color-primary;
+    color: $color-text-inverse;
+    border: $color-border-thin;
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.2s ease;
 
     &:hover {
-      background: var(--primary-hover);
+      background: $color-primary-hover;
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      box-shadow: $color-shadow-md;
     }
   }
 }
@@ -42,10 +44,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: var(--surface);
+  background: $color-card-background;
   border-radius: 12px;
   margin-bottom: 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: $color-shadow-sm;
 
   .progress-info {
     display: flex;
@@ -55,15 +57,15 @@
     .question-number {
       font-size: 1.25rem;
       font-weight: 600;
-      color: var(--text-primary);
+      color: $color-text-primary;
     }
 
     .score {
       font-size: 1.125rem;
       font-weight: 500;
-      color: var(--primary);
+      color: $color-primary;
       padding: 0.5rem 1rem;
-      background: rgba(var(--primary-rgb), 0.1);
+      background: rgb(var(--primary-color-rgb) / 10%);
       border-radius: 8px;
     }
   }
@@ -74,29 +76,36 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: transparent;
-    border: 2px solid var(--border-subtle);
+    background: transparent; /* stylelint-disable-line sh-waqar/declaration-use-variable */
+    border: $color-border-thick;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.2s ease;
-    color: var(--text-secondary);
+    color: $color-text-secondary;
     font-size: 1.5rem;
 
     &:hover {
-      background: rgba(244, 67, 54, 0.1);
-      border-color: #F44336;
-      color: #F44336;
+      background: $color-error-background;
+      border-color: $color-error;
+      color: $color-error;
     }
   }
 }
 
 .question-wrapper {
-  animation: fadeIn 0.4s ease;
+  animation: fade-in 0.4s ease;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 768px) {

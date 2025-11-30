@@ -1,32 +1,150 @@
 /* Global Styles with CSS Variables for Theming */
 
+@use "./internal" as *;
+
+// ==========================================================================
+// 2. Semantic Variables (Public API)
+// ==========================================================================
+
+$color-primary: var(--primary-color);
+$color-primary-hover: var(--primary-color-hover);
+/* stylelint-disable declaration-property-value-disallowed-list */
+$color-primary-alpha-05: rgb(var(--primary-color-rgb) / 5%);
+$color-primary-alpha-10: rgb(var(--primary-color-rgb) / 10%);
+$color-primary-alpha-30: rgb(var(--primary-color-rgb) / 30%);
+/* stylelint-enable */
+
+$color-text-primary: var(--text-primary);
+$color-text-secondary: var(--text-secondary);
+$color-text-tertiary: var(--text-tertiary);
+$color-text-inverse: $color-base-white;
+$color-text-inverse-muted: $color-base-white-alpha-60;
+$color-background: var(--background);
+$color-card-background: var(--card-background);
+$color-hover-background: var(--hover-background);
+$color-button-background: var(--button-background);
+$color-border: var(--border-color);
+$color-shadow: var(--shadow-color);
+$color-success: var(--success-color);
+$color-success-background: var(--success-background);
+$color-success-background-subtle: $color-base-green-alpha-05;
+$color-error: var(--error-color);
+$color-error-background: var(--error-background);
+$color-warning: var(--warning-color);
+$color-warning-hover: var(--warning-color-hover);
+$color-warning-background: var(--warning-background);
+$color-warning-background-subtle: $color-base-orange-alpha-05;
+$color-info: var(--info-color);
+$color-info-background: var(--info-background);
+$color-info-background-subtle: $color-base-blue-alpha-05;
+$color-disabled: var(--disabled-color);
+$color-gold: var(--gold-color);
+$color-gold-background-subtle: $color-base-gold-alpha-05;
+$color-white: $color-base-white;
+
+// ==========================================================================
+// 3. Complex Variables (Borders, Shadows, Outlines)
+// ==========================================================================
+
+$color-border-thin: 1px solid $color-border;
+$color-border-thick: 2px solid $color-border;
+$color-border-thick-primary: 2px solid $color-primary;
+$color-border-thick-success: 2px solid $color-success;
+$color-border-thick-error: 2px solid $color-error;
+$color-border-thick-warning: 2px solid $color-warning;
+$color-border-thick-info: 2px solid $color-info;
+$color-border-thick-gold: 2px solid $color-gold;
+$color-border-thick-disabled: 2px solid $color-disabled;
+$color-border-3-border: 3px solid $color-border;
+$color-border-3-gold: 3px solid $color-gold;
+$color-border-3-success: 3px solid $color-success;
+$color-border-3-info: 3px solid $color-info;
+$color-border-3-warning: 3px solid $color-warning;
+$color-shadow-sm: 0 2px 8px $color-shadow;
+$color-shadow-md: 0 4px 12px $color-shadow;
+$color-shadow-lg: 0 8px 32px $color-shadow;
+$color-shadow-hover: 0 4px 16px $color-primary-alpha-30;
+$color-outline-focus: 2px solid $color-primary;
+
+// ==========================================================================
+// 4. Theme Definitions
+// ==========================================================================
+
 /* Light Theme (Default) */
 :root,
 [data-theme="light"] {
-  --primary-color: #2563eb;
-  --primary-color-hover: #1d4ed8;
-  --text-primary: #1f2937;
-  --text-secondary: #6b7280;
-  --background: #ffffff;
-  --card-background: #f9fafb;
-  --border-color: #e5e7eb;
-  --hover-background: #f3f4f6;
-  --button-background: #ffffff;
-  --shadow-color: rgba(0, 0, 0, 0.1);
+  /* Primary Colors */
+  --primary-color: #{$color-base-blue-600};
+  --primary-color-hover: #{$color-base-blue-700};
+  --primary-color-rgb: 37, 99, 235;
+
+  /* Text Colors */
+  --text-primary: #{$color-base-gray-900};
+  --text-secondary: #{$color-base-gray-500};
+  --text-tertiary: #{$color-base-gray-400};
+
+  /* Background Colors */
+  --background: #{$color-base-white};
+  --card-background: #{$color-base-gray-50};
+  --hover-background: #{$color-base-gray-100};
+  --button-background: #{$color-base-white};
+
+  /* Border Colors */
+  --border-color: #{$color-base-gray-200};
+
+  /* Shadow */
+  --shadow-color: #{$color-base-black-alpha-10};
+
+  /* Semantic Colors */
+  --success-color: #{$color-base-green-500};
+  --success-background: #{$color-base-green-alpha-10};
+  --error-color: #{$color-base-red-500};
+  --error-background: #{$color-base-red-alpha-10};
+  --warning-color: #{$color-base-orange-500};
+  --warning-color-hover: #{$color-base-orange-600};
+  --warning-background: #{$color-base-orange-alpha-10};
+  --info-color: #{$color-base-blue-400};
+  --info-background: #{$color-base-blue-alpha-10};
+  --disabled-color: #{$color-base-disabled};
+  --gold-color: #{$color-base-gold};
 }
 
 /* Dark Theme */
 [data-theme="dark"] {
-  --primary-color: #3b82f6;
-  --primary-color-hover: #2563eb;
-  --text-primary: #f9fafb;
-  --text-secondary: #9ca3af;
-  --background: #111827;
-  --card-background: #1f2937;
-  --border-color: #374151;
-  --hover-background: #374151;
-  --button-background: #1f2937;
-  --shadow-color: rgba(0, 0, 0, 0.3);
+  /* Primary Colors */
+  --primary-color: #{$color-base-blue-500};
+  --primary-color-hover: #{$color-base-blue-600};
+  --primary-color-rgb: 59, 130, 246;
+
+  /* Text Colors */
+  --text-primary: #{$color-base-gray-50};
+  --text-secondary: #{$color-base-gray-400};
+  --text-tertiary: #{$color-base-gray-500};
+
+  /* Background Colors */
+  --background: #{$color-base-gray-950};
+  --card-background: #{$color-base-gray-800};
+  --hover-background: #{$color-base-gray-700};
+  --button-background: #{$color-base-gray-800};
+
+  /* Border Colors */
+  --border-color: #{$color-base-gray-700};
+
+  /* Shadow */
+  --shadow-color: #{$color-base-black-alpha-30};
+
+  /* Semantic Colors */
+  --success-color: #{$color-base-green-500};
+  --success-background: #{$color-base-green-alpha-15};
+  --error-color: #{$color-base-red-500};
+  --error-background: #{$color-base-red-alpha-15};
+  --warning-color: #{$color-base-orange-500};
+  --warning-color-hover: #{$color-base-orange-600};
+  --warning-background: #{$color-base-orange-alpha-15};
+  --info-color: #{$color-base-blue-400};
+  --info-background: #{$color-base-blue-alpha-15};
+  --disabled-color: #{$color-base-disabled};
+  --gold-color: #{$color-base-gold};
 }
 
 /* Font Size Variables */
@@ -58,9 +176,9 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background-color: var(--background);
-  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: $color-background;
+  color: $color-text-primary;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -69,8 +187,8 @@ body {
 
 /* Navigation Styles */
 .main-nav {
-  background: var(--card-background);
-  border-bottom: 1px solid var(--border-color);
+  background: $color-card-background;
+  border-bottom: $color-border-thin;
   padding: 1rem 0;
   position: sticky;
   top: 0;
@@ -90,28 +208,28 @@ body {
 .nav-logo {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: $color-text-primary;
   text-decoration: none;
   transition: color 0.2s ease;
 
   &:hover,
   &:focus {
-    color: var(--primary-color);
-    outline: 2px solid var(--primary-color);
+    color: $color-primary;
+    outline: $color-outline-focus;
     outline-offset: 2px;
   }
 }
 
 .nav-link {
-  color: var(--text-secondary);
+  color: $color-text-secondary;
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.2s ease;
 
   &:hover,
   &:focus {
-    color: var(--primary-color);
-    outline: 2px solid var(--primary-color);
+    color: $color-primary;
+    outline: $color-outline-focus;
     outline-offset: 2px;
   }
 }
@@ -131,17 +249,18 @@ body {
 
 /* Focus Styles for Accessibility */
 *:focus-visible {
-  outline: 2px solid var(--primary-color);
+  outline: $color-outline-focus;
   outline-offset: 2px;
 }
 
 /* Button Reset */
+/* stylelint-disable sh-waqar/declaration-use-variable */
 button {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
   border: none;
-  background: none;
+  background: transparent;
   cursor: pointer;
 }
 
@@ -150,6 +269,7 @@ a {
   color: inherit;
   text-decoration: none;
 }
+/* stylelint-enable sh-waqar/declaration-use-variable */
 
 /* Responsive Typography */
 @media (max-width: 768px) {

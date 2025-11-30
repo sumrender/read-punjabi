@@ -1,0 +1,47 @@
+// Internal styles for the application. Only use things from this in styles.scss
+
+// ==========================================================================
+// 1. Primitive Colors (Internal Use Only)
+// ==========================================================================
+
+/* stylelint-disable color-no-hex, declaration-property-value-disallowed-list, color-function-notation, alpha-value-notation, color-hex-length, scss/dollar-variable-empty-line-before, max-line-length */
+$color-base-blue-400: #2196f3;
+$color-base-blue-500: #3b82f6;
+$color-base-blue-600: #2563eb;
+$color-base-blue-700: #1d4ed8;
+
+$color-base-gray-50: #f9fafb;
+$color-base-gray-100: #f3f4f6;
+$color-base-gray-200: #e5e7eb;
+$color-base-gray-400: #9ca3af;
+$color-base-gray-500: #6b7280;
+$color-base-gray-700: #374151;
+$color-base-gray-800: #1f2937;
+$color-base-gray-900: #1f2937;
+$color-base-gray-950: #111827;
+
+$color-base-green-500: #4caf50;
+$color-base-red-500: #f44336;
+$color-base-orange-500: #ff9800;
+$color-base-orange-600: #f57c00;
+$color-base-gold: #ffd700;
+$color-base-white: #fff;
+$color-base-disabled: #9e9e9e;
+
+// Alpha variants
+$color-base-black-alpha-10: rgb(0 0 0 / 10%);
+$color-base-black-alpha-30: rgb(0 0 0 / 30%);
+$color-base-green-alpha-05: rgb(76 175 80 / 5%);
+$color-base-green-alpha-10: rgb(76 175 80 / 10%);
+$color-base-green-alpha-15: rgb(76 175 80 / 15%);
+$color-base-red-alpha-10: rgb(244 67 54 / 10%);
+$color-base-red-alpha-15: rgb(244 67 54 / 15%);
+$color-base-orange-alpha-05: rgb(255 152 0 / 5%);
+$color-base-orange-alpha-10: rgb(255 152 0 / 10%);
+$color-base-orange-alpha-15: rgb(255 152 0 / 15%);
+$color-base-blue-alpha-05: rgb(33 150 243 / 5%);
+$color-base-blue-alpha-10: rgb(33 150 243 / 10%);
+$color-base-blue-alpha-15: rgb(33 150 243 / 15%);
+$color-base-gold-alpha-05: rgb(255 215 0 / 5%);
+$color-base-white-alpha-60: rgb(255 255 255 / 60%);
+/* stylelint-enable */

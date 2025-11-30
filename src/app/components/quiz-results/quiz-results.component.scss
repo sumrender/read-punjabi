@@ -1,41 +1,51 @@
+@use "../../../styles.scss" as *;
+
 .results-container {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  background: var(--background);
+  background: $color-background;
 }
 
 .results-card {
   max-width: 600px;
   width: 100%;
   padding: 3rem;
-  background: var(--surface);
+  background: $color-card-background;
   border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: $color-shadow-lg;
   text-align: center;
-  animation: slideInUp 0.5s ease;
-  border: 3px solid var(--border-subtle);
+  animation: slide-in-up 0.5s ease;
+  border: $color-border-3-border;
 
   &.excellent {
-    border-color: #FFD700;
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, var(--surface) 100%);
+    border-color: $color-gold;
+    border: $color-border-3-gold;
+    /* stylelint-disable-next-line sh-waqar/declaration-use-variable */
+    background: linear-gradient(135deg, $color-gold-background-subtle 0%, $color-card-background 100%);
   }
 
   &.great {
-    border-color: #4CAF50;
-    background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, var(--surface) 100%);
+    border-color: $color-success;
+    border: $color-border-3-success;
+    /* stylelint-disable-next-line sh-waqar/declaration-use-variable */
+    background: linear-gradient(135deg, $color-success-background-subtle 0%, $color-card-background 100%);
   }
 
   &.good {
-    border-color: #2196F3;
-    background: linear-gradient(135deg, rgba(33, 150, 243, 0.05) 0%, var(--surface) 100%);
+    border-color: $color-info;
+    border: $color-border-3-info;
+    /* stylelint-disable-next-line sh-waqar/declaration-use-variable */
+    background: linear-gradient(135deg, $color-info-background-subtle 0%, $color-card-background 100%);
   }
 
   &.keep-learning {
-    border-color: #FF9800;
-    background: linear-gradient(135deg, rgba(255, 152, 0, 0.05) 0%, var(--surface) 100%);
+    border-color: $color-warning;
+    border: $color-border-3-warning;
+    /* stylelint-disable-next-line sh-waqar/declaration-use-variable */
+    background: linear-gradient(135deg, $color-warning-background-subtle 0%, $color-card-background 100%);
   }
 }
 
@@ -52,8 +62,8 @@
 .title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--text-primary);
-  margin: 0 0 2rem 0;
+  color: $color-text-primary;
+  margin: 0 0 2rem;
 }
 
 .score-display {
@@ -69,34 +79,34 @@
     .score-number {
       font-size: 5rem;
       font-weight: 800;
-      color: var(--primary);
+      color: $color-primary;
       line-height: 1;
     }
 
     .score-total {
       font-size: 2.5rem;
       font-weight: 600;
-      color: var(--text-secondary);
+      color: $color-text-secondary;
     }
   }
 
   .score-percentage {
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--text-secondary);
+    color: $color-text-secondary;
   }
 }
 
 .message {
-  margin: 2rem 0;
+  margin: 2rem 0 0;
   padding: 1.5rem;
-  background: rgba(var(--primary-rgb), 0.05);
+  background: $color-primary-alpha-05;
   border-radius: 12px;
 
   p {
     font-size: 1.75rem;
     font-weight: 600;
-    color: var(--text-primary);
+    color: $color-text-primary;
     margin: 0;
   }
 }
@@ -113,7 +123,7 @@
   padding: 1.25rem 2rem;
   font-size: 1.25rem;
   font-weight: 600;
-  border: none;
+  border: $color-border-thick;
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -124,33 +134,34 @@
 }
 
 .btn-retry {
-  background: var(--primary);
-  color: skyblue;
+  background: $color-primary;
+  color: $color-white;
 
   &:hover {
-    background: var(--primary-hover);
+    background: $color-primary-hover;
     transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(var(--primary-rgb), 0.3);
+    box-shadow: $color-shadow-hover;
   }
 }
 
 .btn-lessons {
-  background: transparent;
-  color: var(--text-primary);
-  border: 2px solid var(--border-subtle);
+  background: transparent; /* stylelint-disable-line sh-waqar/declaration-use-variable */
+  color: $color-text-primary;
+  border: $color-border-thick;
 
   &:hover {
-    background: var(--surface-hover);
-    border-color: var(--primary);
+    background: $color-hover-background;
+    border-color: $color-primary;
     transform: translateY(-2px);
   }
 }
 
-@keyframes slideInUp {
+@keyframes slide-in-up {
   from {
     opacity: 0;
     transform: translateY(40px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -158,9 +169,11 @@
 }
 
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-20px);
   }

@@ -1,3 +1,5 @@
+@use "../../../styles.scss" as *;
+
 .question-container {
   display: flex;
   flex-direction: column;
@@ -13,7 +15,7 @@
   h2 {
     font-size: 1.75rem;
     font-weight: 600;
-    color: var(--text-primary);
+    color: $color-text-primary;
     margin: 0;
   }
 }
@@ -24,7 +26,7 @@
   p {
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--text-primary);
+    color: $color-text-primary;
     margin: 0;
   }
 }
@@ -40,37 +42,37 @@
   align-items: center;
   gap: 1rem;
   padding: 1.5rem;
-  background: var(--surface);
-  border: 2px solid var(--border-subtle);
+  background: $color-card-background;
+  border: $color-border-thick;
   border-radius: 12px;
   transition: all 0.3s ease;
-
-  &.correct {
-    background: rgba(76, 175, 80, 0.1);
-    border-color: #4CAF50;
-    
-    .line-content {
-      color: #4CAF50;
-    }
-  }
-
-  &.incorrect {
-    background: rgba(244, 67, 54, 0.1);
-    border-color: #F44336;
-    
-    .line-content {
-      color: #F44336;
-    }
-  }
 
   .line-content {
     flex: 1;
 
     .line-text {
-      font-family: 'Raavi', 'Noto Sans Gurmukhi', sans-serif;
+      font-family: Raavi, "Noto Sans Gurmukhi", sans-serif;
       font-size: 1.5rem;
       line-height: 1.6;
-      color: var(--text-primary);
+      color: $color-text-primary;
+    }
+  }
+
+  &.correct {
+    background: $color-success-background;
+    border-color: $color-success;
+
+    .line-content {
+      color: $color-success;
+    }
+  }
+
+  &.incorrect {
+    background: $color-error-background;
+    border-color: $color-error;
+
+    .line-content {
+      color: $color-error;
     }
   }
 
@@ -82,22 +84,22 @@
     label {
       font-size: 0.95rem;
       font-weight: 500;
-      color: var(--text-secondary);
+      color: $color-text-secondary;
     }
 
     select {
       padding: 0.5rem 1rem;
       font-size: 1rem;
-      border: 2px solid var(--border-subtle);
+      border: $color-border-thick;
       border-radius: 8px;
-      background: var(--surface);
-      color: var(--text-primary);
+      background: $color-card-background;
+      color: $color-text-primary;
       cursor: pointer;
       min-width: 70px;
 
       &:focus {
-        outline: none;
-        border-color: var(--primary);
+        outline: $color-outline-focus; /* stylelint-disable-line sh-waqar/declaration-use-variable */
+        border-color: $color-primary;
       }
 
       &:disabled {
@@ -119,8 +121,8 @@
       justify-content: center;
       width: 40px;
       height: 40px;
-      background: #4CAF50;
-      color: white;
+      background: $color-success;
+      color: $color-white;
       border-radius: 50%;
       font-size: 1.25rem;
       font-weight: 600;
@@ -128,23 +130,22 @@
   }
 }
 
-.submit-btn,
-.retry-btn {
+.submit-btn {
   padding: 1rem 2rem;
   font-size: 1.25rem;
   font-weight: 600;
-  background: var(--primary);
-  color: white;
-  border: none;
+  background: $color-primary;
+  color: $color-white;
+  border: $color-border-thin; /* stylelint-disable-line sh-waqar/declaration-use-variable */
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.2s ease;
   align-self: center;
 
   &:hover {
-    background: var(--primary-hover);
+    background: $color-primary-hover;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: $color-shadow-md;
   }
 
   &:active {
@@ -153,11 +154,26 @@
 }
 
 .retry-btn {
-  background: #FF9800;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  background: $color-warning;
+  color: $color-white;
+  border: $color-border-thin; /* stylelint-disable-line sh-waqar/declaration-use-variable */
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-self: center;
+}
 
-  &:hover {
-    background: #F57C00;
-  }
+.retry-btn:hover {
+  background: $color-warning-hover;
+  transform: translateY(-2px);
+  box-shadow: $color-shadow-md;
+}
+
+.retry-btn:active {
+  transform: translateY(0);
 }
 
 .feedback-message {
@@ -166,22 +182,29 @@
   font-weight: 600;
   padding: 1rem;
   border-radius: 8px;
-  animation: fadeIn 0.3s ease;
+  animation: fade-in 0.3s ease;
 
   &.correct {
-    background: rgba(76, 175, 80, 0.1);
-    color: #4CAF50;
+    background: $color-success-background;
+    color: $color-success;
   }
 
   &.incorrect {
-    background: rgba(244, 67, 54, 0.1);
-    color: #F44336;
+    background: $color-error-background;
+    color: $color-error;
   }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 768px) {

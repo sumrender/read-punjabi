@@ -1,3 +1,5 @@
+@use "../../../styles.scss" as *;
+
 .question-container {
   display: flex;
   flex-direction: column;
@@ -13,7 +15,7 @@
   h2 {
     font-size: 2rem;
     font-weight: 600;
-    color: var(--text-primary);
+    color: $color-text-primary;
     margin: 0;
   }
 }
@@ -29,8 +31,8 @@
   padding: 1.5rem;
   font-size: 2rem;
   font-weight: 500;
-  background: var(--surface);
-  border: 2px solid var(--border-subtle);
+  background: $color-card-background;
+  border: $color-border-thick;
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -38,13 +40,13 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  color: var(--text-primary);
+  color: $color-text-primary;
 
   &:hover:not(:disabled) {
-    background: var(--surface-hover);
-    border-color: var(--primary);
+    background: $color-hover-background;
+    border-color: $color-primary;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: $color-shadow-md;
   }
 
   &:active:not(:disabled) {
@@ -56,29 +58,29 @@
   }
 
   &.correct {
-    background: #4caf50;
-    border-color: #4caf50;
-    color: white;
+    background: $color-success;
+    border-color: $color-success;
+    color: $color-white;
     animation: pulse 0.5s ease;
   }
 
   &.incorrect {
-    background: #f44336;
-    border-color: #f44336;
-    color: white;
+    background: $color-error;
+    border-color: $color-error;
+    color: $color-white;
     animation: shake 0.5s ease;
   }
 
   &.disabled {
-    background: #9e9e9e;
-    border-color: #9e9e9e;
-    color: rgba(255, 255, 255, 0.6);
+    background: $color-disabled;
+    border-color: $color-disabled;
+    color: $color-text-inverse-muted;
     cursor: not-allowed;
     opacity: 0.5;
   }
 
   .option-text {
-    font-family: 'Raavi', 'Noto Sans Gurmukhi', sans-serif;
+    font-family: Raavi, "Noto Sans Gurmukhi", sans-serif;
   }
 
   .feedback-icon {
@@ -95,16 +97,16 @@
   font-weight: 600;
   padding: 1rem;
   border-radius: 8px;
-  animation: fadeIn 0.3s ease;
+  animation: fade-in 0.3s ease;
 
   &.correct {
-    background: rgba(76, 175, 80, 0.1);
-    color: #4caf50;
+    background: $color-success-background;
+    color: $color-success;
   }
 
   &.incorrect {
-    background: rgba(244, 67, 54, 0.1);
-    color: #f44336;
+    background: $color-error-background;
+    color: $color-error;
   }
 }
 
@@ -113,6 +115,7 @@
   100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.05);
   }
@@ -123,26 +126,29 @@
   100% {
     transform: translateX(0);
   }
+
   25% {
     transform: translateX(-10px);
   }
+
   75% {
     transform: translateX(10px);
   }
 }
 
-@keyframes fadeIn {
+@keyframes fade-in {
   from {
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-// Mobile responsive
+/* Mobile responsive */
 @media (max-width: 768px) {
   .question-container {
     padding: 1rem;

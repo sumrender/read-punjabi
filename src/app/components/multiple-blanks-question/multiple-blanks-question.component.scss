@@ -1,3 +1,5 @@
+@use "../../../styles.scss" as *;
+
 .question-container {
   display: flex;
   flex-direction: column;
@@ -8,45 +10,45 @@
 }
 
 .paragraph-display {
-  background: var(--surface);
+  background: $color-card-background;
   padding: 2rem;
   border-radius: 12px;
-  border: 2px solid var(--border-subtle);
+  border: $color-border-thick;
 
   .gurmukhi-paragraph {
-    font-family: 'Raavi', 'Noto Sans Gurmukhi', sans-serif;
+    font-family: Raavi, "Noto Sans Gurmukhi", sans-serif;
     font-size: 1.75rem;
     line-height: 2;
-    color: var(--text-primary);
-    margin: 0 0 1rem 0;
+    color: $color-text-primary;
+    margin: 1rem 0 0;
 
-    ::ng-deep .filled-blank {
-      background: #4CAF50;
-      color: white;
+    ::ng-deep .filled-blank { /* stylelint-disable-line selector-pseudo-element-no-unknown */
+      background: $color-success;
+      color: $color-white;
       padding: 0.25rem 0.75rem;
       border-radius: 6px;
       font-weight: 600;
     }
 
-    ::ng-deep .active-blank {
-      background: var(--primary);
-      color: white;
+    ::ng-deep .active-blank { /* stylelint-disable-line selector-pseudo-element-no-unknown */
+      background: $color-primary;
+      color: $color-white;
       padding: 0.25rem 0.75rem;
       border-radius: 6px;
       animation: blink 1s infinite;
     }
 
-    ::ng-deep .empty-blank {
-      color: var(--text-tertiary);
+    ::ng-deep .empty-blank { /* stylelint-disable-line selector-pseudo-element-no-unknown */
+      color: $color-text-tertiary;
       padding: 0.25rem 0.75rem;
-      border-bottom: 2px solid var(--text-tertiary);
+      border-bottom: 2px solid $color-text-tertiary;
     }
   }
 
   .hint {
     font-size: 1rem;
-    color: var(--text-secondary);
-    margin: 1rem 0 0 0;
+    color: $color-text-secondary;
+    margin: 1rem 0 0;
     font-style: italic;
   }
 }
@@ -57,7 +59,7 @@
   p {
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--text-primary);
+    color: $color-text-primary;
     margin: 0;
   }
 }
@@ -73,21 +75,21 @@
   padding: 1.25rem;
   font-size: 1.5rem;
   font-weight: 500;
-  background: var(--surface);
-  border: 2px solid var(--border-subtle);
+  background: $color-card-background;
+  border: $color-border-thick;
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-primary);
+  color: $color-text-primary;
 
   &:hover:not(:disabled) {
-    background: var(--surface-hover);
-    border-color: var(--primary);
+    background: $color-hover-background;
+    border-color: $color-primary;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: $color-shadow-md;
   }
 
   &:active:not(:disabled) {
@@ -95,15 +97,15 @@
   }
 
   &.disabled {
-    background: #9E9E9E;
-    border-color: #9E9E9E;
-    color: rgba(255, 255, 255, 0.6);
+    background: $color-disabled;
+    border-color: $color-disabled;
+    color: $color-text-inverse-muted;
     cursor: not-allowed;
     opacity: 0.5;
   }
 
   .option-text {
-    font-family: 'Raavi', 'Noto Sans Gurmukhi', sans-serif;
+    font-family: Raavi, "Noto Sans Gurmukhi", sans-serif;
   }
 }
 
@@ -113,27 +115,40 @@
   font-weight: 600;
   padding: 1rem;
   border-radius: 8px;
-  animation: fadeIn 0.3s ease;
+  animation: fade-in 0.3s ease;
 
   &.correct {
-    background: rgba(76, 175, 80, 0.1);
-    color: #4CAF50;
+    background: $color-success-background;
+    color: $color-success;
   }
 
   &.incorrect {
-    background: rgba(244, 67, 54, 0.1);
-    color: #F44336;
+    background: $color-error-background;
+    color: $color-error;
   }
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 768px) {
