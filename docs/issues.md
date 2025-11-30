@@ -9,3 +9,4 @@
 7. For all blank questions, transliterations should have complete sentences 
 8. The reordering story quiz is not working properly I think
 9. Centralize all fonts
+10. Move all references of Punjabi to config `Punjabi.ts`. So later, I can create a `Hindi.ts` and my application becomes a Hindi Reading app when I want.
