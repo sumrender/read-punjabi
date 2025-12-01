@@ -41,6 +41,25 @@
     </div>
   </section>
 
+  <section class="settings-section">
+    <h2>Language</h2>
+    <div class="settings-options" role="radiogroup" aria-label="Language selection">
+      @for (language of languages(); track language.value) {
+        <label class="radio-option">
+          <input
+            type="radio"
+            name="language"
+            [value]="language.value"
+            [checked]="currentLanguage() === language.value"
+            (change)="setLanguage(language.value)"
+            [attr.aria-label]="'Select ' + language.label + ' language'"
+          />
+          <span>{{ language.label }}</span>
+        </label>
+      }
+    </div>
+  </section>
+
   <nav class="settings-navigation">
     <a routerLink="/" class="back-link">← Back to Home</a>
   </nav>

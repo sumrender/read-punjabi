@@ -13,7 +13,7 @@ export interface BaseQuizQuestion {
 export interface MultipleChoiceQuestion extends BaseQuizQuestion {
   type: 'alphabet' | 'word';
   prompt: string; // Transliteration shown to user
-  options: string[]; // 4 Gurmukhi options
+  options: string[]; // 4 native script options
   correctAnswerIndex: number; // 0-3
 }
 
@@ -22,10 +22,10 @@ export interface MultipleChoiceQuestion extends BaseQuizQuestion {
  */
 export interface FillBlankQuestion extends BaseQuizQuestion {
   type: 'sentence';
-  sentence: string; // Gurmukhi with {{blank}} placeholder
+  sentence: string; // Native script with {{blank}} placeholder
   transliteration: string; // Full sentence transliteration
   meaning?: string; // Optional English meaning
-  options: string[]; // 4 Gurmukhi word options
+  options: string[]; // 4 native script word options
   correctAnswerIndex: number; // 0-3
 }
 
@@ -34,7 +34,7 @@ export interface FillBlankQuestion extends BaseQuizQuestion {
  */
 export interface MultipleBlanksQuestion extends BaseQuizQuestion {
   type: 'paragraph';
-  paragraph: string; // Gurmukhi with {{blank1}}, {{blank2}}, etc.
+  paragraph: string; // Native script with {{blank1}}, {{blank2}}, etc.
   transliteration?: string;
   blanks: Array<{
     blankId: string; // "blank1", "blank2", etc.
@@ -49,7 +49,7 @@ export interface MultipleBlanksQuestion extends BaseQuizQuestion {
 export interface StorySequenceQuestion extends BaseQuizQuestion {
   type: 'story';
   storyTitle?: string;
-  lines: string[]; // 4-5 Gurmukhi lines in CORRECT order
+  lines: string[]; // 4-5 native script lines in CORRECT order
   // UI will randomize display order
 }
 

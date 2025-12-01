@@ -1,25 +1,24 @@
 <main class="home-container">
   <header class="home-header">
-    <h1>Punjabi Reading App</h1>
-    <p class="subtitle">Learn to read Gurmukhi script</p>
+    <h1>{{ config().appName }}</h1>
+    <p class="subtitle">{{ config().ui.subtitle }}</p>
   </header>
 
   <section class="levels-grid" role="list">
     @for (levelInfo of levels(); track levelInfo.level) {
-      <article 
-        class="level-card" 
-        role="listitem"
-        (click)="selectLevel(levelInfo.level)"
-        (keydown.enter)="selectLevel(levelInfo.level)"
-        (keydown.space)="selectLevel(levelInfo.level)"
-        tabindex="0"
-        [attr.aria-label]="'Select ' + levelInfo.title + ': ' + levelInfo.description"
-      >
-        <div class="level-number" aria-hidden="true">{{ levelInfo.level }}</div>
-        <h2 class="level-title">{{ levelInfo.title }}</h2>
-        <p class="level-description">{{ levelInfo.description }}</p>
-      </article>
+    <article
+      class="level-card"
+      role="listitem"
+      (click)="selectLevel(levelInfo.level)"
+      (keydown.enter)="selectLevel(levelInfo.level)"
+      (keydown.space)="selectLevel(levelInfo.level)"
+      tabindex="0"
+      [attr.aria-label]="'Select ' + levelInfo.title + ': ' + levelInfo.description"
+    >
+      <div class="level-number" aria-hidden="true">{{ levelInfo.level }}</div>
+      <h2 class="level-title">{{ levelInfo.title }}</h2>
+      <p class="level-description">{{ levelInfo.description }}</p>
+    </article>
     }
   </section>
 </main>
-

@@ -3,12 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, map, forkJoin, of } from 'rxjs';
 import { LessonItem } from '../models/lesson-item.interface';
 import { AppConfig } from '../configuration/config';
+import { LanguageService } from './language.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LessonService {
   private readonly http = inject(HttpClient);
+  private readonly languageService = inject(LanguageService);
   private readonly lessonsCache = new Map<number, LessonItem[]>();
   private readonly currentLessonId = signal<string | null>(null);
   private readonly allLessons = signal<LessonItem[]>([]);
@@ -23,7 +25,7 @@ export class LessonService {
   private loadAllLessons(): void {
     const levelFiles = Array.from(
       { length: AppConfig.lessons.totalLevels },
-      (_, i) => AppConfig.lessons.assetPathTemplate.replace('{level}', String(i + AppConfig.lessons.firstLevelIndex))
+      (_, i) => this.languageService.config.lessonsPathTemplate.replace('{level}', String(i + AppConfig.lessons.firstLevelIndex))
     );
 
     const requests = levelFiles.map(file => 
@@ -59,7 +61,7 @@ export class LessonService {
       return of(this.lessonsCache.get(level) || []);
     }
     
-    const filePath = `assets/lessons/level-${level}.json`;
+    const filePath = this.languageService.config.lessonsPathTemplate.replace('{level}', String(level));
     return this.http.get<LessonItem[]>(filePath).pipe(
       map(lessons => {
         const lessonArray = lessons || [];

@@ -108,12 +108,12 @@
   margin-bottom: 0.25rem;
 }
 
-.lesson-gurmukhi {
+.lesson-native {
   font-size: 1.5rem;
   font-weight: bold;
   color: $color-text-primary;
   margin-bottom: 0.5rem;
-  font-family: "Noto Sans Gurmukhi", sans-serif;
+  font-family: var(--native-font-family);
 }
 
 .lesson-transliteration {
@@ -155,7 +155,7 @@
     padding: 1rem;
   }
 
-  .lesson-gurmukhi {
+  .lesson-native {
     font-size: 1.5rem;
   }
 }

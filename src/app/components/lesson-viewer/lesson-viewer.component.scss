@@ -56,8 +56,8 @@
   min-height: 300px;
 }
 
-.gurmukhi-text {
-  font-family: "Noto Sans Gurmukhi", sans-serif;
+.native-text {
+  font-family: var(--native-font-family);
   color: $color-text-primary;
   margin-bottom: 2rem;
   line-height: 1.6;
@@ -184,7 +184,7 @@
     padding: 1rem;
   }
 
-  .gurmukhi-text {
+  .native-text {
     &.font-small {
       font-size: 1.5rem;
     }

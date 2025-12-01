@@ -15,8 +15,8 @@
   border-radius: 12px;
   border: $color-border-thick;
 
-  .gurmukhi-paragraph {
-    font-family: Raavi, "Noto Sans Gurmukhi", sans-serif;
+  .native-paragraph {
+    font-family: var(--native-font-family);
     font-size: 1.75rem;
     line-height: 2;
     color: $color-text-primary;
@@ -105,7 +105,7 @@
   }
 
   .option-text {
-    font-family: Raavi, "Noto Sans Gurmukhi", sans-serif;
+    font-family: var(--native-font-family);
   }
 }
 
@@ -159,7 +159,7 @@
   .paragraph-display {
     padding: 1.5rem;
 
-    .gurmukhi-paragraph {
+    .native-paragraph {
       font-size: 1.4rem;
       line-height: 1.8;
     }

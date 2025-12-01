@@ -15,11 +15,11 @@
 
     <section class="lesson-content">
       <div 
-        class="gurmukhi-text" 
+        class="native-text" 
         [ngClass]="fontSizeClass()"
-        [attr.aria-label]="'Gurmukhi text: ' + lesson.gurmukhi"
+        [attr.aria-label]="config().ui.aria.scriptName + ' text: ' + lesson.native"
       >
-        {{ lesson.gurmukhi }}
+        {{ lesson.native }}
       </div>
 
       @if (showTransliteration()) {

@@ -1,5 +1,6 @@
-import { Injectable, signal, effect } from '@angular/core';
+import { Injectable, signal, effect, inject } from '@angular/core';
 import { AppConfig } from '../configuration/config';
+import { LanguageService } from './language.service';
 
 export type Theme = 'light' | 'dark';
 export type FontSize = 'small' | 'medium' | 'large' | 'xlarge';
@@ -8,8 +9,16 @@ export type FontSize = 'small' | 'medium' | 'large' | 'xlarge';
   providedIn: 'root'
 })
 export class ThemeService {
-  private readonly THEME_KEY = 'punjabi-reading-app-theme';
-  private readonly FONT_SIZE_KEY = 'punjabi-reading-app-font-size';
+  private languageService = inject(LanguageService);
+  private config = this.languageService.currentLanguage;
+
+  private get THEME_KEY(): string {
+    return `${this.config().localStoragePrefix}-theme`;
+  }
+
+  private get FONT_SIZE_KEY(): string {
+    return `${this.config().localStoragePrefix}-font-size`;
+  }
 
   readonly currentTheme = signal<Theme>(this.loadTheme());
   readonly currentFontSize = signal<FontSize>(this.loadFontSize());
@@ -20,6 +29,9 @@ export class ThemeService {
 
     // Apply font size on initialization
     this.applyFontSize(this.currentFontSize());
+
+    // Apply native font family on initialization
+    this.applyNativeFontFamily();
 
     // Persist theme changes to localStorage
     effect(() => {
@@ -33,6 +45,12 @@ export class ThemeService {
       const fontSize = this.currentFontSize();
       localStorage.setItem(this.FONT_SIZE_KEY, fontSize);
       this.applyFontSize(fontSize);
+    });
+
+    // Update native font family when language changes
+    effect(() => {
+      const config = this.config();
+      this.applyNativeFontFamily();
     });
   }
 
@@ -66,6 +84,13 @@ export class ThemeService {
    */
   private applyFontSize(fontSize: FontSize): void {
     document.documentElement.setAttribute('data-font-size', fontSize);
+  }
+
+  /**
+   * Apply native font family to document
+   */
+  private applyNativeFontFamily(): void {
+    document.documentElement.style.setProperty('--native-font-family', this.config().fontFamily);
   }
 
   /**

@@ -2,6 +2,7 @@ import { Component, computed, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ThemeService, Theme, FontSize } from '../../services/theme.service';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-settings',
@@ -12,6 +13,7 @@ import { ThemeService, Theme, FontSize } from '../../services/theme.service';
 })
 export class SettingsComponent {
   private themeService = inject(ThemeService);
+  private languageService = inject(LanguageService);
 
   readonly themes = signal<{ value: Theme; label: string }[]>([
     { value: 'light', label: 'Light' },
@@ -25,8 +27,17 @@ export class SettingsComponent {
     { value: 'xlarge', label: 'Extra Large' }
   ]);
 
+  readonly languages = signal(this.languageService.availableLanguages.map(lang => ({
+    value: lang.value,
+    label: lang.label
+  })));
+
   readonly currentTheme = computed(() => this.themeService.currentTheme());
   readonly currentFontSize = computed(() => this.themeService.currentFontSize());
+  readonly currentLanguage = computed(() => {
+    const config = this.languageService.config;
+    return this.languageService.availableLanguages.find(lang => lang.config === config)?.value || 'punjabi';
+  });
 
   setTheme(theme: Theme): void {
     this.themeService.setTheme(theme);
@@ -34,6 +45,10 @@ export class SettingsComponent {
 
   setFontSize(fontSize: FontSize): void {
     this.themeService.setFontSize(fontSize);
+  }
+
+  setLanguage(languageValue: string): void {
+    this.languageService.setLanguage(languageValue);
   }
 }
 

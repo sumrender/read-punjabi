@@ -26,12 +26,12 @@
       (keydown.enter)="goToLesson(lesson.id)"
       (keydown.space)="goToLesson(lesson.id)"
       tabindex="0"
-      [attr.aria-label]="getLessonTypeLabel(lesson.type) + ': ' + lesson.gurmukhi"
+      [attr.aria-label]="getLessonTypeLabel(lesson.type) + ': ' + lesson.native"
     >
       <div class="lesson-type" aria-hidden="true">
         {{ getLessonTypeLabel(lesson.type) }}
       </div>
-      <div class="lesson-gurmukhi">{{ getLessonDisplayContent(lesson) }}</div>
+      <div class="lesson-native">{{ getDisplayContent(lesson) }}</div>
       @if (lesson.transliteration && !(lesson.type === 'paragraph' || lesson.type === 'story')) {
       <div class="lesson-transliteration" aria-hidden="true">
         {{ lesson.transliteration }}

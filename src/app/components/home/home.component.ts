@@ -1,4 +1,5 @@
 import { Component, signal, inject } from '@angular/core';
+import { LanguageService } from '../../services/language.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
@@ -17,12 +18,14 @@ interface LevelInfo {
 })
 export class HomeComponent {
   private router = inject(Router);
+  private languageService = inject(LanguageService);
+  protected config = this.languageService.currentLanguage;
 
   readonly levels = signal<LevelInfo[]>([
     {
       level: 1,
       title: 'Alphabet Recognition',
-      description: 'Learn the Gurmukhi alphabet'
+      description: `Learn the ${this.config().ui.levelDescriptions.alphabet}`
     },
     {
       level: 2,

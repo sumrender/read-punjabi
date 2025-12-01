@@ -2,7 +2,7 @@ export interface LessonItem {
   id: string;
   level: number; // 1-5
   type: LessonType;
-  gurmukhi: string;
+  native: string;
   transliteration: string;
   meaning?: string; // Optional for letters
   title?: string; // Optional title for paragraphs/stories

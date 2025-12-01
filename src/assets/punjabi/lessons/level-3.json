@@ -3,7 +3,7 @@
     "id": "sentence-1",
     "level": 3,
     "type": "sentence",
-    "gurmukhi": "ਮੈਂ ਸਕੂਲ ਜਾਂਦਾ ਹਾਂ।",
+    "native": "ਮੈਂ ਸਕੂਲ ਜਾਂਦਾ ਹਾਂ।",
     "transliteration": "Main school janda haan.",
     "meaning": "I go to school.",
     "audioSrc": "assets/audio/sentences/sentence1.mp3"
@@ -12,7 +12,7 @@
     "id": "sentence-2",
     "level": 3,
     "type": "sentence",
-    "gurmukhi": "ਤੁਸੀਂ ਕਿਵੇਂ ਹੋ?",
+    "native": "ਤੁਸੀਂ ਕਿਵੇਂ ਹੋ?",
     "transliteration": "Tussi kiven ho?",
     "meaning": "How are you?",
     "audioSrc": "assets/audio/sentences/sentence2.mp3"
@@ -21,7 +21,7 @@
     "id": "sentence-3",
     "level": 3,
     "type": "sentence",
-    "gurmukhi": "ਮੈਂ ਠੀਕ ਹਾਂ।",
+    "native": "ਮੈਂ ਠੀਕ ਹਾਂ।",
     "transliteration": "Main theek haan.",
     "meaning": "I am fine.",
     "audioSrc": "assets/audio/sentences/sentence3.mp3"
@@ -30,7 +30,7 @@
     "id": "sentence-4",
     "level": 3,
     "type": "sentence",
-    "gurmukhi": "ਇਹ ਇੱਕ ਕਿਤਾਬ ਹੈ।",
+    "native": "ਇਹ ਇੱਕ ਕਿਤਾਬ ਹੈ।",
     "transliteration": "Eh ik kitab hai.",
     "meaning": "This is a book.",
     "audioSrc": "assets/audio/sentences/sentence4.mp3"
@@ -39,7 +39,7 @@
     "id": "sentence-5",
     "level": 3,
     "type": "sentence",
-    "gurmukhi": "ਮੈਨੂੰ ਪਾਣੀ ਚਾਹੀਦਾ ਹੈ।",
+    "native": "ਮੈਨੂੰ ਪਾਣੀ ਚਾਹੀਦਾ ਹੈ।",
     "transliteration": "Mainu pani chahida hai.",
     "meaning": "I need water.",
     "audioSrc": "assets/audio/sentences/sentence5.mp3"
@@ -48,7 +48,7 @@
     "id": "sentence-6",
     "level": 3,
     "type": "sentence",
-    "gurmukhi": "ਤੁਹਾਡਾ ਨਾਮ ਕੀ ਹੈ?",
+    "native": "ਤੁਹਾਡਾ ਨਾਮ ਕੀ ਹੈ?",
     "transliteration": "Tuhada naam ki hai?",
     "meaning": "What is your name?",
     "audioSrc": "assets/audio/sentences/sentence6.mp3"
@@ -57,7 +57,7 @@
     "id": "sentence-7",
     "level": 3,
     "type": "sentence",
-    "gurmukhi": "ਮੇਰਾ ਨਾਮ ਸੀਮਾ ਹੈ।",
+    "native": "ਮੇਰਾ ਨਾਮ ਸੀਮਾ ਹੈ।",
     "transliteration": "Mera naam Seema hai.",
     "meaning": "My name is Seema.",
     "audioSrc": "assets/audio/sentences/sentence7.mp3"
@@ -66,7 +66,7 @@
     "id": "sentence-8",
     "level": 3,
     "type": "sentence",
-    "gurmukhi": "ਅੱਜ ਮੌਸਮ ਸੁੰਦਰ ਹੈ।",
+    "native": "ਅੱਜ ਮੌਸਮ ਸੁੰਦਰ ਹੈ।",
     "transliteration": "Ajj mausam sundar hai.",
     "meaning": "Today the weather is beautiful.",
     "audioSrc": "assets/audio/sentences/sentence8.mp3"

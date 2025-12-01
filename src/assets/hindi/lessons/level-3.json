@@ -1,0 +1,75 @@
+[
+  {
+    "id": "sentence-1",
+    "level": 3,
+    "type": "sentence",
+    "native": "मैं स्कूल जाता हूँ।",
+    "transliteration": "Main school jata hoon.",
+    "meaning": "I go to school.",
+    "audioSrc": "assets/audio/sentences/sentence1.mp3"
+  },
+  {
+    "id": "sentence-2",
+    "level": 3,
+    "type": "sentence",
+    "native": "आप कैसे हैं?",
+    "transliteration": "Aap kaise hain?",
+    "meaning": "How are you?",
+    "audioSrc": "assets/audio/sentences/sentence2.mp3"
+  },
+  {
+    "id": "sentence-3",
+    "level": 3,
+    "type": "sentence",
+    "native": "मैं ठीक हूँ।",
+    "transliteration": "Main theek hoon.",
+    "meaning": "I am fine.",
+    "audioSrc": "assets/audio/sentences/sentence3.mp3"
+  },
+  {
+    "id": "sentence-4",
+    "level": 3,
+    "type": "sentence",
+    "native": "यह एक किताब है।",
+    "transliteration": "Yeh ek kitab hai.",
+    "meaning": "This is a book.",
+    "audioSrc": "assets/audio/sentences/sentence4.mp3"
+  },
+  {
+    "id": "sentence-5",
+    "level": 3,
+    "type": "sentence",
+    "native": "मुझे पानी चाहिए।",
+    "transliteration": "Mujhe pani chahiye.",
+    "meaning": "I need water.",
+    "audioSrc": "assets/audio/sentences/sentence5.mp3"
+  },
+  {
+    "id": "sentence-6",
+    "level": 3,
+    "type": "sentence",
+    "native": "आपका नाम क्या है?",
+    "transliteration": "Aapka naam kya hai?",
+    "meaning": "What is your name?",
+    "audioSrc": "assets/audio/sentences/sentence6.mp3"
+  },
+  {
+    "id": "sentence-7",
+    "level": 3,
+    "type": "sentence",
+    "native": "मेरा नाम सीमा है।",
+    "transliteration": "Mera naam Seema hai.",
+    "meaning": "My name is Seema.",
+    "audioSrc": "assets/audio/sentences/sentence7.mp3"
+  },
+  {
+    "id": "sentence-8",
+    "level": 3,
+    "type": "sentence",
+    "native": "आज मौसम सुंदर है।",
+    "transliteration": "Aaj mausam sundar hai.",
+    "meaning": "Today the weather is beautiful.",
+    "audioSrc": "assets/audio/sentences/sentence8.mp3"
+  }
+]
+

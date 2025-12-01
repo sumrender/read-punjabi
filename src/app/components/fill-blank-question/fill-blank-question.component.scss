@@ -16,8 +16,8 @@
   border-radius: 12px;
   border: $color-border-thick;
 
-  .gurmukhi-sentence {
-    font-family: Raavi, "Noto Sans Gurmukhi", sans-serif;
+  .native-sentence {
+    font-family: var(--native-font-family);
     font-size: 2rem;
     font-weight: 500;
     color: $color-text-primary;
@@ -110,7 +110,7 @@
   }
 
   .option-text {
-    font-family: Raavi, "Noto Sans Gurmukhi", sans-serif;
+    font-family: var(--native-font-family);
   }
 
   .feedback-icon {
@@ -186,7 +186,7 @@
   .sentence-display {
     padding: 1.5rem;
 
-    .gurmukhi-sentence {
+    .native-sentence {
       font-size: 1.5rem;
     }
 

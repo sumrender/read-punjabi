@@ -1,0 +1,93 @@
+[
+  {
+    "id": "word-1",
+    "level": 2,
+    "type": "word",
+    "native": "घर",
+    "transliteration": "Ghar",
+    "meaning": "Home",
+    "audioSrc": "assets/audio/words/ghar.mp3"
+  },
+  {
+    "id": "word-2",
+    "level": 2,
+    "type": "word",
+    "native": "किताब",
+    "transliteration": "Kitab",
+    "meaning": "Book",
+    "audioSrc": "assets/audio/words/kitab.mp3"
+  },
+  {
+    "id": "word-3",
+    "level": 2,
+    "type": "word",
+    "native": "पानी",
+    "transliteration": "Pani",
+    "meaning": "Water",
+    "audioSrc": "assets/audio/words/pani.mp3"
+  },
+  {
+    "id": "word-4",
+    "level": 2,
+    "type": "word",
+    "native": "रोटी",
+    "transliteration": "Roti",
+    "meaning": "Bread",
+    "audioSrc": "assets/audio/words/roti.mp3"
+  },
+  {
+    "id": "word-5",
+    "level": 2,
+    "type": "word",
+    "native": "माँ",
+    "transliteration": "Maa",
+    "meaning": "Mother",
+    "audioSrc": "assets/audio/words/maa.mp3"
+  },
+  {
+    "id": "word-6",
+    "level": 2,
+    "type": "word",
+    "native": "पिता",
+    "transliteration": "Pita",
+    "meaning": "Father",
+    "audioSrc": "assets/audio/words/pita.mp3"
+  },
+  {
+    "id": "word-7",
+    "level": 2,
+    "type": "word",
+    "native": "बच्चा",
+    "transliteration": "Baccha",
+    "meaning": "Child",
+    "audioSrc": "assets/audio/words/baccha.mp3"
+  },
+  {
+    "id": "word-8",
+    "level": 2,
+    "type": "word",
+    "native": "सूरज",
+    "transliteration": "Suraj",
+    "meaning": "Sun",
+    "audioSrc": "assets/audio/words/suraj.mp3"
+  },
+  {
+    "id": "word-9",
+    "level": 2,
+    "type": "word",
+    "native": "चाँद",
+    "transliteration": "Chand",
+    "meaning": "Moon",
+    "audioSrc": "assets/audio/words/chand.mp3"
+  },
+  {
+    "id": "word-10",
+    "level": 2,
+    "type": "word",
+    "native": "फूल",
+    "transliteration": "Phool",
+    "meaning": "Flower",
+    "audioSrc": "assets/audio/words/phool.mp3"
+  }
+]
+

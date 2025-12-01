@@ -1,0 +1,347 @@
+[
+  {
+    "id": "letter-1",
+    "level": 1,
+    "type": "letter",
+    "native": "अ",
+    "transliteration": "A",
+    "audioSrc": "assets/audio/letters/a.mp3"
+  },
+  {
+    "id": "letter-2",
+    "level": 1,
+    "type": "letter",
+    "native": "आ",
+    "transliteration": "Aa",
+    "audioSrc": "assets/audio/letters/aa.mp3"
+  },
+  {
+    "id": "letter-3",
+    "level": 1,
+    "type": "letter",
+    "native": "इ",
+    "transliteration": "I",
+    "audioSrc": "assets/audio/letters/i.mp3"
+  },
+  {
+    "id": "letter-4",
+    "level": 1,
+    "type": "letter",
+    "native": "ई",
+    "transliteration": "Ii",
+    "audioSrc": "assets/audio/letters/ii.mp3"
+  },
+  {
+    "id": "letter-5",
+    "level": 1,
+    "type": "letter",
+    "native": "उ",
+    "transliteration": "U",
+    "audioSrc": "assets/audio/letters/u.mp3"
+  },
+  {
+    "id": "letter-6",
+    "level": 1,
+    "type": "letter",
+    "native": "ऊ",
+    "transliteration": "Uu",
+    "audioSrc": "assets/audio/letters/uu.mp3"
+  },
+  {
+    "id": "letter-7",
+    "level": 1,
+    "type": "letter",
+    "native": "ए",
+    "transliteration": "E",
+    "audioSrc": "assets/audio/letters/e.mp3"
+  },
+  {
+    "id": "letter-8",
+    "level": 1,
+    "type": "letter",
+    "native": "ऐ",
+    "transliteration": "Ai",
+    "audioSrc": "assets/audio/letters/ai.mp3"
+  },
+  {
+    "id": "letter-9",
+    "level": 1,
+    "type": "letter",
+    "native": "ओ",
+    "transliteration": "O",
+    "audioSrc": "assets/audio/letters/o.mp3"
+  },
+  {
+    "id": "letter-10",
+    "level": 1,
+    "type": "letter",
+    "native": "औ",
+    "transliteration": "Au",
+    "audioSrc": "assets/audio/letters/au.mp3"
+  },
+  {
+    "id": "letter-11",
+    "level": 1,
+    "type": "letter",
+    "native": "क",
+    "transliteration": "Ka",
+    "audioSrc": "assets/audio/letters/ka.mp3"
+  },
+  {
+    "id": "letter-12",
+    "level": 1,
+    "type": "letter",
+    "native": "ख",
+    "transliteration": "Kha",
+    "audioSrc": "assets/audio/letters/kha.mp3"
+  },
+  {
+    "id": "letter-13",
+    "level": 1,
+    "type": "letter",
+    "native": "ग",
+    "transliteration": "Ga",
+    "audioSrc": "assets/audio/letters/ga.mp3"
+  },
+  {
+    "id": "letter-14",
+    "level": 1,
+    "type": "letter",
+    "native": "घ",
+    "transliteration": "Gha",
+    "audioSrc": "assets/audio/letters/gha.mp3"
+  },
+  {
+    "id": "letter-15",
+    "level": 1,
+    "type": "letter",
+    "native": "ङ",
+    "transliteration": "Nga",
+    "audioSrc": "assets/audio/letters/nga.mp3"
+  },
+  {
+    "id": "letter-16",
+    "level": 1,
+    "type": "letter",
+    "native": "च",
+    "transliteration": "Cha",
+    "audioSrc": "assets/audio/letters/cha.mp3"
+  },
+  {
+    "id": "letter-17",
+    "level": 1,
+    "type": "letter",
+    "native": "छ",
+    "transliteration": "Chha",
+    "audioSrc": "assets/audio/letters/chha.mp3"
+  },
+  {
+    "id": "letter-18",
+    "level": 1,
+    "type": "letter",
+    "native": "ज",
+    "transliteration": "Ja",
+    "audioSrc": "assets/audio/letters/ja.mp3"
+  },
+  {
+    "id": "letter-19",
+    "level": 1,
+    "type": "letter",
+    "native": "झ",
+    "transliteration": "Jha",
+    "audioSrc": "assets/audio/letters/jha.mp3"
+  },
+  {
+    "id": "letter-20",
+    "level": 1,
+    "type": "letter",
+    "native": "ञ",
+    "transliteration": "Nya",
+    "audioSrc": "assets/audio/letters/nya.mp3"
+  },
+  {
+    "id": "letter-21",
+    "level": 1,
+    "type": "letter",
+    "native": "ट",
+    "transliteration": "Ta",
+    "audioSrc": "assets/audio/letters/ta.mp3"
+  },
+  {
+    "id": "letter-22",
+    "level": 1,
+    "type": "letter",
+    "native": "ठ",
+    "transliteration": "Tha",
+    "audioSrc": "assets/audio/letters/tha.mp3"
+  },
+  {
+    "id": "letter-23",
+    "level": 1,
+    "type": "letter",
+    "native": "ड",
+    "transliteration": "Da",
+    "audioSrc": "assets/audio/letters/da.mp3"
+  },
+  {
+    "id": "letter-24",
+    "level": 1,
+    "type": "letter",
+    "native": "ढ",
+    "transliteration": "Dha",
+    "audioSrc": "assets/audio/letters/dha.mp3"
+  },
+  {
+    "id": "letter-25",
+    "level": 1,
+    "type": "letter",
+    "native": "ण",
+    "transliteration": "Na",
+    "audioSrc": "assets/audio/letters/na.mp3"
+  },
+  {
+    "id": "letter-26",
+    "level": 1,
+    "type": "letter",
+    "native": "त",
+    "transliteration": "Ta",
+    "audioSrc": "assets/audio/letters/ta2.mp3"
+  },
+  {
+    "id": "letter-27",
+    "level": 1,
+    "type": "letter",
+    "native": "थ",
+    "transliteration": "Tha",
+    "audioSrc": "assets/audio/letters/tha2.mp3"
+  },
+  {
+    "id": "letter-28",
+    "level": 1,
+    "type": "letter",
+    "native": "द",
+    "transliteration": "Da",
+    "audioSrc": "assets/audio/letters/da2.mp3"
+  },
+  {
+    "id": "letter-29",
+    "level": 1,
+    "type": "letter",
+    "native": "ध",
+    "transliteration": "Dha",
+    "audioSrc": "assets/audio/letters/dha2.mp3"
+  },
+  {
+    "id": "letter-30",
+    "level": 1,
+    "type": "letter",
+    "native": "न",
+    "transliteration": "Na",
+    "audioSrc": "assets/audio/letters/na2.mp3"
+  },
+  {
+    "id": "letter-31",
+    "level": 1,
+    "type": "letter",
+    "native": "प",
+    "transliteration": "Pa",
+    "audioSrc": "assets/audio/letters/pa.mp3"
+  },
+  {
+    "id": "letter-32",
+    "level": 1,
+    "type": "letter",
+    "native": "फ",
+    "transliteration": "Pha",
+    "audioSrc": "assets/audio/letters/pha.mp3"
+  },
+  {
+    "id": "letter-33",
+    "level": 1,
+    "type": "letter",
+    "native": "ब",
+    "transliteration": "Ba",
+    "audioSrc": "assets/audio/letters/ba.mp3"
+  },
+  {
+    "id": "letter-34",
+    "level": 1,
+    "type": "letter",
+    "native": "भ",
+    "transliteration": "Bha",
+    "audioSrc": "assets/audio/letters/bha.mp3"
+  },
+  {
+    "id": "letter-35",
+    "level": 1,
+    "type": "letter",
+    "native": "म",
+    "transliteration": "Ma",
+    "audioSrc": "assets/audio/letters/ma.mp3"
+  },
+  {
+    "id": "letter-36",
+    "level": 1,
+    "type": "letter",
+    "native": "य",
+    "transliteration": "Ya",
+    "audioSrc": "assets/audio/letters/ya.mp3"
+  },
+  {
+    "id": "letter-37",
+    "level": 1,
+    "type": "letter",
+    "native": "र",
+    "transliteration": "Ra",
+    "audioSrc": "assets/audio/letters/ra.mp3"
+  },
+  {
+    "id": "letter-38",
+    "level": 1,
+    "type": "letter",
+    "native": "ल",
+    "transliteration": "La",
+    "audioSrc": "assets/audio/letters/la.mp3"
+  },
+  {
+    "id": "letter-39",
+    "level": 1,
+    "type": "letter",
+    "native": "व",
+    "transliteration": "Va",
+    "audioSrc": "assets/audio/letters/va.mp3"
+  },
+  {
+    "id": "letter-40",
+    "level": 1,
+    "type": "letter",
+    "native": "श",
+    "transliteration": "Sha",
+    "audioSrc": "assets/audio/letters/sha.mp3"
+  },
+  {
+    "id": "letter-41",
+    "level": 1,
+    "type": "letter",
+    "native": "ष",
+    "transliteration": "Sha",
+    "audioSrc": "assets/audio/letters/sha2.mp3"
+  },
+  {
+    "id": "letter-42",
+    "level": 1,
+    "type": "letter",
+    "native": "स",
+    "transliteration": "Sa",
+    "audioSrc": "assets/audio/letters/sa.mp3"
+  },
+  {
+    "id": "letter-43",
+    "level": 1,
+    "type": "letter",
+    "native": "ह",
+    "transliteration": "Ha",
+    "audioSrc": "assets/audio/letters/ha.mp3"
+  }
+]
+

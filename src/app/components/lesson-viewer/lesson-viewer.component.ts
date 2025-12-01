@@ -4,6 +4,7 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { LessonService } from '../../services/lesson.service';
 import { AudioService } from '../../services/audio.service';
 import { ThemeService } from '../../services/theme.service';
+import { LanguageService } from '../../services/language.service';
 import { LessonItem } from '../../models/lesson-item.interface';
 
 @Component({
@@ -19,6 +20,8 @@ export class LessonViewerComponent implements OnInit, OnDestroy {
   private lessonService = inject(LessonService);
   private audioService = inject(AudioService);
   private themeService = inject(ThemeService);
+  private languageService = inject(LanguageService);
+  protected config = this.languageService.currentLanguage;
 
   readonly lesson = signal<LessonItem | null>(null);
   readonly currentLevel = signal<number>(1);

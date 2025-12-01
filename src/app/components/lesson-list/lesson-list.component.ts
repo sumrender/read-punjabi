@@ -83,15 +83,15 @@ export class LessonListComponent implements OnInit {
     return this.lessonTypeLabels()[type] || type;
   }
 
-  getLessonDisplayContent(lesson: LessonItem): string {
+  getDisplayContent(lesson: LessonItem): string {
     if (lesson.title) {
       return lesson.title;
     }
     
     if (lesson.type === 'paragraph' || lesson.type === 'story') {
-      return lesson.gurmukhi.substring(0, 50) + '...';
+      return lesson.native.substring(0, 50) + '...';
     }
 
-    return lesson.gurmukhi;
+    return lesson.native;
   }
 }

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "story-1",
+    "level": 5,
+    "type": "story",
+    "title": "राज (Raj)",
+    "native": "एक बार एक छोटा बच्चा था। उसका नाम राज था। राज को पढ़ना बहुत पसंद था। वह हर रोज़ स्कूल जाता था। उसके अध्यापक उसे बहुत प्यार करते थे। राज हमेशा अपनी किताब पढ़ता था। एक दिन उसने एक नई किताब पढ़ी। उस किताब में बहुत सारी कहानियाँ थीं। राज को वे कहानियाँ बहुत पसंद आईं। उसने अपनी माँ को भी वे कहानियाँ सुनाईं। माँ बहुत खुश हुई। राज ने सोचा कि पढ़ना बहुत मजेदार है।",
+    "transliteration": "Ek baar ek chhota baccha tha. Uska naam Raj tha. Raj ko padhna bahut pasand tha. Vah har roz school jata tha. Uske adhyapak use bahut pyar karte the. Raj hamesha apni kitab padhta tha. Ek din usne ek nayi kitab padhi. Us kitab mein bahut sari kahaniyan thin. Raj ko ve kahaniyan bahut pasand aiyan. Usne apni maa ko bhi ve kahaniyan sunaiyan. Maa bahut khush hui. Raj ne socha ki padhna bahut mazedar hai.",
+    "meaning": "Once upon a time there was a little child. His name was Raj. Raj loved to read. He went to school every day. His teachers loved him very much. Raj always read his book. One day he read a new book. That book had many stories. Raj liked those stories very much. He also told those stories to his mother. Mother was very happy. Raj thought that reading is very enjoyable.",
+    "audioSrc": "assets/audio/stories/story1.mp3"
+  },
+  {
+    "id": "story-2",
+    "level": 5,
+    "type": "story",
+    "title": "बाबा जी (Baba Ji)",
+    "native": "गाँव में एक बूढ़ा पेड़ था। उसका नाम बाबा जी था। बाबा जी हर सुबह सैर करने जाते थे। वे गाँव के बच्चों को कहानियाँ सुनाते थे। बच्चे बाबा जी के आस-पास बैठ जाते थे। बाबा जी उन्हें पुरानी कहानियाँ सुनाते थे। बच्चे ध्यान से सुनते थे। उन्हें ये कहानियाँ बहुत पसंद आती थीं। बाबा जी की कहानी सुनकर बच्चे बहुत खुश होते थे।",
+    "transliteration": "Gaanv mein ek budha ped tha. Uska naam Baba Ji tha. Baba Ji har subah sair karne jate the. Ve gaanv ke bacchon ko kahaniyan sunate the. Bacche Baba Ji ke aas-pas baith jate the. Baba Ji unhein purani kahaniyan sunate the. Bacche dhyan se sunte the. Unhein ye kahaniyan bahut pasand aati thin. Baba Ji ki kahani sunkar bacche bahut khush hote the.",
+    "meaning": "In the village there was an old tree. Its name was Baba Ji. Baba Ji went for a walk every morning. He used to tell stories to the village children. Children would sit around Baba Ji. Baba Ji would tell them old stories. Children would listen attentively. They liked these stories very much. Children would be very happy after listening to Baba Ji's story.",
+    "audioSrc": "assets/audio/stories/story2.mp3"
+  }
+]
+

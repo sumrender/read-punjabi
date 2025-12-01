@@ -3,7 +3,7 @@
     "id": "word-1",
     "level": 2,
     "type": "word",
-    "gurmukhi": "ਘਰ",
+    "native": "ਘਰ",
     "transliteration": "Ghar",
     "meaning": "Home",
     "audioSrc": "assets/audio/words/ghar.mp3"
@@ -12,7 +12,7 @@
     "id": "word-2",
     "level": 2,
     "type": "word",
-    "gurmukhi": "ਕਿਤਾਬ",
+    "native": "ਕਿਤਾਬ",
     "transliteration": "Kitab",
     "meaning": "Book",
     "audioSrc": "assets/audio/words/kitab.mp3"
@@ -21,7 +21,7 @@
     "id": "word-3",
     "level": 2,
     "type": "word",
-    "gurmukhi": "ਪਾਣੀ",
+    "native": "ਪਾਣੀ",
     "transliteration": "Pani",
     "meaning": "Water",
     "audioSrc": "assets/audio/words/pani.mp3"
@@ -30,7 +30,7 @@
     "id": "word-4",
     "level": 2,
     "type": "word",
-    "gurmukhi": "ਰੋਟੀ",
+    "native": "ਰੋਟੀ",
     "transliteration": "Roti",
     "meaning": "Bread",
     "audioSrc": "assets/audio/words/roti.mp3"
@@ -39,7 +39,7 @@
     "id": "word-5",
     "level": 2,
     "type": "word",
-    "gurmukhi": "ਮਾਂ",
+    "native": "ਮਾਂ",
     "transliteration": "Maan",
     "meaning": "Mother",
     "audioSrc": "assets/audio/words/maan.mp3"
@@ -48,7 +48,7 @@
     "id": "word-6",
     "level": 2,
     "type": "word",
-    "gurmukhi": "ਪਿਤਾ",
+    "native": "ਪਿਤਾ",
     "transliteration": "Pita",
     "meaning": "Father",
     "audioSrc": "assets/audio/words/pita.mp3"
@@ -57,7 +57,7 @@
     "id": "word-7",
     "level": 2,
     "type": "word",
-    "gurmukhi": "ਬੱਚਾ",
+    "native": "ਬੱਚਾ",
     "transliteration": "Baccha",
     "meaning": "Child",
     "audioSrc": "assets/audio/words/baccha.mp3"
@@ -66,7 +66,7 @@
     "id": "word-8",
     "level": 2,
     "type": "word",
-    "gurmukhi": "ਸੂਰਜ",
+    "native": "ਸੂਰਜ",
     "transliteration": "Suraj",
     "meaning": "Sun",
     "audioSrc": "assets/audio/words/suraj.mp3"
@@ -75,7 +75,7 @@
     "id": "word-9",
     "level": 2,
     "type": "word",
-    "gurmukhi": "ਚੰਦ",
+    "native": "ਚੰਦ",
     "transliteration": "Chand",
     "meaning": "Moon",
     "audioSrc": "assets/audio/words/chand.mp3"
@@ -84,7 +84,7 @@
     "id": "word-10",
     "level": 2,
     "type": "word",
-    "gurmukhi": "ਫੁੱਲ",
+    "native": "ਫੁੱਲ",
     "transliteration": "Phull",
     "meaning": "Flower",
     "audioSrc": "assets/audio/words/phull.mp3"

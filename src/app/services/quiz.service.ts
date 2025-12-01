@@ -13,12 +13,14 @@ import {
   StorySequenceQuestion
 } from '../models/quiz.interface';
 import { AppConfig } from '../configuration/config';
+import { LanguageService } from './language.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuizService {
   private readonly http = inject(HttpClient);
+  private readonly languageService = inject(LanguageService);
   
   // Quiz state signals
   private readonly currentQuiz = signal<Quiz | null>(null);
@@ -53,7 +55,7 @@ export class QuizService {
    * Load quiz data from JSON file by level
    */
   loadQuiz(level: number): Observable<Quiz> {
-    const filePath = `assets/quizzes/level-${level}.json`;
+    const filePath = this.languageService.config.quizzesPathTemplate.replace('{level}', String(level));
     return this.http.get<Quiz>(filePath).pipe(
       map(quiz => {
         this.currentQuiz.set(quiz);

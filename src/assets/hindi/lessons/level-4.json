@@ -1,0 +1,33 @@
+[
+  {
+    "id": "paragraph-1",
+    "level": 4,
+    "type": "paragraph",
+    "title": "भारत (India)",
+    "native": "भारत एक सुंदर देश है। यहाँ बहुत सारे लोग रहते हैं। हिंदी यहाँ की मुख्य भाषा है। लोग खेती करते हैं और गेहूँ, चावल और अन्य फसलें उगाते हैं।",
+    "transliteration": "Bharat ek sundar desh hai. Yahan bahut sare log rehte hain. Hindi yahan ki mukhy bhasha hai. Log kheti karte hain aur gehu, chawal aur anya fasalain ugate hain.",
+    "meaning": "India is a beautiful country. Many people live here. Hindi is the main language here. People do farming and grow wheat, rice and other crops.",
+    "audioSrc": "assets/audio/paragraphs/paragraph1.mp3"
+  },
+  {
+    "id": "paragraph-2",
+    "level": 4,
+    "type": "paragraph",
+    "title": "स्कूल (School)",
+    "native": "स्कूल में बच्चे पढ़ते हैं। अध्यापक उन्हें पढ़ाते हैं। बच्चे किताबें पढ़ते हैं और लिखते हैं। वे खेलते भी हैं। स्कूल एक महत्वपूर्ण जगह है।",
+    "transliteration": "School mein bacche padhte hain. Adhyapak unhein padhate hain. Bacche kitaben padhte hain aur likhte hain. Ve khelte bhi hain. School ek mahatvapurn jagah hai.",
+    "meaning": "Children study in school. Teachers teach them. Children read books and write. They also play. School is an important place.",
+    "audioSrc": "assets/audio/paragraphs/paragraph2.mp3"
+  },
+  {
+    "id": "paragraph-3",
+    "level": 4,
+    "type": "paragraph",
+    "title": "परिवार (Family)",
+    "native": "परिवार बहुत महत्वपूर्ण है। माँ-पिता बच्चों की देखभाल करते हैं। दादा-दादी कहानियाँ सुनाते हैं। सभी एक साथ खाना खाते हैं। परिवार प्यार और सहायता का स्रोत है।",
+    "transliteration": "Parivar bahut mahatvapurn hai. Maa-pita bacchon ki dekhbhal karte hain. Dada-dadi kahaniyan sunate hain. Sabhi ek sath khana khate hain. Parivar pyar aur sahayata ka srot hai.",
+    "meaning": "Family is very important. Parents take care of children. Grandparents tell stories. Everyone eats together. Family is a source of love and support.",
+    "audioSrc": "assets/audio/paragraphs/paragraph3.mp3"
+  }
+]
+
