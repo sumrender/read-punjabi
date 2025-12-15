@@ -1,0 +1,223 @@
+{
+  "id": "quiz-level2-words-02",
+  "level": 2,
+  "quizNumber": 2,
+  "title": "Word Recognition Quiz 2",
+  "scoringCriteria": {
+    "excellent": 13,
+    "great": 10,
+    "good": 7
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "level": 2,
+      "quizNumber": 2,
+      "type": "word",
+      "prompt": "Shehar (City)",
+      "options": [
+        "ਪਿੰਡ",
+        "ਸ਼ਹਿਰ",
+        "ਘਰ",
+        "ਸੜਕ"
+      ],
+      "correctAnswerIndex": 1
+    },
+    {
+      "id": "q2",
+      "level": 2,
+      "quizNumber": 2,
+      "type": "word",
+      "prompt": "Safar (Journey)",
+      "options": [
+        "ਰਸਤਾ",
+        "ਮੰਜ਼ਿਲ",
+        "ਸਫਰ",
+        "ਠਹਿਰਾਉ"
+      ],
+      "correctAnswerIndex": 2
+    },
+    {
+      "id": "q3",
+      "level": 2,
+      "quizNumber": 2,
+      "type": "word",
+      "prompt": "Sehat (Health)",
+      "options": [
+        "ਬੀਮਾਰੀ",
+        "ਸਿਹਤ",
+        "ਦਵਾਈ",
+        "ਥਕਾਵਟ"
+      ],
+      "correctAnswerIndex": 1
+    },
+    {
+      "id": "q4",
+      "level": 2,
+      "quizNumber": 2,
+      "type": "word",
+      "prompt": "Mehnat (Hard Work)",
+      "options": [
+        "ਆਰਾਮ",
+        "ਕੰਮ",
+        "ਮੇਹਨਤ",
+        "ਸੋਚ"
+      ],
+      "correctAnswerIndex": 2
+    },
+    {
+      "id": "q5",
+      "level": 2,
+      "quizNumber": 2,
+      "type": "word",
+      "prompt": "Shiksha (Education)",
+      "options": [
+        "ਸਕੂਲ",
+        "ਕਲਾਸ",
+        "ਸ਼ਿਖਿਆ",
+        "ਅਧਿਆਪਕ"
+      ],
+      "correctAnswerIndex": 2
+    },
+    {
+      "id": "q6",
+      "level": 2,
+      "quizNumber": 2,
+      "type": "word",
+      "prompt": "Samay (Time)",
+      "options": [
+        "ਘੜੀ",
+        "ਸਮਾਂ",
+        "ਦਿਨ",
+        "ਪਲ"
+      ],
+      "correctAnswerIndex": 1
+    },
+    {
+      "id": "q7",
+      "level": 2,
+      "quizNumber": 2,
+      "type": "word",
+      "prompt": "Zaroorat (Need)",
+      "options": [
+        "ਚਾਹ",
+        "ਲੋੜ",
+        "ਇੱਛਾ",
+        "ਮੰਗ"
+      ],
+      "correctAnswerIndex": 1
+    },
+    {
+      "id": "q8",
+      "level": 2,
+      "quizNumber": 2,
+      "type": "word",
+      "prompt": "Anubhav (Experience)",
+      "options": [
+        "ਸੋਚ",
+        "ਗਿਆਨ",
+        "ਅਨੁਭਵ",
+        "ਸਮਝ"
+      ],
+      "correctAnswerIndex": 2
+    },
+    {
+      "id": "q9",
+      "level": 2,
+      "quizNumber": 2,
+      "type": "word",
+      "prompt": "Nirnay (Decision)",
+      "options": [
+        "ਸਲਾਹ",
+        "ਚੋਣ",
+        "ਫੈਸਲਾ",
+        "ਸਵਾਲ"
+      ],
+      "correctAnswerIndex": 2
+    },
+    {
+      "id": "q10",
+      "level": 2,
+      "quizNumber": 2,
+      "type": "word",
+      "prompt": "Zimmedari (Responsibility)",
+      "options": [
+        "ਕੰਮ",
+        "ਬੋਝ",
+        "ਜ਼ਿੰਮੇਵਾਰੀ",
+        "ਫ਼ਰਜ਼"
+      ],
+      "correctAnswerIndex": 2
+    },
+    {
+      "id": "q11",
+      "level": 2,
+      "quizNumber": 2,
+      "type": "word",
+      "prompt": "Samasya (Problem)",
+      "options": [
+        "ਹੱਲ",
+        "ਮੁਸ਼ਕਲ",
+        "ਸਮੱਸਿਆ",
+        "ਰਾਹ"
+      ],
+      "correctAnswerIndex": 2
+    },
+    {
+      "id": "q12",
+      "level": 2,
+      "quizNumber": 2,
+      "type": "word",
+      "prompt": "Sahyog (Cooperation)",
+      "options": [
+        "ਮਦਦ",
+        "ਸਾਥ",
+        "ਸਹਿਯੋਗ",
+        "ਵਿਚਾਰ"
+      ],
+      "correctAnswerIndex": 2
+    },
+    {
+      "id": "q13",
+      "level": 2,
+      "quizNumber": 2,
+      "type": "word",
+      "prompt": "Lakshya (Goal)",
+      "options": [
+        "ਰਸਤਾ",
+        "ਮਕਸਦ",
+        "ਲਕਸ਼",
+        "ਸਪਨਾ"
+      ],
+      "correctAnswerIndex": 2
+    },
+    {
+      "id": "q14",
+      "level": 2,
+      "quizNumber": 2,
+      "type": "word",
+      "prompt": "Vishwas (Trust)",
+      "options": [
+        "ਡਰ",
+        "ਆਸ",
+        "ਭਰੋਸਾ",
+        "ਸੋਚ"
+      ],
+      "correctAnswerIndex": 2
+    },
+    {
+      "id": "q15",
+      "level": 2,
+      "quizNumber": 2,
+      "type": "word",
+      "prompt": "Sambandh (Relationship)",
+      "options": [
+        "ਨਾਤਾ",
+        "ਦੂਰੀ",
+        "ਸੰਬੰਧ",
+        "ਸਾਥ"
+      ],
+      "correctAnswerIndex": 2
+    }
+  ]
+}

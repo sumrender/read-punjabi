@@ -1,0 +1,253 @@
+{
+  "id": "quiz-level3-sentences-03",
+  "level": 3,
+  "quizNumber": 3,
+  "title": "Fill in the Blank Quiz 3",
+  "scoringCriteria": {
+    "excellent": 13,
+    "great": 10,
+    "good": 7
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "level": 3,
+      "quizNumber": 3,
+      "type": "sentence",
+      "sentence": "ਸਵੇਰੇ {{blank}} ਤੋਂ ਬਿਨਾਂ ਦਿਨ ਸ਼ੁਰੂ ਨਹੀਂ ਹੁੰਦਾ।",
+      "transliteration": "Savere ___ ton bina din shuru nahin hunda.",
+      "meaning": "Without ___, the day does not start in the morning.",
+      "options": [
+        "ਚਾਹ",
+        "ਕਿਤਾਬ",
+        "ਨੀਂਦ",
+        "ਖੇਡ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q2",
+      "level": 3,
+      "quizNumber": 3,
+      "type": "sentence",
+      "sentence": "ਉਹ {{blank}} ਕਰਕੇ ਹਮੇਸ਼ਾ ਸਫਲ ਰਹਿੰਦਾ ਹੈ।",
+      "transliteration": "Oh ___ karke hamesha safal rahinda hai.",
+      "meaning": "He is always successful because of ___.",
+      "options": [
+        "ਮਿਹਨਤ",
+        "ਦੋਸਤ",
+        "ਸਮਾਂ",
+        "ਕਿਸਮਤ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q3",
+      "level": 3,
+      "quizNumber": 3,
+      "type": "sentence",
+      "sentence": "ਬੱਚਿਆਂ ਲਈ {{blank}} ਬਹੁਤ ਜ਼ਰੂਰੀ ਹੈ।",
+      "transliteration": "Bachchiyan layi ___ bahut zaroori hai.",
+      "meaning": "___ is very important for children.",
+      "options": [
+        "ਸਿੱਖਿਆ",
+        "ਖੇਡ",
+        "ਰੰਗ",
+        "ਕਹਾਣੀ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q4",
+      "level": 3,
+      "quizNumber": 3,
+      "type": "sentence",
+      "sentence": "ਉਹ {{blank}} ਦੀ ਮਦਦ ਨਾਲ ਸੱਚ ਦੱਸਦਾ ਹੈ।",
+      "transliteration": "Oh ___ di madad naal sach dassda hai.",
+      "meaning": "He tells the truth with the help of ___.",
+      "options": [
+        "ਹਿੰਮਤ",
+        "ਡਰ",
+        "ਗੁੱਸਾ",
+        "ਭੁੱਖ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q5",
+      "level": 3,
+      "quizNumber": 3,
+      "type": "sentence",
+      "sentence": "ਮੈਨੂੰ {{blank}} ਬਾਰੇ ਸੋਚਣਾ ਚੰਗਾ ਲੱਗਦਾ ਹੈ।",
+      "transliteration": "Mainu ___ baare sochna changa lagda hai.",
+      "meaning": "I like thinking about ___.",
+      "options": [
+        "ਭਵਿੱਖ",
+        "ਰੋਟੀ",
+        "ਕੁਰਸੀ",
+        "ਖਿੜਕੀ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q6",
+      "level": 3,
+      "quizNumber": 3,
+      "type": "sentence",
+      "sentence": "ਉਸਨੇ {{blank}} ਨਾਲ ਆਪਣੀ ਗਲਤੀ ਮੰਨੀ।",
+      "transliteration": "Usne ___ naal apni galti manni.",
+      "meaning": "He admitted his mistake with ___.",
+      "options": [
+        "ਇਮਾਨਦਾਰੀ",
+        "ਚਲਾਕੀ",
+        "ਹੰਸੀ",
+        "ਸ਼ੋਰ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q7",
+      "level": 3,
+      "quizNumber": 3,
+      "type": "sentence",
+      "sentence": "{{blank}} ਤੋਂ ਬਿਨਾਂ ਜ਼ਿੰਦਗੀ ਅਧੂਰੀ ਹੈ।",
+      "transliteration": "___ ton bina zindagi adhoori hai.",
+      "meaning": "Life is incomplete without ___.",
+      "options": [
+        "ਪਿਆਰ",
+        "ਪੈਸਾ",
+        "ਘਰ",
+        "ਕਾਮ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q8",
+      "level": 3,
+      "quizNumber": 3,
+      "type": "sentence",
+      "sentence": "ਮੁਸ਼ਕਲ ਵੇਲੇ {{blank}} ਹੀ ਸਾਥ ਦਿੰਦਾ ਹੈ।",
+      "transliteration": "Mushkal vele ___ hi saath dinda hai.",
+      "meaning": "In difficult times, only ___ supports you.",
+      "options": [
+        "ਹੌਂਸਲਾ",
+        "ਰਸਤਾ",
+        "ਸ਼ੋਰ",
+        "ਭੀੜ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q9",
+      "level": 3,
+      "quizNumber": 3,
+      "type": "sentence",
+      "sentence": "ਉਹ {{blank}} ਨਾਲ ਹਰ ਕਿਸੇ ਦਾ ਦਿਲ ਜਿੱਤ ਲੈਂਦਾ ਹੈ।",
+      "transliteration": "Oh ___ naal har kise da dil jit lainda hai.",
+      "meaning": "He wins everyone’s heart with ___.",
+      "options": [
+        "ਵਿਹਾਰ",
+        "ਗੁੱਸਾ",
+        "ਡਰ",
+        "ਚੁੱਪ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q10",
+      "level": 3,
+      "quizNumber": 3,
+      "type": "sentence",
+      "sentence": "{{blank}} ਦੇ ਬਗੈਰ ਸੱਚ ਪੂਰਾ ਨਹੀਂ ਹੁੰਦਾ।",
+      "transliteration": "___ de bagair sach poora nahin hunda.",
+      "meaning": "Without ___, the truth is not complete.",
+      "options": [
+        "ਸਬੂਤ",
+        "ਆਵਾਜ਼",
+        "ਰੰਗ",
+        "ਸਮਾਂ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q11",
+      "level": 3,
+      "quizNumber": 3,
+      "type": "sentence",
+      "sentence": "ਉਸਦੀ {{blank}} ਨੇ ਸਾਰਿਆਂ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕੀਤਾ।",
+      "transliteration": "Usdi ___ ne saariyan nu prabhavit kita.",
+      "meaning": "His/Her ___ impressed everyone.",
+      "options": [
+        "ਸੋਚ",
+        "ਚਾਲ",
+        "ਆਵਾਜ਼",
+        "ਕਦਮ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q12",
+      "level": 3,
+      "quizNumber": 3,
+      "type": "sentence",
+      "sentence": "ਹਰ ਕੰਮ ਵਿੱਚ {{blank}} ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ।",
+      "transliteration": "Har kaam vich ___ di lod hundi hai.",
+      "meaning": "Every task requires ___.",
+      "options": [
+        "ਧੀਰਜ",
+        "ਤੇਜ਼ੀ",
+        "ਗੱਲ",
+        "ਹੰਸੀ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q13",
+      "level": 3,
+      "quizNumber": 3,
+      "type": "sentence",
+      "sentence": "ਸਹੀ {{blank}} ਇਨਸਾਨ ਨੂੰ ਅੱਗੇ ਵਧਾਉਂਦਾ ਹੈ।",
+      "transliteration": "Sahi ___ insaan nu agge vadhaaunda hai.",
+      "meaning": "The right ___ helps a person move forward.",
+      "options": [
+        "ਫੈਸਲਾ",
+        "ਰਸਤਾ",
+        "ਸ਼ੋਰ",
+        "ਡਰ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q14",
+      "level": 3,
+      "quizNumber": 3,
+      "type": "sentence",
+      "sentence": "ਉਹ {{blank}} ਕਰਕੇ ਆਪਣਾ ਮਕਸਦ ਹਾਸਲ ਕਰ ਲੈਂਦਾ ਹੈ।",
+      "transliteration": "Oh ___ karke apna maksad haasil kar lainda hai.",
+      "meaning": "He achieves his goal because of ___.",
+      "options": [
+        "ਲਗਨ",
+        "ਆਰਾਮ",
+        "ਖੁਸ਼ੀ",
+        "ਸੁਪਨਾ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q15",
+      "level": 3,
+      "quizNumber": 3,
+      "type": "sentence",
+      "sentence": "{{blank}} ਨਾਲ ਭਰੀ ਗੱਲ ਦਿਲ ਨੂੰ ਛੂਹ ਲੈਂਦੀ ਹੈ।",
+      "transliteration": "___ naal bhari gall dil nu chhoo laindi hai.",
+      "meaning": "A statement filled with ___ touches the heart.",
+      "options": [
+        "ਸਚਾਈ",
+        "ਆਵਾਜ਼",
+        "ਤੇਜ਼ੀ",
+        "ਹੰਸੀ"
+      ],
+      "correctAnswerIndex": 0
+    }
+  ]
+}

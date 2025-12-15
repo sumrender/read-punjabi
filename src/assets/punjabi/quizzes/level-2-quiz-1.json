@@ -2,7 +2,7 @@
   "id": "quiz-level2-words-01",
   "level": 2,
   "quizNumber": 1,
-  "title": "Word Recognition Quiz",
+  "title": "Word Recognition Quiz 1",
   "scoringCriteria": {
     "excellent": 13,
     "great": 10,
@@ -12,212 +12,212 @@
     {
       "id": "q1",
       "level": 2,
-  "quizNumber": 1,
+      "quizNumber": 1,
       "type": "word",
       "prompt": "Ghar (House)",
       "options": [
         "ਘਰ",
-        "ਗਰ",
-        "ਖਰ",
-        "ਘਾਰ"
+        "ਕਮਰਾ",
+        "ਦਰਵਾਜ਼ਾ",
+        "ਛੱਤ"
       ],
       "correctAnswerIndex": 0
     },
     {
       "id": "q2",
       "level": 2,
-  "quizNumber": 1,
+      "quizNumber": 1,
       "type": "word",
       "prompt": "Maa (Mother)",
       "options": [
-        "ਮਾ",
+        "ਪਿਤਾ",
         "ਮਾਂ",
-        "ਮਾਨ",
-        "ਮਾਤ"
+        "ਭੈਣ",
+        "ਦਾਦੀ"
       ],
-      "correctAnswerIndex": 0
+      "correctAnswerIndex": 1
     },
     {
       "id": "q3",
       "level": 2,
-  "quizNumber": 1,
+      "quizNumber": 1,
       "type": "word",
       "prompt": "Pani (Water)",
       "options": [
+        "ਦੁੱਧ",
+        "ਚਾਹ",
         "ਪਾਣੀ",
-        "ਪਾਨੀ",
-        "ਪਣੀ",
-        "ਪਾਨਿ"
+        "ਰਸ"
       ],
-      "correctAnswerIndex": 0
+      "correctAnswerIndex": 2
     },
     {
       "id": "q4",
       "level": 2,
-  "quizNumber": 1,
+      "quizNumber": 1,
       "type": "word",
       "prompt": "Roti (Bread)",
       "options": [
+        "ਚੌਲ",
         "ਰੋਟੀ",
-        "ਰੋਟ",
-        "ਰੋਤੀ",
-        "ਰੋਟਿ"
+        "ਸਬਜ਼ੀ",
+        "ਦਾਲ"
       ],
-      "correctAnswerIndex": 0
+      "correctAnswerIndex": 1
     },
     {
       "id": "q5",
       "level": 2,
-  "quizNumber": 1,
+      "quizNumber": 1,
       "type": "word",
       "prompt": "Kitab (Book)",
       "options": [
+        "ਕਾਪੀ",
+        "ਕਲਮ",
         "ਕਿਤਾਬ",
-        "ਕਿਤਬ",
-        "ਕਤਾਬ",
-        "ਕਿਤਾਬਾ"
+        "ਬੈਗ"
       ],
-      "correctAnswerIndex": 0
+      "correctAnswerIndex": 2
     },
     {
       "id": "q6",
       "level": 2,
-  "quizNumber": 1,
+      "quizNumber": 1,
       "type": "word",
       "prompt": "Kamra (Room)",
       "options": [
+        "ਘਰ",
+        "ਰਸੋਈ",
         "ਕਮਰਾ",
-        "ਕਾਮਰਾ",
-        "ਕਮਰ",
-        "ਕਮਰਾਹ"
+        "ਆੰਗਣ"
       ],
-      "correctAnswerIndex": 0
+      "correctAnswerIndex": 2
     },
     {
       "id": "q7",
       "level": 2,
-  "quizNumber": 1,
+      "quizNumber": 1,
       "type": "word",
       "prompt": "Darwaza (Door)",
       "options": [
+        "ਖਿੜਕੀ",
         "ਦਰਵਾਜ਼ਾ",
-        "ਦਰਵਾਜਾ",
-        "ਦਰਵਾਜ",
-        "ਦਰਵਾਜ਼"
+        "ਦੀਵਾਰ",
+        "ਛੱਤ"
       ],
-      "correctAnswerIndex": 0
+      "correctAnswerIndex": 1
     },
     {
       "id": "q8",
       "level": 2,
-  "quizNumber": 1,
+      "quizNumber": 1,
       "type": "word",
       "prompt": "Khushbu (Fragrance)",
       "options": [
+        "ਸੁਆਦ",
+        "ਰੰਗ",
         "ਖੁਸ਼ਬੂ",
-        "ਖੁਸਬੂ",
-        "ਖੁਸ਼ਬੁ",
-        "ਖੁਸ਼ਬੂਹ"
+        "ਆਵਾਜ਼"
       ],
-      "correctAnswerIndex": 0
+      "correctAnswerIndex": 2
     },
     {
       "id": "q9",
       "level": 2,
-  "quizNumber": 1,
+      "quizNumber": 1,
       "type": "word",
       "prompt": "Sab (All)",
       "options": [
-        "ਸਬ",
-        "ਸਾਬ",
-        "ਸਬਾ",
-        "ਸਬ੍"
+        "ਕੁਝ",
+        "ਸਭ",
+        "ਥੋੜ੍ਹਾ",
+        "ਅੱਧਾ"
       ],
-      "correctAnswerIndex": 0
+      "correctAnswerIndex": 1
     },
     {
       "id": "q10",
       "level": 2,
-  "quizNumber": 1,
+      "quizNumber": 1,
       "type": "word",
       "prompt": "Jaan (Life)",
       "options": [
+        "ਮੌਤ",
+        "ਸਰੀਰ",
         "ਜਾਨ",
-        "ਜਾਨਾ",
-        "ਜਾਨ੍",
-        "ਜਾਣ"
+        "ਸਾਹ"
       ],
-      "correctAnswerIndex": 0
+      "correctAnswerIndex": 2
     },
     {
       "id": "q11",
       "level": 2,
-  "quizNumber": 1,
+      "quizNumber": 1,
       "type": "word",
       "prompt": "Din (Day)",
       "options": [
+        "ਰਾਤ",
+        "ਸਵੇਰ",
         "ਦਿਨ",
-        "ਦੀਨ",
-        "ਦਿਨ੍",
-        "ਦਿਨਾ"
+        "ਸ਼ਾਮ"
       ],
-      "correctAnswerIndex": 0
+      "correctAnswerIndex": 2
     },
     {
       "id": "q12",
       "level": 2,
-  "quizNumber": 1,
+      "quizNumber": 1,
       "type": "word",
       "prompt": "Raat (Night)",
       "options": [
-        "ਰਾਤ",
-        "ਰਾਤਾ",
-        "ਰਾਤ੍",
-        "ਰਾਤੀ"
+        "ਸਵੇਰ",
+        "ਦਿਨ",
+        "ਦੁਪਹਿਰ",
+        "ਰਾਤ"
       ],
-      "correctAnswerIndex": 0
+      "correctAnswerIndex": 3
     },
     {
       "id": "q13",
       "level": 2,
-  "quizNumber": 1,
+      "quizNumber": 1,
       "type": "word",
       "prompt": "Sach (Truth)",
       "options": [
+        "ਝੂਠ",
         "ਸੱਚ",
-        "ਸਚ",
-        "ਸਾਚ",
-        "ਸੱਚ੍"
+        "ਕਹਾਣੀ",
+        "ਗੱਲ"
       ],
-      "correctAnswerIndex": 0
+      "correctAnswerIndex": 1
     },
     {
       "id": "q14",
       "level": 2,
-  "quizNumber": 1,
+      "quizNumber": 1,
       "type": "word",
       "prompt": "Pyar (Love)",
       "options": [
+        "ਗੁੱਸਾ",
+        "ਡਰ",
         "ਪਿਆਰ",
-        "ਪਯਾਰ",
-        "ਪਿਆਰ੍",
-        "ਪਿਆਰਾ"
+        "ਨਫ਼ਰਤ"
       ],
-      "correctAnswerIndex": 0
+      "correctAnswerIndex": 2
     },
     {
       "id": "q15",
       "level": 2,
-  "quizNumber": 1,
+      "quizNumber": 1,
       "type": "word",
       "prompt": "Dhoop (Sunshine)",
       "options": [
+        "ਛਾਂ",
+        "ਮੀਂਹ",
         "ਧੁੱਪ",
-        "ਧੁਪ",
-        "ਧੂਪ",
-        "ਧੁੱਪ੍"
+        "ਹਵਾ"
       ],
-      "correctAnswerIndex": 0
+      "correctAnswerIndex": 2
     }
   ]
 }

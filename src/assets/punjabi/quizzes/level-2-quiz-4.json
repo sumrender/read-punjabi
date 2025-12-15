@@ -1,0 +1,223 @@
+{
+  "id": "quiz-level2-words-04",
+  "level": 2,
+  "quizNumber": 4,
+  "title": "Word Recognition Quiz 4",
+  "scoringCriteria": {
+    "excellent": 13,
+    "great": 10,
+    "good": 7
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "level": 2,
+      "quizNumber": 4,
+      "type": "word",
+      "prompt": "Samajikta (Social Awareness)",
+      "options": [
+        "ਅਕੇਲਾਪਨ",
+        "ਸਮਾਜਿਕਤਾ",
+        "ਵਿਅਕਤੀਗਤਤਾ",
+        "ਲਾਪਰਵਾਹੀ"
+      ],
+      "correctAnswerIndex": 1
+    },
+    {
+      "id": "q2",
+      "level": 2,
+      "quizNumber": 4,
+      "type": "word",
+      "prompt": "Naitikta (Morality)",
+      "options": [
+        "ਲਾਭ",
+        "ਚਾਲਾਕੀ",
+        "ਨੈਤਿਕਤਾ",
+        "ਸਵਾਰਥ"
+      ],
+      "correctAnswerIndex": 2
+    },
+    {
+      "id": "q3",
+      "level": 2,
+      "quizNumber": 4,
+      "type": "word",
+      "prompt": "Samanvay (Coordination)",
+      "options": [
+        "ਟਕਰਾਵ",
+        "ਅਲੱਗਾਵ",
+        "ਸਮਨ੍ਵਯ",
+        "ਗੜਬੜ"
+      ],
+      "correctAnswerIndex": 2
+    },
+    {
+      "id": "q4",
+      "level": 2,
+      "quizNumber": 4,
+      "type": "word",
+      "prompt": "Dridhata (Determination)",
+      "options": [
+        "ਕਮਜ਼ੋਰੀ",
+        "ਅਸਥਿਰਤਾ",
+        "ਦ੍ਰਿੜਤਾ",
+        "ਹਿਚਕਚਾਹਟ"
+      ],
+      "correctAnswerIndex": 2
+    },
+    {
+      "id": "q5",
+      "level": 2,
+      "quizNumber": 4,
+      "type": "word",
+      "prompt": "Sankraman (Transition)",
+      "options": [
+        "ਸਥਿਰਤਾ",
+        "ਸੰਕ੍ਰਮਣ",
+        "ਰੁਕਾਵਟ",
+        "ਅੰਤ"
+      ],
+      "correctAnswerIndex": 1
+    },
+    {
+      "id": "q6",
+      "level": 2,
+      "quizNumber": 4,
+      "type": "word",
+      "prompt": "Utpatti (Origin)",
+      "options": [
+        "ਅੰਤ",
+        "ਵਿਕਾਸ",
+        "ਉਤਪੱਤੀ",
+        "ਨਾਸ"
+      ],
+      "correctAnswerIndex": 2
+    },
+    {
+      "id": "q7",
+      "level": 2,
+      "quizNumber": 4,
+      "type": "word",
+      "prompt": "Vivek (Judgement)",
+      "options": [
+        "ਗੁੱਸਾ",
+        "ਵਿਵੇਕ",
+        "ਜਲਦਬਾਜ਼ੀ",
+        "ਅਗਿਆਨਤਾ"
+      ],
+      "correctAnswerIndex": 1
+    },
+    {
+      "id": "q8",
+      "level": 2,
+      "quizNumber": 4,
+      "type": "word",
+      "prompt": "Prerna (Inspiration)",
+      "options": [
+        "ਹੌਸਲਾ",
+        "ਪ੍ਰੇਰਣਾ",
+        "ਥਕਾਵਟ",
+        "ਨਿਰਾਸ਼ਾ"
+      ],
+      "correctAnswerIndex": 1
+    },
+    {
+      "id": "q9",
+      "level": 2,
+      "quizNumber": 4,
+      "type": "word",
+      "prompt": "Samarpan (Dedication)",
+      "options": [
+        "ਟਾਲਮਟੋਲ",
+        "ਅਹੰਕਾਰ",
+        "ਸਮਰਪਣ",
+        "ਲਾਪਰਵਾਹੀ"
+      ],
+      "correctAnswerIndex": 2
+    },
+    {
+      "id": "q10",
+      "level": 2,
+      "quizNumber": 4,
+      "type": "word",
+      "prompt": "Madhyasthata (Neutrality)",
+      "options": [
+        "ਪੱਖਪਾਤ",
+        "ਮੱਧਸਥਤਾ",
+        "ਵਿਰੋਧ",
+        "ਝੁਕਾਅ"
+      ],
+      "correctAnswerIndex": 1
+    },
+    {
+      "id": "q11",
+      "level": 2,
+      "quizNumber": 4,
+      "type": "word",
+      "prompt": "Paripakvata (Maturity)",
+      "options": [
+        "ਬਚਪਨ",
+        "ਜਲਦਬਾਜ਼ੀ",
+        "ਪਰਿਪਕਵਤਾ",
+        "ਅਣਗਹਿਲੀ"
+      ],
+      "correctAnswerIndex": 2
+    },
+    {
+      "id": "q12",
+      "level": 2,
+      "quizNumber": 4,
+      "type": "word",
+      "prompt": "Sahansheel (Resilient)",
+      "options": [
+        "ਕਮਜ਼ੋਰ",
+        "ਸਹਿਨਸ਼ੀਲ",
+        "ਨਾਜੁਕ",
+        "ਡਰਪੋਕ"
+      ],
+      "correctAnswerIndex": 1
+    },
+    {
+      "id": "q13",
+      "level": 2,
+      "quizNumber": 4,
+      "type": "word",
+      "prompt": "Vichardhara (Ideology)",
+      "options": [
+        "ਸੋਚ",
+        "ਵਿਚਾਰਧਾਰਾ",
+        "ਰਾਏ",
+        "ਗੱਲਬਾਤ"
+      ],
+      "correctAnswerIndex": 1
+    },
+    {
+      "id": "q14",
+      "level": 2,
+      "quizNumber": 4,
+      "type": "word",
+      "prompt": "Prabhav (Impact)",
+      "options": [
+        "ਕਾਰਨ",
+        "ਪ੍ਰਭਾਵ",
+        "ਕ੍ਰਿਆ",
+        "ਉਦੇਸ਼"
+      ],
+      "correctAnswerIndex": 1
+    },
+    {
+      "id": "q15",
+      "level": 2,
+      "quizNumber": 4,
+      "type": "word",
+      "prompt": "Uddeshya (Objective)",
+      "options": [
+        "ਰਸਤਾ",
+        "ਉਪਾਅ",
+        "ਉਦੇਸ਼",
+        "ਨਤੀਜਾ"
+      ],
+      "correctAnswerIndex": 2
+    }
+  ]
+}

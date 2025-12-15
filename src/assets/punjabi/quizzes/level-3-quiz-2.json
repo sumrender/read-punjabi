@@ -1,0 +1,253 @@
+{
+  "id": "quiz-level3-sentences-02",
+  "level": 3,
+  "quizNumber": 2,
+  "title": "Fill in the Blank Quiz 2",
+  "scoringCriteria": {
+    "excellent": 13,
+    "great": 10,
+    "good": 7
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "level": 3,
+      "quizNumber": 2,
+      "type": "sentence",
+      "sentence": "ਮੈਂ {{blank}} ਨਾਲ ਖੇਡਦਾ ਹਾਂ।",
+      "transliteration": "Main ___ naal kheda haan.",
+      "meaning": "I play with ___.",
+      "options": [
+        "ਗੇਂਦ",
+        "ਕਿਤਾਬ",
+        "ਪਾਣੀ",
+        "ਕੁਰਸੀ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q2",
+      "level": 3,
+      "quizNumber": 2,
+      "type": "sentence",
+      "sentence": "ਉਹ {{blank}} ਵਿੱਚ ਕੰਮ ਕਰਦਾ ਹੈ।",
+      "transliteration": "Oh ___ vich kaam karda hai.",
+      "meaning": "He works in ___.",
+      "options": [
+        "ਦਫ਼ਤਰ",
+        "ਘਰ",
+        "ਬਾਜ਼ਾਰ",
+        "ਪਾਰਕ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q3",
+      "level": 3,
+      "quizNumber": 2,
+      "type": "sentence",
+      "sentence": "ਮੇਰੇ {{blank}} ਸਕੂਲ ਜਾਂਦੇ ਹਨ।",
+      "transliteration": "Mere ___ school jaande han.",
+      "meaning": "My ___ go to school.",
+      "options": [
+        "ਦੋਸਤ",
+        "ਕੁਰਸੀਆਂ",
+        "ਕਿਤਾਬਾਂ",
+        "ਘਰ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q4",
+      "level": 3,
+      "quizNumber": 2,
+      "type": "sentence",
+      "sentence": "ਸਵੇਰੇ {{blank}} ਬਹੁਤ ਸੁਹਾਵਣੀ ਹੁੰਦੀ ਹੈ।",
+      "transliteration": "Savere ___ bahut suhaavni hundi hai.",
+      "meaning": "In the morning, ___ is very pleasant.",
+      "options": [
+        "ਹਵਾ",
+        "ਰਾਤ",
+        "ਧੁੱਪ",
+        "ਬਾਰਿਸ਼"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q5",
+      "level": 3,
+      "quizNumber": 2,
+      "type": "sentence",
+      "sentence": "ਮੈਨੂੰ {{blank}} ਪੜ੍ਹਨਾ ਪਸੰਦ ਹੈ।",
+      "transliteration": "Mainu ___ parhna pasand hai.",
+      "meaning": "I like reading ___.",
+      "options": [
+        "ਕਿਤਾਬਾਂ",
+        "ਰੋਟੀ",
+        "ਪਾਣੀ",
+        "ਖੇਡ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q6",
+      "level": 3,
+      "quizNumber": 2,
+      "type": "sentence",
+      "sentence": "ਅਸੀਂ {{blank}} ਵਿੱਚ ਮਿਲਾਂਗੇ।",
+      "transliteration": "Aseen ___ vich milaange.",
+      "meaning": "We will meet in ___.",
+      "options": [
+        "ਪਾਰਕ",
+        "ਕੁਰਸੀ",
+        "ਕਿਤਾਬ",
+        "ਰੋਟੀ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q7",
+      "level": 3,
+      "quizNumber": 2,
+      "type": "sentence",
+      "sentence": "ਉਹ {{blank}} ਬਹੁਤ ਸੋਹਣਾ ਹੈ।",
+      "transliteration": "Oh ___ bahut sohna hai.",
+      "meaning": "That ___ is very beautiful.",
+      "options": [
+        "ਫੁੱਲ",
+        "ਪਾਣੀ",
+        "ਰਸਤਾ",
+        "ਕਾਗਜ਼"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q8",
+      "level": 3,
+      "quizNumber": 2,
+      "type": "sentence",
+      "sentence": "ਬੱਚੇ {{blank}} ਨਾਲ ਖੁਸ਼ ਹਨ।",
+      "transliteration": "Bachche ___ naal khush han.",
+      "meaning": "The children are happy with ___.",
+      "options": [
+        "ਖੇਡ",
+        "ਦਰਵਾਜ਼ਾ",
+        "ਦੀਵਾਰ",
+        "ਸਮਾਂ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q9",
+      "level": 3,
+      "quizNumber": 2,
+      "type": "sentence",
+      "sentence": "ਮੈਂ {{blank}} ਤੇ ਭਰੋਸਾ ਕਰਦਾ ਹਾਂ।",
+      "transliteration": "Main ___ te bharosa karda haan.",
+      "meaning": "I trust ___.",
+      "options": [
+        "ਦੋਸਤ",
+        "ਕੁਰਸੀ",
+        "ਰਸਤਾ",
+        "ਪਾਣੀ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q10",
+      "level": 3,
+      "quizNumber": 2,
+      "type": "sentence",
+      "sentence": "ਇਹ {{blank}} ਮੇਰਾ ਨਹੀਂ ਹੈ।",
+      "transliteration": "Ih ___ mera nahin hai.",
+      "meaning": "This ___ is not mine.",
+      "options": [
+        "ਬੈਗ",
+        "ਸਮਾਂ",
+        "ਖੁਸ਼ੀ",
+        "ਪਿਆਰ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q11",
+      "level": 3,
+      "quizNumber": 2,
+      "type": "sentence",
+      "sentence": "ਅੱਜ {{blank}} ਬਹੁਤ ਗਰਮੀ ਹੈ।",
+      "transliteration": "Aj ___ bahut garmi hai.",
+      "meaning": "Today there is a lot of ___.",
+      "options": [
+        "ਧੁੱਪ",
+        "ਹਵਾ",
+        "ਠੰਡ",
+        "ਬਾਰਿਸ਼"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q12",
+      "level": 3,
+      "quizNumber": 2,
+      "type": "sentence",
+      "sentence": "ਰਾਤ ਨੂੰ {{blank}} ਦਿਖਾਈ ਦਿੰਦੇ ਹਨ।",
+      "transliteration": "Raat nu ___ dikhaai dinde han.",
+      "meaning": "At night, ___ are visible.",
+      "options": [
+        "ਤਾਰੇ",
+        "ਫੁੱਲ",
+        "ਕਿਤਾਬਾਂ",
+        "ਕੁਰਸੀਆਂ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q13",
+      "level": 3,
+      "quizNumber": 2,
+      "type": "sentence",
+      "sentence": "ਮੈਨੂੰ {{blank}} ਦੀ ਆਵਾਜ਼ ਚੰਗੀ ਲੱਗਦੀ ਹੈ।",
+      "transliteration": "Mainu ___ di awaaz changi lagdi hai.",
+      "meaning": "I like the sound of ___.",
+      "options": [
+        "ਸੰਗੀਤ",
+        "ਦੀਵਾਰ",
+        "ਕਾਗਜ਼",
+        "ਰੋਟੀ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q14",
+      "level": 3,
+      "quizNumber": 2,
+      "type": "sentence",
+      "sentence": "ਉਹ {{blank}} ਨਾਲ ਗੱਲ ਕਰ ਰਹੀ ਹੈ।",
+      "transliteration": "Oh ___ naal gall kar rahi hai.",
+      "meaning": "She is talking with ___.",
+      "options": [
+        "ਦੋਸਤ",
+        "ਕਿਤਾਬ",
+        "ਰਸਤਾ",
+        "ਪਾਣੀ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q15",
+      "level": 3,
+      "quizNumber": 2,
+      "type": "sentence",
+      "sentence": "ਸਾਨੂੰ {{blank}} ਦੀ ਕਦਰ ਕਰਨੀ ਚਾਹੀਦੀ ਹੈ।",
+      "transliteration": "Saanu ___ di kadar karni chaahidi hai.",
+      "meaning": "We should value ___.",
+      "options": [
+        "ਸਮਾਂ",
+        "ਕੁਰਸੀ",
+        "ਦੀਵਾਰ",
+        "ਰਸਤਾ"
+      ],
+      "correctAnswerIndex": 0
+    }
+  ]
+}

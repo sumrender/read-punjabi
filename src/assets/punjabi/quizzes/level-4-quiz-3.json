@@ -1,0 +1,303 @@
+{
+  "id": "quiz-level4-paragraphs-03",
+  "level": 4,
+  "quizNumber": 3,
+  "title": "Paragraph Fill-in Quiz 3",
+  "scoringCriteria": {
+    "excellent": 13,
+    "great": 10,
+    "good": 7
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "level": 4,
+      "quizNumber": 3,
+      "type": "paragraph",
+      "paragraph": "ਮੇਰਾ {{blank1}} ਹਰ ਰੋਜ਼ {{blank2}} ਜਾਂਦਾ ਹੈ।",
+      "blanks": [
+        {
+          "blankId": "blank1",
+          "options": [
+            "ਭਰਾ",
+            "ਕਿਤਾਬ",
+            "ਘਰ",
+            "ਖੇਡ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "blankId": "blank2",
+          "options": [
+            "ਸਕੂਲ",
+            "ਬਾਜ਼ਾਰ",
+            "ਘਰ",
+            "ਮੈਦਾਨ"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "level": 4,
+      "quizNumber": 3,
+      "type": "paragraph",
+      "paragraph": "ਸਵੇਰੇ ਅਸੀਂ {{blank1}} ਉੱਠਦੇ ਹਾਂ ਅਤੇ {{blank2}} ਕਰਦੇ ਹਾਂ।",
+      "blanks": [
+        {
+          "blankId": "blank1",
+          "options": [
+            "ਜਲਦੀ",
+            "ਦੇਰ",
+            "ਹੌਲੀ",
+            "ਥੱਕੇ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "blankId": "blank2",
+          "options": [
+            "ਨਹਾਉਣਾ",
+            "ਖੇਡਣਾ",
+            "ਸੋਣਾ",
+            "ਬੈਠਣਾ"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "level": 4,
+      "quizNumber": 3,
+      "type": "paragraph",
+      "paragraph": "ਅੱਜ ਮੌਸਮ {{blank1}} ਹੈ ਇਸ ਲਈ ਅਸੀਂ {{blank2}} ਗਏ।",
+      "blanks": [
+        {
+          "blankId": "blank1",
+          "options": [
+            "ਠੰਡਾ",
+            "ਪੁਰਾਣਾ",
+            "ਚੁੱਪ",
+            "ਭਾਰਾ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "blankId": "blank2",
+          "options": [
+            "ਸੈਰ",
+            "ਕਿਤਾਬ",
+            "ਸੋਚ",
+            "ਕਮਰਾ"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "level": 4,
+      "quizNumber": 3,
+      "type": "paragraph",
+      "paragraph": "ਉਹ {{blank1}} ਨਾਲ ਕੰਮ ਕਰਦਾ ਹੈ ਇਸ ਲਈ ਉਹ {{blank2}} ਹੈ।",
+      "blanks": [
+        {
+          "blankId": "blank1",
+          "options": [
+            "ਮਿਹਨਤ",
+            "ਡਰ",
+            "ਸ਼ੋਰ",
+            "ਚੁੱਪ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "blankId": "blank2",
+          "options": [
+            "ਸਫਲ",
+            "ਆਲਸੀ",
+            "ਕਮਜ਼ੋਰ",
+            "ਉਦਾਸ"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "level": 4,
+      "quizNumber": 3,
+      "type": "paragraph",
+      "paragraph": "ਮੈਨੂੰ {{blank1}} ਦੀ {{blank2}} ਬਹੁਤ ਪਸੰਦ ਹੈ।",
+      "blanks": [
+        {
+          "blankId": "blank1",
+          "options": [
+            "ਕੁਦਰਤ",
+            "ਕਿਤਾਬ",
+            "ਕੰਮ",
+            "ਸ਼ੋਰ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "blankId": "blank2",
+          "options": [
+            "ਸੁੰਦਰਤਾ",
+            "ਭਾਰ",
+            "ਆਵਾਜ਼",
+            "ਰਫ਼ਤਾਰ"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "level": 4,
+      "quizNumber": 3,
+      "type": "paragraph",
+      "paragraph": "ਅਸੀਂ {{blank1}} ਬੈਠ ਕੇ {{blank2}} ਕਰ ਰਹੇ ਹਾਂ।",
+      "blanks": [
+        {
+          "blankId": "blank1",
+          "options": [
+            "ਇਕੱਠੇ",
+            "ਅਕੇਲੇ",
+            "ਚੁੱਪ",
+            "ਹੌਲੀ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "blankId": "blank2",
+          "options": [
+            "ਗੱਲਾਂ",
+            "ਸਫ਼ਰ",
+            "ਨੀਂਦ",
+            "ਡਰ"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "level": 4,
+      "quizNumber": 3,
+      "type": "paragraph",
+      "paragraph": "ਬੱਚੇ {{blank1}} ਵਿੱਚ {{blank2}} ਰਹੇ ਹਨ।",
+      "blanks": [
+        {
+          "blankId": "blank1",
+          "options": [
+            "ਮੈਦਾਨ",
+            "ਕਮਰਾ",
+            "ਰਸੋਈ",
+            "ਦਫ਼ਤਰ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "blankId": "blank2",
+          "options": [
+            "ਖੇਡ",
+            "ਪੜ੍ਹਾਈ",
+            "ਸੋਚ",
+            "ਸਫ਼ਾਈ"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "level": 4,
+      "quizNumber": 3,
+      "type": "paragraph",
+      "paragraph": "ਉਹ {{blank1}} ਸੁਣ ਕੇ {{blank2}} ਹੋ ਗਿਆ।",
+      "blanks": [
+        {
+          "blankId": "blank1",
+          "options": [
+            "ਖ਼ਬਰ",
+            "ਗੀਤ",
+            "ਹਵਾ",
+            "ਰੌਸ਼ਨੀ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "blankId": "blank2",
+          "options": [
+            "ਖੁਸ਼",
+            "ਥੱਕਿਆ",
+            "ਚੁੱਪ",
+            "ਭੁੱਖਾ"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "level": 4,
+      "quizNumber": 3,
+      "type": "paragraph",
+      "paragraph": "ਮੈਂ {{blank1}} ਗਲਤੀ ਮੰਨ ਲੀ ਅਤੇ {{blank2}} ਮੰਗੀ।",
+      "blanks": [
+        {
+          "blankId": "blank1",
+          "options": [
+            "ਆਪਣੀ",
+            "ਉਸਦੀ",
+            "ਕੋਈ",
+            "ਇਹ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "blankId": "blank2",
+          "options": [
+            "ਮਾਫ਼ੀ",
+            "ਦੌਲਤ",
+            "ਸਹਾਇਤਾ",
+            "ਸਲਾਹ"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "level": 4,
+      "quizNumber": 3,
+      "type": "paragraph",
+      "paragraph": "ਰਾਤ ਨੂੰ {{blank1}} ਚਮਕਦੇ ਹਨ ਅਤੇ {{blank2}} ਨਜ਼ਰ ਆਉਂਦਾ ਹੈ।",
+      "blanks": [
+        {
+          "blankId": "blank1",
+          "options": [
+            "ਤਾਰੇ",
+            "ਬੱਦਲ",
+            "ਫੁੱਲ",
+            "ਰੁੱਖ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "blankId": "blank2",
+          "options": [
+            "ਚੰਦ",
+            "ਸੂਰਜ",
+            "ਮੀਂਹ",
+            "ਧੁੱਪ"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ]
+    }
+  ]
+}

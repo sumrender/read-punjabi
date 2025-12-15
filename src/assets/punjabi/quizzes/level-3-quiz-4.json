@@ -1,0 +1,253 @@
+{
+  "id": "quiz-level3-sentences-04",
+  "level": 3,
+  "quizNumber": 4,
+  "title": "Fill in the Blank Quiz 4",
+  "scoringCriteria": {
+    "excellent": 13,
+    "great": 10,
+    "good": 7
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "level": 3,
+      "quizNumber": 4,
+      "type": "sentence",
+      "sentence": "ਸਮੇਂ ਦੀ {{blank}} ਨਾ ਕਰਨ ਨਾਲ ਮੌਕੇ ਹੱਥੋਂ ਨਿਕਲ ਜਾਂਦੇ ਹਨ।",
+      "transliteration": "Samay di ___ na karan naal mauke hathon nikal jaande han.",
+      "meaning": "By not ___ time, opportunities slip away.",
+      "options": [
+        "ਕਦਰ",
+        "ਗਿਣਤੀ",
+        "ਰਫ਼ਤਾਰ",
+        "ਆਦਤ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q2",
+      "level": 3,
+      "quizNumber": 4,
+      "type": "sentence",
+      "sentence": "ਉਸਦੀ {{blank}} ਨੇ ਮੁਸ਼ਕਲ ਹਾਲਾਤ ਵੀ ਆਸਾਨ ਬਣਾ ਦਿੱਤੇ।",
+      "transliteration": "Usdi ___ ne mushkal halaat vi aasaan bana ditte.",
+      "meaning": "His/Her ___ made even difficult situations easy.",
+      "options": [
+        "ਸਮਝਦਾਰੀ",
+        "ਚੁੱਪੀ",
+        "ਤੇਜ਼ੀ",
+        "ਹੌਲੀ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q3",
+      "level": 3,
+      "quizNumber": 4,
+      "type": "sentence",
+      "sentence": "ਸਫਲਤਾ {{blank}} ਨਾਲ ਨਹੀਂ, ਲਗਾਤਾਰ ਕੋਸ਼ਿਸ਼ ਨਾਲ ਮਿਲਦੀ ਹੈ।",
+      "transliteration": "Safalta ___ naal nahin, lagaataar koshish naal mildi hai.",
+      "meaning": "Success comes not with ___, but with continuous effort.",
+      "options": [
+        "ਕਿਸਮਤ",
+        "ਸਮਾਂ",
+        "ਸੁਪਨਾ",
+        "ਚਾਹ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q4",
+      "level": 3,
+      "quizNumber": 4,
+      "type": "sentence",
+      "sentence": "ਉਹ {{blank}} ਵਿਚ ਵੀ ਸੱਚ ਦਾ ਪੱਖ ਨਹੀਂ ਛੱਡਦਾ।",
+      "transliteration": "Oh ___ vich vi sach da pakkh nahin chhad’da.",
+      "meaning": "Even in ___, he does not leave the side of truth.",
+      "options": [
+        "ਦਬਾਅ",
+        "ਸੁਖ",
+        "ਹਾਸਾ",
+        "ਆਰਾਮ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q5",
+      "level": 3,
+      "quizNumber": 4,
+      "type": "sentence",
+      "sentence": "ਹਰ ਫੈਸਲੇ ਦੇ {{blank}} ਦੂਰਗਾਮੀ ਹੁੰਦੇ ਹਨ।",
+      "transliteration": "Har faisle de ___ doorgaami hunde han.",
+      "meaning": "The ___ of every decision are long-lasting.",
+      "options": [
+        "ਨਤੀਜੇ",
+        "ਸ਼ਬਦ",
+        "ਰੰਗ",
+        "ਕਦਮ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q6",
+      "level": 3,
+      "quizNumber": 4,
+      "type": "sentence",
+      "sentence": "ਸੱਚੀ {{blank}} ਬਿਨਾਂ ਇਜ਼ਤ ਕਾਇਮ ਨਹੀਂ ਰਹਿੰਦੀ।",
+      "transliteration": "Sachi ___ bina izzat kaayam nahin rahindi.",
+      "meaning": "Without true ___, respect does not last.",
+      "options": [
+        "ਇਮਾਨਦਾਰੀ",
+        "ਚਲਾਕੀ",
+        "ਖਾਮੋਸ਼ੀ",
+        "ਸਖ਼ਤੀ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q7",
+      "level": 3,
+      "quizNumber": 4,
+      "type": "sentence",
+      "sentence": "ਉਸਦੀ {{blank}} ਨੇ ਟਕਰਾਅ ਨੂੰ ਗੱਲਬਾਤ ਵਿੱਚ ਬਦਲ ਦਿੱਤਾ।",
+      "transliteration": "Usdi ___ ne takraav nu gallbaat vich badal ditta.",
+      "meaning": "His/Her ___ turned conflict into conversation.",
+      "options": [
+        "ਸੂਝਬੂਝ",
+        "ਚੁੱਪ",
+        "ਜ਼ੋਰ",
+        "ਜਲਦਬਾਜ਼ੀ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q8",
+      "level": 3,
+      "quizNumber": 4,
+      "type": "sentence",
+      "sentence": "ਹਰ {{blank}} ਆਪਣੀ ਜ਼ਿੰਮੇਵਾਰੀ ਨਾਲ ਜੁੜੀ ਹੁੰਦੀ ਹੈ।",
+      "transliteration": "Har ___ apni zimmedaari naal judi hundi hai.",
+      "meaning": "Every ___ is linked with responsibility.",
+      "options": [
+        "ਆਜ਼ਾਦੀ",
+        "ਇੱਛਾ",
+        "ਗੱਲ",
+        "ਸੋਚ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q9",
+      "level": 3,
+      "quizNumber": 4,
+      "type": "sentence",
+      "sentence": "ਉਹ {{blank}} ਨਾਲ ਨਹੀਂ, ਤਰਕ ਨਾਲ ਗੱਲ ਕਰਦਾ ਹੈ।",
+      "transliteration": "Oh ___ naal nahin, tarak naal gall karda hai.",
+      "meaning": "He speaks not with ___, but with logic.",
+      "options": [
+        "ਭਾਵਨਾ",
+        "ਸਮਾਂ",
+        "ਸੁਪਨਾ",
+        "ਹੌਸਲਾ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q10",
+      "level": 3,
+      "quizNumber": 4,
+      "type": "sentence",
+      "sentence": "ਅਸਲੀ {{blank}} ਮੁਸ਼ਕਲ ਸਮੇਂ ਵਿਚ ਪਤਾ ਲੱਗਦੀ ਹੈ।",
+      "transliteration": "Asli ___ mushkal samay vich pata lagdi hai.",
+      "meaning": "True ___ is known in difficult times.",
+      "options": [
+        "ਦੋਸਤੀ",
+        "ਗੱਲ",
+        "ਖੁਸ਼ੀ",
+        "ਸੁਵਿਧਾ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q11",
+      "level": 3,
+      "quizNumber": 4,
+      "type": "sentence",
+      "sentence": "ਬਿਨਾਂ {{blank}} ਦੇ ਗਿਆਨ ਅਧੂਰਾ ਰਹਿੰਦਾ ਹੈ।",
+      "transliteration": "Bina ___ de gyaan adhoora rahinda hai.",
+      "meaning": "Without ___, knowledge remains incomplete.",
+      "options": [
+        "ਅਨੁਭਵ",
+        "ਕਿਤਾਬ",
+        "ਯਾਦ",
+        "ਸ਼ਬਦ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q12",
+      "level": 3,
+      "quizNumber": 4,
+      "type": "sentence",
+      "sentence": "ਉਹ {{blank}} ਦੇ ਪਿੱਛੇ ਨਹੀਂ, ਮਕਸਦ ਦੇ ਪਿੱਛੇ ਦੌੜਦਾ ਹੈ।",
+      "transliteration": "Oh ___ de pichhe nahin, maksad de pichhe daurda hai.",
+      "meaning": "He runs not after ___, but after purpose.",
+      "options": [
+        "ਪੈਸੇ",
+        "ਰਾਹ",
+        "ਲੋਕ",
+        "ਸਮਾਂ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q13",
+      "level": 3,
+      "quizNumber": 4,
+      "type": "sentence",
+      "sentence": "ਸਹੀ {{blank}} ਸੋਚ ਨੂੰ ਦਿਸ਼ਾ ਦਿੰਦਾ ਹੈ।",
+      "transliteration": "Sahi ___ soch nu disha dinda hai.",
+      "meaning": "The right ___ gives direction to thought.",
+      "options": [
+        "ਮਾਰਗਦਰਸ਼ਨ",
+        "ਆਵਾਜ਼",
+        "ਰਫ਼ਤਾਰ",
+        "ਰੰਗ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q14",
+      "level": 3,
+      "quizNumber": 4,
+      "type": "sentence",
+      "sentence": "ਉਸਦੀ {{blank}} ਨੇ ਉਸਨੂੰ ਭੀੜ ਤੋਂ ਵੱਖਰਾ ਕੀਤਾ।",
+      "transliteration": "Usdi ___ ne usnu bheer ton vakhra kita.",
+      "meaning": "His/Her ___ set him/her apart from the crowd.",
+      "options": [
+        "ਵਿਚਾਰਧਾਰਾ",
+        "ਚਾਲ",
+        "ਬੋਲ",
+        "ਪਹਿਰਾਵਾ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q15",
+      "level": 3,
+      "quizNumber": 4,
+      "type": "sentence",
+      "sentence": "{{blank}} ਨਾਲ ਲਿਆ ਫੈਸਲਾ ਪਛਤਾਵਾ ਛੱਡ ਜਾਂਦਾ ਹੈ।",
+      "transliteration": "___ naal liya faisla pachtaava chhad jaanda hai.",
+      "meaning": "A decision taken with ___ leaves regret.",
+      "options": [
+        "ਜਲਦਬਾਜ਼ੀ",
+        "ਸਮਝਦਾਰੀ",
+        "ਧੀਰਜ",
+        "ਸੂਝਬੂਝ"
+      ],
+      "correctAnswerIndex": 0
+    }
+  ]
+}
