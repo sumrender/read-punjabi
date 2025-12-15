@@ -52,6 +52,18 @@ export class QuizService {
   readonly quizComplete = computed(() => this.isQuizComplete());
 
   /**
+   * Shuffle array using Fisher-Yates algorithm
+   */
+  private shuffleArray<T>(array: T[]): T[] {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  }
+
+  /**
    * Load quiz data from JSON file by level and quiz number
    */
   loadQuiz(level: number, quizNumber: number = 1): Observable<Quiz> {
@@ -60,12 +72,17 @@ export class QuizService {
       .replace('{quizNumber}', String(quizNumber));
     return this.http.get<Quiz>(filePath).pipe(
       map(quiz => {
-        this.currentQuiz.set(quiz);
+        // Shuffle questions to randomize the sequence
+        const shuffledQuiz = {
+          ...quiz,
+          questions: this.shuffleArray(quiz.questions)
+        };
+        this.currentQuiz.set(shuffledQuiz);
         this.currentQuestionIndex.set(AppConfig.quiz.initialIndex);
         this.score.set(AppConfig.quiz.initialScore);
         this.questionAttempts.set(new Map());
         this.isQuizComplete.set(false);
-        return quiz;
+        return shuffledQuiz;
       })
     );
   }
