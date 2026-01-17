@@ -1,0 +1,337 @@
+[
+  {
+    "id": "l3_r1",
+    "level": 3,
+    "type": "sentence",
+    "native": "यह मेरा घर है।",
+    "transliteration": "Yeh mera ghar hai.",
+    "meaning": "This is my home."
+  },
+  {
+    "id": "l3_r2",
+    "level": 3,
+    "type": "sentence",
+    "native": "मैं हिंदी सीख रहा हूँ।",
+    "transliteration": "Main Hindi seekh raha hoon.",
+    "meaning": "I am learning Hindi."
+  },
+  {
+    "id": "l3_r3",
+    "level": 3,
+    "type": "sentence",
+    "native": "आपका नाम क्या है?",
+    "transliteration": "Aapka naam kya hai?",
+    "meaning": "What is your name?"
+  },
+  {
+    "id": "l3_r4",
+    "level": 3,
+    "type": "sentence",
+    "native": "नमस्ते।",
+    "transliteration": "Namaste.",
+    "meaning": "Hello."
+  },
+  {
+    "id": "l3_r5",
+    "level": 3,
+    "type": "sentence",
+    "native": "पानी पियो।",
+    "transliteration": "Paani piyo.",
+    "meaning": "Drink water."
+  },
+  {
+    "id": "l3_r6",
+    "level": 3,
+    "type": "sentence",
+    "native": "फल खाओ।",
+    "transliteration": "Phal khao.",
+    "meaning": "Eat fruit."
+  },
+  {
+    "id": "l3_r7",
+    "level": 3,
+    "type": "sentence",
+    "native": "बस आ गई।",
+    "transliteration": "Bus aa gayi.",
+    "meaning": "The bus has arrived."
+  },
+  {
+    "id": "l3_r8",
+    "level": 3,
+    "type": "sentence",
+    "native": "किताब पढ़ो।",
+    "transliteration": "Kitaab parho.",
+    "meaning": "Read the book."
+  },
+  {
+    "id": "l3_r9",
+    "level": 3,
+    "type": "sentence",
+    "native": "दरवाज़ा बंद करो।",
+    "transliteration": "Darwaza band karo.",
+    "meaning": "Close the door."
+  },
+  {
+    "id": "l3_r10",
+    "level": 3,
+    "type": "sentence",
+    "native": "मुझे भूख लगी है।",
+    "transliteration": "Mujhe bhookh lagi hai.",
+    "meaning": "I am hungry."
+  },
+  {
+    "id": "l3_r11",
+    "level": 3,
+    "type": "sentence",
+    "native": "आज मौसम अच्छा है।",
+    "transliteration": "Aaj mausam accha hai.",
+    "meaning": "The weather is nice today."
+  },
+  {
+    "id": "l3_r12",
+    "level": 3,
+    "type": "sentence",
+    "native": "धन्यवाद।",
+    "transliteration": "Dhanyavaad.",
+    "meaning": "Thank you."
+  },{
+    "id": "l3_r13",
+    "level": 3,
+    "type": "sentence",
+    "native": "मैं स्कूल जाता हूँ।",
+    "transliteration": "Main school jaata hoon.",
+    "meaning": "I go to school."
+  },
+  {
+    "id": "l3_r14",
+    "level": 3,
+    "type": "sentence",
+    "native": "वह मेरा दोस्त है।",
+    "transliteration": "Vah mera dost hai.",
+    "meaning": "He is my friend."
+  },
+  {
+    "id": "l3_r15",
+    "level": 3,
+    "type": "sentence",
+    "native": "माँ घर पर है।",
+    "transliteration": "Maa ghar par hai.",
+    "meaning": "Mother is at home."
+  },
+  {
+    "id": "l3_r16",
+    "level": 3,
+    "type": "sentence",
+    "native": "पिताजी काम कर रहे हैं।",
+    "transliteration": "Pitaji kaam kar rahe hain.",
+    "meaning": "Father is working."
+  },
+  {
+    "id": "l3_r17",
+    "level": 3,
+    "type": "sentence",
+    "native": "मुझे चाय चाहिए।",
+    "transliteration": "Mujhe chai chahiye.",
+    "meaning": "I want tea."
+  },
+  {
+    "id": "l3_r18",
+    "level": 3,
+    "type": "sentence",
+    "native": "वह किताब ले आया।",
+    "transliteration": "Vah kitaab le aaya.",
+    "meaning": "He brought the book."
+  },
+  {
+    "id": "l3_r19",
+    "level": 3,
+    "type": "sentence",
+    "native": "हम खेल रहे हैं।",
+    "transliteration": "Hum khel rahe hain.",
+    "meaning": "We are playing."
+  },
+  {
+    "id": "l3_r20",
+    "level": 3,
+    "type": "sentence",
+    "native": "बच्चे खुश हैं।",
+    "transliteration": "Bachche khush hain.",
+    "meaning": "The children are happy."
+  },
+  {
+    "id": "l3_r21",
+    "level": 3,
+    "type": "sentence",
+    "native": "कक्षा शुरू हो गई।",
+    "transliteration": "Kaksha shuru ho gayi.",
+    "meaning": "The class has started."
+  },
+  {
+    "id": "l3_r22",
+    "level": 3,
+    "type": "sentence",
+    "native": "वह गाना सुन रहा है।",
+    "transliteration": "Vah gaana sun raha hai.",
+    "meaning": "He is listening to a song."
+  },
+  {
+    "id": "l3_r23",
+    "level": 3,
+    "type": "sentence",
+    "native": "मैं लिखना सीख रहा हूँ।",
+    "transliteration": "Main likhna seekh raha hoon.",
+    "meaning": "I am learning to write."
+  },
+  {
+    "id": "l3_r24",
+    "level": 3,
+    "type": "sentence",
+    "native": "सूरज उग गया।",
+    "transliteration": "Suraj ug gaya.",
+    "meaning": "The sun has risen."
+  },
+  {
+    "id": "l3_r25",
+    "level": 3,
+    "type": "sentence",
+    "native": "रात हो गई है।",
+    "transliteration": "Raat ho gayi hai.",
+    "meaning": "It has become night."
+  },
+  {
+    "id": "l3_r26",
+    "level": 3,
+    "type": "sentence",
+    "native": "कृपया बैठिए।",
+    "transliteration": "Kripya baithiye.",
+    "meaning": "Please sit down."
+  },
+  {
+    "id": "l3_r27",
+    "level": 3,
+    "type": "sentence",
+    "native": "मैं घर जा रहा हूँ।",
+    "transliteration": "Main ghar ja raha hoon.",
+    "meaning": "I am going home."
+  },
+  {
+    "id": "l3_r28",
+    "level": 3,
+    "type": "sentence",
+    "native": "वह दफ़्तर में है।",
+    "transliteration": "Vah daftar mein hai.",
+    "meaning": "He is in the office."
+  },
+  {
+    "id": "l3_r29",
+    "level": 3,
+    "type": "sentence",
+    "native": "मुझे समझ आ गया।",
+    "transliteration": "Mujhe samajh aa gaya.",
+    "meaning": "I understand."
+  },
+  {
+    "id": "l3_r30",
+    "level": 3,
+    "type": "sentence",
+    "native": "घड़ी बज गई।",
+    "transliteration": "Ghadi baj gayi.",
+    "meaning": "The clock rang."
+  },
+  {
+    "id": "l3_r31",
+    "level": 3,
+    "type": "sentence",
+    "native": "कुत्ता दौड़ रहा है।",
+    "transliteration": "Kutta daud raha hai.",
+    "meaning": "The dog is running."
+  },
+  {
+    "id": "l3_r32",
+    "level": 3,
+    "type": "sentence",
+    "native": "बिल्ली सो रही है।",
+    "transliteration": "Billi so rahi hai.",
+    "meaning": "The cat is sleeping."
+  },
+  {
+    "id": "l3_r33",
+    "level": 3,
+    "type": "sentence",
+    "native": "हमने फिल्म देखी।",
+    "transliteration": "Humne film dekhi.",
+    "meaning": "We watched a movie."
+  },
+  {
+    "id": "l3_r34",
+    "level": 3,
+    "type": "sentence",
+    "native": "वह हँस रहा है।",
+    "transliteration": "Vah hans raha hai.",
+    "meaning": "He is laughing."
+  },
+  {
+    "id": "l3_r35",
+    "level": 3,
+    "type": "sentence",
+    "native": "मैंने सवाल पूछा।",
+    "transliteration": "Maine sawaal pucha.",
+    "meaning": "I asked a question."
+  },
+  {
+    "id": "l3_r36",
+    "level": 3,
+    "type": "sentence",
+    "native": "उत्तर सही है।",
+    "transliteration": "Uttar sahi hai.",
+    "meaning": "The answer is correct."
+  },
+  {
+    "id": "l3_r37",
+    "level": 3,
+    "type": "sentence",
+    "native": "कल छुट्टी है।",
+    "transliteration": "Kal chutti hai.",
+    "meaning": "Tomorrow is a holiday."
+  },
+  {
+    "id": "l3_r38",
+    "level": 3,
+    "type": "sentence",
+    "native": "हम बाज़ार गए।",
+    "transliteration": "Hum bazaar gaye.",
+    "meaning": "We went to the market."
+  },
+  {
+    "id": "l3_r39",
+    "level": 3,
+    "type": "sentence",
+    "native": "सब्ज़ी ताज़ी है।",
+    "transliteration": "Sabzi taazi hai.",
+    "meaning": "The vegetables are fresh."
+  },
+  {
+    "id": "l3_r40",
+    "level": 3,
+    "type": "sentence",
+    "native": "मैं तैयार हूँ।",
+    "transliteration": "Main taiyaar hoon.",
+    "meaning": "I am ready."
+  },
+  {
+    "id": "l3_r41",
+    "level": 3,
+    "type": "sentence",
+    "native": "वह आ रहा है।",
+    "transliteration": "Vah aa raha hai.",
+    "meaning": "He is coming."
+  },
+  {
+    "id": "l3_r42",
+    "level": 3,
+    "type": "sentence",
+    "native": "चलो शुरू करें।",
+    "transliteration": "Chalo shuru karein.",
+    "meaning": "Let’s begin."
+  }
+]

@@ -1,16 +1,26 @@
-import { Injectable, inject } from '@angular/core';
+import { Injectable, inject, effect } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map, of, tap } from 'rxjs';
 import { LessonItem } from '../models/lesson-item.interface';
+import { LanguageService } from './language.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RandomService {
   private http = inject(HttpClient);
+  private languageService = inject(LanguageService);
   
   // Cache for loaded items
   private itemsCache = new Map<number, LessonItem[]>();
+
+  constructor() {
+    // When language changes, clear cache
+    effect(() => {
+      this.languageService.currentLanguage(); // depends on current language
+      this.itemsCache.clear();
+    });
+  }
 
   getReadItems(level: number): Set<string> {
     const key = `random_read_level_${level}`;
@@ -54,7 +64,7 @@ export class RandomService {
       return of(this.itemsCache.get(level)!);
     }
 
-    const path = `assets/punjabi/random/level-${level}-random.json`;
+    const path = this.languageService.config.randomPathTemplate.replace('{level}', String(level));
     return this.http.get<LessonItem[]>(path).pipe(
       tap(items => this.itemsCache.set(level, items))
     );

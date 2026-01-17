@@ -1,0 +1,242 @@
+[
+  {
+    "id": "l2_r1",
+    "level": 2,
+    "type": "word",
+    "native": "घर",
+    "transliteration": "Ghar",
+    "meaning": "Home"
+  },
+  {
+    "id": "l2_r2",
+    "level": 2,
+    "type": "word",
+    "native": "फल",
+    "transliteration": "Phal",
+    "meaning": "Fruit"
+  },
+  {
+    "id": "l2_r3",
+    "level": 2,
+    "type": "word",
+    "native": "बस",
+    "transliteration": "Bus",
+    "meaning": "Bus"
+  },
+  {
+    "id": "l2_r4",
+    "level": 2,
+    "type": "word",
+    "native": "कमल",
+    "transliteration": "Kamal",
+    "meaning": "Lotus"
+  },
+  {
+    "id": "l2_r5",
+    "level": 2,
+    "type": "word",
+    "native": "मटर",
+    "transliteration": "Matar",
+    "meaning": "Peas"
+  },
+  {
+    "id": "l2_r6",
+    "level": 2,
+    "type": "word",
+    "native": "सड़क",
+    "transliteration": "Sadak",
+    "meaning": "Road"
+  },
+  {
+    "id": "l2_r7",
+    "level": 2,
+    "type": "word",
+    "native": "बर्फ़",
+    "transliteration": "Baraf",
+    "meaning": "Ice / Snow"
+  },
+  {
+    "id": "l2_r8",
+    "level": 2,
+    "type": "word",
+    "native": "कलम",
+    "transliteration": "Kalam",
+    "meaning": "Pen"
+  },
+  {
+    "id": "l2_r9",
+    "level": 2,
+    "type": "word",
+    "native": "जल",
+    "transliteration": "Jal",
+    "meaning": "Water"
+  },
+  {
+    "id": "l2_r10",
+    "level": 2,
+    "type": "word",
+    "native": "नल",
+    "transliteration": "Nal",
+    "meaning": "Tap"
+  },
+  {
+    "id": "l2_r11",
+    "level": 2,
+    "type": "word",
+    "native": "रथ",
+    "transliteration": "Rath",
+    "meaning": "Chariot"
+  },
+  {
+    "id": "l2_r12",
+    "level": 2,
+    "type": "word",
+    "native": "धन",
+    "transliteration": "Dhan",
+    "meaning": "Wealth"
+  },
+  {
+    "id": "l2_r13",
+    "level": 2,
+    "type": "word",
+    "native": "दिल",
+    "transliteration": "Dil",
+    "meaning": "Heart"
+  },
+  {
+    "id": "l2_r14",
+    "level": 2,
+    "type": "word",
+    "native": "किताब",
+    "transliteration": "Kitaab",
+    "meaning": "Book"
+  },
+  {
+    "id": "l2_r15",
+    "level": 2,
+    "type": "word",
+    "native": "मेज़",
+    "transliteration": "Mez",
+    "meaning": "Table"
+  },
+  {
+    "id": "l2_r16",
+    "level": 2,
+    "type": "word",
+    "native": "कुरसी",
+    "transliteration": "Kursi",
+    "meaning": "Chair"
+  },
+  {
+    "id": "l2_r17",
+    "level": 2,
+    "type": "word",
+    "native": "दूध",
+    "transliteration": "Doodh",
+    "meaning": "Milk"
+  },
+  {
+    "id": "l2_r18",
+    "level": 2,
+    "type": "word",
+    "native": "रोटी",
+    "transliteration": "Roti",
+    "meaning": "Bread"
+  },
+  {
+    "id": "l2_r19",
+    "level": 2,
+    "type": "word",
+    "native": "फूल",
+    "transliteration": "Phool",
+    "meaning": "Flower"
+  },
+  {
+    "id": "l2_r20",
+    "level": 2,
+    "type": "word",
+    "native": "चाय",
+    "transliteration": "Chai",
+    "meaning": "Tea"
+  },
+  {
+    "id": "l2_r21",
+    "level": 2,
+    "type": "word",
+    "native": "बच्चा",
+    "transliteration": "Bachcha",
+    "meaning": "Child"
+  },
+  {
+    "id": "l2_r22",
+    "level": 2,
+    "type": "word",
+    "native": "माँ",
+    "transliteration": "Maa",
+    "meaning": "Mother"
+  },
+  {
+    "id": "l2_r23",
+    "level": 2,
+    "type": "word",
+    "native": "पिता",
+    "transliteration": "Pita",
+    "meaning": "Father"
+  },
+  {
+    "id": "l2_r24",
+    "level": 2,
+    "type": "word",
+    "native": "दिन",
+    "transliteration": "Din",
+    "meaning": "Day"
+  },
+  {
+    "id": "l2_r25",
+    "level": 2,
+    "type": "word",
+    "native": "रात",
+    "transliteration": "Raat",
+    "meaning": "Night"
+  },
+  {
+    "id": "l2_r26",
+    "level": 2,
+    "type": "word",
+    "native": "सूरज",
+    "transliteration": "Suraj",
+    "meaning": "Sun"
+  },
+  {
+    "id": "l2_r27",
+    "level": 2,
+    "type": "word",
+    "native": "चाँद",
+    "transliteration": "Chand",
+    "meaning": "Moon"
+  },
+  {
+    "id": "l2_r28",
+    "level": 2,
+    "type": "word",
+    "native": "हवा",
+    "transliteration": "Hawa",
+    "meaning": "Air"
+  },
+  {
+    "id": "l2_r29",
+    "level": 2,
+    "type": "word",
+    "native": "आग",
+    "transliteration": "Aag",
+    "meaning": "Fire"
+  },
+  {
+    "id": "l2_r30",
+    "level": 2,
+    "type": "word",
+    "native": "मिट्टी",
+    "transliteration": "Mitti",
+    "meaning": "Soil"
+  }
+]
