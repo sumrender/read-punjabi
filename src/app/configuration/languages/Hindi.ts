@@ -9,6 +9,7 @@ export const HindiConfig: LanguageConfig = {
   localStoragePrefix: 'hindi-reading-app',
   lessonsPathTemplate: 'assets/hindi/lessons/level-{level}-lesson-{lessonNumber}.json',
   quizzesPathTemplate: 'assets/hindi/quizzes/level-{level}-quiz-{quizNumber}.json',
+  randomPathTemplate: 'assets/hindi/random/level-{level}-random.json',
   ui: {
     subtitle: 'Learn to read Devanagari script',
     levelDescriptions: {

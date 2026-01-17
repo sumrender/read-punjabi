@@ -7,6 +7,7 @@ export interface LanguageConfig {
   localStoragePrefix: string;
   lessonsPathTemplate: string;
   quizzesPathTemplate: string;
+  randomPathTemplate: string;
   ui: {
     subtitle: string;
     levelDescriptions: {
@@ -27,6 +28,7 @@ export const PunjabiConfig: LanguageConfig = {
   localStoragePrefix: 'punjabi-reading-app',
   lessonsPathTemplate: 'assets/punjabi/lessons/level-{level}-lesson-{lessonNumber}.json',
   quizzesPathTemplate: 'assets/punjabi/quizzes/level-{level}-quiz-{quizNumber}.json',
+  randomPathTemplate: 'assets/punjabi/random/level-{level}-random.json',
   ui: {
     subtitle: 'Learn to read Gurmukhi script',
     levelDescriptions: {
