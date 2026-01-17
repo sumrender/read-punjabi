@@ -53,9 +53,10 @@
         </section>
 
         <section class="lesson-controls" role="toolbar" aria-label="Lesson controls">
-          <button 
-            class="control-button play-button"
-            (click)="playAudio()"
+          @if (isAudioPlaybackEnabled) {
+            <button
+              class="control-button play-button"
+              (click)="playAudio()"
             [attr.aria-label]="isPlaying() ? 'Stop audio' : 'Play audio'"
             [attr.aria-pressed]="isPlaying()"
           >
@@ -65,6 +66,7 @@
               <span aria-hidden="true">▶</span> Play Audio
             }
           </button>
+          }
 
           <button 
             class="control-button toggle-button"

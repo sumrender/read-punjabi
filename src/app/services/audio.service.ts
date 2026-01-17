@@ -1,5 +1,6 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, signal, inject } from '@angular/core';
 import { AppConfig } from '../configuration/config';
+import { FeatureFlagService } from './feature-flag.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,7 @@ export class AudioService {
   private audioElement: HTMLAudioElement | null = null;
   private currentAudioSrc: string | null = null;
   private readonly _isPlaying = signal(false);
+  private featureFlagService = inject(FeatureFlagService);
   
   readonly isPlaying = this._isPlaying.asReadonly();
 
@@ -15,6 +17,9 @@ export class AudioService {
    * Play audio from the given source
    */
   play(audioSrc: string): Promise<void> {
+    if (!this.featureFlagService.isAudioPlaybackEnabled()) {
+      return Promise.resolve();
+    }
     return new Promise((resolve, reject) => {
       // If same audio is already playing, restart it
       if (this.audioElement && this.currentAudioSrc === audioSrc) {
