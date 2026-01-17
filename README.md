@@ -47,7 +47,7 @@ Before you begin, ensure you have the following installed:
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd punjabi-reading-app
+cd read-punjabi
 ```
 
 2. Install dependencies:
@@ -86,7 +86,7 @@ npm run watch
 ## 📁 Project Structure
 
 ```
-punjabi-reading-app/
+read-punjabi/
 ├── src/
 │   ├── app/
 │   │   ├── components/

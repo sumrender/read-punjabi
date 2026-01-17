@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "punjabi-reading-app": {
+    "read-punjabi": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -90,10 +90,10 @@
           },
           "configurations": {
             "production": {
-              "buildTarget": "punjabi-reading-app:build:production"
+              "buildTarget": "read-punjabi:build:production"
             },
             "development": {
-              "buildTarget": "punjabi-reading-app:build:development"
+              "buildTarget": "read-punjabi:build:development"
             }
           },
           "defaultConfiguration": "development"
