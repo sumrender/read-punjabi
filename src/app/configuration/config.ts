@@ -63,4 +63,13 @@ export const AppConfig = {
       expectedLength: 5,
     },
   },
+
+  /**
+   * Feature flags
+   */
+  featureFlags: {
+    AudioPlayback: false,
+  },
 } as const;
+
+export type AppConfigType = typeof AppConfig;

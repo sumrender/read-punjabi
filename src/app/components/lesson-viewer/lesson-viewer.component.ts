@@ -6,6 +6,7 @@ import { AudioService } from '../../services/audio.service';
 import { ThemeService } from '../../services/theme.service';
 import { LanguageService } from '../../services/language.service';
 import { LessonItem } from '../../models/lesson-item.interface';
+import { FeatureFlagService } from '../../services/feature-flag.service';
 
 @Component({
   selector: 'app-lesson-viewer',
@@ -21,12 +22,14 @@ export class LessonViewerComponent implements OnInit, OnDestroy {
   private audioService = inject(AudioService);
   private themeService = inject(ThemeService);
   private languageService = inject(LanguageService);
+  private featureFlagService = inject(FeatureFlagService);
   protected config = this.languageService.currentLanguage;
 
   readonly lesson = signal<LessonItem | null>(null);
   readonly currentLevel = signal<number>(1);
   readonly showTransliteration = signal<boolean>(false);
   readonly showMeaning = signal<boolean>(false);
+  readonly isAudioPlaybackEnabled = this.featureFlagService.isAudioPlaybackEnabled();
   
   readonly isPlaying = this.audioService.isPlaying;
   readonly hasNext = signal<boolean>(false);
