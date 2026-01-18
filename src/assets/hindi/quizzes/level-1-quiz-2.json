@@ -1,0 +1,208 @@
+{
+  "id": "quiz-level1-alphabets-02",
+  "level": 1,
+  "quizNumber": 2,
+  "title": "Alphabet Recognition Quiz",
+  "scoringCriteria": {
+    "excellent": 13,
+    "great": 10,
+    "good": 7
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "level": 1,
+      "type": "alphabet",
+      "prompt": "Kha",
+      "options": [
+        "ग",
+        "घ",
+        "क",
+        "ख"
+      ],
+      "correctAnswerIndex": 3
+    },
+    {
+      "id": "q2",
+      "level": 1,
+      "type": "alphabet",
+      "prompt": "Ga",
+      "options": [
+        "घ",
+        "ग",
+        "ख",
+        "क"
+      ],
+      "correctAnswerIndex": 1
+    },
+    {
+      "id": "q3",
+      "level": 1,
+      "type": "alphabet",
+      "prompt": "Gha",
+      "options": [
+        "ग",
+        "क",
+        "घ",
+        "ख"
+      ],
+      "correctAnswerIndex": 2
+    },
+    {
+      "id": "q4",
+      "level": 1,
+      "type": "alphabet",
+      "prompt": "Cha",
+      "options": [
+        "ख",
+        "छ",
+        "च",
+        "घ"
+      ],
+      "correctAnswerIndex": 2
+    },
+    {
+      "id": "q5",
+      "level": 1,
+      "type": "alphabet",
+      "prompt": "Chha",
+      "options": [
+        "झ",
+        "च",
+        "छ",
+        "ज"
+      ],
+      "correctAnswerIndex": 2
+    },
+    {
+      "id": "q6",
+      "level": 1,
+      "type": "alphabet",
+      "prompt": "Ja",
+      "options": [
+        "ड",
+        "ठ",
+        "ज",
+        "ट"
+      ],
+      "correctAnswerIndex": 2
+    },
+    {
+      "id": "q7",
+      "level": 1,
+      "type": "alphabet",
+      "prompt": "Jha",
+      "options": [
+        "इ",
+        "आ",
+        "झ",
+        "ई"
+      ],
+      "correctAnswerIndex": 2
+    },
+    {
+      "id": "q8",
+      "level": 1,
+      "type": "alphabet",
+      "prompt": "Ta",
+      "options": [
+        "ण",
+        "ड",
+        "त",
+        "ट"
+      ],
+      "correctAnswerIndex": 3
+    },
+    {
+      "id": "q9",
+      "level": 1,
+      "type": "alphabet",
+      "prompt": "Tha",
+      "options": [
+        "ठ",
+        "ल",
+        "स",
+        "क"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q10",
+      "level": 1,
+      "type": "alphabet",
+      "prompt": "Da",
+      "options": [
+        "ड",
+        "व",
+        "ल",
+        "र"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q11",
+      "level": 1,
+      "type": "alphabet",
+      "prompt": "Dha",
+      "options": [
+        "ढ",
+        "र",
+        "ह",
+        "ल"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q12",
+      "level": 1,
+      "type": "alphabet",
+      "prompt": "Na",
+      "options": [
+        "ण",
+        "ह",
+        "र",
+        "व"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q13",
+      "level": 1,
+      "type": "alphabet",
+      "prompt": "Pa",
+      "options": [
+        "प",
+        "ब",
+        "न",
+        "म"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q14",
+      "level": 1,
+      "type": "alphabet",
+      "prompt": "Pha",
+      "options": [
+        "ब",
+        "म",
+        "फ",
+        "प"
+      ],
+      "correctAnswerIndex": 2
+    },
+    {
+      "id": "q15",
+      "level": 1,
+      "type": "alphabet",
+      "prompt": "Ba",
+      "options": [
+        "न",
+        "ब",
+        "म",
+        "प"
+      ],
+      "correctAnswerIndex": 1
+    }
+  ]
+}

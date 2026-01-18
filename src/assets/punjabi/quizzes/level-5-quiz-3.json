@@ -1,0 +1,31 @@
+{
+  "id": "quiz-level5-story-03",
+  "level": 5,
+  "quizNumber": 3,
+  "title": "Story Sequence Quiz - The Fox and the Grapes",
+  "scoringCriteria": {
+    "excellent": 1,
+    "great": 1,
+    "good": 1
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "level": 5,
+      "type": "story",
+      "prompt": "Arrange the sentences in the correct order to tell the story of the fox and the grapes.",
+      "lines": [
+        "ਇੱਕ ਲੂੰਬੜੀ ਨੇ ਅੰਗੂਰਾਂ ਦਾ ਇੱਕ ਗੁੱਛਾ ਦੇਖਿਆ।",
+        "ਉਹ ਅੰਗੂਰਾਂ ਤੱਕ ਪਹੁੰਚਣ ਲਈ ਕਈ ਵਾਰ ਕੁੱਦੀ।",
+        "ਜਦੋਂ ਉਹ ਅੰਗੂਰਾਂ ਤੱਕ ਨਹੀਂ ਪਹੁੰਚ ਸਕੀ, ਤਾਂ ਉਸਨੇ ਹਾਰ ਮੰਨ ਲਈ।",
+        "ਉਸਨੇ ਕਿਹਾ, 'ਅੰਗੂਰ ਖੱਟੇ ਹਨ'।"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}

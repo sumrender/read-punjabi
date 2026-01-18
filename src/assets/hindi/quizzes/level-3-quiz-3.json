@@ -1,0 +1,208 @@
+{
+  "id": "quiz-level3-sentence-03",
+  "level": 3,
+  "quizNumber": 3,
+  "title": "Sentence Completion Quiz - Teacher/Student",
+  "scoringCriteria": {
+    "excellent": 13,
+    "great": 10,
+    "good": 7
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "अध्यापक ने विद्यार्थियों को __ पढ़ाया।",
+      "options": [
+        "पाठ",
+        "गाना",
+        "खेल",
+        "कहानी"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q2",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "विद्यार्थी ने अपना __ पूरा किया।",
+      "options": [
+        "गृहकार्य",
+        "खाना",
+        "सोना",
+        "खेलना"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q3",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "स्कूल की घंटी __।",
+      "options": [
+        "बजी",
+        "रुकी",
+        "टूटी",
+        "खो गई"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q4",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "उसने परीक्षा में अच्छे __ प्राप्त किए।",
+      "options": [
+        "अंक",
+        "उपहार",
+        "दोस्त",
+        "खिलौने"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q5",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "कक्षा में बहुत __ थी।",
+      "options": [
+        "शोर",
+        "शांति",
+        "अंधेरा",
+        "गर्मी"
+      ],
+      "correctAnswerIndex": 1
+    },
+    {
+      "id": "q6",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "अध्यापक ने बोर्ड पर __ लिखा।",
+      "options": [
+        "सवाल",
+        "जवाब",
+        "कविता",
+        "कहानी"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q7",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "विद्यार्थी ने __ से सवाल पूछा।",
+      "options": [
+        "अध्यापक",
+        "दोस्त",
+        "माता-पिता",
+        "भाई"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q8",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "सभी बच्चे __ में खेल रहे थे।",
+      "options": [
+        "मैदान",
+        "कक्षा",
+        "घर",
+        "बाज़ार"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q9",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "उसने अपने __ में किताबें रखीं।",
+      "options": [
+        "बस्ते",
+        "जेब",
+        "हाथ",
+        "कार"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q10",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "आज स्कूल में __ है।",
+      "options": [
+        "छुट्टी",
+        "परीक्षा",
+        "खेल",
+        "पार्टी"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q11",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "अध्यापक ने __ की प्रशंसा की।",
+      "options": [
+        "विद्यार्थी",
+        "चोर",
+        "जानवर",
+        "पक्षी"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q12",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "विद्यार्थी ने नया __ सीखा।",
+      "options": [
+        "पाठ",
+        "खेल",
+        "गाना",
+        "नाच"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q13",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "स्कूल का गेट __ था।",
+      "options": [
+        "बंद",
+        "खुला",
+        "टूटा",
+        "छोटा"
+      ],
+      "correctAnswerIndex": 1
+    },
+    {
+      "id": "q14",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "उसने अपनी कलम अपने __ को दी।",
+      "options": [
+        "दोस्त",
+        "दुश्मन",
+        "अध्यापक",
+        "भाई"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q15",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "सभी बच्चों ने मिलकर __ गाया।",
+      "options": [
+        "राष्ट्रगान",
+        "फिल्मी गाना",
+        "लोकगीत",
+        "भजन"
+      ],
+      "correctAnswerIndex": 0
+    }
+  ]
+}

@@ -16,13 +16,13 @@ This Angular-based web application enables users to progress from zero literacy 
 
 ## ✨ Features
 
-- **Audio Playback** - Hear correct pronunciation for letters, words, and sentences
 - **Transliteration Toggle** - View Latin script transliteration for support
 - **Meaning Toggle** - Access English translations on-demand
 - **Progressive Learning** - Navigate through 5 difficulty levels
 - **Customizable Settings** - Adjust font size and toggle dark/light theme
 - **Mobile-First Design** - Responsive interface optimized for all devices
 - **Privacy-Focused** - No accounts, no tracking, runs entirely in the browser
+- **Audio Playback** - Hear correct pronunciation for letters, words, and sentences (IN PROGRESS)
 
 ## 🛠️ Tech Stack
 
@@ -82,52 +82,6 @@ Build the project in watch mode for development:
 ```bash
 npm run watch
 ```
-
-## 📁 Project Structure
-
-```
-read-punjabi/
-├── src/
-│   ├── app/
-│   │   ├── components/
-│   │   │   ├── home/              # Home page component
-│   │   │   ├── lesson-list/       # Lesson list component
-│   │   │   ├── lesson-viewer/     # Lesson viewer component
-│   │   │   └── settings/          # Settings component
-│   │   ├── models/
-│   │   │   └── lesson-item.interface.ts
-│   │   ├── services/
-│   │   │   ├── audio.service.ts   # Audio playback service
-│   │   │   ├── lesson.service.ts  # Lesson data service
-│   │   │   └── theme.service.ts   # Theme management service
-│   │   ├── app.config.ts
-│   │   ├── app.routes.ts
-│   │   └── app.ts
-│   ├── assets/                    # Static assets (JSON, images, audio) served by Angular
-│   │   └── lessons/               # JSON lesson files
-│   │       ├── level-1.json
-│   │       ├── level-2.json
-│   │       ├── level-3.json
-│   │       ├── level-4.json
-│   │       └── level-5.json
-│   └── index.html
-├── angular.json
-├── package.json
-└── tsconfig.json
-```
-
-## 🎯 Key Components
-
-- **Home Component** - Landing page with level selection menu
-- **Lesson List Component** - Displays available lessons for a selected level
-- **Lesson Viewer Component** - Main learning interface with audio, transliteration, and meaning toggles
-- **Settings Component** - Font size and theme customization
-
-## 🔧 Services
-
-- **LessonService** - Fetches JSON data and manages current lesson state
-- **AudioService** - Manages HTML5 Audio playback
-- **ThemeService** - Handles dark/light mode toggling with LocalStorage persistence
 
 **Note**: This app requires no backend services, user accounts, or authentication. All data is static and served from JSON files, ensuring privacy and simplicity.
 

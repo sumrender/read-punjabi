@@ -1,0 +1,270 @@
+{
+  "id": "quiz-level4-paragraph-05",
+  "level": 4,
+  "quizNumber": 5,
+  "title": "Paragraph Completion Quiz - Funny Story",
+  "scoringCriteria": {
+    "excellent": 4,
+    "great": 3,
+    "good": 2
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "level": 4,
+      "type": "paragraph",
+      "prompt": "ਇੱਕ ਵਾਰ ਇੱਕ __ ਅਤੇ ਇੱਕ __ ਵਿੱਚ ਦੌੜ ਲੱਗੀ। ਖਰਗੋਸ਼ ਬਹੁਤ ਤੇਜ਼ __। ਉਸਨੇ ਸੋਚਿਆ ਕਿ ਉਹ __ ਹੈ। ਇਸ ਲਈ ਉਹ ਰਸਤੇ ਵਿੱਚ __ ਗਿਆ। ਪਰ ਕੱਛੂ ਹੌਲੀ-ਹੌਲੀ __ ਰਿਹਾ ਅਤੇ ਜਿੱਤ ਗਿਆ।",
+      "blanks": [
+        {
+          "options": [
+            "ਖਰਗੋਸ਼",
+            "ਸ਼ੇਰ",
+            "ਹਾਥੀ",
+            "ਘੋੜਾ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "ਕੱਛੂ",
+            "ਬਾਂਦਰ",
+            "ਭਾਲੂ",
+            "ਲੂੰਬੜੀ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "ਦੌੜਦਾ",
+            "ਚਲਦਾ",
+            "ਉੱਡਦਾ",
+            "ਤੈਰਦਾ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "ਜਿੱਤ ਜਾਵੇਗਾ",
+            "ਹਾਰ ਜਾਵੇਗਾ",
+            "ਥੱਕ ਜਾਵੇਗਾ",
+            "ਸੌਂ ਜਾਵੇਗਾ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "ਸੌਂ",
+            "ਖੇਡਣ",
+            "ਖਾਣ",
+            "ਪੀਣ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "ਚਲਦਾ",
+            "ਦੌੜਦਾ",
+            "ਰੁਕ",
+            "ਬੈਠ"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "level": 4,
+      "type": "paragraph",
+      "prompt": "ਇੱਕ ਪਿਆਸਾ __ ਸੀ। ਉਹ ਪਾਣੀ ਦੀ ਭਾਲ ਵਿੱਚ ਇਧਰ-ਉਧਰ __। ਅਚਾਨਕ ਉਸਨੂੰ ਇੱਕ __ ਦਿਸਿਆ। ਘੜੇ ਵਿੱਚ ਪਾਣੀ ਬਹੁਤ __ ਸੀ। ਉਸਨੇ ਘੜੇ ਵਿੱਚ __ ਪਾਏ। ਪਾਣੀ __ ਆ ਗਿਆ। ਕਾਂ ਨੇ ਪਾਣੀ ਪੀਤਾ ਅਤੇ __ ਗਿਆ।",
+      "blanks": [
+        {
+          "options": [
+            "ਕਾਂ",
+            "ਕੁੱਤਾ",
+            "ਬਿੱਲੀ",
+            "ਚਿੜੀ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "ਭਟਕ ਰਿਹਾ ਸੀ",
+            "ਖੇਡ ਰਿਹਾ ਸੀ",
+            "ਸੌਂ ਰਿਹਾ ਸੀ",
+            "ਗਾ ਰਿਹਾ ਸੀ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "ਘੜਾ",
+            "ਨਦੀ",
+            "ਤਲਾਬ",
+            "ਖੂਹ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "ਥੋੜ੍ਹਾ",
+            "ਬਹੁਤ",
+            "ਗਰਮ",
+            "ਠੰਡਾ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "ਕੰਕਰ",
+            "ਪੱਤੇ",
+            "ਫੁੱਲ",
+            "ਰੇਤ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "ਉੱਪਰ",
+            "ਹੇਠਾਂ",
+            "ਬਾਹਰ",
+            "ਅੰਦਰ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "ਉੱਡ",
+            "ਬੈਠ",
+            "ਸੌਂ",
+            "ਰੋਣ"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "level": 4,
+      "type": "paragraph",
+      "prompt": "ਇੱਕ __ ਲੂੰਬੜੀ ਸੀ। ਉਸਨੇ __ ਦੇਖੇ। ਅੰਗੂਰ ਬਹੁਤ __ ਸਨ। ਉਸਨੇ ਅੰਗੂਰ ਤੋੜਨ ਦੀ ਬਹੁਤ __ ਕੀਤੀ। ਪਰ ਉਹ ਅੰਗੂਰਾਂ ਤੱਕ ਨਹੀਂ __ ਸਕੀ। ਅੰਤ ਵਿੱਚ ਉਸਨੇ ਕਿਹਾ, '__ ਖੱਟੇ ਹਨ'।",
+      "blanks": [
+        {
+          "options": [
+            "ਭੁੱਖੀ",
+            "ਪਿਆਸੀ",
+            "ਥੱਕੀ",
+            "ਖੁਸ਼"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "ਅੰਗੂਰ",
+            "ਸੇਬ",
+            "ਸੰਤਰੇ",
+            "ਅੰਬ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "ਉੱਚੇ",
+            "ਨੀਵੇਂ",
+            "ਦੂਰ",
+            "ਨੇੜੇ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "ਕੋਸ਼ਿਸ਼",
+            "ਗਲਤੀ",
+            "ਪ੍ਰਾਰਥਨਾ",
+            "ਸ਼ਿਕਾਇਤ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "ਪਹੁੰਚ",
+            "ਦੇਖ",
+            "ਸੁਣ",
+            "ਸੁੰਘ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "ਅੰਗੂਰ",
+            "ਸੇਬ",
+            "ਸੰਤਰੇ",
+            "ਅੰਬ"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "level": 4,
+      "type": "paragraph",
+      "prompt": "ਇੱਕ __ ਸੀ। ਉਹ ਬਹੁਤ __ ਸੀ। ਇੱਕ ਦਿਨ ਉਸਨੇ ਇੱਕ ਸ਼ੇਰ ਨੂੰ __ ਵਿੱਚ ਫਸਿਆ ਦੇਖਿਆ। ਚੂਹੇ ਨੇ ਜਾਲ __ ਦਿੱਤਾ। ਸ਼ੇਰ __ ਹੋ ਗਿਆ। ਸ਼ੇਰ ਨੇ ਚੂਹੇ ਦਾ __ ਕੀਤਾ।",
+      "blanks": [
+        {
+          "options": [
+            "ਚੂਹਾ",
+            "ਹਾਥੀ",
+            "ਬਾਂਦਰ",
+            "ਖਰਗੋਸ਼"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "ਦਿਆਲੂ",
+            "ਲਾਲਚੀ",
+            "ਗੁੱਸੇ ਵਾਲਾ",
+            "ਡਰਪੋਕ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "ਜਾਲ",
+            "ਪਿੰਜਰੇ",
+            "ਖੱਡ",
+            "ਗੁਫਾ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "ਕੱਟ",
+            "ਖਿੱਚ",
+            "ਧੱਕ",
+            "ਤੋੜ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "ਆਜ਼ਾਦ",
+            "ਗੁੱਸੇ",
+            "ਖੁਸ਼",
+            "ਉਦਾਸ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "ਧੰਨਵਾਦ",
+            "ਅਪਮਾਨ",
+            "ਮਜ਼ਾਕ",
+            "ਪਿੱਛਾ"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ]
+    }
+  ]
+}

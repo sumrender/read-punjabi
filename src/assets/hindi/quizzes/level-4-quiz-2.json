@@ -1,0 +1,270 @@
+{
+  "id": "quiz-level4-paragraph-02",
+  "level": 4,
+  "quizNumber": 2,
+  "title": "Paragraph Completion Quiz - Funny Story",
+  "scoringCriteria": {
+    "excellent": 4,
+    "great": 3,
+    "good": 2
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "level": 4,
+      "type": "paragraph",
+      "prompt": "एक बार एक __ और एक __ में दौड़ हुई। खरगोश बहुत तेज़ __। उसने सोचा कि वह __ है। इसलिए वह रास्ते में __ गया। लेकिन कछुआ धीरे-धीरे __ रहा और जीत गया।",
+      "blanks": [
+        {
+          "options": [
+            "खरगोश",
+            "शेर",
+            "हाथी",
+            "घोड़ा"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "कछुए",
+            "बंदर",
+            "भालू",
+            "लोमड़ी"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "दौड़ता",
+            "चलता",
+            "उड़ता",
+            "तैरता"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "जीत जाएगा",
+            "हार जाएगा",
+            "थक जाएगा",
+            "सो जाएगा"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "सो",
+            "खेलने",
+            "खाने",
+            "पीने"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "चलता",
+            "दौड़ता",
+            "रुक",
+            "बैठ"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "level": 4,
+      "type": "paragraph",
+      "prompt": "एक प्यासा __ था। वह पानी की तलाश में इधर-उधर __। अचानक उसे एक __ दिखा। घड़े में पानी बहुत __ था। उसने घड़े में __ डाले। पानी __ आ गया। कौवे ने पानी पिया और __ गया।",
+      "blanks": [
+        {
+          "options": [
+            "कौवा",
+            "कुत्ता",
+            "बिल्ली",
+            "चिड़िया"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "भटक रहा था",
+            "खेल रहा था",
+            "सो रहा था",
+            "गा रहा था"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "घड़ा",
+            "नदी",
+            "तालाब",
+            "कुआँ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "कम",
+            "ज़्यादा",
+            "गर्म",
+            "ठंडा"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "कंकड़",
+            "पत्ते",
+            "फूल",
+            "रेत"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "ऊपर",
+            "नीचे",
+            "बाहर",
+            "अंदर"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "उड़",
+            "बैठ",
+            "सो",
+            "रोने"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "level": 4,
+      "type": "paragraph",
+      "prompt": "एक __ लोमड़ी थी। उसने __ देखे। अंगूर बहुत __ थे। उसने अंगूर तोड़ने की बहुत __ की। लेकिन वह अंगूरों तक नहीं __ सकी। अंत में उसने कहा, '__ खट्टे हैं'।",
+      "blanks": [
+        {
+          "options": [
+            "भूखी",
+            "प्यासी",
+            "थकी",
+            "खुश"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "अंगूर",
+            "सेब",
+            "संतरे",
+            "आम"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "ऊँचे",
+            "नीचे",
+            "दूर",
+            "पास"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "कोशिश",
+            "गलती",
+            "प्रार्थना",
+            "शिकायत"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "पहुँच",
+            "देख",
+            "सुन",
+            "सूंघ"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "अंगूर",
+            "सेब",
+            "संतरे",
+            "आम"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "level": 4,
+      "type": "paragraph",
+      "prompt": "एक __ था। वह बहुत __ था। एक दिन उसने एक शेर को __ में फँसा देखा। चूहे ने जाल __ दिया। शेर __ हो गया। शेर ने चूहे का __ किया।",
+      "blanks": [
+        {
+          "options": [
+            "चूहा",
+            "हाथी",
+            "बंदर",
+            "खरगोश"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "दयालु",
+            "लालची",
+            "गुस्सैल",
+            "डरपोक"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "जाल",
+            "पिंजरे",
+            "गड्ढे",
+            "गुफा"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "काट",
+            "खींच",
+            "धकेल",
+            "तोड़"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "आज़ाद",
+            "गुस्से",
+            "खुश",
+            "उदास"
+          ],
+          "correctAnswerIndex": 0
+        },
+        {
+          "options": [
+            "धन्यवाद",
+            "अपमान",
+            "मज़ाक",
+            "पीछा"
+          ],
+          "correctAnswerIndex": 0
+        }
+      ]
+    }
+  ]
+}
