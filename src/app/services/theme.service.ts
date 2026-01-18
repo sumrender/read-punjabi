@@ -59,7 +59,7 @@ export class ThemeService {
    */
   private loadTheme(): Theme {
     const saved = localStorage.getItem(this.THEME_KEY);
-    return (saved === 'light' || saved === 'dark') ? saved : 'light';
+    return (saved === 'light' || saved === 'dark') ? saved : 'dark';
   }
 
   /**
