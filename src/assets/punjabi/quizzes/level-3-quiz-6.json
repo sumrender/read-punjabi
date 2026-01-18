@@ -1,0 +1,208 @@
+{
+  "id": "quiz-level3-sentence-06",
+  "level": 3,
+  "quizNumber": 6,
+  "title": "Sentence Completion Quiz - Teacher/Student",
+  "scoringCriteria": {
+    "excellent": 13,
+    "great": 10,
+    "good": 7
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "ਅਧਿਆਪਕ ਨੇ ਵਿਦਿਆਰਥੀਆਂ ਨੂੰ __ ਪੜ੍ਹਾਇਆ।",
+      "options": [
+        "ਪਾਠ",
+        "ਗਾਣਾ",
+        "ਖੇਡ",
+        "ਕਹਾਣੀ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q2",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "ਵਿਦਿਆਰਥੀ ਨੇ ਆਪਣਾ __ ਪੂਰਾ ਕੀਤਾ।",
+      "options": [
+        "ਘਰ ਦਾ ਕੰਮ",
+        "ਖਾਣਾ",
+        "ਸੌਣਾ",
+        "ਖੇਡਣਾ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q3",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "ਸਕੂਲ ਦੀ ਘੰਟੀ __।",
+      "options": [
+        "ਵੱਜੀ",
+        "ਰੁਕੀ",
+        "ਟੁੱਟੀ",
+        "ਗੁੰਮ ਗਈ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q4",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "ਉਸਨੇ ਪ੍ਰੀਖਿਆ ਵਿੱਚ ਚੰਗੇ __ ਪ੍ਰਾਪਤ ਕੀਤੇ।",
+      "options": [
+        "ਅੰਕ",
+        "ਤੋਹਫ਼ੇ",
+        "ਦੋਸਤ",
+        "ਖਿਡੌਣੇ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q5",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "ਜਮਾਤ ਵਿੱਚ ਬਹੁਤ __ ਸੀ।",
+      "options": [
+        "ਸ਼ੋਰ",
+        "ਸ਼ਾਂਤੀ",
+        "ਹਨੇਰਾ",
+        "ਗਰਮੀ"
+      ],
+      "correctAnswerIndex": 1
+    },
+    {
+      "id": "q6",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "ਅਧਿਆਪਕ ਨੇ ਬੋਰਡ 'ਤੇ __ ਲਿਖਿਆ।",
+      "options": [
+        "ਸਵਾਲ",
+        "ਜਵਾਬ",
+        "ਕਵਿਤਾ",
+        "ਕਹਾਣੀ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q7",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "ਵਿਦਿਆਰਥੀ ਨੇ __ ਤੋਂ ਸਵਾਲ ਪੁੱਛਿਆ।",
+      "options": [
+        "ਅਧਿਆਪਕ",
+        "ਦੋਸਤ",
+        "ਮਾਤਾ-ਪਿਤਾ",
+        "ਭਰਾ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q8",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "ਸਾਰੇ ਬੱਚੇ __ ਵਿੱਚ ਖੇਡ ਰਹੇ ਸਨ।",
+      "options": [
+        "ਮੈਦਾਨ",
+        "ਜਮਾਤ",
+        "ਘਰ",
+        "ਬਾਜ਼ਾਰ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q9",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "ਉਸਨੇ ਆਪਣੀ __ ਵਿੱਚ ਕਿਤਾਬਾਂ ਰੱਖੀਆਂ।",
+      "options": [
+        "ਬੈਗ",
+        "ਜੇਬ",
+        "ਹੱਥ",
+        "ਕਾਰ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q10",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "ਅੱਜ ਸਕੂਲ ਵਿੱਚ __ ਹੈ।",
+      "options": [
+        "ਛੁੱਟੀ",
+        "ਪ੍ਰੀਖਿਆ",
+        "ਖੇਡ",
+        "ਪਾਰਟੀ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q11",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "ਅਧਿਆਪਕ ਨੇ __ ਦੀ ਪ੍ਰਸ਼ੰਸਾ ਕੀਤੀ।",
+      "options": [
+        "ਵਿਦਿਆਰਥੀ",
+        "ਚੋਰ",
+        "ਜਾਨਵਰ",
+        "ਪੰਛੀ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q12",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "ਵਿਦਿਆਰਥੀ ਨੇ ਨਵਾਂ __ ਸਿੱਖਿਆ।",
+      "options": [
+        "ਪਾਠ",
+        "ਖੇਡ",
+        "ਗਾਣਾ",
+        "ਨਾਚ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q13",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "ਸਕੂਲ ਦਾ ਗੇਟ __ ਸੀ।",
+      "options": [
+        "ਬੰਦ",
+        "ਖੁੱਲ੍ਹਾ",
+        "ਟੁੱਟਾ",
+        "ਛੋਟਾ"
+      ],
+      "correctAnswerIndex": 1
+    },
+    {
+      "id": "q14",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "ਉਸਨੇ ਆਪਣੀ ਕਲਮ ਆਪਣੇ __ ਨੂੰ ਦਿੱਤੀ।",
+      "options": [
+        "ਦੋਸਤ",
+        "ਦੁਸ਼ਮਣ",
+        "ਅਧਿਆਪਕ",
+        "ਭਰਾ"
+      ],
+      "correctAnswerIndex": 0
+    },
+    {
+      "id": "q15",
+      "level": 3,
+      "type": "sentence",
+      "prompt": "ਸਾਰੇ ਬੱਚਿਆਂ ਨੇ ਮਿਲ ਕੇ __ ਗਾਇਆ।",
+      "options": [
+        "ਰਾਸ਼ਟਰੀ ਗੀਤ",
+        "ਫਿਲਮੀ ਗਾਣਾ",
+        "ਲੋਕ ਗੀਤ",
+        "ਭਜਨ"
+      ],
+      "correctAnswerIndex": 0
+    }
+  ]
+}

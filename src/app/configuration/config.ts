@@ -45,7 +45,7 @@ export const AppConfig = {
     initialScore: 0,
     initialAttempts: 0,
     incrementOffset: 1,
-    maxQuizzesPerLevel: 10, // Maximum quiz files to check per level
+    maxQuizzesPerLevel: 20, // Maximum quiz files to check per level
     
     /**
      * Scoring thresholds for encouraging messages

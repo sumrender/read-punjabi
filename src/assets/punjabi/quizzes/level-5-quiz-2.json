@@ -1,0 +1,31 @@
+{
+  "id": "quiz-level5-story-02",
+  "level": 5,
+  "quizNumber": 2,
+  "title": "Story Sequence Quiz - The Thirsty Crow",
+  "scoringCriteria": {
+    "excellent": 1,
+    "great": 1,
+    "good": 1
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "level": 5,
+      "type": "story",
+      "prompt": "Arrange the sentences in the correct order to tell the story of the thirsty crow.",
+      "lines": [
+        "ਇੱਕ ਵਾਰ ਇੱਕ ਪਿਆਸਾ ਕਾਂ ਸੀ।",
+        "ਉਸਨੂੰ ਇੱਕ ਘੜਾ ਦਿਸਿਆ ਜਿਸ ਵਿੱਚ ਥੋੜ੍ਹਾ ਜਿਹਾ ਪਾਣੀ ਸੀ।",
+        "ਉਸਨੇ ਘੜੇ ਵਿੱਚ ਕੰਕਰ ਪਾਉਣੇ ਸ਼ੁਰੂ ਕਰ ਦਿੱਤੇ।",
+        "ਪਾਣੀ ਉੱਪਰ ਆ ਗਿਆ ਅਤੇ ਕਾਂ ਨੇ ਪਾਣੀ ਪੀ ਲਿਆ।"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}
