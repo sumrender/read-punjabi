@@ -375,7 +375,7 @@
     "transliteration": "Chalo shuru kariye.",
     "meaning": "Let’s begin.",
     "audioSrc": "assets/audio/sentence42.mp3"
-,
+  },
   { "id": "l3_r31", "level": 3, "type": "sentence", "native": "ਮੇਰਾ ਕੁੱਤਾ ਮੇਰਾ ਘਰ ਦਾ ਕੰਮ ਖਾ ਗਿਆ।", "transliteration": "Mera kutta mera ghar da kamm kha gaya.", "meaning": "My dog ate my homework.", "audioSrc": "assets/audio/l3_r31.mp3" },
   { "id": "l3_r32", "level": 3, "type": "sentence", "native": "ਬਿੱਲੀ ਨੇ ਚੂਹੇ ਨਾਲ ਦੋਸਤੀ ਕਰ ਲਈ।", "transliteration": "Billi ne chuhe naal dosti kar layi.", "meaning": "The cat made friends with the mouse.", "audioSrc": "assets/audio/l3_r32.mp3" },
   { "id": "l3_r33", "level": 3, "type": "sentence", "native": "ਤੋਤੇ ਨੇ ਸਾਰੇ ਪਾਠ ਯਾਦ ਕਰ ਲਏ।", "transliteration": "Tote ne saare paath yaad kar laye.", "meaning": "The parrot memorized all the lessons.", "audioSrc": "assets/audio/l3_r33.mp3" },
