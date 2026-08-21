@@ -1,0 +1,19 @@
+// Self-hosted variable fonts (wght axis), served from /fonts.
+// Each file includes full Latin coverage, so transliterations render
+// in-family without falling back to system fonts.
+
+@font-face {
+  font-family: "Noto Sans Gurmukhi";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/noto-sans-gurmukhi-variable.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Noto Sans Devanagari";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/noto-sans-devanagari-variable.woff2") format("woff2");
+}

@@ -1,0 +1,3 @@
+# Hindi is a client-side course, not a routed variant
+
+There are two Courses (see CONTEXT.md) but only one set of URLs. The active course is stored client-side; `?lang=hi` makes a link open the Hindi course directly. This was deliberate: one URL set per page means no duplicate content for crawlers, a minimal sitemap, and a single Punjabi-branded public identity (the product is Read Punjabi; Hindi is a secondary course inside it). Do not "fix" this by adding `/hi/...` route prefixes or prerendering a second tree of Hindi pages — that trade-off was considered and rejected. Canonical URLs must continue to strip the query param so search engines see exactly one version of each page.

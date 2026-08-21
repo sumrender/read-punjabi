@@ -3,7 +3,6 @@ export interface LanguageConfig {
   languageName: string;
   scriptName: string;
   fontFamily: string;
-  googleFontsUrl: string;
   localStoragePrefix: string;
   lessonsPathTemplate: string;
   quizzesPathTemplate: string;
@@ -24,7 +23,6 @@ export const PunjabiConfig: LanguageConfig = {
   languageName: 'Punjabi',
   scriptName: 'Gurmukhi',
   fontFamily: "'Noto Sans Gurmukhi', sans-serif",
-  googleFontsUrl: 'https://fonts.googleapis.com/css2?family=Noto+Sans+Gurmukhi:wght@400;700&display=swap',
   localStoragePrefix: 'read-punjabi',
   lessonsPathTemplate: 'assets/punjabi/lessons/level-{level}-lesson-{lessonNumber}.json',
   quizzesPathTemplate: 'assets/punjabi/quizzes/level-{level}-quiz-{quizNumber}.json',
