@@ -1,0 +1,3 @@
+# Static prerendering over SSR on Cloudflare Pages
+
+The build outputs fully static HTML: all indexable routes are prerendered at build time and served as-is by Cloudflare Pages. There is no server and no server entry point, on purpose — all app content is static JSON in the repo, nothing needs per-request rendering, and static hosting is cheaper and simpler to operate than running a rendering server. Full SSR was considered and rejected; if a future change introduces genuinely dynamic server-rendered content, this decision can be revisited, but the absence of a server here is not an oversight.
