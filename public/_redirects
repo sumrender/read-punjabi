@@ -1,0 +1,6 @@
+# Cloudflare Pages redirects.
+# Interactive-only routes are client-side rendered: deep links serve the CSR
+# fallback shell (index.csr.html) and Angular Router takes over.
+
+/quiz/* /index.csr.html 200
+/level/*/random /index.csr.html 200
