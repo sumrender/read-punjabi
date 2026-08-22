@@ -1,6 +1,7 @@
 export interface LanguageConfig {
   appName: string;
   languageName: string;
+  langCode: 'pa' | 'hi';
   scriptName: string;
   fontFamily: string;
   localStoragePrefix: string;
@@ -21,6 +22,7 @@ export interface LanguageConfig {
 export const PunjabiConfig: LanguageConfig = {
   appName: 'Punjabi Reading App',
   languageName: 'Punjabi',
+  langCode: 'pa',
   scriptName: 'Gurmukhi',
   fontFamily: "'Noto Sans Gurmukhi', sans-serif",
   localStoragePrefix: 'read-punjabi',

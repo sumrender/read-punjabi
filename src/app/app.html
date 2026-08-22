@@ -9,4 +9,6 @@
   </div>
 </nav>
 
-<router-outlet />
+<div class="app-content" [attr.lang]="config().langCode">
+  <router-outlet />
+</div>
