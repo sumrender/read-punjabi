@@ -250,10 +250,12 @@ if (!existsSync(redirectsPath)) {
 } else {
   const redirectsContent = readFileSync(redirectsPath, 'utf8');
   for (const pattern of INTERACTIVE_FALLBACKS) {
-    const rewrite = new RegExp(`^${pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s+\\S*index\\.csr\\.html\\s+200\\s*$`, 'm');
+    // Cloudflare strips ".html" from _redirects targets, so the CSR shell is
+    // referenced by its extension-less pretty URL (/index.csr).
+    const rewrite = new RegExp(`^${pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s+/index\\.csr\\s+200\\s*$`, 'm');
     expect(
       rewrite.test(redirectsContent),
-      `_redirects: ${pattern} must rewrite to index.csr.html with status 200`,
+      `_redirects: ${pattern} must rewrite to the /index.csr shell with status 200`,
     );
   }
   try {

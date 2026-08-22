@@ -1,6 +1,8 @@
 # Cloudflare Pages redirects.
-# Interactive-only routes are client-side rendered: deep links serve the CSR
-# fallback shell (index.csr.html) and Angular Router takes over.
+# Interactive-only routes are client-side rendered: deep links rewrite (200,
+# no URL change) to the CSR fallback shell and Angular Router takes over.
+# NOTE: Cloudflare strips ".html" from _redirects targets, so the shell is
+# referenced by its extension-less pretty URL (/index.csr -> index.csr.html).
 
-/quiz/* /index.csr.html 200
-/level/*/random /index.csr.html 200
+/quiz/* /index.csr 200
+/level/*/random /index.csr 200
