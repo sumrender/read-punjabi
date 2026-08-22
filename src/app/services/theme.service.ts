@@ -1,4 +1,5 @@
-import { Injectable, signal, effect, inject } from '@angular/core';
+import { Injectable, PLATFORM_ID, signal, effect, inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { AppConfig } from '../configuration/config';
 import { LanguageService } from './language.service';
 
@@ -9,6 +10,7 @@ export type FontSize = 'small' | 'medium' | 'large' | 'xlarge';
   providedIn: 'root'
 })
 export class ThemeService {
+  private readonly platformId = inject(PLATFORM_ID);
   private languageService = inject(LanguageService);
   private config = this.languageService.currentLanguage;
 
@@ -36,20 +38,24 @@ export class ThemeService {
     // Persist theme changes to localStorage
     effect(() => {
       const theme = this.currentTheme();
-      localStorage.setItem(this.THEME_KEY, theme);
+      if (isPlatformBrowser(this.platformId)) {
+        localStorage.setItem(this.THEME_KEY, theme);
+      }
       this.applyTheme(theme);
     });
 
     // Persist font size changes to localStorage
     effect(() => {
       const fontSize = this.currentFontSize();
-      localStorage.setItem(this.FONT_SIZE_KEY, fontSize);
+      if (isPlatformBrowser(this.platformId)) {
+        localStorage.setItem(this.FONT_SIZE_KEY, fontSize);
+      }
       this.applyFontSize(fontSize);
     });
 
     // Update native font family when language changes
     effect(() => {
-      const config = this.config();
+      this.config();
       this.applyNativeFontFamily();
     });
   }
@@ -58,6 +64,9 @@ export class ThemeService {
    * Load theme from localStorage or default to 'light'
    */
   private loadTheme(): Theme {
+    if (!isPlatformBrowser(this.platformId)) {
+      return 'dark';
+    }
     const saved = localStorage.getItem(this.THEME_KEY);
     return (saved === 'light' || saved === 'dark') ? saved : 'dark';
   }
@@ -66,9 +75,12 @@ export class ThemeService {
    * Load font size from localStorage or default to 'medium'
    */
   private loadFontSize(): FontSize {
+    if (!isPlatformBrowser(this.platformId)) {
+      return 'medium';
+    }
     const saved = localStorage.getItem(this.FONT_SIZE_KEY);
-    return (saved === 'small' || saved === 'medium' || saved === 'large' || saved === 'xlarge') 
-      ? saved 
+    return (saved === 'small' || saved === 'medium' || saved === 'large' || saved === 'xlarge')
+      ? saved
       : 'medium';
   }
 
@@ -76,6 +88,9 @@ export class ThemeService {
    * Apply theme to document
    */
   private applyTheme(theme: Theme): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
     document.documentElement.setAttribute('data-theme', theme);
   }
 
@@ -83,6 +98,9 @@ export class ThemeService {
    * Apply font size to document
    */
   private applyFontSize(fontSize: FontSize): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
     document.documentElement.setAttribute('data-font-size', fontSize);
   }
 
@@ -90,6 +108,9 @@ export class ThemeService {
    * Apply native font family to document
    */
   private applyNativeFontFamily(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
     document.documentElement.style.setProperty('--native-font-family', this.config().fontFamily);
   }
 

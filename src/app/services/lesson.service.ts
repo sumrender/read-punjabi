@@ -15,6 +15,10 @@ export class LessonService {
   private readonly lessonGroupsCache = new Map<string, LessonGroup>(); // key: "level-lessonNumber"
   private readonly currentLessonId = signal<string | null>(null);
   private readonly allLessons = signal<LessonItem[]>([]);
+  private readonly _isLoading = signal<boolean>(true);
+
+  /** True while initial content files are being fetched. */
+  readonly isLoading = this._isLoading.asReadonly();
 
   constructor() {
     this.loadAllLessons();
@@ -48,10 +52,12 @@ export class LessonService {
         });
 
         this.allLessons.set(allLessons);
+        this._isLoading.set(false);
       },
       error: (error) => {
         console.error('Error loading lessons:', error);
         this.allLessons.set([]);
+        this._isLoading.set(false);
       }
     });
   }

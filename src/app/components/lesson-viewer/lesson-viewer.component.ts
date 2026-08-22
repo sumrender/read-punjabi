@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, signal, computed, inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, signal, computed, inject, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { LessonService } from '../../services/lesson.service';
@@ -30,6 +30,7 @@ export class LessonViewerComponent implements OnInit, OnDestroy {
   readonly showTransliteration = signal<boolean>(false);
   readonly showMeaning = signal<boolean>(false);
   readonly isAudioPlaybackEnabled = this.featureFlagService.isAudioPlaybackEnabled();
+  private readonly pendingLessonId = signal<string | null>(null);
   
   readonly isPlaying = this.audioService.isPlaying;
   readonly hasNext = signal<boolean>(false);
@@ -55,11 +56,26 @@ export class LessonViewerComponent implements OnInit, OnDestroy {
     story: 'Story'
   });
 
+  constructor() {
+    // Resolve a lesson requested before content finished loading (deep links).
+    effect(() => {
+      const pending = this.pendingLessonId();
+      if (pending !== null && !this.lessonService.isLoading()) {
+        this.pendingLessonId.set(null);
+        this.resolveLesson(pending);
+      }
+    });
+  }
+
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       const lessonId = params['lessonId'];
       if (lessonId) {
-        this.loadLesson(lessonId);
+        if (this.lessonService.isLoading()) {
+          this.pendingLessonId.set(lessonId);
+        } else {
+          this.resolveLesson(lessonId);
+        }
       }
     });
   }
@@ -68,7 +84,7 @@ export class LessonViewerComponent implements OnInit, OnDestroy {
     this.audioService.stop();
   }
 
-  loadLesson(lessonId: string): void {
+  private resolveLesson(lessonId: string): void {
     const loadedLesson = this.lessonService.getLessonById(lessonId);
     if (!loadedLesson) {
       this.router.navigate(['/']);
@@ -78,7 +94,7 @@ export class LessonViewerComponent implements OnInit, OnDestroy {
     this.lesson.set(loadedLesson);
     this.currentLevel.set(loadedLesson.level);
     this.lessonService.setCurrentLesson(lessonId);
-    
+
     this.hasNext.set(this.lessonService.hasNextLesson());
     this.hasPrevious.set(this.lessonService.hasPreviousLesson());
   }
