@@ -72,13 +72,17 @@ function expect(cond, message) {
 
 // --- Required assets -------------------------------------------------------
 
-for (const required of REQUIRED_FILES) {
+function expectLocalAsset(relativePath, label) {
   try {
-    const bytes = readFileSync(join(DIST_DIR, required));
-    if (bytes.length === 0) fail(`Required asset is empty: ${required}`);
+    const bytes = readFileSync(join(DIST_DIR, relativePath));
+    if (bytes.length === 0) fail(`${label} is empty: ${relativePath}`);
   } catch {
-    fail(`Required asset missing from build output: ${required}`);
+    fail(`${label} missing from build output: ${relativePath}`);
   }
+}
+
+for (const required of REQUIRED_FILES) {
+  expectLocalAsset(required, 'Required asset');
 }
 
 // --- No third-party font origins -------------------------------------------
@@ -498,6 +502,125 @@ if (!existsSync(headersPath)) {
   }
 }
 
+// --- PWA manifest -------------------------------------------------------------
+
+const MANIFEST_FILE = 'manifest.webmanifest';
+const manifestPath = join(DIST_DIR, MANIFEST_FILE);
+
+expect(existsSync(manifestPath), `${MANIFEST_FILE} missing from build output`);
+
+if (existsSync(manifestPath)) {
+  let manifest = null;
+  try {
+    manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
+  } catch {
+    fail(`${MANIFEST_FILE} is not valid JSON`);
+  }
+
+  if (manifest) {
+    expect(manifest.name === 'Read Punjabi', 'Manifest name must be "Read Punjabi"');
+    expect(manifest.display === 'standalone', 'Manifest display must be "standalone"');
+    expect(
+      typeof manifest.start_url === 'string' && manifest.start_url.startsWith('/'),
+      `Manifest start_url must point into the site (got ${JSON.stringify(manifest.start_url)})`,
+    );
+
+    const iconSizes = new Set((manifest.icons || []).map((icon) => icon.sizes).filter(Boolean));
+    expect(iconSizes.has('192x192'), 'Manifest must include a 192x192 icon');
+    expect(iconSizes.has('512x512'), 'Manifest must include a 512x512 icon');
+
+    for (const icon of manifest.icons || []) {
+      if (!icon.src || typeof icon.src !== 'string') continue;
+      if (/^https?:\/\//i.test(icon.src)) {
+        fail(`Manifest icon must be shipped from this origin, got ${icon.src}`);
+        continue;
+      }
+      expectLocalAsset(icon.src.replace(/^\//, ''), 'Manifest icon');
+    }
+  }
+
+  for (const route of expectedRoutes) {
+    try {
+      const html = readFileSync(routeToHtmlPath(route), 'utf8');
+      const manifestLinks = findAllTags(html, 'link', 'rel="manifest"');
+      expect(
+        manifestLinks.length === 1 && attrValue(manifestLinks[0], 'href') === MANIFEST_FILE,
+        `Exactly one <link rel="manifest" href="${MANIFEST_FILE}"> required in prerendered HTML for ${route}`,
+      );
+    } catch {
+      // Missing file already reported above.
+    }
+  }
+}
+
+// --- Service worker artifact ---------------------------------------------------
+
+let ngswConfig = null;
+try {
+  ngswConfig = JSON.parse(readFileSync(join(DIST_DIR, 'ngsw.json'), 'utf8'));
+} catch {
+  fail('Could not read ngsw.json from build output; service worker was not generated. Run "ng build" with the serviceWorker option.');
+}
+
+if (ngswConfig) {
+  const assetGroups = ngswConfig.assetGroups || [];
+
+  function expectCached(fileUrl, label) {
+    const group = assetGroups.find((candidate) => (candidate.urls || []).includes(fileUrl));
+    expect(group !== undefined, `Service-worker cache is missing ${label} (${fileUrl})`);
+    expect(
+      group && group.installMode === 'prefetch',
+      `${label} (${fileUrl}) must be prefetched at install time`,
+    );
+  }
+
+  // App shell: entry documents and every emitted hashed JS/CSS chunk must be
+  // prefetched so the app boots with no network.
+  for (const shellFile of ['index.html', 'index.csr.html', MANIFEST_FILE]) {
+    expectCached(`/${shellFile}`, 'the app-shell file');
+  }
+
+  for (const file of collectFiles(DIST_DIR)) {
+    const name = file.replace(DIST_DIR, '');
+    if (!/\.js$|\.css$/.test(name)) continue;
+    if (/ngsw-worker\.js$|worker-basic\.min\.js$|safety-worker\.js$/.test(name)) continue;
+    expectCached(name, 'the hashed chunk');
+  }
+
+  // Fonts: both Courses' scripts must render offline from the first install.
+  for (const font of ['noto-sans-gurmukhi-variable.woff2', 'noto-sans-devanagari-variable.woff2']) {
+    expectCached(`/fonts/${font}`, 'the font');
+  }
+
+  // Course content: every shipped lesson, quiz, and random-practice JSON file
+  // for both Courses must be cached, prefetched at install time.
+  const contentFiles = collectFiles(CONTENT_ROOT)
+    .map((file) => `/assets/${file.replace(CONTENT_ROOT + '/', '')}`)
+    .sort();
+  expect(contentFiles.length > 0, 'No course content files found to verify against');
+  for (const contentFile of contentFiles) {
+    expectCached(contentFile, 'the content file');
+  }
+
+  expectLocalAsset('ngsw-worker.js', 'Service worker script');
+}
+
+// --- Served JavaScript budget -----------------------------------------------
+// Measured on 2026-08-22 after the PWA landed: 534,145 bytes of JavaScript in
+// the output directory, including ngsw-worker.js and the safety workers (the
+// Angular "initial" budget in angular.json separately covers the initial
+// bundle at 291.58 kB measured). The cap sits ~25% above measured reality so
+// regressions fail the build instead of shipping silently.
+const SERVED_JS_BUDGET_BYTES = 670_000;
+
+const servedJsBytes = collectFiles(DIST_DIR)
+  .filter((file) => extname(file) === '.js')
+  .reduce((total, file) => total + statSync(file).size, 0);
+expect(
+  servedJsBytes <= SERVED_JS_BUDGET_BYTES,
+  `Served JavaScript (including the service worker) totals ${servedJsBytes} bytes, over the ${SERVED_JS_BUDGET_BYTES}-byte budget`,
+);
+
 // --- CSR fallback for interactive-only routes -------------------------------
 
 const redirectsPath = join(DIST_DIR, '_redirects');
@@ -528,4 +651,4 @@ if (failures.length > 0) {
   process.exit(1);
 }
 
-console.log('\nBuild check passed: assets present, twelve prerendered routes with real content, branded titles/descriptions/canonicals, language markup, noscript fallback, sitemap equals the prerendered route set, robots.txt, JSON-LD structured data, OG/Twitter cards, lazy chunks, zoneless output, and headers verified.');
+console.log('\nBuild check passed: assets present, twelve prerendered routes with real content, branded titles/descriptions/canonicals, language markup, noscript fallback, sitemap equals the prerendered route set, robots.txt, JSON-LD structured data, OG/Twitter cards, lazy chunks, zoneless output, headers verified, and the PWA manifest + service-worker cache cover the app shell, fonts, and all course content.');
