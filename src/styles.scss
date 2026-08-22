@@ -240,6 +240,17 @@ body {
   }
 }
 
+/* Noscript fallback for visitors without JavaScript */
+.noscript-fallback {
+  max-width: 40rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
+
+  li {
+    margin: 0.5rem 0;
+  }
+}
+
 /* Utility Classes */
 .sr-only {
   position: absolute;

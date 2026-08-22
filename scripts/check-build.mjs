@@ -120,6 +120,85 @@ for (const route of expectedRoutes) {
   }
 }
 
+// --- Document head: branding, titles, meta, canonicals ----------------------
+
+const SITE_ORIGIN = 'https://read-punjabi.pages.dev';
+const DARK_THEME_COLOR = '#111827';
+
+function expectedTitle(route) {
+  if (route === '/') return 'Read Punjabi — learn to read Gurmukhi';
+  if (route === '/settings') return 'Settings · Read Punjabi';
+  const levelMatch = route.match(/^\/level\/(\d+)/);
+  if (levelMatch) {
+    const suffix = route.endsWith('/random') ? ' Random Practice' : '';
+    return `Level ${levelMatch[1]}${suffix} · Read Punjabi`;
+  }
+  if (route.startsWith('/lesson/')) return 'Lesson · Read Punjabi';
+  return 'Read Punjabi';
+}
+
+function findAllTags(html, tagName, attrSelector) {
+  const pattern = new RegExp(`<${tagName}\\b[^>]*${attrSelector}[^>]*>`, 'g');
+  return [...html.matchAll(pattern)].map((match) => match[0]);
+}
+
+function attrValue(tag, attr) {
+  const match = tag.match(new RegExp(`${attr}="([^"]*)"`));
+  return match ? match[1] : null;
+}
+
+for (const route of expectedRoutes) {
+  try {
+    const html = readFileSync(routeToHtmlPath(route), 'utf8');
+
+    const titleMatch = html.match(/<title>([^<]*)<\/title>/);
+    expect(
+      titleMatch !== null && titleMatch[1] === expectedTitle(route),
+      `Wrong <title> in prerendered HTML for ${route}: got "${titleMatch ? titleMatch[1] : null}", expected "${expectedTitle(route)}"`,
+    );
+
+    const descriptions = findAllTags(html, 'meta', 'name="description"');
+    expect(
+      descriptions.length === 1,
+      `Expected exactly one meta description for ${route}, found ${descriptions.length}`,
+    );
+    expect(
+      descriptions.length === 1 && (attrValue(descriptions[0], 'content') || '').length > 0,
+      `Empty meta description in prerendered HTML for ${route}`,
+    );
+
+    const themeColors = findAllTags(html, 'meta', 'name="theme-color"');
+    expect(
+      themeColors.length === 1 && attrValue(themeColors[0], 'content') === DARK_THEME_COLOR,
+      `meta theme-colour must be exactly one tag with "${DARK_THEME_COLOR}" for ${route}`,
+    );
+
+    const canonicals = findAllTags(html, 'link', 'rel="canonical"');
+    const expectedCanonical = SITE_ORIGIN + (route === '/' ? '/' : route);
+    expect(
+      canonicals.length === 1 && attrValue(canonicals[0], 'href') === expectedCanonical,
+      `Canonical link must be exactly one tag pointing at "${expectedCanonical}" for ${route}`,
+    );
+
+    expect(/<html[^>]*\slang="en"/.test(html), `Document lang must stay "en" for ${route}`);
+    expect(
+      /<div class="app-content" lang="pa">/.test(html),
+      `Content wrapper must carry lang="pa" (default Course) in prerendered HTML for ${route}`,
+    );
+
+    const noscriptBlocks = [...html.matchAll(/<noscript>([\s\S]*?)<\/noscript>/g)].map(
+      (match) => match[1],
+    );
+    expect(noscriptBlocks.length > 0, `Noscript fallback missing from prerendered HTML for ${route}`);
+    expect(
+      noscriptBlocks.some((block) => block.includes('Read Punjabi') && block.includes('<a href=')),
+      `Noscript fallback lacks meaningful branded content for ${route}`,
+    );
+  } catch {
+    // Missing file already reported above.
+  }
+}
+
 // --- Visible Gurmukhi/Latin content without JavaScript ----------------------
 
 const GURMUKHI = /[\u0A00-\u0A7F]/;
@@ -271,4 +350,4 @@ if (failures.length > 0) {
   process.exit(1);
 }
 
-console.log('\nBuild check passed: assets present, twelve prerendered routes with real content, lazy chunks, zoneless output, and headers verified.');
+console.log('\nBuild check passed: assets present, twelve prerendered routes with real content, branded titles/descriptions/canonicals, language markup, noscript fallback, lazy chunks, zoneless output, and headers verified.');
