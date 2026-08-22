@@ -1,6 +1,7 @@
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, extname } from 'node:path';
 import { CONTENT_ROOT, derivePrerenderRoutes } from './lib/prerender-routes.mjs';
+import { SITE_ORIGIN } from './lib/site-origin.mjs';
 
 const DIST_DIR = join(process.cwd(), 'dist', 'read-punjabi', 'browser');
 
@@ -10,7 +11,6 @@ if (!existsSync(DIST_DIR)) {
 }
 
 const FORBIDDEN_ORIGINS = ['fonts.googleapis.com', 'fonts.gstatic.com'];
-
 const REQUIRED_FILES = [
   'fonts/noto-sans-gurmukhi-variable.woff2',
   'fonts/noto-sans-devanagari-variable.woff2',
@@ -122,7 +122,6 @@ for (const route of expectedRoutes) {
 
 // --- Document head: branding, titles, meta, canonicals ----------------------
 
-const SITE_ORIGIN = 'https://read-punjabi.pages.dev';
 const DARK_THEME_COLOR = '#111827';
 
 function expectedTitle(route) {
@@ -193,6 +192,185 @@ for (const route of expectedRoutes) {
     expect(
       noscriptBlocks.some((block) => block.includes('Read Punjabi') && block.includes('<a href=')),
       `Noscript fallback lacks meaningful branded content for ${route}`,
+    );
+  } catch {
+    // Missing file already reported above.
+  }
+}
+
+// --- Sitemap -----------------------------------------------------------------
+
+const sitemapPath = join(DIST_DIR, 'sitemap.xml');
+expect(existsSync(sitemapPath), 'sitemap.xml missing from build output');
+if (existsSync(sitemapPath)) {
+  const sitemapContent = readFileSync(sitemapPath, 'utf8');
+  expect(
+    sitemapContent.includes('xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"'),
+    'sitemap.xml must declare the sitemap-0.9 namespace',
+  );
+  expect(!/<lastmod/i.test(sitemapContent), 'sitemap.xml must not contain lastmod elements');
+
+  const sitemapUrls = [...sitemapContent.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+  expect(
+    new Set(sitemapUrls).size === sitemapUrls.length,
+    'sitemap.xml must not list duplicate URLs',
+  );
+  const expectedUrls = expectedRoutes.map((route) => SITE_ORIGIN + route);
+  for (const url of expectedUrls) {
+    expect(
+      sitemapUrls.includes(url),
+      `sitemap.xml is missing the prerendered URL ${url}`,
+    );
+  }
+  for (const url of sitemapUrls) {
+    expect(
+      expectedUrls.includes(url),
+      `sitemap.xml lists ${url}, which is not a prerendered route`,
+    );
+  }
+}
+
+// --- Robots.txt ---------------------------------------------------------------
+
+const robotsPath = join(DIST_DIR, 'robots.txt');
+expect(existsSync(robotsPath), 'robots.txt missing from build output');
+if (existsSync(robotsPath)) {
+  const robotsContent = readFileSync(robotsPath, 'utf8');
+  expect(
+    /^Sitemap:\s*https:\/\/read-punjabi\.pages\.dev\/sitemap\.xml$/m.test(robotsContent),
+    'robots.txt must reference the sitemap at https://read-punjabi.pages.dev/sitemap.xml',
+  );
+  expect(/^User-agent:\s*\*$/m.test(robotsContent), 'robots.txt must address all user agents');
+}
+
+// --- Structured data (JSON-LD) --------------------------------------------------
+
+function extractJsonLd(html) {
+  return [...html.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)]
+    .map((match) => {
+      try {
+        return JSON.parse(match[1].trim());
+      } catch {
+        return null;
+      }
+    })
+    .filter((data) => data !== null);
+}
+
+try {
+  const homeHtml = readFileSync(routeToHtmlPath('/'), 'utf8');
+  const homeTagCount = [...homeHtml.matchAll(/<script type="application\/ld\+json"/g)].length;
+  const homeBlocks = extractJsonLd(homeHtml);
+  expect(
+    homeTagCount === 1,
+    `Home page must carry exactly one JSON-LD script tag, found ${homeTagCount}`,
+  );
+  const webApp = homeBlocks.find((block) => block['@type'] === 'WebApplication');
+  expect(webApp !== undefined, 'Home page JSON-LD must be a schema.org WebApplication');
+  if (webApp) {
+    expect(webApp.name === 'Read Punjabi', 'WebApplication JSON-LD must carry the brand name');
+    expect(
+      webApp.url === `${SITE_ORIGIN}/`,
+      'WebApplication JSON-LD must point at the production origin',
+    );
+  }
+} catch {
+  fail('Could not read or parse prerendered home HTML for WebApplication JSON-LD');
+}
+
+for (const route of expectedRoutes.filter((r) => /^\/level\/\d+$/.test(r))) {
+  try {
+    const html = readFileSync(routeToHtmlPath(route), 'utf8');
+    const blocks = extractJsonLd(html);
+    expect(
+      blocks.length === 1,
+      `Level page must carry exactly one JSON-LD block, found ${blocks.length} parseable for ${route}`,
+    );
+    const course = blocks.find((block) => block['@type'] === 'Course');
+    expect(course !== undefined, `JSON-LD must be a schema.org Course for ${route}`);
+    if (course) {
+      expect(course.inLanguage === 'pa', `Course JSON-LD must declare inLanguage "pa" for ${route}`);
+      expect(
+        typeof course.teaches === 'string' && course.teaches.includes('Gurmukhi'),
+        `Course JSON-LD must teach Gurmukhi for ${route}`,
+      );
+      expect(
+        course.url === SITE_ORIGIN + route,
+        `Course JSON-LD must point at its own canonical URL for ${route}`,
+      );
+    }
+  } catch {
+    fail(`Could not read or parse prerendered HTML for Course JSON-LD at ${route}`);
+  }
+}
+
+// --- Open Graph and Twitter cards ------------------------------------------------
+
+const EXPECTED_OG_IMAGE = `${SITE_ORIGIN}/og-image.png`;
+
+function singleTag(html, tagName, attrSelector) {
+  const tags = findAllTags(html, tagName, attrSelector);
+  return tags.length === 1 ? attrValue(tags[0], 'content') : null;
+}
+
+for (const route of expectedRoutes) {
+  try {
+    const html = readFileSync(routeToHtmlPath(route), 'utf8');
+    const expectedOgUrl = SITE_ORIGIN + route;
+
+    const ogTitle = singleTag(html, 'meta', 'property="og:title"');
+    expect(
+      ogTitle !== null && ogTitle.length > 0,
+      `og:title missing from prerendered HTML for ${route}`,
+    );
+    expect(
+      ogTitle === expectedTitle(route),
+      `og:title must match the page title ("${expectedTitle(route)}") for ${route}, got "${ogTitle}"`,
+    );
+
+    const ogDescription = singleTag(html, 'meta', 'property="og:description"');
+    const metaDescription = singleTag(html, 'meta', 'name="description"');
+    expect(
+      ogDescription !== null && ogDescription.length > 0,
+      `og:description missing from prerendered HTML for ${route}`,
+    );
+    expect(
+      ogDescription === metaDescription,
+      `og:description must match the meta description for ${route}`,
+    );
+
+    const ogImage = singleTag(html, 'meta', 'property="og:image"');
+    expect(
+      ogImage === EXPECTED_OG_IMAGE,
+      `og:image must point at the placeholder social image (${EXPECTED_OG_IMAGE}) for ${route}, got "${ogImage}"`,
+    );
+
+    const ogUrl = singleTag(html, 'meta', 'property="og:url"');
+    expect(
+      ogUrl === expectedOgUrl,
+      `og:url must follow the stripped canonical URL (${expectedOgUrl}) for ${route}, got "${ogUrl}"`,
+    );
+
+    expect(
+      singleTag(html, 'meta', 'property="og:type"') === 'website',
+      `og:type must be "website" for ${route}`,
+    );
+
+    expect(
+      singleTag(html, 'meta', 'name="twitter:card"') === 'summary_large_image',
+      `twitter:card must be "summary_large_image" for ${route}`,
+    );
+    expect(
+      singleTag(html, 'meta', 'name="twitter:title"') === ogTitle,
+      `twitter:title must match og:title for ${route}`,
+    );
+    expect(
+      singleTag(html, 'meta', 'name="twitter:description"') === ogDescription,
+      `twitter:description must match og:description for ${route}`,
+    );
+    expect(
+      singleTag(html, 'meta', 'name="twitter:image"') === EXPECTED_OG_IMAGE,
+      `twitter:image must point at the placeholder social image for ${route}`,
     );
   } catch {
     // Missing file already reported above.
@@ -350,4 +528,4 @@ if (failures.length > 0) {
   process.exit(1);
 }
 
-console.log('\nBuild check passed: assets present, twelve prerendered routes with real content, branded titles/descriptions/canonicals, language markup, noscript fallback, lazy chunks, zoneless output, and headers verified.');
+console.log('\nBuild check passed: assets present, twelve prerendered routes with real content, branded titles/descriptions/canonicals, language markup, noscript fallback, sitemap equals the prerendered route set, robots.txt, JSON-LD structured data, OG/Twitter cards, lazy chunks, zoneless output, and headers verified.');

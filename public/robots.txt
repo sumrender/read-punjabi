@@ -1,0 +1,7 @@
+# Read Punjabi crawler directives.
+# Sitemap is generated at build time and lists exactly the prerendered pages.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://read-punjabi.pages.dev/sitemap.xml

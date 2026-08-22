@@ -6,7 +6,7 @@
     "start": "ng serve",
     "prestart": "npm run lint",
     "prebuild": "npm run lint",
-    "build": "node scripts/generate-prerender-routes.mjs && ng build",
+    "build": "node scripts/generate-prerender-routes.mjs && node scripts/generate-sitemap.mjs && ng build",
     "postbuild": "node scripts/check-build.mjs",
     "watch": "ng build --watch --configuration development",
     "test": "vitest",
