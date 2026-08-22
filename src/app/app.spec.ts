@@ -11,6 +11,7 @@ import { AppTitleStrategy } from './app-title-strategy';
 import {
   BRAND_NAME,
   HOME_TITLE,
+  OG_IMAGE_PATH,
   SITE_ORIGIN,
   THEME_COLOR_DARK,
   pageTitle,
@@ -110,6 +111,95 @@ describe('App', () => {
       const canonical = headQuery('link[rel="canonical"]')?.getAttribute('href');
       expect(canonical).toBe(`${SITE_ORIGIN}/level/1`);
       expect(canonical).not.toContain('?');
+    });
+  });
+
+  describe('social cards', () => {
+    it('should carry complete OG and Twitter tags following the route', async () => {
+      const fixture = boot();
+
+      await navigate(fixture, '/level/2');
+
+      expect(headQuery('meta[property="og:title"]')?.getAttribute('content')).toBe(
+        pageTitle('Level 2'),
+      );
+      expect(
+        headQuery('meta[property="og:description"]')?.getAttribute('content')?.length ?? 0,
+      ).toBeGreaterThan(0);
+      expect(headQuery('meta[property="og:image"]')?.getAttribute('content')).toBe(
+        `${SITE_ORIGIN}${OG_IMAGE_PATH}`,
+      );
+      expect(headQuery('meta[property="og:url"]')?.getAttribute('content')).toBe(
+        `${SITE_ORIGIN}/level/2`,
+      );
+      expect(headQuery('meta[name="twitter:card"]')?.getAttribute('content')).toBe(
+        'summary_large_image',
+      );
+      expect(headQuery('meta[name="twitter:title"]')?.getAttribute('content')).toBe(
+        pageTitle('Level 2'),
+      );
+      expect(headQuery('meta[name="twitter:description"]')?.getAttribute('content')).toBe(
+        headQuery('meta[property="og:description"]')?.getAttribute('content'),
+      );
+      expect(headQuery('meta[name="twitter:image"]')?.getAttribute('content')).toBe(
+        `${SITE_ORIGIN}${OG_IMAGE_PATH}`,
+      );
+
+      await navigate(fixture, '/settings');
+      expect(headQuery('meta[property="og:title"]')?.getAttribute('content')).toBe(
+        pageTitle('Settings'),
+      );
+      expect(headQuery('meta[property="og:url"]')?.getAttribute('content')).toBe(
+        `${SITE_ORIGIN}/settings`,
+      );
+    });
+
+    it('should point og:url at the stripped canonical URL even with query parameters', async () => {
+      const fixture = boot();
+      await navigate(fixture, '/lesson/letter-1?utm_source=test&lang=hi');
+      const ogUrl = headQuery('meta[property="og:url"]')?.getAttribute('content');
+      expect(ogUrl).toBe(`${SITE_ORIGIN}/lesson/letter-1`);
+      expect(ogUrl).not.toContain('?');
+    });
+  });
+
+  describe('structured data', () => {
+    const jsonLdBlocks = () =>
+      [...document.head.querySelectorAll('script[type="application/ld+json"]')].map((script) => {
+        expect(() => JSON.parse(script.textContent ?? '')).not.toThrow();
+        return JSON.parse(script.textContent ?? '');
+      });
+
+    it('should carry WebApplication structured data on home', async () => {
+      const fixture = boot();
+      await navigate(fixture, '/');
+
+      const blocks = jsonLdBlocks();
+      expect(blocks).toHaveLength(1);
+      expect(blocks[0]['@type']).toBe('WebApplication');
+      expect(blocks[0].name).toBe(BRAND_NAME);
+      expect(blocks[0].url).toBe(`${SITE_ORIGIN}/`);
+    });
+
+    it('should carry Course structured data teaching Gurmukhi on Level pages', async () => {
+      const fixture = boot();
+      await navigate(fixture, '/level/4');
+
+      const blocks = jsonLdBlocks();
+      expect(blocks).toHaveLength(1);
+      expect(blocks[0]['@type']).toBe('Course');
+      expect(blocks[0].inLanguage).toBe('pa');
+      expect(blocks[0].teaches).toContain('Gurmukhi');
+      expect(blocks[0].url).toBe(`${SITE_ORIGIN}/level/4`);
+    });
+
+    it('should remove structured data on pages that carry none', async () => {
+      const fixture = boot();
+      await navigate(fixture, '/');
+      expect(jsonLdBlocks()).toHaveLength(1);
+
+      await navigate(fixture, '/settings');
+      expect(jsonLdBlocks()).toHaveLength(0);
     });
   });
 

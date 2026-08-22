@@ -10,6 +10,10 @@ export const SITE_DESCRIPTION =
 
 export const THEME_COLOR_DARK = '#111827';
 
+export const OG_IMAGE_PATH = '/og-image.png';
+
+export const TWITTER_CARD_TYPE = 'summary_large_image';
+
 export function pageTitle(page: string): string {
   return `${page} · ${BRAND_NAME}`;
 }

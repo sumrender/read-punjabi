@@ -8,6 +8,7 @@
 
 # Generated at build time from shipped content files
 /prerender-routes.txt
+/public/sitemap.xml
 
 # Node
 /node_modules
