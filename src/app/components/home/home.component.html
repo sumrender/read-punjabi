@@ -4,7 +4,7 @@
     <p class="subtitle">{{ config().ui.subtitle }}</p>
   </header>
 
-  <section class="levels-grid" role="list">
+  <div class="levels-grid" role="list">
     @for (levelInfo of levels(); track levelInfo.level) {
     <article
       class="level-card"
@@ -20,5 +20,5 @@
       <p class="level-description">{{ levelInfo.description }}</p>
     </article>
     }
-  </section>
+  </div>
 </main>

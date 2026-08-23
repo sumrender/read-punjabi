@@ -1,0 +1,28 @@
+# Read Punjabi
+
+> Read Punjabi is a free browser app that teaches people to read Gurmukhi, the script used to write Punjabi. It offers five levels of lessons, graded quizzes, and random practice, and also includes a secondary Hindi course teaching Devanagari.
+
+Read Punjabi runs entirely in the browser with no account or payment required. Content is organised as five numbered levels; each level has one lesson page (an ordered list of letters), a quiz, and ungraded random practice.
+
+## Pages
+
+- [Home](https://read-punjabi.pages.dev/): course overview with links to all five levels.
+- [Level 1](https://read-punjabi.pages.dev/level/1): alphabet recognition — lesson list, quiz, and practice.
+- [Level 2](https://read-punjabi.pages.dev/level/2): words.
+- [Level 3](https://read-punjabi.pages.dev/level/3): sentences.
+- [Level 4](https://read-punjabi.pages.dev/level/4): paragraphs.
+- [Level 5](https://read-punjabi.pages.dev/level/5): stories.
+
+## Lessons
+
+Each level has one instructional lesson made up of individual letters with transliterations and audio:
+
+- [Letter lesson](https://read-punjabi.pages.dev/lesson/letter-1)
+- [Word lesson](https://read-punjabi.pages.dev/lesson/word-1)
+- [Sentence lesson](https://read-punjabi.pages.dev/lesson/sentence-1)
+- [Paragraph lesson](https://read-punjabi.pages.dev/lesson/paragraph-1)
+- [Story lesson](https://read-punjabi.pages.dev/lesson/story-1)
+
+## Courses
+
+There are two courses: Punjabi (Gurmukhi, the default) and Hindi (Devanagari). Both share the same pages; the active course is selected on the [Settings](https://read-punjabi.pages.dev/settings) page, which also offers theme and font size options.
