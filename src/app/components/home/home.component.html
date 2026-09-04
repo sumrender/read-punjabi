@@ -1,24 +1,82 @@
 <main class="home-container">
-  <header class="home-header">
+  <header class="home-masthead">
     <h1>{{ config().appName }}</h1>
     <p class="subtitle">{{ config().ui.subtitle }}</p>
   </header>
 
-  <div class="levels-grid" role="list">
-    @for (levelInfo of levels(); track levelInfo.level) {
-    <article
-      class="level-card"
-      role="listitem"
-      (click)="selectLevel(levelInfo.level)"
-      (keydown.enter)="selectLevel(levelInfo.level)"
-      (keydown.space)="selectLevel(levelInfo.level)"
-      tabindex="0"
-      [attr.aria-label]="'Select ' + levelInfo.title + ': ' + levelInfo.description"
-    >
-      <div class="level-number" aria-hidden="true">{{ levelInfo.level }}</div>
-      <h2 class="level-title">{{ levelInfo.title }}</h2>
-      <p class="level-description">{{ levelInfo.description }}</p>
-    </article>
-    }
-  </div>
+  <section class="spread">
+    <nav class="contents" aria-label="Course contents">
+      <h2 class="contents-heading">Contents</h2>
+      <ol class="chapter-list">
+        @for (levelInfo of levels(); track levelInfo.level) {
+        <li class="chapter-row">
+          <a
+            class="chapter-link"
+            [routerLink]="['/level', levelInfo.level]"
+            [attr.aria-label]="'Open ' + levelInfo.title + ' (Level ' + levelInfo.level + '): ' + levelInfo.description"
+          >
+            <span class="chapter-text">
+              <span class="chapter-line">
+                <span class="chapter-title">{{ levelInfo.title }}</span>
+                <span class="chapter-leader" aria-hidden="true"></span>
+                <span class="chapter-page">{{ levelInfo.level }}</span>
+              </span>
+              <span class="chapter-description">{{ levelInfo.description }}</span>
+            </span>
+            <svg class="chapter-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" focusable="false">
+              <path
+                d="M4 12h15m0 0-6-6m6 6-6 6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </li>
+        }
+      </ol>
+    </nav>
+
+    <div class="facing-page" (mouseenter)="pauseSpecimen()" (mouseleave)="resumeSpecimen()" (focusin)="pauseSpecimen()" (focusout)="resumeSpecimen()">
+      <div class="page-badge" aria-hidden="true">Level 1 · Letters</div>
+
+      @if (currentSpecimen(); as specimen) {
+      <div class="specimen" aria-hidden="true">
+        @for (item of specimenList(); track item.id) {
+        <div class="specimen-glyph">{{ item.native }}</div>
+        <div class="specimen-transliteration">{{ item.transliteration }}</div>
+        }
+      </div>
+      } @else {
+      <div class="specimen-loading" role="status" aria-live="polite">
+        <p>Opening the first letters…</p>
+      </div>
+      }
+
+      <span class="sr-only" role="status" aria-live="polite">
+        @if (announcedSpecimen(); as specimen) {
+        The letter {{ specimen.native }}, read as {{ specimen.transliteration }}.
+        }
+      </span>
+
+      @if (specimens().length > 1) {
+      <div class="specimen-dots" role="group" aria-label="Preview letters">
+        @for (item of specimens(); track item.id; let i = $index) {
+        <button
+          type="button"
+          class="specimen-dot"
+          [class.active]="i === specimenIndex() % specimens().length"
+          (click)="selectSpecimen(i)"
+          [attr.aria-label]="'Show letter ' + (i + 1) + ' of ' + specimens().length + ': ' + item.transliteration"
+          [attr.aria-pressed]="i === specimenIndex() % specimens().length"
+        ></button>
+        }
+      </div>
+      }
+
+      <a class="begin-button" routerLink="/level/1">Begin Level 1</a>
+      <p class="page-note">Free in your browser — no account needed.</p>
+    </div>
+  </section>
 </main>

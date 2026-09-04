@@ -191,7 +191,7 @@ All feedback colors pair a saturated stroke/text with a 10%-alpha (15% in dark) 
 - **Title** (600, 1.5rem): card titles, group headings, result messages (1.75rem inside the results card).
 - **Body** (400, 1rem, 1.6 line-height): all UI copy, descriptions, options in transliteration. Root is 16px (14px under 768px).
 - **Label** (700, 0.75rem, +1.5px letter-spacing, uppercase): type badges ("LETTER", "WORD"); the looser 0.5px variant appears on the lesson-type tag.
-- **Native Glyph** (700, 2–5rem scale, Gurmukhi/Devanagari): the item being learned. Size follows the user's font-size setting (small 2rem → xlarge 5rem); the practice flashcard shows it at 8rem (5rem mobile, 4rem long text). Transliteration renders under it at 1.5rem italic, Quiet Text.
+- **Native Glyph** (700, 2–5rem scale, Gurmukhi/Devanagari): the item being learned. Size follows the user's font-size setting (small 2rem → xlarge 5rem); the practice flashcard and the home facing page show it at 8rem (5rem mobile, 4rem long text). Transliteration renders under it at 1.5rem italic, Quiet Text.
 
 The user-selectable base size (`data-font-size`: small 0.875rem → xlarge 1.5rem) scales the entire rem-based system, not just the native text.
 
@@ -205,24 +205,24 @@ One centered column per page inside a 1200px max-width container (Settings narro
 
 Rhythm is a fixed ladder: 1rem within components, 1.5–2rem between a heading and its content, 3rem between page sections. Grids are `auto-fit` with minimums tuned to content — level cards 280px, quiz cards 200px, letter tiles 120px, gaps 1–1.5rem.
 
-A single 768px breakpoint collapses every multi-column layout to one column, converts control rows to stacked full-width buttons, and moves navigation FABs to fixed screen edges (48px lesson / 40px practice, floating over content). A 480px breakpoint further shrinks native display text on the flashcard.
+A single 768px breakpoint collapses every multi-column layout to one column, converts control rows to stacked full-width buttons, and moves navigation FABs to fixed screen edges (48px lesson / 40px practice, floating over content); on the home spread the facing page leads and the contents spine follows. A 480px breakpoint further shrinks native display text on the flashcard.
 
 ## Elevation & Depth
 
-**The Flat-By-Default Rule.** Surfaces are flat at rest. A shadow appears only as a response to state — hover lift, active practice, or a genuinely floating surface. The exceptions are deliberate: the flashcard (shadow-lg, it is the page) and the results card (shadow-lg, it is the moment).
+**The Flat-By-Default Rule.** Surfaces are flat at rest. A shadow appears only as a response to state — hover lift, active practice, or a genuinely floating surface. The exceptions are deliberate: the flashcard (shadow-lg, it is the page), the results card (shadow-lg, it is the moment), and the home facing page (shadow-lg, it is the flashcard's kin).
 
 ### Shadow Vocabulary
 
 - **Rest** (`0 2px 8px rgb(0 0 0 / 10%)`): floating chrome only — FABs, the sticky nav. Never on static cards.
 - **Lift** (`0 4px 12px rgb(0 0 0 / 10%)`): hover response on cards, FABs at scale.
-- **Float** (`0 8px 32px rgb(0 0 0 / 10%)`): flashcard, results card.
+- **Float** (`0 8px 32px rgb(0 0 0 / 10%)`): flashcard, results card, home facing page.
 - **Action Glow** (`0 4px 16px rgb(37 99 235 / 30%)`): primary button hover only.
 
 Dark theme strengthens all shadows to 30% black and pairs them with lighter card surfaces rather than deeper ones — depth reads through contrast, not darkness.
 
 ## Shapes
 
-A soft radius ladder, never sharp corners: 4px on buttons and inputs, 8px on cards and feedback banners, 12px on quiz option tiles and prominent result actions, 24px on the two "moment" surfaces (flashcard, results card). Two recurring silhouettes complete the language: the pill (100px) for badges and reveal buttons, and the circle (50%) for navigation and audio FABs.
+A soft radius ladder, never sharp corners: 4px on buttons and inputs, 8px on cards and feedback banners, 12px on quiz option tiles and prominent result actions, 24px on the "moment" surfaces (flashcard, results card, home facing page). Two recurring silhouettes complete the language: the pill (100px) for badges and reveal buttons, and the circle (50%) for navigation and audio FABs.
 
 Borders are 1px Rule Line at rest. Interactivity is expressed by thickening: quiz options carry a 2px border that grows to 3px when selected; verdict states fill completely. The results card is the deepest border statement — a 3px colored ring matched to the score tier.
 
@@ -234,6 +234,7 @@ Borders are 1px Rule Line at rest. Interactivity is expressed by thickening: qui
 - **Primary:** Scholar Blue fill, Paper text; hover deepens to #1d4ed8 with the Action Glow shadow and a −2px lift.
 - **Secondary / Ghost:** transparent or Paper fill, 1px Rule Line border, Ink text; hover brings the Highlight wash and a Scholar Blue border. Text-underline links with 4px underline-offset are the tertiary voice.
 - **Toggle (aria-pressed):** a ghost control that fills Scholar Blue with Paper text when active — the transliteration/meaning/audio pattern.
+- **Primary on dark:** large filled CTAs deepen one step under `[data-theme="dark"]` — blue-600 (#2563eb) at rest, blue-700 (#1d4ed8) on hover — via `:host-context`. White on the dark-theme primary blue-500 is only 3.68:1; the deeper step restores contrast. This is the documented contrast-correct treatment for any large primary CTA on a dark-theme surface.
 - **Focus:** every interactive element gets a 2px Scholar Blue outline with 2px offset (`:focus-visible`).
 
 ### Cards / Containers
@@ -254,7 +255,30 @@ The system's hero. 700px max-width, 24px radius, Float shadow at rest, and a 6px
 
 ### Navigation
 
-Sticky top bar on Workbook Page with a bottom Rule Line; brand wordmark at 1.25rem/600 left, text links right in Quiet Text that turn Scholar Blue on hover. It is chrome, not a design moment — on small screens it simply tightens.
+Sticky top bar on Workbook Page with a bottom Rule Line; brand wordmark at 1.25rem/600 left, text links right in Quiet Text that turn Scholar Blue on hover. It is chrome, not a design moment — on small screens it simply tightens. Nav links carry vertical padding (0.75rem 0) so tap targets clear minimum size.
+
+### The Open Workbook (home surface)
+
+The home page is composed as a book's front matter: a contents spine beside a facing page (5fr/7fr grid, 3rem gap). Both columns borrow from existing components rather than inventing new ones.
+
+**Contents spine.** A "Contents" heading over printed-contents rows: each row is a link holding a 1.25rem/600 title, a 1px dotted leader (Rule Line color, baseline-shifted −4px) running to a tabular-nums page number equal to the level, and a 0.9375rem quiet description beneath. Rows are separated by 1px Rule Line rules (none on the last). Hover/focus shows an authored inline SVG arrow (24px, 2px round-capped stroke, Scholar Blue) that fades in from `translateX(-4px)` to `+4px` while the row text indents `translateX(0.5rem)` and the title/page number turn Scholar Blue — 0.2s ease throughout, Highlight wash on the row.
+
+**Facing page.** The flashcard's kin: Workbook Page fill, 1px Rule Line border, 24px radius, Float shadow, and a 6px Scholar Blue→deep gradient cap across the top at 0.8 opacity. Min-height 480px (420px mobile, 380px at 480px), padding 2.5rem 2rem. Contents, top to bottom:
+
+- **Badge:** uppercase pill (10%-alpha Scholar Blue wash, 1.5px letter-spacing, Quiet Text) — `aria-hidden`.
+- **Specimen:** native glyph at 8rem (5rem mobile, 4rem at 480px) over 1.5rem italic transliteration, entering with a 0.45s `cubic-bezier(0.22, 1, 0.36, 1)` rise (14px translate + fade, staggered 0.05s).
+- **Dot selectors:** 28px circular buttons wrapping 10px ring dots; active dot fills Scholar Blue, hover scales 1.2.
+- **Primary CTA:** one `button-primary` at 4px radius, 1rem 2.75rem padding, 1.125rem/600.
+- **Note:** 0.875rem Quiet Text under the CTA.
+
+### The Specimen Auto-Advance Pattern
+
+The facing page cycles three Level 1 letters on a 4.5s `setInterval`. The cycle:
+
+- **Pauses** while hovered or focused (mouseenter/mouseleave/focusin/focusout), and never advances when `prefers-reduced-motion: reduce` matches.
+- **Re-renders via a one-item `@for`** keyed on the specimen's content id, so Angular recreates the node and the enter animation replays on every change.
+- **Announces only user-initiated changes:** the glyph wrapper is `aria-hidden`, so ambient cycling is silent; a separate sr-only `role="status"` live region receives a message only on initial load and dot selection.
+- **Keeps loading status outside the hidden wrapper:** the "Opening the first letters…" state carries its own `role="status"`/`aria-live="polite"`.
 
 ### Inputs / Fields
 
@@ -269,12 +293,14 @@ Settings rows are full-width selectable cards (Workbook Page, 4px radius, 1rem p
 - **Do** answer every interaction within 0.2s `ease` (0.3s for theme changes); feedback is instant but calm.
 - **Do** pair every verdict color with its 10%-alpha wash when it becomes a surface.
 - **Do** express interactivity through the state ladder first: border thickens → fill → lift → shadow.
+- **Do** deepen large primary CTAs one step under dark theme (blue-600 rest → blue-700 hover, via `:host-context`) — white on the dark-theme primary is 3.68:1.
 
 ### Don't:
 
 - **Don't** introduce a second accent color; if something wants attention, it is Scholar Blue or a traffic-light verdict.
-- **Don't** put shadows on static, non-interactive surfaces (flashcard and results card are the only sanctioned exceptions).
+- **Don't** put shadows on static, non-interactive surfaces (flashcard, results card, and home facing page are the only sanctioned exceptions).
 - **Don't** rely on the native script alone for any label, instruction, or navigation — the audience, by definition, cannot read it yet.
 - **Don't** gamify: no streaks, badges, leaderboards, or ambient celebration outside the quiz results moment.
 - **Don't** advertise or surface audio controls until real audio assets exist.
 - **Don't** add new breakpoints beyond 768px/480px or containers wider than 1200px.
+- **Don't** announce ambient auto-advancing content to assistive tech; live regions carry only user-initiated changes.
