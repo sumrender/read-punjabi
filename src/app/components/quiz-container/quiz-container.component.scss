@@ -1,5 +1,8 @@
 @use "../../../styles.scss" as *;
 
+// Motion (shared vocabulary)
+@include keyframes-fade-in(20px);
+
 .quiz-container {
   min-height: 100vh;
   background: $color-background;
@@ -94,18 +97,6 @@
 
 .question-wrapper {
   animation: fade-in 0.4s ease;
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 @media (max-width: 768px) {

@@ -1,34 +1,9 @@
 @use "../../../styles.scss" as *;
 
-// Animations
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
+// Motion (shared vocabulary)
+@include keyframes-fade-in(10px);
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: $color-shadow-sm;
-  }
-
-  70% {
-    transform: scale(1.05);
-    box-shadow: $color-shadow-md;
-  }
-
-  100% {
-    transform: scale(1);
-    box-shadow: $color-shadow-sm;
-  }
-}
+// Layout Wrapper
 
 .random-practice-container {
   min-height: 100vh;
@@ -95,34 +70,7 @@
 
 // Navigation FABs
 .nav-fab {
-  background: $color-card-background;
-  border: $color-border-thin;
-  color: $color-text-primary;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 1.5rem;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: $color-shadow-sm;
-
-  &:disabled {
-    opacity: 0.3;
-    cursor: default;
-    /* stylelint-disable-next-line sh-waqar/declaration-use-variable */
-    border: 0;
-  }
-
-  &:hover:not(:disabled) {
-    background: $color-hover-background;
-    transform: scale(1.1);
-    box-shadow: $color-shadow-md;
-    border-color: $color-primary;
-    color: $color-primary;
-  }
+  @include nav-fab;
 }
 
 // Flashcard
@@ -331,8 +279,27 @@
   }
 
   &.playing {
-    animation: pulse 1.5s infinite;
+    animation: audio-pulse 1.5s infinite;
     background: $color-success;
+  }
+}
+
+// Audio FAB playing pulse: scale plus shadow breathing — bespoke, do not
+// replace with the shared scale-only pulse.
+@keyframes audio-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: $color-shadow-sm;
+  }
+
+  70% {
+    transform: scale(1.05);
+    box-shadow: $color-shadow-md;
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: $color-shadow-sm;
   }
 }
 
@@ -402,19 +369,10 @@
   }
 }
 
-.button-primary,
-.button-secondary {
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 500;
-  cursor: pointer;
-  border: $color-border-thin;
-  transition: all 0.2s ease;
-}
-
 .button-primary {
-  background: $color-primary;
-  color: $color-white;
+  @include button-primary($radius: 8px);
+
+  transition: all 0.2s ease;
 
   &:hover {
     background: $color-primary-hover;
@@ -423,6 +381,12 @@
 }
 
 .button-secondary {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
   /* stylelint-disable-next-line sh-waqar/declaration-use-variable */
   background: none;
   border: $color-border-thin;

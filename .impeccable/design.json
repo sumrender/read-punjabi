@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-04T00:00:00Z",
+  "title": "Design System: Read Punjabi",
+  "extensions": {
+    "colorMeta": {
+      "scholar-blue": {
+        "role": "primary",
+        "displayName": "Scholar Blue",
+        "canonical": "#2563eb",
+        "tonalRamp": ["oklch(15% 0.05 259)", "oklch(25% 0.1 259)", "oklch(35% 0.14 259)", "oklch(45% 0.17 259)", "oklch(55% 0.19 259)", "oklch(65% 0.17 259)", "oklch(80% 0.11 259)", "oklch(95% 0.04 259)"]
+      },
+      "scholar-blue-deep": {
+        "role": "primary",
+        "displayName": "Scholar Blue Deep",
+        "canonical": "#1d4ed8",
+        "tonalRamp": ["oklch(15% 0.05 259)", "oklch(25% 0.1 259)", "oklch(35% 0.14 259)", "oklch(45% 0.17 259)", "oklch(55% 0.19 259)", "oklch(65% 0.17 259)", "oklch(80% 0.11 259)", "oklch(95% 0.04 259)"]
+      },
+      "scholar-bright": {
+        "role": "primary",
+        "displayName": "Scholar Bright (dark-theme primary)",
+        "canonical": "#3b82f6",
+        "tonalRamp": ["oklch(15% 0.05 259)", "oklch(25% 0.1 259)", "oklch(35% 0.14 259)", "oklch(45% 0.17 259)", "oklch(55% 0.19 259)", "oklch(65% 0.17 259)", "oklch(80% 0.11 259)", "oklch(95% 0.04 259)"]
+      },
+      "notice-blue": {
+        "role": "tertiary",
+        "displayName": "Notice Blue",
+        "canonical": "#2196f3",
+        "tonalRamp": ["oklch(15% 0.04 247)", "oklch(25% 0.08 247)", "oklch(35% 0.12 247)", "oklch(45% 0.15 247)", "oklch(58% 0.17 247)", "oklch(70% 0.14 247)", "oklch(83% 0.09 247)", "oklch(95% 0.03 247)"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#1f2937",
+        "tonalRamp": ["oklch(15% 0.01 255)", "oklch(25% 0.01 255)", "oklch(35% 0.008 255)", "oklch(45% 0.008 255)", "oklch(58% 0.008 255)", "oklch(70% 0.006 255)", "oklch(85% 0.005 255)", "oklch(96% 0.003 255)"]
+      },
+      "night-text": {
+        "role": "neutral",
+        "displayName": "Night Text",
+        "canonical": "#f9fafb",
+        "tonalRamp": ["oklch(15% 0.01 255)", "oklch(25% 0.01 255)", "oklch(35% 0.008 255)", "oklch(45% 0.008 255)", "oklch(58% 0.008 255)", "oklch(70% 0.006 255)", "oklch(85% 0.005 255)", "oklch(98% 0.003 255)"]
+      },
+      "quiet-text": {
+        "role": "neutral",
+        "displayName": "Quiet Text",
+        "canonical": "#6b7280",
+        "tonalRamp": ["oklch(15% 0.01 255)", "oklch(25% 0.01 255)", "oklch(35% 0.008 255)", "oklch(48% 0.008 255)", "oklch(58% 0.008 255)", "oklch(70% 0.006 255)", "oklch(85% 0.005 255)", "oklch(96% 0.003 255)"]
+      },
+      "faint-text": {
+        "role": "neutral",
+        "displayName": "Faint Text",
+        "canonical": "#9ca3af",
+        "tonalRamp": ["oklch(15% 0.01 255)", "oklch(25% 0.01 255)", "oklch(35% 0.008 255)", "oklch(48% 0.008 255)", "oklch(62% 0.008 255)", "oklch(72% 0.006 255)", "oklch(85% 0.005 255)", "oklch(96% 0.003 255)"]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#ffffff",
+        "tonalRamp": ["oklch(20% 0.005 255)", "oklch(32% 0.005 255)", "oklch(45% 0.004 255)", "oklch(58% 0.004 255)", "oklch(70% 0.003 255)", "oklch(82% 0.003 255)", "oklch(92% 0.002 255)", "oklch(100% 0 0)"]
+      },
+      "workbook-page": {
+        "role": "neutral",
+        "displayName": "Workbook Page",
+        "canonical": "#f9fafb",
+        "tonalRamp": ["oklch(15% 0.01 255)", "oklch(25% 0.01 255)", "oklch(35% 0.008 255)", "oklch(45% 0.008 255)", "oklch(58% 0.008 255)", "oklch(70% 0.006 255)", "oklch(85% 0.005 255)", "oklch(97.5% 0.003 255)"]
+      },
+      "highlight-hover": {
+        "role": "neutral",
+        "displayName": "Highlight Hover",
+        "canonical": "#f3f4f6",
+        "tonalRamp": ["oklch(15% 0.01 255)", "oklch(25% 0.01 255)", "oklch(35% 0.008 255)", "oklch(45% 0.008 255)", "oklch(58% 0.008 255)", "oklch(70% 0.006 255)", "oklch(85% 0.005 255)", "oklch(95.5% 0.003 255)"]
+      },
+      "rule-line": {
+        "role": "neutral",
+        "displayName": "Rule Line",
+        "canonical": "#e5e7eb",
+        "tonalRamp": ["oklch(15% 0.01 255)", "oklch(25% 0.01 255)", "oklch(35% 0.008 255)", "oklch(45% 0.008 255)", "oklch(58% 0.008 255)", "oklch(70% 0.006 255)", "oklch(84% 0.005 255)", "oklch(92% 0.004 255)"]
+      },
+      "night": {
+        "role": "neutral",
+        "displayName": "Night",
+        "canonical": "#111827",
+        "tonalRamp": ["oklch(17% 0.02 258)", "oklch(25% 0.02 258)", "oklch(35% 0.015 258)", "oklch(45% 0.012 258)", "oklch(58% 0.008 258)", "oklch(70% 0.006 258)", "oklch(85% 0.004 258)", "oklch(96% 0.003 258)"]
+      },
+      "night-page": {
+        "role": "neutral",
+        "displayName": "Night Page",
+        "canonical": "#1f2937",
+        "tonalRamp": ["oklch(15% 0.015 258)", "oklch(24% 0.015 258)", "oklch(34% 0.012 258)", "oklch(45% 0.01 258)", "oklch(58% 0.008 258)", "oklch(70% 0.006 258)", "oklch(85% 0.004 258)", "oklch(96% 0.003 258)"]
+      },
+      "night-hover": {
+        "role": "neutral",
+        "displayName": "Night Hover",
+        "canonical": "#374151",
+        "tonalRamp": ["oklch(15% 0.015 258)", "oklch(25% 0.015 258)", "oklch(35% 0.012 258)", "oklch(45% 0.01 258)", "oklch(58% 0.008 258)", "oklch(70% 0.006 258)", "oklch(85% 0.004 258)", "oklch(96% 0.003 258)"]
+      },
+      "correct-green": {
+        "role": "feedback",
+        "displayName": "Correct Green",
+        "canonical": "#4caf50",
+        "tonalRamp": ["oklch(15% 0.05 145)", "oklch(25% 0.09 145)", "oklch(35% 0.12 145)", "oklch(45% 0.14 145)", "oklch(58% 0.15 145)", "oklch(70% 0.13 145)", "oklch(83% 0.1 145)", "oklch(95% 0.05 145)"]
+      },
+      "mistake-red": {
+        "role": "feedback",
+        "displayName": "Mistake Red",
+        "canonical": "#f44336",
+        "tonalRamp": ["oklch(15% 0.06 25)", "oklch(25% 0.11 25)", "oklch(35% 0.15 25)", "oklch(45% 0.17 25)", "oklch(58% 0.19 25)", "oklch(70% 0.16 25)", "oklch(83% 0.1 25)", "oklch(95% 0.04 25)"]
+      },
+      "practice-orange": {
+        "role": "feedback",
+        "displayName": "Practice Orange",
+        "canonical": "#ff9800",
+        "tonalRamp": ["oklch(15% 0.05 70)", "oklch(28% 0.09 70)", "oklch(40% 0.12 70)", "oklch(52% 0.14 70)", "oklch(65% 0.16 70)", "oklch(76% 0.14 70)", "oklch(86% 0.1 70)", "oklch(95% 0.05 70)"]
+      },
+      "practice-orange-deep": {
+        "role": "feedback",
+        "displayName": "Practice Orange Deep",
+        "canonical": "#f57c00",
+        "tonalRamp": ["oklch(15% 0.05 70)", "oklch(28% 0.09 70)", "oklch(40% 0.12 70)", "oklch(52% 0.14 70)", "oklch(62% 0.16 70)", "oklch(74% 0.14 70)", "oklch(86% 0.1 70)", "oklch(95% 0.05 70)"]
+      },
+      "celebration-gold": {
+        "role": "feedback",
+        "displayName": "Celebration Gold",
+        "canonical": "#ffd700",
+        "tonalRamp": ["oklch(15% 0.05 90)", "oklch(28% 0.09 90)", "oklch(42% 0.12 90)", "oklch(56% 0.14 90)", "oklch(70% 0.16 90)", "oklch(80% 0.16 90)", "oklch(88% 0.13 90)", "oklch(96% 0.07 90)"]
+      },
+      "pencil-gray": {
+        "role": "neutral",
+        "displayName": "Pencil Gray (disabled)",
+        "canonical": "#9e9e9e",
+        "tonalRamp": ["oklch(15% 0.005 120)", "oklch(25% 0.005 120)", "oklch(35% 0.005 120)", "oklch(45% 0.005 120)", "oklch(58% 0.005 120)", "oklch(70% 0.004 120)", "oklch(85% 0.003 120)", "oklch(96% 0.002 120)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Page titles only (home h1, quiz results title); 2rem under 768px." },
+      "headline": { "displayName": "Headline", "purpose": "Section page h1s and quiz question prompts." },
+      "title": { "displayName": "Title", "purpose": "Card titles, group headings, results messages." },
+      "body": { "displayName": "Body", "purpose": "All UI copy; scales with the user font-size setting (0.875–1.5rem base)." },
+      "label": { "displayName": "Label", "purpose": "Uppercase type badges (LETTER, WORD) and lesson-type tags." },
+      "native-glyph": { "displayName": "Native Glyph", "purpose": "The item being learned; 2–5rem per user setting, 8rem on the practice flashcard." }
+    },
+    "shadows": [
+      { "name": "rest", "value": "0 2px 8px rgb(0 0 0 / 10%)", "purpose": "Floating chrome only — FABs, sticky nav. Never on static cards." },
+      { "name": "lift", "value": "0 4px 12px rgb(0 0 0 / 10%)", "purpose": "Hover response on cards and FABs." },
+      { "name": "float", "value": "0 8px 32px rgb(0 0 0 / 10%)", "purpose": "Flashcard and results card only." },
+      { "name": "action-glow", "value": "0 4px 16px rgb(37 99 235 / 30%)", "purpose": "Primary button hover only." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "ease 0.2s", "purpose": "Default for all state transitions." },
+      { "name": "ease-emphasized", "value": "cubic-bezier(0.4, 0, 0.2, 1) 0.2s", "purpose": "FAB transforms." },
+      { "name": "theme-crossfade", "value": "ease 0.3s", "purpose": "Light/dark theme and background transitions." },
+      { "name": "animate-fade-in", "value": "opacity 0 + translateY(10px) -> 1, 0.4s ease", "purpose": "Question and flashcard entrances." },
+      { "name": "animate-pulse", "value": "scale 1 -> 1.05 -> 1, 0.5s ease", "purpose": "Correct-answer confirmation; 1.5s loop while audio plays." },
+      { "name": "animate-shake", "value": "translateX 0 -> -10px -> 10px -> 0, 0.5s ease", "purpose": "Incorrect-answer feedback." },
+      { "name": "animate-slide-in-up", "value": "opacity 0 + translateY(40px) -> 1/0, 0.5s ease", "purpose": "Quiz results card entrance." },
+      { "name": "animate-bounce", "value": "translateY 0 -> -20px -> 0, 1s ease infinite", "purpose": "Results trophy only." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "480px" },
+      { "name": "md", "value": "768px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one accent voice: starts quizzes, retries, plays audio.",
+      "html": "<button class=\"ds-btn-primary\">Start Quiz</button>",
+      "css": ".ds-btn-primary { background: var(--primary-color, #2563eb); color: #fff; padding: 0.75rem 1.5rem; border: 1px solid var(--border-color, #e5e7eb); border-radius: 4px; font-size: 1rem; font-family: inherit; cursor: pointer; transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; } .ds-btn-primary:hover { background: var(--primary-color-hover, #1d4ed8); transform: translateY(-2px); box-shadow: 0 4px 16px rgb(37 99 235 / 30%); } .ds-btn-primary:focus-visible { outline: 2px solid var(--primary-color, #2563eb); outline-offset: 2px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Back, secondary, and reset actions; becomes a filled toggle when aria-pressed.",
+      "html": "<button class=\"ds-btn-ghost\">← Back</button>",
+      "css": ".ds-btn-ghost { background: var(--background, #fff); color: var(--text-primary, #1f2937); border: 1px solid var(--border-color, #e5e7eb); padding: 0.5rem 1rem; border-radius: 4px; font-size: 1rem; font-family: inherit; cursor: pointer; transition: background-color 0.2s ease; } .ds-btn-ghost:hover { background: var(--hover-background, #f3f4f6); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--primary-color, #2563eb); outline-offset: 2px; } .ds-btn-ghost[aria-pressed=\"true\"] { background: var(--primary-color, #2563eb); color: #fff; border-color: var(--primary-color, #2563eb); }"
+    },
+    {
+      "name": "Level Card",
+      "kind": "card",
+      "refersTo": "card-level",
+      "description": "Clickable workbook page: big level number, title, description; lifts on hover.",
+      "html": "<article class=\"ds-card-level\"><div class=\"ds-level-number\">1</div><h3 class=\"ds-level-title\">Alphabet Recognition</h3><p class=\"ds-level-desc\">Master the letters of the script.</p></article>",
+      "css": ".ds-card-level { background: var(--card-background, #f9fafb); border: 1px solid var(--border-color, #e5e7eb); border-radius: 8px; padding: 2rem; text-align: center; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; font-family: inherit; } .ds-card-level:hover, .ds-card-level:focus-visible { transform: translateY(-4px); box-shadow: 0 4px 12px var(--shadow-color, rgb(0 0 0 / 10%)); outline: 2px solid var(--primary-color, #2563eb); outline-offset: 2px; } .ds-level-number { font-size: 3rem; font-weight: 700; color: var(--primary-color, #2563eb); margin-bottom: 1rem; } .ds-level-title { font-size: 1.5rem; font-weight: 600; margin: 0 0 0.5rem; color: var(--text-primary, #1f2937); } .ds-level-desc { font-size: 1rem; margin: 0; color: var(--text-secondary, #6b7280); line-height: 1.6; }"
+    },
+    {
+      "name": "Practice Flashcard",
+      "kind": "custom",
+      "refersTo": "card-flashcard",
+      "description": "The signature surface: gradient cap, type badge, native glyph at display size, read toggle.",
+      "html": "<div class=\"ds-flashcard\"><div class=\"ds-card-header\"><span class=\"ds-badge\">LETTER</span><label class=\"ds-read-toggle\"><input type=\"checkbox\" checked><span class=\"ds-checkmark\"></span></label></div><div class=\"ds-card-body\"><div class=\"ds-native\">ਕ</div><div class=\"ds-revealed\"><span class=\"ds-translit\">kakka</span><span class=\"ds-meaning\">letter k</span></div></div></div>",
+      "css": ".ds-flashcard { position: relative; background: var(--card-background, #f9fafb); border: 1px solid var(--border-color, #e5e7eb); border-radius: 24px; box-shadow: 0 8px 32px var(--shadow-color, rgb(0 0 0 / 10%)); width: 100%; max-width: 700px; min-height: 320px; overflow: hidden; display: flex; flex-direction: column; font-family: inherit; } .ds-flashcard::before { content: \"\"; position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(135deg, var(--primary-color, #2563eb), var(--primary-color-hover, #1d4ed8)); opacity: 0.8; } .ds-card-header { padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; } .ds-badge { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; color: var(--text-secondary, #6b7280); background: rgb(37 99 235 / 10%); padding: 0.25rem 0.75rem; border-radius: 100px; } .ds-read-toggle { display: flex; align-items: center; cursor: pointer; } .ds-read-toggle input { display: none; } .ds-checkmark { width: 24px; height: 24px; border: 2px solid var(--border-color, #e5e7eb); border-radius: 6px; position: relative; transition: all 0.2s ease; } .ds-checkmark::after { content: \"✓\"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); color: #fff; font-size: 14px; font-weight: 700; transition: transform 0.2s ease; } .ds-read-toggle input:checked + .ds-checkmark { background: var(--success-color, #4caf50); border-color: var(--success-color, #4caf50); } .ds-read-toggle input:checked + .ds-checkmark::after { transform: translate(-50%, -50%) scale(1); } .ds-card-body { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; gap: 1.5rem; } .ds-native { font-family: var(--native-font-family, \"Noto Sans Gurmukhi\", sans-serif); font-size: 8rem; font-weight: 700; color: var(--text-primary, #1f2937); line-height: 1; } .ds-revealed { text-align: center; } .ds-translit { display: block; font-size: 1.5rem; font-weight: 500; color: var(--text-primary, #1f2937); } .ds-meaning { display: block; font-size: 1rem; color: var(--text-secondary, #6b7280); }"
+    },
+    {
+      "name": "Quiz Option",
+      "kind": "button",
+      "refersTo": "option-quiz",
+      "description": "Answer tile with the full verdict ladder: hover, correct, incorrect, disabled.",
+      "html": "<div style=\"display:grid; grid-template-columns: repeat(2, 1fr); gap:1rem; font-family:inherit;\"><button class=\"ds-option\">ਕ</button><button class=\"ds-option correct\">ਖ ✓</button><button class=\"ds-option incorrect\">ਗ ✗</button><button class=\"ds-option disabled\">ਘ</button></div>",
+      "css": ".ds-option { min-height: 80px; padding: 1.5rem; font-size: 2rem; font-weight: 500; background: var(--card-background, #f9fafb); border: 2px solid var(--border-color, #e5e7eb); border-radius: 12px; cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; justify-content: center; color: var(--text-primary, #1f2937); font-family: inherit; } .ds-option:hover:not(:disabled) { background: var(--hover-background, #f3f4f6); border-color: var(--primary-color, #2563eb); transform: translateY(-2px); box-shadow: 0 4px 12px var(--shadow-color, rgb(0 0 0 / 10%)); } .ds-option.correct { background: var(--success-color, #4caf50); border-color: var(--success-color, #4caf50); color: #fff; } .ds-option.incorrect { background: var(--error-color, #f44336); border-color: var(--error-color, #f44336); color: #fff; } .ds-option.disabled { background: var(--disabled-color, #9e9e9e); border-color: var(--disabled-color, #9e9e9e); color: rgb(255 255 255 / 60%); opacity: 0.5; cursor: not-allowed; } .ds-option:focus-visible { outline: 2px solid var(--primary-color, #2563eb); outline-offset: 2px; }"
+    },
+    {
+      "name": "Navigation FAB",
+      "kind": "button",
+      "refersTo": "nav-fab",
+      "description": "64px circular prev/next control flanking the flashcard and lesson viewer.",
+      "html": "<button class=\"ds-fab\">‹</button>",
+      "css": ".ds-fab { background: var(--card-background, #f9fafb); border: 1px solid var(--border-color, #e5e7eb); color: var(--text-primary, #1f2937); width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.5rem; font-family: inherit; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 2px 8px var(--shadow-color, rgb(0 0 0 / 10%)); } .ds-fab:hover:not(:disabled) { background: var(--hover-background, #f3f4f6); transform: scale(1.1); box-shadow: 0 4px 12px var(--shadow-color, rgb(0 0 0 / 10%)); border-color: var(--primary-color, #2563eb); color: var(--primary-color, #2563eb); } .ds-fab:disabled { opacity: 0.3; cursor: default; } .ds-fab:focus-visible { outline: 2px solid var(--primary-color, #2563eb); outline-offset: 2px; }"
+    },
+    {
+      "name": "Type Badge",
+      "kind": "chip",
+      "refersTo": "badge-type",
+      "description": "Uppercase pill naming the item type (LETTER, WORD, SENTENCE).",
+      "html": "<span class=\"ds-badge\">WORD</span>",
+      "css": ".ds-badge { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; color: var(--text-secondary, #6b7280); background: rgb(37 99 235 / 10%); padding: 0.25rem 0.75rem; border-radius: 100px; font-family: inherit; }"
+    },
+    {
+      "name": "Feedback Banner",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Verdict echo under a quiz question: saturated text on a 10% wash.",
+      "html": "<div style=\"display:grid; gap:0.75rem; font-family:inherit;\"><div class=\"ds-feedback correct\">Correct! ✓</div><div class=\"ds-feedback incorrect\">Try again</div></div>",
+      "css": ".ds-feedback { text-align: center; font-size: 1.25rem; font-weight: 600; padding: 1rem; border-radius: 8px; } .ds-feedback.correct { background: rgb(76 175 80 / 10%); color: var(--success-color, #4caf50); } .ds-feedback.incorrect { background: rgb(244 67 54 / 10%); color: var(--error-color, #f44336); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The First Reader's Workbook",
+    "overview": "Read Punjabi looks like a well-set first workbook: paper-clear pages, generous type, and one patient ink color that shows you where to act. Nothing on a page competes with the thing being learned — a Gurmukhi glyph at reading size sits at the center of the composition, and every piece of interface around it is quiet, ordered, and obviously functional. The system borrows the emotional register of a good textbook: supportive structure, no judgment, no noise.\n\nDensity is low and rhythm is predictable: one container, generous section spacing (2–3rem), centered content, mobile-first. Interaction is \"soft, patient, precise\" — 0.2s eased transitions, gentle hover lifts, instant but calm feedback. The voice is warm, plain, and encouraging; the visuals follow the same rule. Celebration exists (gold, a bouncing trophy, a subtle gradient wash) but only as the honest final beat of a completed quiz — never as ambient gamification.",
+    "keyCharacteristics": [
+      "Paper-clear light theme and true-night dark theme; both driven by one semantic variable set",
+      "One accent (Scholar Blue) for action and focus; traffic-light colors reserved for learning verdicts",
+      "Native script always set in self-hosted Noto Sans Gurmukhi/Devanagari at display sizes",
+      "Flat surfaces at rest; shadow appears as a response to state",
+      "Soft radius ladder (4 → 8 → 12 → 24px) with pill badges and circular navigation FABs",
+      "A single 768px breakpoint collapses every layout to a single centered column"
+    ],
+    "rules": [
+      { "name": "The One Ink Rule", "body": "Scholar Blue is the only accent on any screen. It marks where the learner acts. Everything else is ink, paper, or a verdict.", "section": "colors" },
+      { "name": "The Traffic-Light Rule", "body": "Green, red, orange, and gold exist to answer the learner's \"how did I do?\" — never to decorate, never for marketing moments, never on navigation.", "section": "colors" },
+      { "name": "The Script Leads Rule", "body": "Every Gurmukhi/Devanagari string is set in the native font family — never the UI stack, never italic, never small. The interface never relies on the script alone to communicate.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Surfaces are flat at rest. A shadow appears only as a response to state — hover lift, active practice, or a genuinely floating surface.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do set every Gurmukhi/Devanagari string in var(--native-font-family) and give it display scale — the script is the page's typographic event.",
+      "Do keep the 2px Scholar Blue :focus-visible outline with 2px offset on every interactive element.",
+      "Do answer every interaction within 0.2s ease (0.3s for theme changes); feedback is instant but calm.",
+      "Do pair every verdict color with its 10%-alpha wash when it becomes a surface.",
+      "Do express interactivity through the state ladder first: border thickens → fill → lift → shadow."
+    ],
+    "donts": [
+      "Don't introduce a second accent color; if something wants attention, it is Scholar Blue or a traffic-light verdict.",
+      "Don't put shadows on static, non-interactive surfaces (flashcard and results card are the only sanctioned exceptions).",
+      "Don't rely on the native script alone for any label, instruction, or navigation — the audience, by definition, cannot read it yet.",
+      "Don't gamify: no streaks, badges, leaderboards, or ambient celebration outside the quiz results moment.",
+      "Don't advertise or surface audio controls until real audio assets exist.",
+      "Don't add new breakpoints beyond 768px/480px or containers wider than 1200px."
+    ]
+  }
+}

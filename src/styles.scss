@@ -2,72 +2,8 @@
 
 @use "./internal" as *;
 @use "./styles/fonts";
-
-// ==========================================================================
-// 2. Semantic Variables (Public API)
-// ==========================================================================
-
-$color-primary: var(--primary-color);
-$color-primary-hover: var(--primary-color-hover);
-/* stylelint-disable declaration-property-value-disallowed-list */
-$color-primary-alpha-05: rgb(var(--primary-color-rgb) / 5%);
-$color-primary-alpha-10: rgb(var(--primary-color-rgb) / 10%);
-$color-primary-alpha-30: rgb(var(--primary-color-rgb) / 30%);
-/* stylelint-enable */
-
-$color-text-primary: var(--text-primary);
-$color-text-secondary: var(--text-secondary);
-$color-text-tertiary: var(--text-tertiary);
-$color-text-inverse: $color-base-white;
-$color-text-inverse-muted: $color-base-white-alpha-60;
-$color-background: var(--background);
-$color-card-background: var(--card-background);
-$color-hover-background: var(--hover-background);
-$color-button-background: var(--button-background);
-$color-border: var(--border-color);
-$color-shadow: var(--shadow-color);
-$color-success: var(--success-color);
-$color-success-background: var(--success-background);
-$color-success-background-subtle: $color-base-green-alpha-05;
-$color-error: var(--error-color);
-$color-error-background: var(--error-background);
-$color-warning: var(--warning-color);
-$color-warning-hover: var(--warning-color-hover);
-$color-warning-background: var(--warning-background);
-$color-warning-background-subtle: $color-base-orange-alpha-05;
-$color-info: var(--info-color);
-$color-info-background: var(--info-background);
-$color-info-background-subtle: $color-base-blue-alpha-05;
-$color-disabled: var(--disabled-color);
-$color-gold: var(--gold-color);
-$color-gold-background-subtle: $color-base-gold-alpha-05;
-$color-white: $color-base-white;
-
-// ==========================================================================
-// 3. Complex Variables (Borders, Shadows, Outlines)
-// ==========================================================================
-
-$color-border-thin: 1px solid $color-border;
-$color-border-thick: 2px solid $color-border;
-$color-border-thick-primary: 2px solid $color-primary;
-$color-border-thick-success: 2px solid $color-success;
-$color-border-thick-error: 2px solid $color-error;
-$color-border-thick-warning: 2px solid $color-warning;
-$color-border-thick-info: 2px solid $color-info;
-$color-border-thick-gold: 2px solid $color-gold;
-$color-border-thick-disabled: 2px solid $color-disabled;
-$color-border-3-border: 3px solid $color-border;
-$color-border-3-gold: 3px solid $color-gold;
-$color-border-3-success: 3px solid $color-success;
-$color-border-3-info: 3px solid $color-info;
-$color-border-3-warning: 3px solid $color-warning;
-$color-shadow-sm: 0 2px 8px $color-shadow;
-$color-shadow-md: 0 4px 12px $color-shadow;
-$color-shadow-lg: 0 8px 32px $color-shadow;
-$color-shadow-hover: 0 4px 16px $color-primary-alpha-30;
-$color-outline-focus: 2px solid $color-primary;
-/* stylelint-disable-next-line declaration-property-value-disallowed-list */
-$color-gradient-primary: linear-gradient(135deg, $color-primary, $color-primary-hover);
+@forward "./styles/ui";
+@forward "./internal";
 
 // ==========================================================================
 // 4. Theme Definitions

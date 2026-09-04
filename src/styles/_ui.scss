@@ -1,0 +1,158 @@
+// Shared UI recipes for component stylesheets.
+// Mixins only — this partial emits no CSS on its own. It is re-exported by
+// styles.scss, so every component using `@use "../../../styles.scss" as *;`
+// already receives these members. Components that don't import styles.scss
+// can load this partial directly.
+// Convention: include the mixin, then add local overrides after it. Values
+// here are canonical (see DESIGN.md); local drift must be justified.
+
+@use "../internal" as *;
+
+// stylelint-disable scss/dollar-variable-pattern -- mixin parameters are call-site API, not color tokens
+
+// Page shell: centered container with the standard page padding.
+@mixin page-container($max-width: 1200px, $padding: 2rem 1rem) {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: $padding;
+}
+
+// Clickable-card state ladder: lift on hover/focus, settle on press.
+@mixin card-interactive {
+  &:hover,
+  &:focus {
+    transform: translateY(-4px);
+    box-shadow: $color-shadow-md;
+    outline: $color-outline-focus;
+    outline-offset: 2px;
+  }
+
+  &:active {
+    transform: translateY(-2px);
+  }
+}
+
+// Circular prev/next navigation button flanking flashcards and lessons.
+// Mobile treatments (size, fixed positioning, backdrop) stay in components.
+@mixin nav-fab {
+  background: $color-card-background;
+  border: $color-border-thin;
+  color: $color-text-primary;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: $color-shadow-sm;
+  flex-shrink: 0;
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: default;
+
+    /* stylelint-disable-next-line sh-waqar/declaration-use-variable */
+    border: none;
+  }
+
+  &:hover:not(:disabled) {
+    background: $color-hover-background;
+    transform: scale(1.1);
+    box-shadow: $color-shadow-md;
+    border-color: $color-primary;
+    color: $color-primary;
+  }
+}
+
+// Bordered secondary action (back buttons, control toggles).
+@mixin button-ghost($padding: 0.5rem 1rem, $background: $color-background) {
+  background: $background;
+  border: $color-border-thin;
+  color: $color-text-primary;
+  padding: $padding;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+
+  &:hover,
+  &:focus {
+    background: $color-hover-background;
+    outline: $color-outline-focus;
+    outline-offset: 2px;
+  }
+}
+
+// Primary action button (standard scale). Hero-scale primaries
+// (quiz results actions) are bespoke by intent and stay local.
+@mixin button-primary($radius: 4px, $padding: 0.75rem 1.5rem) {
+  background: $color-primary;
+  color: $color-white;
+  border: $color-border-thin;
+  padding: $padding;
+  border-radius: $radius;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+
+  &:hover,
+  &:focus {
+    background: $color-primary-hover;
+    outline: $color-outline-focus;
+    outline-offset: 2px;
+  }
+}
+
+// Motion vocabulary. Include at the stylesheet's top level; Angular view
+// encapsulation scopes the emitted keyframes per component, so names never
+// collide across components.
+
+// Entrance: rise from $from-y while fading in.
+@mixin keyframes-fade-in($from-y: -10px) {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY($from-y);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+// Correct-answer confirmation: gentle scale breath.
+@mixin keyframes-pulse {
+  @keyframes pulse {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.05);
+    }
+  }
+}
+
+// Incorrect-answer feedback: horizontal head shake.
+@mixin keyframes-shake {
+  @keyframes shake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+
+    25% {
+      transform: translateX(-10px);
+    }
+
+    75% {
+      transform: translateX(10px);
+    }
+  }
+}
