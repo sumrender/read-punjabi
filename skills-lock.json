@@ -55,6 +55,12 @@
       "skillPath": "skills/productivity/handoff/SKILL.md",
       "computedHash": "20e5f4afdef502637510bc5c64d27645d3c85c88df9cb006824bbb0980166319"
     },
+    "impeccable": {
+      "source": "pbakaus/impeccable",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/impeccable/SKILL.md",
+      "computedHash": "73702c168d9ab290221349687855fcac419e5ca3183c039aad2e80404e2c5533"
+    },
     "implement": {
       "source": "mattpocock/skills",
       "sourceType": "github",
