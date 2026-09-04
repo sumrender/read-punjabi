@@ -1,22 +1,40 @@
-<div class="quiz-container">
+<div class="quiz-sheet">
   @if (isLoading()) {
-    <div class="loading">
+    <div class="sheet-state">
       <p>Loading quiz...</p>
     </div>
   } @else if (error()) {
-    <div class="error">
+    <div class="sheet-state">
       <p>{{ error() }}</p>
-      <button class="btn-primary" (click)="exitQuiz()">Back to Lessons</button>
+      <button class="button-primary" (click)="exitQuiz()">Back to Lessons</button>
     </div>
   } @else {
-    <header class="quiz-header">
-      <div class="progress-info">
-        <span class="question-number">Question {{ progress.current }} / {{ progress.total }}</span>
-        <span class="score">Score: {{ currentScore }}</span>
+    <header class="paper-header">
+      <div class="header-row">
+        <span class="question-count" aria-live="polite">
+          Question <span class="count-strong">{{ progress.current }}</span> of {{ progress.total }}
+        </span>
+
+        <div class="header-tools">
+          <span class="score-line" [attr.aria-label]="'Score: ' + currentScore + ' correct'">
+            <span class="score-label">Score</span>
+            @for (count of scoreTallyGroups; track $index) {
+            <svg class="tally-group" viewBox="0 0 26 20" aria-hidden="true" focusable="false">
+              @if (count >= 1) {<line x1="3" y1="3" x2="3" y2="17" />}
+              @if (count >= 2) {<line x1="8" y1="3" x2="8" y2="17" />}
+              @if (count >= 3) {<line x1="13" y1="3" x2="13" y2="17" />}
+              @if (count >= 4) {<line x1="18" y1="3" x2="18" y2="17" />}
+              @if (count >= 5) {<line class="tally-slash" x1="0" y1="16" x2="21" y2="4" />}
+            </svg>
+            } @empty {
+            <span class="score-empty" aria-hidden="true">—</span>
+            }
+          </span>
+
+          <button class="stop-btn" (click)="exitQuiz()" title="Exit Quiz" aria-label="Exit Quiz">Stop</button>
+        </div>
       </div>
-      <button class="exit-btn" (click)="exitQuiz()" title="Exit Quiz">
-        <span>✕</span>
-      </button>
+      <div class="header-rule" aria-hidden="true"></div>
     </header>
 
     <div class="question-wrapper">

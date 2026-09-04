@@ -1,40 +1,62 @@
-<div class="question-container">
+<div class="question-sheet">
   <div class="sentence-display">
     <p class="native-sentence">{{ getDisplaySentence() }}</p>
+    @if (question.transliteration) {
     <p class="hint">{{ question.transliteration }}</p>
+    }
     @if (question.meaning) {
-      <p class="meaning">{{ question.meaning }}</p>
+    <p class="meaning">{{ question.meaning }}</p>
     }
   </div>
 
-  <div class="instruction">
+  <div class="sheet-instruction">
     <p>Fill in the blank:</p>
   </div>
 
   <div class="options">
     @for (option of question.options; track $index) {
-      <button
-        class="option-btn"
-        [class.selected]="selectedOption() === $index"
-        [class.correct]="selectedOption() === $index && isCorrect()"
-        [class.incorrect]="selectedOption() === $index && !isCorrect()"
-        [class.disabled]="disabledOptions().has($index)"
-        [disabled]="disabledOptions().has($index)"
-        (click)="selectOption($index)"
-      >
-        <span class="option-text">{{ option }}</span>
-        @if (selectedOption() === $index && showFeedback()) {
-          <span class="feedback-icon">
-            {{ isCorrect() ? '✓' : '✗' }}
-          </span>
+    <button
+      class="option-btn"
+      [class.selected]="selectedOption() === $index"
+      [class.correct]="selectedOption() === $index && isCorrect()"
+      [class.incorrect]="selectedOption() === $index && !isCorrect()"
+      [class.disabled]="disabledOptions().has($index)"
+      [disabled]="disabledOptions().has($index)"
+      (click)="selectOption($index)"
+    >
+      <span class="option-marker" aria-hidden="true"></span>
+      <span class="option-text">{{ option }}</span>
+      @if (selectedOption() === $index && showFeedback()) {
+      <span class="feedback-icon" aria-hidden="true">
+        @if (isCorrect()) {
+        <svg viewBox="0 0 24 24" fill="none" focusable="false">
+          <path d="M4 12.5 10 18.5 20 6" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        } @else {
+        <svg viewBox="0 0 24 24" fill="none" focusable="false">
+          <path d="M6 6 18 18M18 6 6 18" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+        </svg>
         }
-      </button>
+      </span>
+      }
+    </button>
     }
   </div>
 
   @if (showFeedback()) {
-    <div class="feedback-message" [class.correct]="isCorrect()" [class.incorrect]="!isCorrect()">
-      {{ isCorrect() ? 'Correct! ✓' : 'Try again' }}
-    </div>
+  <div class="feedback-message" [class.correct]="isCorrect()" [class.incorrect]="!isCorrect()" role="status">
+    @if (isCorrect()) {
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+      <path d="M4 12.5 10 18.5 20 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </svg>
+    } @else {
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+      <path d="M6 6 18 18M18 6 6 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+    </svg>
+    }
+    {{ isCorrect() ? 'Correct!' : 'Try again' }}
+  </div>
   }
 </div>

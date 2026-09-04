@@ -35,6 +35,19 @@ export class QuizResultsComponent implements OnInit {
     return this.quizService.getPerformanceLevel(score);
   });
 
+  readonly stampLabel = computed(() => {
+    switch (this.performanceLevel()) {
+      case 'excellent':
+        return 'Excellent!';
+      case 'great':
+        return 'Great job!';
+      case 'good':
+        return 'Good effort';
+      default:
+        return 'Keep learning';
+    }
+  });
+
   ngOnInit(): void {
     const results = this.quizService.getQuizResults();
     this.result.set(results);

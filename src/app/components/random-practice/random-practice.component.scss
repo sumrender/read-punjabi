@@ -1,36 +1,46 @@
 @use "../../../styles.scss" as *;
 
+// ---------------------------------------------------------------------------
+// The Practice Deck: the flashcard (DESIGN.md's signature component) on its
+// workbook stage — a deck folio header with printed batch position, circular
+// FABs, and a printed ledger of deck actions. The finished state is a
+// deck-complete plate with an authored fanned-cards SVG.
+// ---------------------------------------------------------------------------
+
 // Motion (shared vocabulary)
 @include keyframes-fade-in(10px);
 
-// Layout Wrapper
+.deck-page {
+  @include page-container(1200px, 0 1rem 2rem);
 
-.random-practice-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   background-color: $color-background;
-  padding: 0 1rem;
 }
 
-.random-practice-header {
+// --- Deck folio -------------------------------------------------------------
+
+.deck-folio {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
-  padding: 1rem 0;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1.5rem 0 1rem;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+}
 
-  h1 {
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: $color-text-secondary;
-    margin: 0;
-  }
+.folio-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .back-button {
+  align-self: flex-start;
   /* stylelint-disable-next-line sh-waqar/declaration-use-variable */
   background: none;
   /* stylelint-disable-next-line sh-waqar/declaration-use-variable */
@@ -55,7 +65,26 @@
   }
 }
 
-// Layout Wrapper
+.folio-left h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: $color-text-primary;
+  margin: 0 0 0 0.5rem;
+}
+
+.folio-position {
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: $color-text-secondary;
+  font-variant-numeric: tabular-nums;
+  margin: 0;
+  padding-bottom: 0.375rem;
+}
+
+// --- Practice area -----------------------------------------------------------
+
 .practice-area {
   flex: 1;
   display: flex;
@@ -88,7 +117,7 @@
   transition: all 0.3s ease;
   overflow: hidden;
 
-  // Subtle glass effect gradient top
+  // Gradient cap: blue at rest, Correct Green when read.
   &::before {
     content: "";
     position: absolute;
@@ -147,14 +176,16 @@
     transition: all 0.2s ease;
 
     &::after {
-      content: "✓";
+      content: "";
       position: absolute;
-      top: 50%;
+      top: 45%;
       left: 50%;
-      transform: translate(-50%, -50%) scale(0);
-      color: $color-white;
-      font-size: 14px;
-      font-weight: bold;
+      width: 12px;
+      height: 7px;
+      border-left: 3px solid $color-white;
+      border-bottom: 3px solid $color-white;
+      transform: translate(-50%, -50%) rotate(-45deg) scale(0);
+      transform-origin: center;
       transition: transform 0.2s ease;
     }
   }
@@ -168,7 +199,7 @@
     border-color: $color-success;
 
     &::after {
-      transform: translate(-50%, -50%) scale(1);
+      transform: translate(-50%, -50%) rotate(-45deg) scale(1);
     }
   }
 
@@ -224,10 +255,13 @@
   font-size: 0.875rem;
   transition: all 0.2s ease;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     border-color: $color-primary;
     color: $color-primary;
     background: $color-primary-alpha-05;
+    outline: $color-outline-focus;
+    outline-offset: 2px;
   }
 }
 
@@ -278,6 +312,16 @@
     box-shadow: $color-shadow-lg;
   }
 
+  /* Dark-theme primary (blue-500) gives white text only 3.68:1 — the
+     documented treatment deepens filled controls one step on dark. */
+  :host-context([data-theme="dark"]) & {
+    background: $color-base-blue-600;
+
+    &:hover {
+      background: $color-base-blue-700;
+    }
+  }
+
   &.playing {
     animation: audio-pulse 1.5s infinite;
     background: $color-success;
@@ -303,20 +347,18 @@
   }
 }
 
-// Bottom Actions
+// --- Bottom ledger -----------------------------------------------------------
+
 .bottom-actions {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding: 2rem 0;
-  color: $color-text-secondary;
-  opacity: 0.7;
-  transition: opacity 0.2s ease;
-
-  &:hover {
-    opacity: 1;
-  }
+  padding: 2rem 0 0;
+  border-top: $color-border-thin;
+  max-width: 700px;
+  margin: 2rem auto 0;
+  width: 100%;
 
   .text-button {
     /* stylelint-disable-next-line sh-waqar/declaration-use-variable */
@@ -330,8 +372,11 @@
     text-underline-offset: 4px;
     padding: 0.5rem;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       color: $color-primary;
+      outline: $color-outline-focus;
+      outline-offset: 2px;
     }
   }
 
@@ -340,9 +385,10 @@
   }
 }
 
-// States
+// --- States ------------------------------------------------------------------
+
 .loading-state,
-.finished-state {
+.finished-plate {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -350,20 +396,59 @@
   justify-content: center;
   text-align: center;
   color: $color-text-secondary;
+  padding: 3rem 1rem;
+}
+
+// Deck-complete plate: authored fanned-cards geometry, not an emoji.
+.finished-plate {
+  background: $color-card-background;
+  border: $color-border-thin;
+  border-radius: 24px;
+  box-shadow: $color-shadow-lg;
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3.5rem 2rem;
 
   h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
     color: $color-text-primary;
-    margin: 1rem 0 0.5rem;
+    margin: 1.5rem 0 0.5rem;
   }
 
-  .celebration-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    animation: fade-in 0.5s ease-out;
+  p {
+    margin: 0;
+    font-size: 1.0625rem;
+  }
+
+  .deck-fan {
+    width: 120px;
+    height: 96px;
+
+    .fan-card {
+      fill: $color-background;
+      stroke: $color-border;
+      stroke-width: 1.5;
+    }
+
+    .fan-face {
+      fill: $color-card-background;
+      stroke: $color-primary;
+      stroke-width: 2;
+    }
+
+    .fan-rule {
+      stroke: $color-border;
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
   }
 
   .action-buttons {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
     margin-top: 2rem;
   }
@@ -392,14 +477,46 @@
   border: $color-border-thin;
   color: $color-text-primary;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     border-color: $color-text-secondary;
     background: $color-hover-background;
+    outline: $color-outline-focus;
+    outline-offset: 2px;
+  }
+}
+
+// --- Loading spinner -----------------------------------------------------------
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: $color-border-3-border;
+  border-top-color: $color-primary;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 
 // Responsive
 @media (max-width: 768px) {
+  .deck-page {
+    padding: 0 1rem 1.5rem;
+  }
+
+  .deck-folio {
+    padding: 1rem 0 0.75rem;
+  }
+
+  .folio-left h1 {
+    font-size: 1.375rem;
+  }
+
   .practice-area {
     flex-direction: column;
     gap: 1rem;
@@ -420,7 +537,6 @@
     height: 40px;
     font-size: 1rem;
     background: $color-card-background;
-    backdrop-filter: blur(4px);
   }
 
   .prev-fab {
@@ -444,6 +560,10 @@
   .card-body,
   .card-footer {
     padding: 1rem;
+  }
+
+  .bottom-actions {
+    margin-top: 1.5rem;
   }
 }
 

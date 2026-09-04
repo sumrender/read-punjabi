@@ -1,101 +1,72 @@
 @if (lesson(); as lesson) {
-  <main class="lesson-viewer-container">
-    <header class="lesson-viewer-header">
-      <button 
-        class="back-button" 
-        (click)="goToLessonList()"
-        aria-label="Go back to lesson list"
-      >
+  <main class="lesson-stage">
+    <header class="stage-top">
+      <button class="back-button" (click)="goToLessonList()" aria-label="Go back to lesson list">
         ← Back
       </button>
-      <div class="lesson-type-badge" aria-label="Lesson type: {{ lesson.type }}">
-        {{ getLessonTypeLabel(lesson.type) }}
-      </div>
+      @if (lesson.type) {
+      <span class="lesson-type-badge" aria-label="Lesson type: {{ lesson.type }}">{{
+        getLessonTypeLabel(lesson.type) }}</span>
+      }
     </header>
 
-    <div class="viewer-layout">
-      <button 
-        class="nav-fab prev-fab"
-        (click)="goToPrevious()"
-        [disabled]="!hasPrevious()"
-        aria-label="Previous lesson"
-      >
+    <div class="plate-row">
+      <button class="nav-fab prev-fab" (click)="goToPrevious()" [disabled]="!hasPrevious()"
+        aria-label="Previous lesson">
         <span aria-hidden="true">❮</span>
       </button>
 
-      <div class="center-container">
-        <section class="lesson-content">
-          <div 
-            class="native-text" 
-            [ngClass]="fontSizeClass()"
-            [attr.aria-label]="config().ui.aria.scriptName + ' text: ' + lesson.native"
-          >
+      <section class="lesson-plate">
+        <div class="plate-cap" aria-hidden="true"></div>
+
+        <div class="plate-body">
+          <div class="native-text" [ngClass]="fontSizeClass()"
+            [attr.aria-label]="config().ui.aria.scriptName + ' text: ' + lesson.native">
             {{ lesson.native }}
           </div>
+          <div class="baseline-rule" aria-hidden="true"></div>
 
           @if (showTransliteration()) {
-            <div 
-              class="transliteration-text"
-              [attr.aria-label]="'Transliteration: ' + lesson.transliteration"
-            >
-              {{ lesson.transliteration }}
-            </div>
+          <div class="transliteration-text" [attr.aria-label]="'Transliteration: ' + lesson.transliteration">
+            {{ lesson.transliteration }}
+          </div>
           }
 
           @if (showMeaning() && lesson.meaning) {
-            <div 
-              class="meaning-text"
-              [attr.aria-label]="'Meaning: ' + lesson.meaning"
-            >
-              {{ lesson.meaning }}
-            </div>
+          <div class="meaning-text" [attr.aria-label]="'Meaning: ' + lesson.meaning">
+            {{ lesson.meaning }}
+          </div>
           }
-        </section>
+        </div>
 
-        <section class="lesson-controls" role="toolbar" aria-label="Lesson controls">
+        <div class="plate-controls" role="toolbar" aria-label="Lesson controls">
           @if (isAudioPlaybackEnabled) {
-            <button
-              class="control-button play-button"
-              (click)="playAudio()"
-            [attr.aria-label]="isPlaying() ? 'Stop audio' : 'Play audio'"
-            [attr.aria-pressed]="isPlaying()"
-          >
+          <button class="control-button play-button" (click)="playAudio()"
+            [attr.aria-label]="isPlaying() ? 'Stop audio' : 'Play audio'" [attr.aria-pressed]="isPlaying()">
             @if (isPlaying()) {
-              <span aria-hidden="true">⏸</span> Stop
+            <span aria-hidden="true">⏸</span> Stop
             } @else {
-              <span aria-hidden="true">▶</span> Play Audio
+            <span aria-hidden="true">▶</span> Play Audio
             }
           </button>
           }
 
-          <button 
-            class="control-button toggle-button"
-            (click)="toggleTransliteration()"
+          <button class="control-button toggle-button" (click)="toggleTransliteration()"
             [attr.aria-label]="showTransliteration() ? 'Hide transliteration' : 'Show transliteration'"
-            [attr.aria-pressed]="showTransliteration()"
-          >
+            [attr.aria-pressed]="showTransliteration()">
             {{ showTransliteration() ? 'Hide' : 'Show' }} Transliteration
           </button>
 
           @if (lesson.meaning) {
-            <button 
-              class="control-button toggle-button"
-              (click)="toggleMeaning()"
-              [attr.aria-label]="showMeaning() ? 'Hide meaning' : 'Show meaning'"
-              [attr.aria-pressed]="showMeaning()"
-            >
-              {{ showMeaning() ? 'Hide' : 'Show' }} Meaning
-            </button>
+          <button class="control-button toggle-button" (click)="toggleMeaning()"
+            [attr.aria-label]="showMeaning() ? 'Hide meaning' : 'Show meaning'" [attr.aria-pressed]="showMeaning()">
+            {{ showMeaning() ? 'Hide' : 'Show' }} Meaning
+          </button>
           }
-        </section>
-      </div>
+        </div>
+      </section>
 
-      <button 
-        class="nav-fab next-fab"
-        (click)="goToNext()"
-        [disabled]="!hasNext()"
-        aria-label="Next lesson"
-      >
+      <button class="nav-fab next-fab" (click)="goToNext()" [disabled]="!hasNext()" aria-label="Next lesson">
         <span aria-hidden="true">❯</span>
       </button>
     </div>
@@ -105,4 +76,3 @@
     <p>Loading lesson...</p>
   </div>
 }
-

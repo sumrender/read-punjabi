@@ -1,123 +1,134 @@
 @use "../../../styles.scss" as *;
 
-// Motion (shared vocabulary)
-@include keyframes-fade-in(20px);
+// ---------------------------------------------------------------------------
+// The Test Paper: the quiz as a numbered exercise sheet. The page is the
+// sheet — a printed header row (question count, score tally, Stop) over a
+// hairline rule, with the mounted question set on the paper below.
+// ---------------------------------------------------------------------------
 
-.quiz-container {
-  min-height: 100vh;
-  background: $color-background;
-  padding: 1rem;
+.quiz-sheet {
+  @include page-container(800px, 2rem 1rem 3rem);
 }
 
-.loading,
-.error {
+// --- Loading / error ---------------------------------------------------------
+
+.sheet-state {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: $color-text-secondary;
+
+  .button-primary {
+    @include button-primary;
+
+    margin-top: 1rem;
+  }
+}
+
+// --- Paper header -------------------------------------------------------------
+
+.paper-header {
+  margin-bottom: 2.5rem;
+}
+
+.header-row {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 60vh;
-  gap: 2rem;
-
-  p {
-    font-size: 1.5rem;
-    color: $color-text-primary;
-  }
-
-  .btn-primary {
-    padding: 1rem 2rem;
-    font-size: 1.125rem;
-    font-weight: 600;
-    background: $color-primary;
-    color: $color-text-inverse;
-    border: $color-border-thin;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-
-    &:hover {
-      background: $color-primary-hover;
-      transform: translateY(-2px);
-      box-shadow: $color-shadow-md;
-    }
-  }
-}
-
-.quiz-header {
-  display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: $color-card-background;
-  border-radius: 12px;
-  margin-bottom: 2rem;
-  box-shadow: $color-shadow-sm;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 
-  .progress-info {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
+.question-count {
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+  color: $color-text-secondary;
 
-    .question-number {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: $color-text-primary;
-    }
-
-    .score {
-      font-size: 1.125rem;
-      font-weight: 500;
-      color: $color-primary;
-      padding: 0.5rem 1rem;
-      background: rgb(var(--primary-color-rgb) / 10%);
-      border-radius: 8px;
-    }
-  }
-
-  .exit-btn {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent; /* stylelint-disable-line sh-waqar/declaration-use-variable */
-    border: $color-border-thick;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    color: $color-text-secondary;
-    font-size: 1.5rem;
-
-    &:hover {
-      background: $color-error-background;
-      border-color: $color-error;
-      color: $color-error;
-    }
+  .count-strong {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: $color-text-primary;
+    font-variant-numeric: tabular-nums;
   }
 }
+
+.header-tools {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.score-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.score-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: $color-text-secondary;
+}
+
+.tally-group {
+  width: 26px;
+  height: 20px;
+
+  line {
+    stroke: $color-text-primary;
+    stroke-width: 2;
+    stroke-linecap: round;
+  }
+
+  .tally-slash {
+    stroke: $color-primary;
+  }
+}
+
+.score-empty {
+  color: $color-text-secondary;
+}
+
+.stop-btn {
+  @include button-ghost(0.375rem 0.875rem);
+
+  border-radius: 100px;
+  font-size: 0.875rem;
+  color: $color-text-secondary;
+
+  &:hover,
+  &:focus {
+    color: $color-error;
+    border-color: $color-error;
+    background: $color-error-background;
+  }
+}
+
+// The printed rule under the header.
+.header-rule {
+  margin-top: 0.875rem;
+  border-bottom: 2px solid $color-text-primary;
+}
+
+// --- Question area -------------------------------------------------------------
 
 .question-wrapper {
-  animation: fade-in 0.4s ease;
+  min-height: 16rem;
 }
 
+// --- Responsive -----------------------------------------------------------------
+
 @media (max-width: 768px) {
-  .quiz-container {
-    padding: 0.5rem;
+  .quiz-sheet {
+    padding: 1.5rem 1rem 2.5rem;
   }
 
-  .quiz-header {
-    padding: 1rem;
-    flex-direction: column;
-    gap: 1rem;
+  .header-row {
+    gap: 0.75rem;
+  }
 
-    .progress-info {
-      flex-direction: column;
-      gap: 0.5rem;
-      width: 100%;
-      text-align: center;
-    }
-
-    .exit-btn {
-      align-self: flex-end;
-    }
+  .header-tools {
+    gap: 0.875rem;
   }
 }

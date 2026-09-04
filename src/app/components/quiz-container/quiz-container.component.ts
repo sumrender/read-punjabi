@@ -155,6 +155,15 @@ export class QuizContainerComponent implements OnInit {
     return this.quizService.currentScore();
   }
 
+  get scoreTallyGroups(): number[] {
+    const score = this.currentScore;
+    const groups: number[] = [];
+    for (let remaining = score; remaining > 0; remaining -= 5) {
+      groups.push(remaining >= 5 ? 5 : remaining);
+    }
+    return groups;
+  }
+
   exitQuiz(): void {
     const level = this.route.snapshot.paramMap.get('level');
     this.router.navigate(['/level', level]);

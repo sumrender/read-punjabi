@@ -1,61 +1,68 @@
-<main class="settings-container">
-  <header class="settings-header">
+<main class="belongs-page">
+  <header class="belongs-masthead">
     <h1>Settings</h1>
+    <p class="belongs-line">This workbook is yours.</p>
   </header>
 
-  <section class="settings-section">
-    <h2>Theme</h2>
-    <div class="settings-options" role="radiogroup" aria-label="Theme selection">
-      @for (theme of themes(); track theme.value) {
-        <label class="radio-option">
-          <input
-            type="radio"
-            name="theme"
-            [value]="theme.value"
-            [checked]="currentTheme() === theme.value"
-            (change)="setTheme(theme.value)"
-            [attr.aria-label]="'Select ' + theme.label + ' theme'"
-          />
-          <span>{{ theme.label }}</span>
-        </label>
+  <section class="form-line">
+    <h2 class="form-label">Course</h2>
+    <div class="settings-options" role="radiogroup" aria-label="Course selection">
+      @for (language of languages(); track language.value) {
+      <label class="radio-option">
+        <input
+          type="radio"
+          name="language"
+          [value]="language.value"
+          [checked]="currentLanguage() === language.value"
+          (change)="setLanguage(language.value)"
+          [attr.aria-label]="'Select ' + language.label + ' language'"
+        />
+        <span class="option-specimen" aria-hidden="true">{{ getLanguageSpecimen(language.value) }}</span>
+        <span class="option-label">{{ language.label }}</span>
+      </label>
       }
     </div>
   </section>
 
-  <section class="settings-section">
-    <h2>Font Size</h2>
+  <section class="form-line">
+    <h2 class="form-label">Type Size</h2>
     <div class="settings-options" role="radiogroup" aria-label="Font size selection">
       @for (fontSize of fontSizes(); track fontSize.value) {
-        <label class="radio-option">
-          <input
-            type="radio"
-            name="fontSize"
-            [value]="fontSize.value"
-            [checked]="currentFontSize() === fontSize.value"
-            (change)="setFontSize(fontSize.value)"
-            [attr.aria-label]="'Select ' + fontSize.label + ' font size'"
-          />
-          <span>{{ fontSize.label }}</span>
-        </label>
+      <label class="radio-option">
+        <input
+          type="radio"
+          name="fontSize"
+          [value]="fontSize.value"
+          [checked]="currentFontSize() === fontSize.value"
+          (change)="setFontSize(fontSize.value)"
+          [attr.aria-label]="'Select ' + fontSize.label + ' font size'"
+        />
+        <span class="option-specimen" aria-hidden="true" [attr.data-size]="fontSize.value">Aa ੳ</span>
+        <span class="option-label">{{ fontSize.label }}</span>
+      </label>
       }
     </div>
   </section>
 
-  <section class="settings-section">
-    <h2>Language</h2>
-    <div class="settings-options" role="radiogroup" aria-label="Language selection">
-      @for (language of languages(); track language.value) {
-        <label class="radio-option">
-          <input
-            type="radio"
-            name="language"
-            [value]="language.value"
-            [checked]="currentLanguage() === language.value"
-            (change)="setLanguage(language.value)"
-            [attr.aria-label]="'Select ' + language.label + ' language'"
-          />
-          <span>{{ language.label }}</span>
-        </label>
+  <section class="form-line">
+    <h2 class="form-label">Ink &amp; Paper</h2>
+    <div class="settings-options" role="radiogroup" aria-label="Theme selection">
+      @for (theme of themes(); track theme.value) {
+      <label class="radio-option">
+        <input
+          type="radio"
+          name="theme"
+          [value]="theme.value"
+          [checked]="currentTheme() === theme.value"
+          (change)="setTheme(theme.value)"
+          [attr.aria-label]="'Select ' + theme.label + ' theme'"
+        />
+        <span class="option-specimen theme-specimen" aria-hidden="true" [attr.data-theme-chip]="theme.value">
+          <span class="chip-ink"></span>
+          <span class="chip-paper"></span>
+        </span>
+        <span class="option-label">{{ theme.label }}</span>
+      </label>
       }
     </div>
   </section>
@@ -64,4 +71,3 @@
     <a routerLink="/" class="back-link">← Back to Home</a>
   </nav>
 </main>
-

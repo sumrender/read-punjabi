@@ -1,86 +1,89 @@
-<main class="lesson-list-container">
-  <header class="lesson-list-header">
+<main class="unit-page">
+  <header class="unit-top">
     <button class="back-button" (click)="goToHome()" aria-label="Go back to home">← Back</button>
-    <h1>{{ levelTitle() }}</h1>
   </header>
 
   @if (loading()) {
-  <div class="loading" role="status" aria-live="polite">
+  <div class="unit-loading" role="status" aria-live="polite">
     <p>Loading lessons...</p>
   </div>
   } @else if (lessonGroups().length === 0) {
-  <div class="empty-state">
+  <div class="unit-empty">
     <p>No lessons available for this level.</p>
     <button class="button-primary" (click)="goToHome()">Go to Home</button>
   </div>
   } @else {
-  
-  <!-- Random Practice Section -->
-  <section class="random-practice-section">
-    <div class="random-practice-card" (click)="goToRandomPractice()">
-      <div class="random-content">
-        <h2>Random Practice</h2>
-        <p>Master words and sentences with randomized sets from a larger pool.</p>
-        <button class="start-practice-btn">Start Practice</button>
+
+  <div class="unit-spread">
+    <aside class="unit-margin">
+      <span class="unit-numeral" aria-hidden="true">{{ level() }}</span>
+      <div class="unit-naming">
+        <h1 class="unit-title">{{ levelTitle() }}</h1>
       </div>
-      <div class="random-icon">🎲</div>
-    </div>
-  </section>
 
-  <!-- Lesson Groups Section -->
-  <section class="lesson-groups-section">
-    @for (group of lessonGroups(); track group.lessonNumber) {
-    <div class="lesson-group">
-      <h2 class="lesson-group-title">{{ group.title || 'Lesson ' + group.lessonNumber }}</h2>
-      @if (group.description) {
-      <p class="lesson-group-description">{{ group.description }}</p>
-      }
-
-      <div class="lessons-grid" role="list">
-        @for (lesson of group.items; track lesson.id) {
-        <article
-          class="lesson-card"
-          role="listitem"
-          (click)="goToLesson(lesson.id)"
-          (keydown.enter)="goToLesson(lesson.id)"
-          (keydown.space)="goToLesson(lesson.id)"
-          tabindex="0"
-          [attr.aria-label]="getLessonTypeLabel(lesson.type) + ': ' + lesson.native"
-        >
-          <div class="lesson-type" aria-hidden="true">
-            {{ getLessonTypeLabel(lesson.type) }}
-          </div>
-          <div class="lesson-native">{{ getDisplayContent(lesson) }}</div>
-          @if (lesson.transliteration && !(lesson.type === 'paragraph' || lesson.type === 'story'))
-          {
-          <div class="lesson-transliteration" aria-hidden="true">
-            {{ lesson.transliteration }}
-          </div>
-          }
-        </article>
-        }
-      </div>
-    </div>
-    }
-  </section>
-
-  <!-- Quizzes Section -->
-  @if (quizzes().length > 0) {
-  <section class="quizzes-section">
-    <h2 class="quizzes-title">Quizzes</h2>
-    <div class="quizzes-grid">
-      @for (quiz of quizzes(); track quiz.id) {
-      <button
-        class="quiz-card"
-        (click)="startQuiz(quiz.quizNumber)"
-        [attr.aria-label]="'Start ' + quiz.title"
-      >
-        <div class="quiz-icon">📝</div>
-        <div class="quiz-title">{{ quiz.title }}</div>
-        <div class="quiz-subtitle">{{ quiz.questions.length }} questions</div>
+      <button class="unit-practice" (click)="goToRandomPractice()"
+        [attr.aria-label]="'Open Random Practice for Level ' + level()">
+        <span class="practice-title">Random Practice</span>
+        <span class="practice-desc">Randomized sets from a larger pool.</span>
+        <span class="practice-go">
+          Start Practice
+          <svg class="practice-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" focusable="false">
+            <path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
       </button>
+    </aside>
+
+    <div class="unit-body">
+      @for (group of lessonGroups(); track group.lessonNumber) {
+      <section class="lesson-group">
+        <header class="group-head">
+          <h2 class="group-title">{{ group.title || 'Lesson ' + group.lessonNumber }}</h2>
+          @if (group.description) {
+          <p class="group-desc">{{ group.description }}</p>
+          }
+        </header>
+
+        <div class="specimen-index" role="list">
+          @for (lesson of group.items; track lesson.id) {
+          <a class="specimen-cell" role="listitem" tabindex="0"
+            (click)="goToLesson(lesson.id)" (keydown.enter)="goToLesson(lesson.id)"
+            (keydown.space)="goToLesson(lesson.id)"
+            [attr.aria-label]="getLessonTypeLabel(lesson.type) + ': ' + lesson.native">
+            <span class="cell-badge" aria-hidden="true">{{ getLessonTypeLabel(lesson.type) }}</span>
+            <span class="cell-native"
+              [class.cell-native-long]="lesson.type === 'paragraph' || lesson.type === 'story'">{{
+              getDisplayContent(lesson) }}</span>
+            @if (lesson.transliteration && !(lesson.type === 'paragraph' || lesson.type === 'story')) {
+            <span class="cell-transliteration" aria-hidden="true">{{ lesson.transliteration }}</span>
+            }
+          </a>
+          }
+        </div>
+      </section>
+      }
+
+      @if (quizzes().length > 0) {
+      <section class="unit-exercises">
+        <h2 class="exercises-heading">Exercises</h2>
+        <div class="exercise-list">
+          @for (quiz of quizzes(); track quiz.id) {
+          <button class="exercise-row" (click)="startQuiz(quiz.quizNumber)"
+            [attr.aria-label]="'Start ' + quiz.title">
+            <span class="exercise-title">{{ quiz.title }}</span>
+            <span class="exercise-leader" aria-hidden="true"></span>
+            <span class="exercise-count">{{ quiz.questions.length }} questions</span>
+            <svg class="exercise-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" focusable="false">
+              <path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          }
+        </div>
+      </section>
       }
     </div>
-  </section>
-  } }
+  </div>
+  }
 </main>

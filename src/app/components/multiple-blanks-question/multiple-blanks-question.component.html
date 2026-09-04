@@ -1,39 +1,46 @@
-<div class="question-container">
+<div class="question-sheet">
   <div class="paragraph-display">
     <div class="native-paragraph" [innerHTML]="getDisplayParagraph()"></div>
     @if (question.transliteration) {
-      <p class="hint">{{ question.transliteration }}</p>
+    <p class="hint">{{ question.transliteration }}</p>
     }
   </div>
 
   @if (!isComplete()) {
-    <div class="instruction">
-      <p>Fill blank {{ currentBlankIndex() + 1 }} of {{ question.blanks.length }}:</p>
-    </div>
+  <div class="sheet-instruction">
+    <p>Fill blank {{ currentBlankIndex() + 1 }} of {{ question.blanks.length }}:</p>
+  </div>
 
-    <div class="options">
-      @if (currentBlank(); as blank) {
-        @for (option of blank.options; track $index) {
-          <button
-            class="option-btn"
-            [class.disabled]="disabledOptions().has($index)"
-            [disabled]="disabledOptions().has($index)"
-            (click)="selectOption($index)"
-          >
-            <span class="option-text">{{ option }}</span>
-          </button>
-        }
-      }
-    </div>
+  <div class="options">
+    @if (currentBlank(); as blank) {
+    @for (option of blank.options; track $index) {
+    <button
+      class="option-btn"
+      [class.disabled]="disabledOptions().has($index)"
+      [disabled]="disabledOptions().has($index)"
+      (click)="selectOption($index)"
+    >
+      <span class="option-marker" aria-hidden="true"></span>
+      <span class="option-text">{{ option }}</span>
+    </button>
+    }
+    }
+  </div>
   }
 
   @if (showFeedback()) {
-    <div 
-      class="feedback-message" 
-      [class.correct]="isCorrect()" 
-      [class.incorrect]="!isCorrect()"
-    >
-      {{ isCorrect() ? 'Correct! ✓' : 'Try again' }}
-    </div>
+  <div class="feedback-message" [class.correct]="isCorrect()" [class.incorrect]="!isCorrect()" role="status">
+    @if (isCorrect()) {
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+      <path d="M4 12.5 10 18.5 20 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </svg>
+    } @else {
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+      <path d="M6 6 18 18M18 6 6 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+    </svg>
+    }
+    {{ isCorrect() ? 'Correct!' : 'Try again' }}
+  </div>
   }
 </div>

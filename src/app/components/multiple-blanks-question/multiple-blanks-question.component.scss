@@ -1,167 +1,131 @@
 @use "../../../styles.scss" as *;
 
-// Motion (shared vocabulary)
-@include keyframes-fade-in;
+// ---------------------------------------------------------------------------
+// Multiple blanks on the exercise sheet: the paragraph as a printed passage
+// with its numbered write-in gaps, options as ruled answer tiles.
+// ---------------------------------------------------------------------------
 
-.question-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 900px;
-  margin: 0 auto;
+.question-sheet {
+  @include keyframes-pulse;
+  @include keyframes-shake;
+  @include keyframes-fade-in(-8px);
+
+  animation: fade-in 0.3s ease backwards;
 }
 
 .paragraph-display {
+  padding: 2rem 2rem 2.25rem;
   background: $color-card-background;
-  padding: 2rem;
-  border-radius: 12px;
-  border: $color-border-thick;
+  border: $color-border-thin;
+  border-radius: 8px;
+}
 
-  .native-paragraph {
-    font-family: var(--native-font-family);
-    font-size: 1.75rem;
-    line-height: 2;
+.native-paragraph {
+  font-family: var(--native-font-family);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2.4;
+  color: $color-text-primary;
+  overflow-wrap: anywhere;
+
+  :deep(.filled-blank) {
+    display: inline-block;
+    min-width: 3.5rem;
+    padding: 0 0.375rem;
+    border-bottom: 2px solid $color-success;
     color: $color-text-primary;
-    margin: 1rem 0 0;
-
-    ::ng-deep .filled-blank { /* stylelint-disable-line selector-pseudo-element-no-unknown */
-      background: $color-success;
-      color: $color-white;
-      padding: 0.25rem 0.75rem;
-      border-radius: 6px;
-      font-weight: 600;
-    }
-
-    ::ng-deep .active-blank { /* stylelint-disable-line selector-pseudo-element-no-unknown */
-      background: $color-primary;
-      color: $color-white;
-      padding: 0.25rem 0.75rem;
-      border-radius: 6px;
-      animation: blink 1s infinite;
-    }
-
-    ::ng-deep .empty-blank { /* stylelint-disable-line selector-pseudo-element-no-unknown */
-      color: $color-text-tertiary;
-      padding: 0.25rem 0.75rem;
-      border-bottom: 2px solid $color-text-tertiary;
-    }
+    text-align: center;
+    font-weight: 700;
   }
 
-  .hint {
-    font-size: 1rem;
+  :deep(.active-blank) {
+    display: inline-block;
+    min-width: 3.5rem;
+    padding: 0 0.375rem;
+    border-bottom: 2px solid $color-primary;
+    color: $color-primary;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  :deep(.empty-blank) {
+    display: inline-block;
+    min-width: 3.5rem;
+    padding: 0 0.375rem;
+    border-bottom: 2px solid $color-border;
     color: $color-text-secondary;
-    margin: 1rem 0 0;
-    font-style: italic;
+    text-align: center;
   }
 }
 
-.instruction {
-  text-align: center;
+.hint {
+  font-size: 1rem;
+  font-style: italic;
+  color: $color-text-secondary;
+  margin: 1.25rem 0 0;
+}
+
+.sheet-instruction {
+  @include sheet-instruction;
 
   p {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: $color-text-primary;
     margin: 0;
   }
 }
 
 .options {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 .option-btn {
-  min-height: 70px;
-  padding: 1.25rem;
-  font-size: 1.5rem;
-  font-weight: 500;
-  background: $color-card-background;
-  border: $color-border-thick;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
+  @include quiz-option-tile;
+
+  width: auto;
+  min-width: 8rem;
   justify-content: center;
-  color: $color-text-primary;
+}
 
-  &:hover:not(:disabled) {
-    background: $color-hover-background;
-    border-color: $color-primary;
-    transform: translateY(-2px);
-    box-shadow: $color-shadow-md;
-  }
+.option-marker {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: $color-border;
+  transition: background-color 0.2s ease;
+}
 
-  &:active:not(:disabled) {
-    transform: translateY(0);
-  }
-
-  &.disabled {
-    background: $color-disabled;
-    border-color: $color-disabled;
-    color: $color-text-inverse-muted;
-    cursor: not-allowed;
-    opacity: 0.5;
-  }
-
-  .option-text {
-    font-family: var(--native-font-family);
-  }
+.option-text {
+  font-family: var(--native-font-family);
+  font-size: 1.5rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
 }
 
 .feedback-message {
-  text-align: center;
-  font-size: 1.25rem;
-  font-weight: 600;
-  padding: 1rem;
-  border-radius: 8px;
-  animation: fade-in 0.3s ease;
+  @include feedback-banner;
 
-  &.correct {
-    background: $color-success-background;
-    color: $color-success;
-  }
-
-  &.incorrect {
-    background: $color-error-background;
-    color: $color-error;
+  svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
   }
 }
 
-@keyframes blink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.5;
-  }
-}
+// --- Responsive -------------------------------------------------------------
 
 @media (max-width: 768px) {
-  .question-container {
-    padding: 1rem;
-  }
-
   .paragraph-display {
-    padding: 1.5rem;
-
-    .native-paragraph {
-      font-size: 1.4rem;
-      line-height: 1.8;
-    }
+    padding: 1.5rem 1.25rem 1.75rem;
   }
 
-  .options {
-    grid-template-columns: 1fr;
+  .native-paragraph {
+    font-size: 1.25rem;
+    line-height: 2.2;
   }
 
   .option-btn {
-    min-height: 60px;
-    padding: 1rem;
+    flex: 1 1 100%;
   }
 }

@@ -1,20 +1,24 @@
 @use "../../../styles.scss" as *;
 
-.lesson-viewer-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+// ---------------------------------------------------------------------------
+// The Lesson Plate: one lesson as the home facing page's sibling — a
+// workbook-page plate with a gradient cap, the native item on a baseline
+// rule like a printed specimen, and quiet controls in the plate footer.
+// ---------------------------------------------------------------------------
 
-  // Increased width to accommodate side buttons
-  @include page-container;
+.lesson-stage {
+  @include page-container(1200px, 2.5rem 1rem 3rem);
 }
 
-.lesson-viewer-header {
+// --- Top row ---------------------------------------------------------------
+
+.stage-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 2rem;
   gap: 1rem;
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
 }
 
 .back-button {
@@ -22,194 +26,208 @@
 }
 
 .lesson-type-badge {
-  background: $color-primary;
-  color: $color-white;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  color: $color-text-secondary;
+  background: $color-primary-alpha-10;
+  border-radius: 100px;
+  padding: 0.375rem 0.875rem;
 }
 
-// Layout Wrapper
-.viewer-layout {
+// --- Plate row: FABs flanking the plate -------------------------------------
+
+.plate-row {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 2rem;
-  flex: 1;
-  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.center-container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.lesson-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem 0;
-  min-height: 200px;
-  width: 100%;
-}
-
-.native-text {
-  font-family: var(--native-font-family);
-  color: $color-text-primary;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-  word-wrap: break-word;
-  max-width: 100%;
-
-  &.font-small {
-    font-size: 2rem;
-  }
-
-  &.font-medium {
-    font-size: 3rem;
-  }
-
-  &.font-large {
-    font-size: 4rem;
-  }
-
-  &.font-xlarge {
-    font-size: 5rem;
-  }
-}
-
-.transliteration-text {
-  font-size: 1.5rem;
-  color: $color-text-secondary;
-  margin-bottom: 1rem;
-  font-style: italic;
-}
-
-.meaning-text {
-  font-size: 1.25rem;
-  color: $color-text-secondary;
-  margin-bottom: 1rem;
-}
-
-.lesson-controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  margin-bottom: 2rem;
-  padding: 1rem 0;
-  width: 100%;
-}
-
-// Navigation FABs
 .nav-fab {
   @include nav-fab;
 }
 
-.control-button {
-  @include button-ghost(0.75rem 1.5rem, $color-button-background);
+// --- The plate --------------------------------------------------------------
 
-  transition: background-color 0.2s ease, transform 0.1s ease;
+.lesson-plate {
+  flex: 1;
+  max-width: 700px;
+  background: $color-card-background;
+  border: $color-border-thin;
+  border-radius: 24px;
+  box-shadow: $color-shadow-lg;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
 
-  &:active {
-    transform: scale(0.98);
+.plate-cap {
+  height: 6px;
+  background: $color-gradient-primary;
+}
+
+.plate-body {
+  padding: 4rem 2.5rem 3rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// The item on its ruled baseline, like a specimen on a workbook line.
+.native-text {
+  font-family: var(--native-font-family);
+  font-weight: 700;
+  line-height: 1.25;
+  color: $color-text-primary;
+  font-size: 4rem;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+
+  &.font-small {
+    font-size: 3rem;
   }
+
+  &.font-medium {
+    font-size: 4rem;
+  }
+
+  &.font-large {
+    font-size: 5rem;
+  }
+
+  &.font-xlarge {
+    font-size: 6rem;
+  }
+}
+
+.baseline-rule {
+  width: 6rem;
+  border-bottom: 2px solid $color-border;
+  margin: 2rem auto 0;
+}
+
+.transliteration-text {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: $color-text-secondary;
+  margin-top: 1.5rem;
+}
+
+.meaning-text {
+  font-size: 1.125rem;
+  color: $color-text-secondary;
+  margin-top: 0.75rem;
+}
+
+// --- Controls: Highlight-wash footer strip, flashcard-kin --------------------
+
+.plate-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.25rem 2rem;
+  background: $color-hover-background;
+  border-top: $color-border-thin;
+}
+
+.control-button {
+  @include button-ghost(0.5rem 1.25rem, transparent);
+
+  border-radius: 100px;
 
   &[aria-pressed="true"] {
     background: $color-primary;
-    color: $color-white;
     border-color: $color-primary;
+    color: $color-white;
+
+    &:hover {
+      background: $color-primary-hover;
+      border-color: $color-primary-hover;
+    }
   }
 }
 
-.play-button {
-  background: $color-primary;
-  color: $color-white;
-  border-color: $color-primary;
-
-  &:hover,
-  &:focus {
-    background: $color-primary-hover;
-  }
-}
+// --- Loading -----------------------------------------------------------------
 
 .loading {
   text-align: center;
-  padding: 3rem 1rem;
+  padding: 4rem 1rem;
   color: $color-text-secondary;
 }
 
+// --- Responsive --------------------------------------------------------------
+
 @media (max-width: 768px) {
-  .lesson-viewer-container {
-    padding: 1rem;
+  .lesson-stage {
+    padding: 1.5rem 1rem 2.5rem;
   }
 
-  // On mobile, maybe layout buttons at bottom or absolute
-  .viewer-layout {
-    flex-direction: column;
-    gap: 1rem;
+  .stage-top {
+    margin-bottom: 1rem;
   }
 
-  .nav-fab {
-    // Keep layout simple for now as requested, or adjust?
-    // The user liked random practice. In random practice mobile, we made them smaller and positioned differently?
-    // Actually in random practice we hid them or positioned absolute.
-    // Let's position absolute for mobile for "app like" feel.
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    width: 48px;
-    height: 48px;
-    font-size: 1.25rem;
-    background: $color-card-background;
-    opacity: 0.9;
-    backdrop-filter: blur(4px);
+  .plate-row {
+    display: block;
+    position: relative;
   }
 
-  .prev-fab {
-    left: 1rem;
+  .lesson-plate {
+    max-width: none;
   }
 
-  .next-fab {
-    right: 1rem;
-  }
-
-  // Ensure content isn't covered by fixed buttons
-  .lesson-content {
-    padding: 1rem 3rem;
-    width: 100%;
+  .plate-body {
+    padding: 3rem 1.5rem 2rem;
   }
 
   .native-text {
-    &.font-small {
-      font-size: 1.5rem;
-    }
+    font-size: 2.5rem;
 
-    &.font-medium {
+    &.font-small {
       font-size: 2rem;
     }
 
-    &.font-large {
+    &.font-medium {
       font-size: 2.5rem;
     }
 
-    &.font-xlarge {
+    &.font-large {
       font-size: 3rem;
+    }
+
+    &.font-xlarge {
+      font-size: 3.5rem;
     }
   }
 
-  .lesson-controls {
-    flex-direction: column;
+  // FABs float over content at the screen edges, per DESIGN.md's mobile rule.
+  .nav-fab {
+    position: fixed;
+    bottom: 1.5rem;
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    background: $color-background;
+
+    &.prev-fab {
+      left: 1rem;
+    }
+
+    &.next-fab {
+      right: 1rem;
+    }
   }
 
-  .control-button {
-    width: 100%;
+  .plate-controls {
+    padding: 1rem 1.25rem;
+
+    .control-button {
+      flex: 1 1 100%;
+    }
   }
 }

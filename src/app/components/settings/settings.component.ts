@@ -50,5 +50,9 @@ export class SettingsComponent {
   setLanguage(languageValue: string): void {
     this.languageService.setLanguage(languageValue);
   }
+
+  getLanguageSpecimen(value: string): string {
+    return value === 'hindi' ? 'अ' : 'ੳ';
+  }
 }
 

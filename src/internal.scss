@@ -45,6 +45,8 @@ $color-base-blue-alpha-05: rgb(33 150 243 / 5%);
 $color-base-blue-alpha-10: rgb(33 150 243 / 10%);
 $color-base-blue-alpha-15: rgb(33 150 243 / 15%);
 $color-base-gold-alpha-05: rgb(255 215 0 / 5%);
+$color-base-white-alpha-25: rgb(255 255 255 / 25%);
+$color-base-white-alpha-80: rgb(255 255 255 / 80%);
 $color-base-white-alpha-60: rgb(255 255 255 / 60%);
 /* stylelint-enable */
 
@@ -110,6 +112,15 @@ $color-shadow-sm: 0 2px 8px $color-shadow;
 $color-shadow-md: 0 4px 12px $color-shadow;
 $color-shadow-lg: 0 8px 32px $color-shadow;
 $color-shadow-hover: 0 4px 16px $color-primary-alpha-30;
+$color-ring-selected: inset 0 0 0 1px var(--primary-color);
 $color-outline-focus: 2px solid $color-primary;
 /* stylelint-disable-next-line declaration-property-value-disallowed-list */
 $color-gradient-primary: linear-gradient(135deg, $color-primary, $color-primary-hover);
+
+// Graded-paper tier washes: the results card ground, one per verdict tier.
+/* stylelint-disable declaration-property-value-disallowed-list */
+$color-gradient-results-info: linear-gradient(135deg, $color-base-blue-alpha-05, var(--card-background) 55%);
+$color-gradient-results-gold: linear-gradient(135deg, $color-base-gold-alpha-05, var(--card-background) 55%);
+$color-gradient-results-success: linear-gradient(135deg, $color-base-green-alpha-05, var(--card-background) 55%);
+$color-gradient-results-warning: linear-gradient(135deg, $color-base-orange-alpha-05, var(--card-background) 55%);
+/* stylelint-enable declaration-property-value-disallowed-list */

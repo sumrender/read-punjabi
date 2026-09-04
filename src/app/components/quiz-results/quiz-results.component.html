@@ -1,45 +1,35 @@
-<div class="results-container">
-  <div class="results-card" [class]="performanceLevel()">
-    <div class="trophy-icon">
-      @switch (performanceLevel()) {
-        @case ('excellent') {
-          <span class="icon">🌟</span>
-        }
-        @case ('great') {
-          <span class="icon">👍</span>
-        }
-        @case ('good') {
-          <span class="icon">📚</span>
-        }
-        @default {
-          <span class="icon">💪</span>
-        }
-      }
-    </div>
+<div class="results-page">
+  <article class="graded-paper" [class]="performanceLevel()">
+    <span class="grade-stamp" aria-hidden="true">{{ stampLabel() }}</span>
 
-    <h1 class="title">Quiz Complete!</h1>
+    <h1 class="paper-title">Quiz Complete!</h1>
 
-    <div class="score-display">
-      <div class="score-primary">
-        <span class="score-number">{{ result()?.score }}</span>
-        <span class="score-total">/ {{ result()?.totalQuestions }}</span>
-      </div>
-      <div class="score-percentage">
-        {{ percentage() }}% First-Try Accuracy
+    <div class="marked-score">
+      <svg class="mark-circle" viewBox="0 0 264 168" fill="none" aria-hidden="true" focusable="false">
+        <path
+          d="M24 88 C 20 46, 76 18, 134 18 C 198 18, 246 44, 244 84 C 242 124, 188 150, 128 148 C 68 146, 28 126, 24 88 C 22 62, 42 36, 80 24" />
+      </svg>
+      <div class="score-display">
+        <div class="score-primary">
+          <span class="score-number">{{ result()?.score }}</span>
+          <span class="score-total">/ {{ result()?.totalQuestions }}</span>
+        </div>
       </div>
     </div>
 
-    <div class="message">
+    <p class="score-percentage">{{ percentage() }}% First-Try Accuracy</p>
+
+    <div class="marker-comment">
       <p>{{ message() }}</p>
     </div>
 
     <div class="actions">
       <button class="btn-retry" (click)="retryQuiz()">
-        🔄 Retry Quiz
+        Retry Quiz
       </button>
       <button class="btn-lessons" (click)="backToLessons()">
-        📖 Back to Lessons
+        Back to Lessons
       </button>
     </div>
-  </div>
+  </article>
 </div>

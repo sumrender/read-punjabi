@@ -1,136 +1,94 @@
 @use "../../../styles.scss" as *;
 
-// Motion (shared vocabulary)
-@include keyframes-fade-in;
-@include keyframes-pulse;
-@include keyframes-shake;
+// ---------------------------------------------------------------------------
+// Multiple choice on the exercise sheet: prompt as the sheet's headline,
+// options as ruled answer tiles that fill with verdict ink when chosen.
+// ---------------------------------------------------------------------------
 
-.question-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
+.question-sheet {
+  @include keyframes-pulse;
+  @include keyframes-shake;
+  @include keyframes-fade-in(-8px);
+
+  animation: fade-in 0.3s ease backwards;
 }
 
 .prompt {
-  text-align: center;
-
   h2 {
+    font-family: var(--native-font-family);
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
     color: $color-text-primary;
-    margin: 0;
+    margin: 0 0 1.5rem;
   }
 }
 
 .options {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 560px;
 }
 
 .option-btn {
-  min-height: 80px;
-  padding: 1.5rem;
+  @include quiz-option-tile;
+}
+
+.option-marker {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: $color-border;
+  transition: background-color 0.2s ease;
+
+  .correct &,
+  .incorrect & {
+    background: $color-white;
+  }
+}
+
+.option-text {
+  flex: 1;
+  font-family: var(--native-font-family);
   font-size: 2rem;
-  font-weight: 500;
-  background: $color-card-background;
-  border: $color-border-thick;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  color: $color-text-primary;
+  font-weight: 600;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
 
-  &:hover:not(:disabled) {
-    background: $color-hover-background;
-    border-color: $color-primary;
-    transform: translateY(-2px);
-    box-shadow: $color-shadow-md;
-  }
+.feedback-icon {
+  flex-shrink: 0;
+  display: inline-flex;
 
-  &:active:not(:disabled) {
-    transform: translateY(0);
-  }
-
-  &.selected {
-    border-width: 3px;
-  }
-
-  &.correct {
-    background: $color-success;
-    border-color: $color-success;
-    color: $color-white;
-    animation: pulse 0.5s ease;
-  }
-
-  &.incorrect {
-    background: $color-error;
-    border-color: $color-error;
-    color: $color-white;
-    animation: shake 0.5s ease;
-  }
-
-  &.disabled {
-    background: $color-disabled;
-    border-color: $color-disabled;
-    color: $color-text-inverse-muted;
-    cursor: not-allowed;
-    opacity: 0.5;
-  }
-
-  .option-text {
-    font-family: var(--native-font-family);
-  }
-
-  .feedback-icon {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    font-size: 1.5rem;
+  svg {
+    width: 20px;
+    height: 20px;
   }
 }
 
 .feedback-message {
-  text-align: center;
-  font-size: 1.25rem;
-  font-weight: 600;
-  padding: 1rem;
-  border-radius: 8px;
-  animation: fade-in 0.3s ease;
+  @include feedback-banner;
 
-  &.correct {
-    background: $color-success-background;
-    color: $color-success;
-  }
+  max-width: 560px;
 
-  &.incorrect {
-    background: $color-error-background;
-    color: $color-error;
+  svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
   }
 }
 
-/* Mobile responsive */
-@media (max-width: 768px) {
-  .question-container {
-    padding: 1rem;
-  }
+// --- Responsive -------------------------------------------------------------
 
+@media (max-width: 768px) {
   .prompt h2 {
     font-size: 1.5rem;
   }
 
-  .options {
-    grid-template-columns: 1fr;
-  }
-
-  .option-btn {
-    min-height: 60px;
-    padding: 1rem;
+  .option-text {
+    font-size: 1.5rem;
   }
 }

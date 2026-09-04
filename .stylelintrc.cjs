@@ -40,6 +40,9 @@ module.exports = {
     ],
 
     /* ✅ Enforce strict color token naming */
-    "scss/dollar-variable-pattern": "^color-[a-z0-9-]+$"
+    "scss/dollar-variable-pattern": "^color-[a-z0-9-]+$",
+
+    /* ✅ Angular emulated-encapsulation piercing selector */
+    "selector-pseudo-class-no-unknown": [true, { ignorePseudoClasses: ["deep"] }]
   }
 };

@@ -1,68 +1,75 @@
-<div class="question-container">
+<div class="question-sheet">
   @if (question.storyTitle) {
-    <div class="story-title">
-      <h2>{{ question.storyTitle }}</h2>
-    </div>
+  <div class="story-title">
+    <h2>{{ question.storyTitle }}</h2>
+  </div>
   }
 
-  <div class="instruction">
+  <div class="sheet-instruction">
     <p>Arrange the story lines in the correct order:</p>
   </div>
 
   <div class="story-lines">
     @for (line of getSortedLines(); track line.originalIndex) {
-      <div 
-        class="story-line"
-        [class.correct]="getLineStatus(line) === 'correct'"
-        [class.incorrect]="getLineStatus(line) === 'incorrect'"
-      >
-        <div class="line-content">
-          <span class="line-text">{{ line.text }}</span>
-        </div>
-        
-        @if (!isCorrect()) {
-          <div class="position-selector">
-            <label for="position-{{ line.originalIndex }}">Position:</label>
-            <select
-              id="position-{{ line.originalIndex }}"
-              [ngModel]="line.assignedPosition"
-              (ngModelChange)="onPositionChange(storyLines().indexOf(line), $event)"
-              [disabled]="showFeedback()"
-            >
-              <option [ngValue]="null">--</option>
-              @for (pos of positions(); track pos) {
-                <option [ngValue]="pos">{{ pos }}</option>
-              }
-            </select>
-          </div>
-        } @else {
-          <div class="position-display">
-            <span class="position-number">{{ line.originalIndex + 1 }}</span>
-          </div>
-        }
+    <div class="story-line" [class.correct]="getLineStatus(line) === 'correct'"
+      [class.incorrect]="getLineStatus(line) === 'incorrect'">
+      <div class="line-content">
+        <span class="line-text">{{ line.text }}</span>
       </div>
+
+      @if (!isCorrect()) {
+      <div class="position-selector">
+        <label class="position-label" for="position-{{ line.originalIndex }}">Position</label>
+        <select
+          id="position-{{ line.originalIndex }}"
+          [ngModel]="line.assignedPosition"
+          (ngModelChange)="onPositionChange(storyLines().indexOf(line), $event)"
+          [disabled]="showFeedback()"
+        >
+          <option [ngValue]="null">--</option>
+          @for (pos of positions(); track pos) {
+          <option [ngValue]="pos">{{ pos }}</option>
+          }
+        </select>
+      </div>
+      } @else {
+      <div class="position-display">
+        <span class="position-number">{{ line.originalIndex + 1 }}</span>
+        <svg class="position-check" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+          <path d="M4 12.5 10 18.5 20 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </div>
+      }
+    </div>
     }
   </div>
 
   @if (!showFeedback() && canSubmit()) {
-    <button class="submit-btn" (click)="submitAnswer()">
-      Submit Answer
-    </button>
+  <button class="submit-btn" (click)="submitAnswer()">
+    Submit Answer
+  </button>
   }
 
   @if (showFeedback()) {
-    <div 
-      class="feedback-message" 
-      [class.correct]="isCorrect()" 
-      [class.incorrect]="!isCorrect()"
-    >
-      {{ isCorrect() ? 'Correct! ✓' : 'Try again - fix the incorrect positions' }}
-    </div>
+  <div class="feedback-message" [class.correct]="isCorrect()" [class.incorrect]="!isCorrect()" role="status">
+    @if (isCorrect()) {
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+      <path d="M4 12.5 10 18.5 20 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </svg>
+    } @else {
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+      <path d="M6 6 18 18M18 6 6 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+    </svg>
+    }
+    {{ isCorrect() ? 'Correct!' : 'Try again - fix the incorrect positions' }}
+  </div>
   }
 
   @if (showFeedback() && !isCorrect()) {
-    <button class="retry-btn" (click)="reset()">
-      Retry
-    </button>
+  <button class="retry-btn" (click)="reset()">
+    Retry
+  </button>
   }
 </div>
