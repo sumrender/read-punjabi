@@ -1,9 +1,9 @@
 @use "../../../styles.scss" as *;
 
 // ---------------------------------------------------------------------------
-// The Graded Paper: the quiz results as the worksheet returned and marked in
-// pen — the score circled in the tier's pen color, an angled grade stamp,
-// the message as the marker's comment on a ruled line.
+// The Graded Paper: the quiz results as the worksheet returned and marked.
+// 4px tier-colored ring (gold / green / saffron / warning), a tier wash, and
+// the score circle in the same pen color. Sharp corners throughout.
 // ---------------------------------------------------------------------------
 
 .results-page {
@@ -17,10 +17,8 @@
   position: relative;
   width: 100%;
   max-width: 640px;
-  border-radius: 24px;
-  border: $color-border-3-info;
-  background: $color-gradient-results-info;
-  box-shadow: $color-shadow-lg;
+  border: $color-border-4-ink;
+  background: $color-card-background;
   padding: 3rem 2.5rem;
   text-align: center;
   display: flex;
@@ -46,8 +44,13 @@
   }
 
   &.needs-practice {
-    border-color: $color-warning;
+    border-color: $color-saffron-deep;
     background: $color-gradient-results-warning;
+  }
+
+  &.info {
+    border-color: $color-info;
+    background: $color-gradient-results-info;
   }
 }
 
@@ -62,11 +65,9 @@
   font-weight: 800;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-
-  /* The word stays ink for legibility; the tier hue rides the border. */
   color: $color-text-primary;
-  border: $color-border-3-info;
-  border-radius: 4px;
+  border: $color-border-thick-info;
+  border-radius: 0;
   padding: 0.5rem 1rem;
   user-select: none;
 
@@ -79,7 +80,7 @@
   }
 
   .needs-practice & {
-    border-color: $color-warning;
+    border-color: $color-saffron-deep;
   }
 }
 
@@ -88,7 +89,7 @@
 .paper-title {
   font-size: 2.5rem;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.15;
   letter-spacing: -0.02em;
   color: $color-text-primary;
   margin: 0 0 1rem;
@@ -140,7 +141,7 @@
   }
 
   .needs-practice & path {
-    stroke: $color-warning;
+    stroke: $color-saffron-deep;
   }
 }
 
@@ -166,7 +167,7 @@
 
 .score-total {
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 700;
   color: $color-text-secondary;
   font-variant-numeric: tabular-nums;
 }
@@ -174,7 +175,8 @@
 .score-percentage {
   font-size: 0.875rem;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   color: $color-text-secondary;
   margin: 0;
 }
@@ -185,7 +187,7 @@
   width: 100%;
   max-width: 26rem;
   margin: 2rem 0 0;
-  border-bottom: 2px solid $color-border;
+  border-bottom: $color-border-thick;
   padding-bottom: 0.75rem;
 
   p {
@@ -208,23 +210,11 @@
 }
 
 .btn-retry {
-  @include button-primary(12px, 0.875rem 2rem);
-
-  /* Dark-theme primary (blue-500) gives white text only 3.68:1 — the
-     documented treatment deepens large CTAs one step on dark. */
-  :host-context([data-theme="dark"]) & {
-    background: $color-base-blue-600;
-
-    &:hover {
-      background: $color-base-blue-700;
-    }
-  }
+  @include button-primary(0, 0.875rem 2rem);
 }
 
 .btn-lessons {
   @include button-ghost(0.875rem 1.5rem);
-
-  border-radius: 12px;
 }
 
 // --- Responsive --------------------------------------------------------------------

@@ -17,18 +17,19 @@
   padding: $padding;
 }
 
-// Clickable-card state ladder: lift on hover/focus, settle on press.
+// Clickable-card state ladder: border thickens on hover/focus, no transform.
 @mixin card-interactive {
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+
   &:hover,
-  &:focus {
-    transform: translateY(-4px);
-    box-shadow: $color-shadow-md;
-    outline: $color-outline-focus;
-    outline-offset: 2px;
+  &:focus-within {
+    border-color: $color-primary;
+    background: $color-hover-background;
   }
 
-  &:active {
-    transform: translateY(-2px);
+  &:focus-visible {
+    outline: $color-outline-focus;
+    outline-offset: 2px;
   }
 }
 
@@ -36,18 +37,17 @@
 // Mobile treatments (size, fixed positioning, backdrop) stay in components.
 @mixin nav-fab {
   background: $color-card-background;
-  border: $color-border-thin;
+  border: $color-border-thick;
   color: $color-text-primary;
   width: 64px;
   height: 64px;
-  border-radius: 50%;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   font-size: 1.5rem;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: $color-shadow-sm;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   flex-shrink: 0;
 
   &:disabled {
@@ -55,55 +55,132 @@
     cursor: default;
 
     /* stylelint-disable-next-line sh-waqar/declaration-use-variable */
-    border: none;
+    border-color: $color-border;
   }
 
-  &:hover:not(:disabled) {
-    background: $color-hover-background;
-    transform: scale(1.1);
-    box-shadow: $color-shadow-md;
-    border-color: $color-primary;
-    color: $color-primary;
+  &:hover:not(:disabled),
+  &:focus-visible:not(:disabled) {
+    background: $color-saffron;
+    border-color: $color-saffron;
+    color: $color-white;
   }
 }
 
 // Bordered secondary action (back buttons, control toggles).
-@mixin button-ghost($padding: 0.5rem 1rem, $background: $color-background) {
+@mixin button-ghost($padding: 0.5rem 1rem, $background: transparent) {
   background: $background;
-  border: $color-border-thin;
+  border: $color-border-thick;
   color: $color-text-primary;
   padding: $padding;
-  border-radius: 4px;
+  border-radius: 0;
   cursor: pointer;
   font-size: 1rem;
-  transition: background-color 0.2s ease;
+  font-weight: 700;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     background: $color-hover-background;
+    border-color: $color-text-primary;
     outline: $color-outline-focus;
     outline-offset: 2px;
   }
 }
 
-// Primary action button (standard scale). Hero-scale primaries
-// (quiz results actions) are bespoke by intent and stay local.
-@mixin button-primary($radius: 4px, $padding: 0.75rem 1.5rem) {
+// Primary action button (action accent — Scholar Blue, 4px square corners).
+@mixin button-primary($radius: 0, $padding: 0.75rem 1.5rem) {
   background: $color-primary;
   color: $color-white;
-  border: $color-border-thin;
+  border: $color-border-thick-primary;
   padding: $padding;
   border-radius: $radius;
   cursor: pointer;
   font-size: 1rem;
-  transition: background-color 0.2s ease;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     background: $color-primary-hover;
+    border-color: $color-primary-hover;
     outline: $color-outline-focus;
     outline-offset: 2px;
   }
+}
+
+// Saffron structural button — same shape as primary, but saffron fill.
+// Use for chapter markers, "begin" CTAs at the section opener. Never use
+// for in-flow controls; Scholar Blue owns those.
+@mixin button-saffron($padding: 0.75rem 1.5rem) {
+  background: $color-saffron;
+  color: $color-white;
+  border: $color-border-thick-saffron;
+  padding: $padding;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    background: $color-saffron-deep;
+    border-color: $color-saffron-deep;
+    outline: $color-outline-focus;
+    outline-offset: 2px;
+  }
+}
+
+// Oversized chapter numeral — Saffron, tabular-nums, display size.
+// Default 6rem; override per-surface via CSS custom properties if needed.
+@mixin chapter-numeral($size: 6rem) {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: $size;
+  font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: $color-saffron;
+  font-variant-numeric: tabular-nums;
+  user-select: none;
+}
+
+// Geometric frame: 2-4px ink border, square corners. The hard-edged
+// container that wraps a specimen. Default 4px ink border.
+@mixin geometric-frame($thickness: 4px, $color: $color-text-primary) {
+  border: $thickness solid $color;
+  border-radius: 0;
+}
+
+// Saffron block — solid filled container holding a chapter numeral.
+// Sized to match the numeral scale; pairs with chapter-numeral.
+@mixin saffron-block {
+  background: $color-saffron;
+  color: $color-white;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Pill badge — only on status/category labels, not on cards.
+@mixin badge-pill($background: $color-primary-alpha-10, $color: $color-text-secondary) {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: $color;
+  background: $background;
+  border-radius: 100px;
+  padding: 0.25rem 0.875rem;
+}
+
+// Saffron-wash pill — for chapter/lesson-type labels.
+@mixin badge-saffron {
+  @include badge-pill($color-saffron-alpha-10, $color-saffron-deep);
 }
 
 // Motion vocabulary. Include at the stylesheet's top level; Angular view
@@ -157,9 +234,8 @@
   }
 }
 
-// Exercise-sheet answer tile: a ruled box that fills with verdict ink when
-// chosen. The selected state thickens the rule via inset shadow (no layout
-// shift); correct/incorrect fill completely, per the state ladder.
+// Exercise-sheet answer tile: a sharp-edged ruled box that fills with verdict
+// ink when chosen. Selected thickens to Scholar Blue; verdict fills.
 @mixin quiz-option-tile {
   display: flex;
   align-items: center;
@@ -167,9 +243,9 @@
   width: 100%;
   min-height: 56px;
   padding: 0.875rem 1.25rem;
-  background: $color-background;
+  background: $color-card-background;
   border: $color-border-thick;
-  border-radius: 12px;
+  border-radius: 0;
   color: $color-text-primary;
   cursor: pointer;
   text-align: left;
@@ -178,7 +254,6 @@
     border-color 0.2s ease,
     background-color 0.2s ease,
     color 0.2s ease,
-    transform 0.2s ease,
     opacity 0.2s ease;
 
   &:disabled {
@@ -189,7 +264,6 @@
   &:hover:not(:disabled),
   &:focus-visible:not(:disabled) {
     border-color: $color-primary;
-    transform: translateY(-2px);
     outline: $color-outline-focus;
     outline-offset: 2px;
   }
@@ -214,24 +288,26 @@
   }
 }
 
-// Verdict echo under an answer: a 10%-alpha wash margin note.
+// Verdict echo under an answer: a wash margin note, no rounded corners.
 @mixin feedback-banner {
   display: flex;
   align-items: center;
   gap: 0.625rem;
   margin-top: 1.25rem;
   padding: 0.875rem 1.25rem;
-  border-radius: 8px;
-  font-weight: 600;
+  border-radius: 0;
+  font-weight: 700;
 
   &.correct {
     background: $color-success-background;
     color: $color-success;
+    border-left: 4px solid $color-success;
   }
 
   &.incorrect {
     background: $color-error-background;
     color: $color-error;
+    border-left: 4px solid $color-error;
   }
 }
 

@@ -2,8 +2,8 @@
 
 // ---------------------------------------------------------------------------
 // The Test Paper: the quiz as a numbered exercise sheet. The page is the
-// sheet — a printed header row (question count, score tally, Stop) over a
-// hairline rule, with the mounted question set on the paper below.
+// sheet — a saffron question-number block on the left, score tally + Stop
+// on the right, hairline rule below.
 // ---------------------------------------------------------------------------
 
 .quiz-sheet {
@@ -32,23 +32,49 @@
 
 .header-row {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
-.question-count {
-  font-size: 0.875rem;
-  letter-spacing: 0.5px;
-  color: $color-text-secondary;
+// Saffron question-number block (left).
+.question-block {
+  background: $color-saffron;
+  color: $color-white;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.125rem;
+  min-width: 9rem;
+}
 
-  .count-strong {
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: $color-text-primary;
-    font-variant-numeric: tabular-nums;
-  }
+.question-block-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.question-block-value {
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: $color-white;
+  font-variant-numeric: tabular-nums;
+}
+
+.question-block-total {
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: $color-white;
+  opacity: 0.7;
+  margin-top: -0.25rem;
 }
 
 .header-tools {
@@ -82,7 +108,7 @@
   }
 
   .tally-slash {
-    stroke: $color-primary;
+    stroke: $color-success;
   }
 }
 
@@ -95,20 +121,22 @@
 
   border-radius: 100px;
   font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   color: $color-text-secondary;
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     color: $color-error;
     border-color: $color-error;
     background: $color-error-background;
   }
 }
 
-// The printed rule under the header.
 .header-rule {
   margin-top: 0.875rem;
-  border-bottom: 2px solid $color-text-primary;
+  border-bottom: $color-border-4-ink;
 }
 
 // --- Question area -------------------------------------------------------------
@@ -130,5 +158,14 @@
 
   .header-tools {
     gap: 0.875rem;
+  }
+
+  .question-block {
+    min-width: 6rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .question-block-value {
+    font-size: 2rem;
   }
 }

@@ -1,10 +1,8 @@
 @use "../../../styles.scss" as *;
 
 // ---------------------------------------------------------------------------
-// The Practice Deck: the flashcard (DESIGN.md's signature component) on its
-// workbook stage — a deck folio header with printed batch position, circular
-// FABs, and a printed ledger of deck actions. The finished state is a
-// deck-complete plate with an authored fanned-cards SVG.
+// The Practice Deck: the flashcard as a 4px ink-framed plate, saffron batch
+// position pill on the folio header, sharp-cornered cards.
 // ---------------------------------------------------------------------------
 
 // Motion (shared vocabulary)
@@ -31,6 +29,7 @@
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+  border-bottom: $color-border-4-ink;
 }
 
 .folio-left {
@@ -46,7 +45,10 @@
   /* stylelint-disable-next-line sh-waqar/declaration-use-variable */
   border: 0;
   color: $color-text-secondary;
-  font-size: 1rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -74,13 +76,18 @@
 }
 
 .folio-position {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  align-self: flex-start;
+  margin-left: 0.5rem;
+  background: $color-saffron;
+  color: $color-white;
+  padding: 0.375rem 0.875rem;
   font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.5px;
-  color: $color-text-secondary;
   font-variant-numeric: tabular-nums;
-  margin: 0;
-  padding-bottom: 0.375rem;
 }
 
 // --- Practice area -----------------------------------------------------------
@@ -105,36 +112,17 @@
 // Flashcard
 .flashcard {
   background: $color-card-background;
-  border-radius: 24px;
-  box-shadow: $color-shadow-lg;
-  border: $color-border-thin;
+  border: $color-border-4-ink;
   width: 100%;
   max-width: 700px;
   min-height: 500px;
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: all 0.3s ease;
-  overflow: hidden;
-
-  // Gradient cap: blue at rest, Correct Green when read.
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 6px;
-    background: $color-gradient-primary;
-    opacity: 0.8;
-  }
+  transition: border-color 0.3s ease;
 
   &.read {
     border-color: $color-success;
-
-    &::before {
-      background: $color-success;
-    }
   }
 }
 
@@ -143,6 +131,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: $color-border-thick;
 }
 
 .badge-type {
@@ -150,13 +139,13 @@
   text-transform: uppercase;
   letter-spacing: 1.5px;
   font-weight: 700;
-  color: $color-text-secondary;
-  background: $color-primary-alpha-10;
+  color: $color-saffron-deep;
+  background: $color-saffron-wash;
   padding: 0.25rem 0.75rem;
   border-radius: 100px;
 }
 
-// Custom Checkbox
+// Custom Checkbox — sharp square.
 .read-toggle {
   display: flex;
   align-items: center;
@@ -171,7 +160,7 @@
     width: 24px;
     height: 24px;
     border: $color-border-thick;
-    border-radius: 6px;
+    border-radius: 0;
     position: relative;
     transition: all 0.2s ease;
 
@@ -206,7 +195,9 @@
   .label-text {
     font-size: 0.875rem;
     color: $color-text-secondary;
-    font-weight: 500;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
 }
 
@@ -221,7 +212,7 @@
 }
 
 .native-text {
-  font-size: 8rem;
+  font-size: 9rem;
   font-weight: 700;
   color: $color-text-primary;
   line-height: 1;
@@ -247,12 +238,15 @@
 .reveal-button {
   /* stylelint-disable-next-line sh-waqar/declaration-use-variable */
   background: none;
-  border: $color-border-thin;
+  border: $color-border-thick;
   color: $color-text-secondary;
   padding: 0.5rem 1.5rem;
   border-radius: 100px;
   cursor: pointer;
   font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   transition: all 0.2s ease;
 
   &:hover,
@@ -286,17 +280,16 @@
   padding: 1.5rem;
   display: flex;
   justify-content: center;
-  border-top: $color-border-thin;
+  border-top: $color-border-thick;
   background: $color-hover-background;
 }
 
 .audio-fab {
   width: 56px;
   height: 56px;
-  border-radius: 50%;
+  border-radius: 0;
   background: $color-primary;
-  /* stylelint-disable-next-line sh-waqar/declaration-use-variable */
-  border: none;
+  border: $color-border-thick-primary;
   color: $color-white;
   display: flex;
   align-items: center;
@@ -304,46 +297,42 @@
   cursor: pointer;
   font-size: 1.25rem;
   transition: all 0.2s ease;
-  box-shadow: $color-shadow-md;
 
   &:hover {
-    transform: scale(1.05);
     background: $color-primary-hover;
-    box-shadow: $color-shadow-lg;
   }
 
   /* Dark-theme primary (blue-500) gives white text only 3.68:1 — the
      documented treatment deepens filled controls one step on dark. */
   :host-context([data-theme="dark"]) & {
     background: $color-base-blue-600;
+    border-color: $color-base-blue-600;
 
     &:hover {
       background: $color-base-blue-700;
+      border-color: $color-base-blue-700;
     }
   }
 
   &.playing {
-    animation: audio-pulse 1.5s infinite;
     background: $color-success;
+    border-color: $color-success;
+    animation: audio-pulse 1.5s infinite;
   }
 }
 
-// Audio FAB playing pulse: scale plus shadow breathing — bespoke, do not
-// replace with the shared scale-only pulse.
+// Audio FAB playing pulse.
 @keyframes audio-pulse {
   0% {
     transform: scale(1);
-    box-shadow: $color-shadow-sm;
   }
 
   70% {
     transform: scale(1.05);
-    box-shadow: $color-shadow-md;
   }
 
   100% {
     transform: scale(1);
-    box-shadow: $color-shadow-sm;
   }
 }
 
@@ -367,6 +356,9 @@
     border: none;
     color: $color-text-secondary;
     font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     cursor: pointer;
     text-decoration: underline;
     text-underline-offset: 4px;
@@ -399,12 +391,10 @@
   padding: 3rem 1rem;
 }
 
-// Deck-complete plate: authored fanned-cards geometry, not an emoji.
+// Deck-complete plate: 4px ink frame, sharp corners, authored fanned-cards SVG.
 .finished-plate {
   background: $color-card-background;
-  border: $color-border-thin;
-  border-radius: 24px;
-  box-shadow: $color-shadow-lg;
+  border: $color-border-4-ink;
   max-width: 640px;
   width: 100%;
   margin: 0 auto;
@@ -455,35 +445,17 @@
 }
 
 .button-primary {
-  @include button-primary($radius: 8px);
+  @include button-primary(0, 0.75rem 1.5rem);
 
   transition: all 0.2s ease;
 
   &:hover {
-    background: $color-primary-hover;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
   }
 }
 
 .button-secondary {
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-
-  /* stylelint-disable-next-line sh-waqar/declaration-use-variable */
-  background: none;
-  border: $color-border-thin;
-  color: $color-text-primary;
-
-  &:hover,
-  &:focus-visible {
-    border-color: $color-text-secondary;
-    background: $color-hover-background;
-    outline: $color-outline-focus;
-    outline-offset: 2px;
-  }
+  @include button-ghost(0.75rem 1.5rem);
 }
 
 // --- Loading spinner -----------------------------------------------------------
@@ -491,7 +463,7 @@
 .spinner {
   width: 40px;
   height: 40px;
-  border: $color-border-3-border;
+  border: $color-border-thick;
   border-top-color: $color-primary;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
@@ -553,7 +525,7 @@
   }
 
   .native-text {
-    font-size: 5rem;
+    font-size: 6rem;
   }
 
   .card-header,

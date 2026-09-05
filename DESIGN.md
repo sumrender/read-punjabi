@@ -168,123 +168,127 @@ components:
 
 ## Overview
 
-**Creative North Star: "The First Reader's Workbook"**
+**Creative North Star: "The Bilingual Poster"**
 
-Read Punjabi looks like a well-set first workbook: paper-clear pages, generous type, and one patient ink color that shows you where to act. Nothing on a page competes with the thing being learned — a Gurmukhi glyph at reading size sits at the center of the composition, and every piece of interface around it is quiet, ordered, and obviously functional. The system borrows the emotional register of a good textbook: supportive structure, no judgment, no noise.
+Read Punjabi is a poster on a warm-cream wall: oversized chapter numbers hold the page's skeleton, the Gurmukhi (or Devanagari) glyph sits as the hero in a hard-edged frame, and the rest of the page — labels, descriptions, controls — is set as small, calm secondary voice. The page's confidence comes from scale contrast (a 6rem saffron numeral beside a 1rem instruction line) and from warm cultural anchors (saffron + ink on cream) rather than from rounded chrome. Nothing is generic; nothing is decorative for its own sake.
 
-Density is low and rhythm is predictable: one container, generous section spacing (2–3rem), centered content, mobile-first. Interaction is "soft, patient, precise" — 0.2s eased transitions, gentle hover lifts, instant but calm feedback. The voice is warm, plain, and encouraging; the visuals follow the same rule. The inner pages carry the metaphor onto full printed sheets — a unit divider, a lesson plate, a numbered test paper, a graded worksheet, a practice deck, an inside cover — all drawn with the same quiet print language: hairline rules, dotted leaders, 2px ink rules, and authored SVG linework standing in for decoration. Celebration exists (gold, a subtle gradient wash) but only as the honest final beat of a completed quiz — never as ambient gamification.
+The system introduces two complementary accents that work as one: **Scholar Blue** (the original) marks learning actions and remains the single interaction accent; **Saffron** is the structural warm accent — chapter numerals, diptych blocks, frame washes. The two meet on the home page's bilingual poster (Scholar Blue links, Saffron block, cream paper) and never on a single element.
+
+The four colors are: cream paper (#FBF5E5), ink (#1A1A1A), Scholar Blue (#2563eb), and Saffron (#E76F3A). Dark mode inverts the paper/ink and shifts saffron one step warmer — same relationships, night setting. Feedback colors (green / red / orange / gold) are still traffic-lights, never decorative. The native script (Noto Sans Gurmukhi / Devanagari) is set at display scale in every context it appears; it is the page's typographic event, not its chrome.
 
 **Key Characteristics:**
 
-- Paper-clear light theme and true-night dark theme; both driven by one semantic variable set
-- One accent (Scholar Blue) for action and focus; traffic-light colors reserved for learning verdicts
-- Native script always set in self-hosted Noto Sans Gurmukhi/Devanagari at display sizes
-- Flat surfaces at rest; shadow appears as a response to state
-- Soft radius ladder (4 → 8 → 12 → 24px) with pill badges and circular navigation FABs
-- A single 768px breakpoint collapses every layout to a single centered column
-- Structure is printed, not boxed: ruled specimen indexes, dotted leaders, and 2px ink top rules carry hierarchy; icons and marks are authored inline SVG, never emoji
+- **Saffron as the structural accent**, Scholar Blue as the action accent; the two never appear on the same element.
+- **Cream paper (#FBF5E5) light theme, deep ink (#1A1409) dark theme** — never pure white or pure black; the page always reads as paper, not screen.
+- **Oversized chapter numerals (4–8rem, 700 weight, tabular)** anchor every list page; numerals carry hierarchy before any text does.
+- **Hard-edged geometric frames** around every specimen — 2–4px ink or saffron borders, square or 2px-radius corners, no soft shadows on cards.
+- **Diptych compositions** on hero surfaces — a saffron or ink block holding a numeral on one side, a framed specimen on the other, divided by a 2px hairline.
+- **Flat surfaces with one permitted shadow per surface**: the flashcard, the lesson plate, the graded paper, and the home poster each get one soft shadow as a printed drop; nothing else casts.
+- **Sans-serif UI stack** + Noto Sans Gurmukhi / Devanagari for native content; the contrast is purely scale, not typeface.
+- **Sharpened radius ladder**: 2px on cards, 4px on buttons, 0px on geometric frames — soft pills reserved for badges.
+- **Two breakpoints** (768px, 480px) collapse every multi-column layout to one and put mobile navigation on screen edges; the diptych stacks specimen-above-numeral on small screens.
+- **Decorative geometry is authored inline SVG** — ornamental ticks, frame corners, bilingual arrows — never emoji.
+- **Audio, celebration, and gamification remain unchanged**: gold only on the Excellent tier, audio controls hidden until assets exist, no streaks or badges anywhere.
 
 ## Colors
 
-The palette is a scholarly neutral world — white paper, gray ink, gray rule-lines — with exactly one accent and a fixed set of teaching feedback colors. Dark mode is not a dimmed version of light; it swaps to a true night scheme with its own ramps.
+The palette is a bilingual-poster world — cream paper, ink, Scholar Blue, and Saffron, with a fixed set of teaching feedback colors. Dark mode is not a dimmed version of light; it swaps the paper and ink to night values and shifts saffron one step warmer. Two accents are intentional: Scholar Blue (action) and Saffron (structure). They are deliberate companions, never teammates — they never appear on the same element.
 
 ### Primary
 
-- **Scholar Blue** (#2563eb, hover #1d4ed8): the only accent. Marks learning actions — Start Quiz, play audio, pressed toggles, selected answers, focus rings, the gradient cap on the flashcard. Dark theme shifts it one step brighter to #3b82f6 (hover #2563eb). It is a link-color blue: trustworthy, unobtrusive, never decorative.
-- **Notice Blue** (#2196f3): informational feedback only — the "good effort" tier on quiz results and info-tinted surfaces (10% alpha wash). Not a second accent.
+- **Scholar Blue** (#2563eb, hover #1d4ed8): the action accent. Marks learning actions — Begin buttons, play audio, pressed toggles, selected answers, focus rings. Dark theme shifts it one step brighter to #3b82f6 (hover #2563eb). It is a link-color blue: trustworthy, unobtrusive, never decorative.
+- **Saffron** (#E76F3A, deep #C8541A, wash #FBE9D7): the structural accent. Marks chapter numerals, diptych blocks, frame washes, and the home poster's hero block. It carries hierarchy, never interaction. Dark theme shifts it one step warmer to #F08650 (deep #E76F3A). It is the cultural anchor: a warm orange that reads as paper and as India without being literal.
 
-### Secondary
+### The Two-Accent Rule
 
-None. The system deliberately has exactly one accent. Where a second color wants to appear, it is either Scholar Blue or a semantic feedback color.
-
-### Tertiary
-
-None.
+Scholar Blue is the action accent. Saffron is the structural accent. They appear together only in the same composition (page), never on the same element. A button is Scholar Blue or Saffron, never a mix. A chapter marker is Saffron; a link inside it is Scholar Blue. This is the system's complementarity rule.
 
 ### Neutral
 
-- **Ink** (#1f2937): primary text, light theme. **Night Text** (#f9fafb) is its dark-theme counterpart.
-- **Quiet Text** (#6b7280): secondary text — descriptions, transliterations, inactive labels.
-- **Faint Text** (#9ca3af): tertiary text — hints and de-emphasized metadata.
-- **Paper** (#ffffff): page background, light theme; also the text color on filled primary/feedback surfaces.
-- **Workbook Page** (#f9fafb): card and raised-surface background, light theme; **Night Page** (#1f2937) in dark.
-- **Highlight Hover** (#f3f4f6): hover wash; **Night Hover** (#374151) in dark.
-- **Rule Line** (#e5e7eb): all 1px borders and dividers; dark theme uses #374151.
-- **Night** (#111827): dark-theme page background and the browser `theme-color`.
-- **Pencil Gray** (#9e9e9e): disabled controls only.
+- **Ink** (#1A1A1A): primary text, light theme. **Paper** (#F8F1DC) is its dark-theme counterpart.
+- **Soft Ink** (#4A4640): secondary text — descriptions, transliterations, inactive labels. Dark theme: #B7AC8E.
+- **Rule** (#1A1A1A at 12% alpha): all 1px borders and dividers; dark theme uses #F8F1DC at 16% alpha.
+- **Cream Paper** (#FBF5E5): page background, light theme; **Deep Ink** (#1A1409) is the dark-theme page background.
+- **Hover** (#1A1A1A at 4% alpha): wash on interactive rows; dark theme #F8F1DC at 6%.
 
 ### Feedback (teaching traffic-lights)
 
-- **Correct Green** (#4caf50): right answers, completed practice (flashcard "read" state and its top bar).
-- **Mistake Red** (#f44336): wrong answers, exit destructive hover.
-- **Practice Orange** (#ff9800, hover #f57c00): "keep learning" verdict tier and warning states.
-- **Celebration Gold** (#ffd700): the single highest tier of quiz results — the "Excellent" border, its gradient wash, and the pen that circles the score. Used nowhere else.
+- **Correct Green** (#4caf50): right answers, completed practice.
+- **Mistake Red** (#f44336): wrong answers.
+- **Practice Orange** (#ff9800, hover #f57c00): keep-learning tier and warning states.
+- **Celebration Gold** (#ffd700): the single highest tier of quiz results — only place it appears.
 
-All feedback colors pair a saturated stroke/text with a 10%-alpha (15% in dark) background wash of the same hue. On filled verdict surfaces the ink flips to Paper, with white at 25% (solved-number discs), 60% (muted counters), and 80% (labels on red) as the muted steps.
+Feedback colors pair a saturated stroke/text with a 10%-alpha wash of the same hue (15% in dark).
 
 ### Named Rules
 
-**The One Ink Rule.** Scholar Blue is the only accent on any screen. It marks where the learner acts. Everything else is ink, paper, or a verdict.
+**The Two-Accent Rule.** Scholar Blue and Saffron are the only two accents. Scholar Blue acts; Saffron structures. They never meet on a single element.
 
-**The Traffic-Light Rule.** Green, red, orange, and gold exist to answer the learner's "how did I do?" — never to decorate, never for marketing moments, never on navigation.
+**The Cream-Paper Rule.** Light theme is cream (#FBF5E5), never #fff. Dark theme is deep ink (#1A1409), never #000. The page is paper at all times.
 
 ## Typography
 
 **Display Font:** System UI stack (`-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif`)
 **Body Font:** Same system stack
-**Script Font:** Noto Sans Gurmukhi (Punjabi course) / Noto Sans Devanagari (Hindi course) — self-hosted variable fonts (weight 100–900) with full Latin coverage, so transliterations render in-family without fallback
+**Script Font:** Noto Sans Gurmukhi (Punjabi course) / Noto Sans Devanagari (Hindi course) — self-hosted variable fonts (weight 100–900) with full Latin coverage.
 
-**Character:** An invisible, native-feeling UI voice so the *script being learned* is the only typographic event on the page. The learner's eye should never have to parse a styled UI font; it should land directly on Gurmukhi set like a display face.
+**Character:** A confident, scale-driven UI voice. The system communicates hierarchy through size contrast, not through typeface choice. Two weights (700 for display, 400 for body) carry the entire range; everything else is size and tracking.
 
 ### Hierarchy
 
-- **Display** (700, 2.5rem — 2rem under 768px): page titles only (home h1, quiz results title).
-- **Headline** (700, 2rem): section pages (level h1, settings h1, quiz question prompt).
-- **Title** (600, 1.5rem): card titles, group headings, result messages (1.75rem inside the results card).
-- **Body** (400, 1rem, 1.6 line-height): all UI copy, descriptions, options in transliteration. Root is 16px (14px under 768px).
-- **Label** (700, 0.75rem, +1.5px letter-spacing, uppercase): type badges ("LETTER", "WORD"); the looser 0.5px variant appears on the lesson-type tag, form-line labels, the score label, and sheet instructions (0.875rem, Faint Text).
-- **Micro Label** (700, 0.6875rem, +1.5px letter-spacing, uppercase): the smallest printed voice — specimen-index cell badges, story position labels.
-- **Emphasized Body** (600–700, 1.0625rem): the printed emphasis step between body and title — practice-note titles, exercise-row titles, deck-complete copy.
-- **Native Glyph** (700, 2–5rem scale, Gurmukhi/Devanagari): the item being learned. Size follows the user's font-size setting (small 2rem → xlarge 5rem); the practice flashcard and the home facing page show it at 8rem (5rem mobile, 4rem long text). Transliteration renders under it at 1.5rem italic, Quiet Text.
-- **Native Lesson Text** (700, 3–6rem scale on the lesson plate by font-size setting; 2–3.5rem mobile): the same role as the Native Glyph, set on the plate's baseline rule. Specimen-index cells set their native content at 2.25rem (1.875rem mobile); the settings course specimen runs 1–1.875rem at true size.
-- **Display Numeral** (700, 6rem, line-height 0.85, −0.04em tracking, tabular-nums): the unit opener's margin numeral — the system's display maximum, printed in Scholar Blue.
+- **Hero Specimen** (700, 12–18rem by surface; 5rem on mobile at 480px): the page's native glyph on the home poster. Sets the product's typographic ceiling.
+- **Display Numeral** (700, 6rem, line-height 0.85, −0.04em tracking, tabular-nums): the chapter numeral — system's structural maximum, set in Saffron.
+- **Headline** (700, 2.5rem — 2rem under 768px): page titles (home h1, quiz results title, settings).
+- **Title** (700, 1.5rem): card titles, group headings, result messages.
+- **Body** (400, 1rem, 1.55 line-height): all UI copy, descriptions, options in transliteration. Root is 16px (14px under 768px).
+- **Label** (700, 0.75rem, +1.5px letter-spacing, uppercase): type badges ("LETTER", "WORD"); the 0.5px variant appears on lesson-type tags, form-line labels, score labels.
+- **Micro Label** (700, 0.6875rem, +1.5px letter-spacing, uppercase): the smallest printed voice — specimen cell badges, story position labels.
+- **Emphasized Body** (700, 1.0625rem): the emphasis step — practice-note titles, exercise-row titles, deck-complete copy.
+- **Native Glyph** (700, 2–5rem scale by font-size setting; 12–18rem on the home poster; 4–8rem on lesson plates and flashcards). Transliteration renders below in 1.5rem italic, Soft Ink.
+- **Native Lesson Text** (700, 3–6rem by font-size setting on the lesson plate; 2–3.5rem mobile).
 - **Score Fraction** (700, 5rem, −0.03em tracking, tabular-nums, over a 2rem/600 total): the graded paper's marked score.
 
-The user-selectable base size (`data-font-size`: small 0.875rem → xlarge 1.5rem) scales the entire rem-based system, not just the native text.
+The user-selectable base size (`data-font-size`: small 0.875rem → xlarge 1.5rem) scales the entire rem-based system, not just native text.
 
 ### Named Rules
 
 **The Script Leads Rule.** Every Gurmukhi/Devanagari string is set in the native font family — never the UI stack, never italic, never small. The interface never relies on the script alone to communicate: labels and instructions are always in the learner's reading language (English/transliteration).
 
+**The Scale Carries Rule.** Hierarchy is expressed through size and tracking, not through font choice or weight variation. Two weights (700, 400) and a wide size range (0.6875rem – 18rem) carry the entire system.
+
 ## Layout
 
-One centered column per page inside a 1200px max-width container (Settings narrows to 600px, the quiz sheet and its questions to 800px, the graded paper and deck-complete plate to 640px, the practice flashcard and lesson plate to 700px). Page padding is 2rem 1rem, dropping to 1rem under 768px. Content is center-aligned by default; headers on list pages align left with their back button.
+The home poster is the system's structural template: a diptych where a saffron block holding an oversized numeral anchors one column and a cream-framed specimen anchors the other. Inner pages adapt the same diptych at smaller scales — a saffron chapter plate on the lesson list, a saffron question number on the test paper, a saffron tier ring on the graded paper.
 
-The level page is the one two-column spread: a sticky margin column (4fr, pinned 5.5rem from the top) beside the specimen index (8fr) with a 3rem gap. The margin column carries the oversized unit numeral, the unit title, and Random Practice as a margin note; under 768px it un-sticks and flows as a wrapped row above the index.
+One centered container per page: 1200px for navigation pages, 700px for lesson plates and flashcards, 800px for test papers, 640px for the graded paper and deck-complete plate, 600px for settings. Page padding is 2.5rem 1rem, dropping to 1rem under 768px. Headers on list pages align left with their back button.
 
-Rhythm is a fixed ladder: 1rem within components, 1.5–2rem between a heading and its content, 3rem between page sections. Grids are `auto-fit` with minimums tuned to content — level cards 280px, quiz cards 200px, letter tiles 120px, gaps 1–1.5rem.
+Diptych columns typically run 0.4fr / 1fr (numeral block / specimen) on hero surfaces and 4fr / 8fr (margin / body) on list pages. The numeral column carries Saffron at display size and never wraps to multiple lines; the specimen column always centers.
 
-A single 768px breakpoint collapses every multi-column layout to one column, converts control rows to stacked full-width buttons, and moves navigation FABs to fixed screen edges (48px lesson / 40px practice, floating over content); on the home spread the facing page leads and the contents spine follows. A 480px breakpoint further shrinks native display text on the flashcard.
+Rhythm is a fixed ladder: 1rem within components, 1.5–2rem between a heading and its content, 3rem between page sections. Grids are `auto-fit` with minimums tuned to content — specimen cells 150px (124px mobile), exercise rows full-width.
+
+A single 768px breakpoint collapses every diptych to one column, moving the numeral above the specimen (so the numeral leads on mobile), converts control rows to stacked full-width buttons, and moves navigation FABs to fixed screen edges (48px lesson / 40px practice, floating over content). A 480px breakpoint further shrinks the hero specimen.
 
 ## Elevation & Depth
 
-**The Flat-By-Default Rule.** Surfaces are flat at rest. A shadow appears only as a response to state — hover lift, active practice, or a genuinely floating surface. The exceptions are deliberate, one per "this surface is the page" moment: the flashcard (shadow-lg, it is the practice), the results card (shadow-lg, it is the moment), the home facing page (shadow-lg, it is the flashcard's kin), the lesson plate (shadow-lg, it is the flashcard's sibling on every lesson), and the deck-complete plate (shadow-lg, it is the practice's closing moment).
+**The One-Shadow Rule.** Surfaces are flat at rest. A single soft shadow is permitted on surfaces that genuinely need to lift: the home poster, the lesson plate, the flashcard, the graded paper, the deck-complete plate — one per "this surface is the page" moment. Everything else is flat.
 
 ### Shadow Vocabulary
 
-- **Rest** (`0 2px 8px rgb(0 0 0 / 10%)`): floating chrome only — FABs, the sticky nav. Never on static cards.
-- **Lift** (`0 4px 12px rgb(0 0 0 / 10%)`): hover response on cards, FABs at scale.
-- **Float** (`0 8px 32px rgb(0 0 0 / 10%)`): flashcard, results card, home facing page, lesson plate, deck-complete plate.
-- **Selected Ring** (`inset 0 0 0 1px var(--primary-color)`): the chosen quiz tile's state mark, drawn inside the border so nothing shifts.
-- **Action Glow** (`0 4px 16px rgb(37 99 235 / 30%)`): primary button hover only.
+- **Drop** (`0 6px 24px rgb(26 26 26 / 12%)`): the single permitted shadow — on the four hero surfaces only.
+- **No hover lift** on cards; cards express interactivity through color and border thickening.
 
-Dark theme strengthens all shadows to 30% black and pairs them with lighter card surfaces rather than deeper ones — depth reads through contrast, not darkness.
+Dark theme strengthens the drop to 22% black; light theme holds at 12% — depth reads through contrast against cream, not darkness.
 
 ## Shapes
 
-A soft radius ladder, never sharp corners: 4px on buttons and inputs, 8px on cards and feedback banners, 12px on quiz option tiles and prominent result actions, 24px on the "moment" surfaces (flashcard, results card, home facing page). Two recurring silhouettes complete the language: the pill (100px) for badges and reveal buttons, and the circle (50%) for navigation and audio FABs.
+A sharpened radius ladder that reads as paper, not app chrome:
 
-Borders are 1px Rule Line at rest. Interactivity is expressed by thickening: quiz options and story slips carry a 2px border that thickens to Scholar Blue when chosen (selected also draws the 1px inset Selected Ring); verdict states fill completely. Two heavier printed statements top the ladder: a 2px Ink rule marks the head of a printed list (the test paper's header, the Exercises block, the settings form lines), and the graded paper is the deepest border statement — a 3px tier-colored ring matched to the score tier. The test paper and graded paper also ground themselves in a 135deg tier wash (10%-alpha verdict into Workbook Page, fading out by 55%) — gold, green, blue (Notice Blue info), or orange.
+- **0px** — geometric frames around specimens, chapter blocks, the page border itself.
+- **2px** — most cards (lesson plate, settings row, quiz container), option tiles.
+- **4px** — primary buttons, secondary buttons.
+- **Pill (100px)** — only on badges, reveal buttons, status pills; never on cards.
+
+Borders are 1px Rule at rest. Interactivity is expressed through border color (Scholar Blue on selected/pressed) or fill (Saffron block on chapter, Scholar Blue on primary). Two heavier printed statements carry the system: a 4px ink or saffron frame for hero specimens, and a 2px ink top rule that heads printed lists (test paper header, settings form lines, exercises block). The graded paper is the deepest border statement — a 4px tier-colored ring matched to the score tier (gold / green / Saffron-warning).
 
 ## Components
 

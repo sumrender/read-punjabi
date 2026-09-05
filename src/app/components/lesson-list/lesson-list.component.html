@@ -16,7 +16,10 @@
 
   <div class="unit-spread">
     <aside class="unit-margin">
-      <span class="unit-numeral" aria-hidden="true">{{ level() }}</span>
+      <div class="unit-numeral">
+        <span class="unit-numeral-label">Chapter</span>
+        <span class="unit-numeral-value">{{ level() | number: '2.0-0' }}</span>
+      </div>
       <div class="unit-naming">
         <h1 class="unit-title">{{ levelTitle() }}</h1>
       </div>

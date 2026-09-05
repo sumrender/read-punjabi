@@ -7,11 +7,31 @@
 // ==========================================================================
 
 /* stylelint-disable color-no-hex, declaration-property-value-disallowed-list, color-function-notation, alpha-value-notation, color-hex-length, scss/dollar-variable-empty-line-before, max-line-length */
+
+// Brand: Scholar Blue (action accent, primary) + Saffron (structural accent).
 $color-base-blue-400: #2196f3;
 $color-base-blue-500: #3b82f6;
 $color-base-blue-600: #2563eb;
 $color-base-blue-700: #1d4ed8;
 
+// Saffron — warm cultural anchor, structural accent (numerals, diptych blocks).
+$color-base-saffron: #e76f3a;
+$color-base-saffron-deep: #c8541a;
+$color-base-saffron-dark: #f08650;
+$color-base-saffron-wash: #fbe9d7;
+$color-base-saffron-wash-dark: #5a2f15;
+$color-base-saffron-alpha-10: rgb(231 111 58 / 10%);
+$color-base-saffron-alpha-15: rgb(231 111 58 / 15%);
+
+// Cream paper + ink — the page surface, never pure white or pure black.
+$color-base-cream: #fbf5e5;
+$color-base-cream-soft: #f8f1dc;
+$color-base-deep-ink: #1a1409;
+$color-base-deep-ink-soft: #251c0d;
+$color-base-ink: #1a1a1a;
+$color-base-ink-soft: #4a4640;
+$color-base-paper-dark: #f8f1dc;
+$color-base-paper-soft-dark: #b7ac8e;
 $color-base-gray-50: #f9fafb;
 $color-base-gray-100: #f3f4f6;
 $color-base-gray-200: #e5e7eb;
@@ -30,9 +50,21 @@ $color-base-gold: #ffd700;
 $color-base-white: #fff;
 $color-base-disabled: #9e9e9e;
 
-// Alpha variants
-$color-base-black-alpha-10: rgb(0 0 0 / 10%);
-$color-base-black-alpha-30: rgb(0 0 0 / 30%);
+// Cream ink (for use in dark theme — never black on cream).
+$color-base-cream-rgb: 251, 245, 229;
+$color-base-ink-rgb: 26, 26, 26;
+$color-base-saffron-rgb: 231, 111, 58;
+
+// Alpha variants — explicit rgba so sass parses unambiguously.
+$color-base-black-alpha-10: rgba(0, 0, 0, 0.1);
+$color-base-black-alpha-30: rgba(0, 0, 0, 0.3);
+$color-base-ink-alpha-04: rgba(26, 26, 26, 0.04);
+$color-base-ink-alpha-10: rgba(26, 26, 26, 0.1);
+$color-base-ink-alpha-30: rgba(26, 26, 26, 0.3);
+$color-base-paper-alpha-04: rgba(251, 245, 229, 0.04);
+$color-base-paper-alpha-10: rgba(251, 245, 229, 0.1);
+$color-base-paper-alpha-15: rgba(251, 245, 229, 0.15);
+$color-base-paper-alpha-30: rgba(251, 245, 229, 0.3);
 $color-base-green-alpha-05: rgb(76 175 80 / 5%);
 $color-base-green-alpha-10: rgb(76 175 80 / 10%);
 $color-base-green-alpha-15: rgb(76 175 80 / 15%);
@@ -62,13 +94,20 @@ $color-primary-alpha-10: rgb(var(--primary-color-rgb) / 10%);
 $color-primary-alpha-30: rgb(var(--primary-color-rgb) / 30%);
 /* stylelint-enable declaration-property-value-disallowed-list */
 
+// Saffron (structural accent) — semantic aliases. Use these in components.
+$color-saffron: var(--saffron-color);
+$color-saffron-deep: var(--saffron-deep);
+$color-saffron-wash: var(--saffron-wash);
+$color-saffron-alpha-10: rgb(var(--saffron-rgb) / 10%);
+$color-saffron-alpha-15: rgb(var(--saffron-rgb) / 15%);
 $color-text-primary: var(--text-primary);
 $color-text-secondary: var(--text-secondary);
 $color-text-tertiary: var(--text-tertiary);
-$color-text-inverse: $color-base-white;
-$color-text-inverse-muted: $color-base-white-alpha-60;
+$color-text-inverse: $color-base-paper-dark;
+$color-text-inverse-muted: rgb(251 245 229 / 60%);
 $color-background: var(--background);
 $color-card-background: var(--card-background);
+$color-card-soft: var(--card-soft);
 $color-hover-background: var(--hover-background);
 $color-button-background: var(--button-background);
 $color-border: var(--border-color);
@@ -97,6 +136,7 @@ $color-white: $color-base-white;
 $color-border-thin: 1px solid $color-border;
 $color-border-thick: 2px solid $color-border;
 $color-border-thick-primary: 2px solid $color-primary;
+$color-border-thick-saffron: 2px solid $color-saffron;
 $color-border-thick-success: 2px solid $color-success;
 $color-border-thick-error: 2px solid $color-error;
 $color-border-thick-warning: 2px solid $color-warning;
@@ -108,14 +148,29 @@ $color-border-3-gold: 3px solid $color-gold;
 $color-border-3-success: 3px solid $color-success;
 $color-border-3-info: 3px solid $color-info;
 $color-border-3-warning: 3px solid $color-warning;
-$color-shadow-sm: 0 2px 8px $color-shadow;
-$color-shadow-md: 0 4px 12px $color-shadow;
-$color-shadow-lg: 0 8px 32px $color-shadow;
-$color-shadow-hover: 0 4px 16px $color-primary-alpha-30;
+$color-border-2-ink: 2px solid $color-text-primary;
+$color-border-4-ink: 4px solid $color-text-primary;
+$color-border-4-primary: 4px solid $color-primary;
+$color-border-4-gold: 4px solid $color-gold;
+$color-border-4-success: 4px solid $color-success;
+$color-border-4-warning: 4px solid $color-warning;
+$color-border-4-saffron-deep: 4px solid $color-saffron-deep;
+
+// One permitted shadow — on hero surfaces only. Lighter than the previous
+// system; reads as paper lift, not glass.
+$color-shadow-drop: 0 6px 24px $color-shadow;
+$color-shadow-sm: $color-shadow-drop;
+$color-shadow-md: $color-shadow-drop;
+$color-shadow-lg: $color-shadow-drop;
+$color-shadow-hover: $color-shadow-drop;
 $color-ring-selected: inset 0 0 0 1px var(--primary-color);
 $color-outline-focus: 2px solid $color-primary;
 /* stylelint-disable-next-line declaration-property-value-disallowed-list */
 $color-gradient-primary: linear-gradient(135deg, $color-primary, $color-primary-hover);
+$color-gradient-saffron: linear-gradient(135deg, $color-saffron, $color-saffron-deep);
+
+// Saffron-wash tier ring — the graded paper's framing for the warning tier.
+$color-saffron-wash-tint: $color-saffron-alpha-10;
 
 // Graded-paper tier washes: the results card ground, one per verdict tier.
 /* stylelint-disable declaration-property-value-disallowed-list */
@@ -123,4 +178,5 @@ $color-gradient-results-info: linear-gradient(135deg, $color-base-blue-alpha-05,
 $color-gradient-results-gold: linear-gradient(135deg, $color-base-gold-alpha-05, var(--card-background) 55%);
 $color-gradient-results-success: linear-gradient(135deg, $color-base-green-alpha-05, var(--card-background) 55%);
 $color-gradient-results-warning: linear-gradient(135deg, $color-base-orange-alpha-05, var(--card-background) 55%);
+$color-gradient-results-saffron: linear-gradient(135deg, $color-saffron-alpha-10, var(--card-background) 55%);
 /* stylelint-enable declaration-property-value-disallowed-list */

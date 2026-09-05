@@ -1,217 +1,157 @@
 @use "../../../styles.scss" as *;
 
 // ---------------------------------------------------------------------------
-// The Open Workbook: home as the book's front matter. Left column is the
-// contents spine (printed-contents rows with dotted leaders); right is
-// Level 1's facing page, in the flashcard family.
+// The Bilingual Poster: home as a saffron-and-blue poster on cream paper.
+// Top: brand mark. Middle: a diptych — saffron chapter block on the left,
+// 4px ink-framed specimen on the right. Below: all five chapters as a list.
 // ---------------------------------------------------------------------------
 
-.home-container {
+.home-page {
   @include page-container(1200px, 2.5rem 1rem 3rem);
+  @include keyframes-fade-in(-14px);
 }
 
-// --- Masthead -------------------------------------------------------------
+// --- Masthead ----------------------------------------------------------------
 
 .home-masthead {
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
+  border-bottom: 4px solid $color-text-primary;
+  padding-bottom: 1.5rem;
+  animation: fade-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) backwards;
 
-  h1 {
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+.home-title {
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin: 0 0 0.75rem;
+  color: $color-text-primary;
+
+  @media (max-width: 768px) {
     font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
-    margin: 0 0 0.5rem;
-    color: $color-text-primary;
-  }
-
-  .subtitle {
-    font-size: 1.125rem;
-    color: $color-text-secondary;
-    margin: 0;
   }
 }
 
-// --- The spread -----------------------------------------------------------
+.home-subtitle {
+  font-size: 1.125rem;
+  color: $color-text-secondary;
+  margin: 0;
+  max-width: 36rem;
+}
 
-.spread {
+// --- The Bilingual Poster ----------------------------------------------------
+
+.poster {
   display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-  gap: 3rem;
-  align-items: stretch;
+  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1fr);
+  gap: 0;
+  margin-bottom: 4rem;
+  animation: fade-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.1s backwards;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 }
 
-// --- Contents spine -------------------------------------------------------
-
-.contents {
+// Saffron chapter block (left).
+.poster-numeral {
+  background: $color-saffron;
+  color: $color-white;
+  padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0.5rem 0;
-}
+  align-items: flex-start;
+  gap: 0.5rem;
+  position: relative;
+  min-height: 18rem;
 
-.contents-heading {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: $color-text-primary;
-  margin: 0 0 0.25rem;
-}
-
-.chapter-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.chapter-row {
-  border-bottom: $color-border-thin;
-
-  &:last-child {
-    /* stylelint-disable-next-line sh-waqar/declaration-use-variable */
-    border-bottom: none;
+  @media (max-width: 768px) {
+    min-height: 8rem;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
   }
 }
 
-.chapter-link {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.25rem 0.5rem;
-  text-decoration: none;
-  transition: background-color 0.2s ease;
+.poster-numeral-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $color-white;
+  opacity: 0.85;
 }
 
-.chapter-text {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  min-width: 0;
-  flex: 1;
-  transition: transform 0.2s ease;
-}
-
-.chapter-line {
-  display: flex;
-  align-items: baseline;
-  gap: 0.75rem;
-}
-
-.chapter-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: $color-text-primary;
-  transition: color 0.2s ease;
-}
-
-// Dotted leader, as on a printed contents page, running to the page number.
-.chapter-leader {
-  flex: 1;
-  min-width: 2rem;
-  border-bottom: 1px dotted $color-border;
-  transform: translateY(-4px);
-}
-
-.chapter-page {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: $color-text-secondary;
+.poster-numeral-value {
+  font-size: 9rem;
+  font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
   font-variant-numeric: tabular-nums;
-  transition: color 0.2s ease;
-}
+  color: $color-white;
+  user-select: none;
 
-.chapter-description {
-  font-size: 0.9375rem;
-  color: $color-text-secondary;
-}
-
-.chapter-arrow {
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  color: $color-primary;
-  opacity: 0;
-  transform: translateX(-4px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.chapter-link:hover,
-.chapter-link:focus-visible {
-  background: $color-hover-background;
-
-  .chapter-text {
-    transform: translateX(0.5rem);
-  }
-
-  .chapter-title {
-    color: $color-primary;
-  }
-
-  .chapter-page {
-    color: $color-primary;
-  }
-
-  .chapter-arrow {
-    opacity: 1;
-    transform: translateX(4px);
+  @media (max-width: 768px) {
+    font-size: 4.5rem;
   }
 }
 
-// --- Facing page ----------------------------------------------------------
-
-.facing-page {
+// Cream specimen panel (right) — 4px ink frame, sharp corners.
+.poster-specimen {
   background: $color-card-background;
-  border: $color-border-thin;
-  border-radius: 24px;
-  box-shadow: $color-shadow-lg;
+  border: $color-border-4-ink;
+  display: flex;
+  align-items: stretch;
+}
+
+.poster-specimen-frame {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 2.5rem 2rem;
-  min-height: 480px;
-  position: relative;
-  overflow: hidden;
+  padding: 2rem 2rem 1.5rem;
+  gap: 1.5rem;
 
-  // Gradient cap, as on the practice flashcard.
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 6px;
-    background: $color-gradient-primary;
-    opacity: 0.8;
+  @media (max-width: 768px) {
+    padding: 1.5rem 1.25rem 1.25rem;
   }
 }
 
-.page-badge {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  font-weight: 700;
-  color: $color-text-secondary;
-  background: $color-primary-alpha-10;
-  padding: 0.25rem 0.75rem;
-  border-radius: 100px;
-  margin-bottom: 2rem;
-}
+// --- Specimen ---------------------------------------------------------------
 
 .specimen {
-  min-height: 240px;
+  min-height: 14rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
 }
 
 .specimen-glyph {
   font-family: var(--native-font-family);
-  font-size: 8rem;
+  font-size: 13rem;
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 0.95;
   color: $color-text-primary;
-  animation: specimen-enter 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  animation: fade-in 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+
+  @media (max-width: 768px) {
+    font-size: 7rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 5rem;
+  }
 
   @media (prefers-reduced-motion: reduce) {
     animation: none;
@@ -222,23 +162,14 @@
   font-size: 1.5rem;
   font-style: italic;
   color: $color-text-secondary;
-  margin-top: 0.5rem;
-  animation: specimen-enter 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.05s backwards;
+  animation: fade-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.05s backwards;
+
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+  }
 
   @media (prefers-reduced-motion: reduce) {
     animation: none;
-  }
-}
-
-@keyframes specimen-enter {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -248,161 +179,196 @@
   margin: 0;
 }
 
-// --- Specimen dots --------------------------------------------------------
+// --- Dots ------------------------------------------------------------------
 
-.specimen-dots {
+.poster-dots {
   display: flex;
-  gap: 0.5rem;
-  margin: 1.5rem 0 2rem;
+  gap: 0.625rem;
+  margin: 0.25rem 0 0.5rem;
 }
 
-.specimen-dot {
-  width: 28px;
-  height: 28px;
+.poster-dot {
+  width: 14px;
+  height: 14px;
   padding: 0;
-  border-radius: 50%;
   /* stylelint-disable-next-line sh-waqar/declaration-use-variable */
   background: transparent;
+  border: $color-border-2-ink;
   cursor: pointer;
-  position: relative;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: $color-border-thin;
-    background: $color-card-background;
-    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  &:hover {
+    transform: scale(1.15);
   }
 
-  &:hover::before {
-    border-color: $color-text-tertiary;
-    transform: translate(-50%, -50%) scale(1.2);
-  }
-
-  &.active::before {
-    background: $color-primary;
-    border-color: $color-primary;
+  &.active {
+    background: $color-text-primary;
   }
 }
 
-// --- Primary action -------------------------------------------------------
+// --- Begin CTA (Scholar Blue action accent) --------------------------------
 
-.begin-button {
-  @include button-primary(4px, 1rem 2.75rem);
-
-  display: inline-block;
+.poster-begin {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  background: $color-primary;
+  color: $color-white;
+  border: $color-border-thick-primary;
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
   text-decoration: none;
-  font-size: 1.125rem;
-  font-weight: 600;
-  transition:
-    background-color 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     background: $color-primary-hover;
+    border-color: $color-primary-hover;
     transform: translateY(-2px);
-    box-shadow: $color-shadow-hover;
-  }
-
-  &:active {
-    transform: translateY(0);
+    outline: $color-outline-focus;
+    outline-offset: 2px;
   }
 }
 
-// Dark theme: one step deeper than the system primary so white-on-blue
-// keeps 4.5:1 (white on blue-500 is 3.68:1); hover deepens further, as in
-// light theme.
-:host-context([data-theme="dark"]) .begin-button {
+// Dark theme: deepen the primary one step so white text keeps 4.5:1.
+:host-context([data-theme="dark"]) .poster-begin {
   background: $color-base-blue-600;
+  border-color: $color-base-blue-600;
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     background: $color-base-blue-700;
+    border-color: $color-base-blue-700;
   }
 }
 
-.page-note {
-  font-size: 0.875rem;
+.poster-begin-arrow {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.poster-note {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   color: $color-text-secondary;
-  margin: 1.25rem 0 0;
+  margin: 0;
 }
 
-// --- Responsive -----------------------------------------------------------
+// --- Contents list -----------------------------------------------------------
 
-@media (max-width: 768px) {
-  .home-container {
-    padding: 1.5rem 1rem 2.5rem;
+.contents {
+  margin-top: 1rem;
+}
+
+.contents-heading {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $color-text-secondary;
+  margin: 0 0 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: $color-border-4-ink;
+}
+
+.chapter-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chapter-row {
+  border-bottom: 1px solid $color-border;
+}
+
+.chapter-link {
+  display: grid;
+  grid-template-columns: 5rem 1fr 2rem;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 3.5rem 1fr 1.5rem;
+    padding: 1.25rem 0.25rem;
+    gap: 1rem;
   }
+}
 
-  .home-masthead {
-    margin-bottom: 2rem;
+.chapter-numeral {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: $color-saffron;
+  font-variant-numeric: tabular-nums;
+  transition: color 0.2s ease, transform 0.2s ease;
 
-    h1 {
-      font-size: 2rem;
-    }
-
-    .subtitle {
-      font-size: 1rem;
-    }
+  @media (max-width: 768px) {
+    font-size: 1.875rem;
   }
+}
 
-  .spread {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
+.chapter-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  min-width: 0;
+}
 
-  // Mobile order: the facing page leads, the spine follows.
-  .facing-page {
-    order: -1;
-    min-height: 420px;
-    padding: 2rem 1.25rem;
-  }
+.chapter-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: $color-text-primary;
+  transition: color 0.2s ease;
 
-  .specimen-glyph {
-    font-size: 5rem;
-  }
-
-  .specimen-transliteration {
+  @media (max-width: 768px) {
     font-size: 1.25rem;
   }
-
-  .begin-button {
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
-
-  .chapter-link {
-    padding: 1rem 0.25rem;
-  }
 }
 
-@media (max-width: 480px) {
-  .specimen-glyph {
-    font-size: 4rem;
-  }
+.chapter-description {
+  font-size: 1rem;
+  color: $color-text-secondary;
+  line-height: 1.5;
+}
 
-  .specimen-transliteration {
-    font-size: 1.125rem;
-  }
+.chapter-arrow {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  color: $color-primary;
+  opacity: 0.4;
+  transform: translateX(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
 
-  .facing-page {
-    min-height: 380px;
+.chapter-link:hover,
+.chapter-link:focus-visible {
+  background: $color-hover-background;
+  outline: $color-outline-focus;
+  outline-offset: -4px;
+
+  .chapter-numeral {
+    color: $color-saffron-deep;
+    transform: translateX(4px);
   }
 
   .chapter-title {
-    font-size: 1.125rem;
+    color: $color-primary;
   }
 
-  .chapter-page {
-    font-size: 1.125rem;
+  .chapter-arrow {
+    opacity: 1;
+    transform: translateX(4px);
   }
 }

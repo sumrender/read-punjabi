@@ -11,9 +11,11 @@
   } @else {
     <header class="paper-header">
       <div class="header-row">
-        <span class="question-count" aria-live="polite">
-          Question <span class="count-strong">{{ progress.current }}</span> of {{ progress.total }}
-        </span>
+        <div class="question-block">
+          <span class="question-block-label">Question</span>
+          <span class="question-block-value">{{ progress.current | number: '2.0-0' }}</span>
+          <span class="question-block-total">/ {{ progress.total }}</span>
+        </div>
 
         <div class="header-tools">
           <span class="score-line" [attr.aria-label]="'Score: ' + currentScore + ' correct'">

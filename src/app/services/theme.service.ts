@@ -61,7 +61,7 @@ export class ThemeService {
   }
 
   /**
-   * Load theme from localStorage or default to 'light'
+   * Load theme from localStorage or default to 'dark'
    */
   private loadTheme(): Theme {
     if (!isPlatformBrowser(this.platformId)) {

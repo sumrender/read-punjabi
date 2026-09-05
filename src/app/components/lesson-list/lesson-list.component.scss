@@ -1,10 +1,10 @@
 @use "../../../styles.scss" as *;
 
 // ---------------------------------------------------------------------------
-// The Unit Opener: level page as a textbook's unit divider. Margin column
-// carries the oversized printed numeral, the unit title, and Random Practice
-// as a margin note; the body is a specimen index of real lesson cells with
-// Exercises as printed dotted-leader rows.
+// The Unit Opener: level page as a textbook's unit divider — a sticky
+// saffron chapter block on the left carrying the unit numeral, the unit
+// title, and Random Practice; on the right, a specimen index of real lesson
+// cells plus the Exercises block.
 // ---------------------------------------------------------------------------
 
 .unit-page {
@@ -37,7 +37,7 @@
 }
 
 .back-button {
-  @include button-ghost;
+  @include button-ghost(0.5rem 1rem);
 }
 
 // --- Loading / empty -------------------------------------------------------
@@ -64,7 +64,7 @@
   align-items: start;
 }
 
-// --- Margin column ---------------------------------------------------------
+// --- Saffron margin column -------------------------------------------------
 
 .unit-margin {
   position: sticky;
@@ -73,12 +73,33 @@
   flex-direction: column;
 }
 
+// Saffron block holding the chapter numeral.
 .unit-numeral {
+  background: $color-saffron;
+  color: $color-white;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.25rem;
+  min-height: 8rem;
+}
+
+.unit-numeral-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.unit-numeral-value {
   font-size: 6rem;
   font-weight: 700;
   line-height: 0.85;
   letter-spacing: -0.04em;
-  color: $color-primary;
+  color: $color-white;
   font-variant-numeric: tabular-nums;
   user-select: none;
 }
@@ -90,30 +111,28 @@
 .unit-title {
   font-size: 2rem;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.15;
   letter-spacing: -0.02em;
   color: $color-text-primary;
   margin: 0;
 }
 
-// Random Practice as the margin note.
+// Random Practice as a 4px ink-framed margin note.
 .unit-practice {
   text-align: left;
-  background: $color-primary-alpha-05;
-  /* stylelint-disable-next-line sh-waqar/declaration-use-variable */
-  border: none;
-  border-radius: 8px;
+  background: $color-card-background;
+  border: $color-border-4-ink;
   padding: 1.25rem 1.25rem 1.1rem;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   gap: 0.375rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 
   &:hover,
   &:focus-visible {
-    transform: translateY(-2px);
-    box-shadow: $color-shadow-md;
+    background: $color-saffron-wash;
+    border-color: $color-saffron;
     outline: $color-outline-focus;
     outline-offset: 2px;
   }
@@ -122,7 +141,9 @@
 .practice-title {
   font-size: 1.0625rem;
   font-weight: 700;
-  color: $color-primary;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: $color-text-primary;
 }
 
 .practice-desc {
@@ -136,8 +157,10 @@
   align-items: center;
   gap: 0.5rem;
   font-size: 0.875rem;
-  font-weight: 600;
-  color: $color-primary;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: $color-saffron-deep;
   margin-top: 0.375rem;
 }
 
@@ -152,7 +175,7 @@
   transform: translateX(4px);
 }
 
-// --- Specimen index ---------------------------------------------------------
+// --- Specimen index --------------------------------------------------------
 
 .unit-body {
   display: flex;
@@ -162,11 +185,15 @@
 
 .group-head {
   margin-bottom: 1rem;
+  border-bottom: $color-border-4-ink;
+  padding-bottom: 0.75rem;
 }
 
 .group-title {
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
   color: $color-text-primary;
   margin: 0 0 0.25rem;
 }
@@ -180,7 +207,7 @@
 .specimen-index {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  border-top: $color-border-thin;
+  border-top: $color-border-thick;
 }
 
 .specimen-cell {
@@ -190,21 +217,22 @@
   text-align: center;
   gap: 0.375rem;
   padding: 1.5rem 0.75rem;
-  border-bottom: $color-border-thin;
-  border-right: $color-border-thin;
+  border-bottom: $color-border-thick;
+  border-right: $color-border-thick;
   cursor: pointer;
   text-decoration: none;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 
   &:hover,
   &:focus-visible {
-    background: $color-hover-background;
+    background: $color-saffron-wash;
     outline: $color-outline-focus;
     outline-offset: -2px;
   }
 
   &:active {
-    background: $color-primary-alpha-10;
+    background: $color-saffron;
+    color: $color-white;
   }
 }
 
@@ -240,13 +268,15 @@
 // --- Exercises --------------------------------------------------------------
 
 .unit-exercises {
-  border-top: 2px solid $color-text-primary;
+  border-top: $color-border-4-ink;
   padding-top: 1.25rem;
 }
 
 .exercises-heading {
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
   color: $color-text-primary;
   margin: 0 0 0.75rem;
 }
@@ -258,7 +288,7 @@
 
 .exercise-title {
   font-size: 1.0625rem;
-  font-weight: 600;
+  font-weight: 700;
   color: $color-text-primary;
   transition: color 0.2s ease;
 }
@@ -272,6 +302,7 @@
 
 .exercise-count {
   font-size: 0.875rem;
+  font-weight: 700;
   color: $color-text-secondary;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
@@ -335,23 +366,28 @@
 
   .unit-margin {
     position: static;
-    flex-flow: row wrap;
-    align-items: flex-end;
-    gap: 0 1.5rem;
+    flex-flow: column wrap;
+    gap: 1rem;
   }
 
   .unit-numeral {
-    font-size: 6rem;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    min-height: 5rem;
+  }
+
+  .unit-numeral-value {
+    font-size: 4.5rem;
   }
 
   .unit-naming {
-    margin: 0 0 1rem;
-    flex: 1;
-    min-width: 10rem;
+    margin: 0;
   }
 
   .unit-title {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
 
   .unit-practice {

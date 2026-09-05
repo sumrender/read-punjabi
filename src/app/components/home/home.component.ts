@@ -1,5 +1,5 @@
 import { Component, OnDestroy, PLATFORM_ID, computed, inject, signal } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { DecimalPipe, isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
 import { LessonService } from '../../services/lesson.service';
@@ -14,7 +14,7 @@ interface LevelInfo {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, DecimalPipe],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

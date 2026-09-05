@@ -9,32 +9,92 @@
 // 4. Theme Definitions
 // ==========================================================================
 
-/* Light Theme (Default) */
+/* Dark Theme (Default) — Deep ink */
+/* stylelint-disable color-no-hex, declaration-property-value-disallowed-list */
+/* stylelint-disable color-function-notation, alpha-value-notation, color-hex-length */
 :root,
+[data-theme="dark"] {
+  /* Action accent: Scholar Blue, one step brighter for contrast. */
+  --primary-color: #{$color-base-blue-500};
+  --primary-color-hover: #{$color-base-blue-600};
+  --primary-color-rgb: 59, 130, 246;
+
+  /* Structural accent: Saffron, shifted warmer for night palette. */
+  --saffron-color: #{$color-base-saffron-dark};
+  --saffron-deep: #{$color-base-saffron};
+  --saffron-wash: #{$color-base-saffron-wash-dark};
+  --saffron-rgb: 240, 134, 80;
+
+  /* Text */
+  --text-primary: #{$color-base-paper-dark};
+  --text-secondary: #{$color-base-paper-soft-dark};
+  --text-tertiary: #8a7f5f;
+
+  /* Surfaces — deep ink world */
+  --background: #{$color-base-deep-ink};
+  --card-background: #{$color-base-deep-ink-soft};
+  --card-soft: #2a2010;
+  --hover-background: #{$color-base-paper-alpha-10};
+  --button-background: #{$color-base-deep-ink};
+
+  /* Borders */
+  --border-color: #{$color-base-paper-alpha-15};
+
+  /* Shadow */
+  --shadow-color: rgb(0 0 0 / 22%);
+
+  /* Semantic */
+  --success-color: #{$color-base-green-500};
+  --success-background: #{$color-base-green-alpha-15};
+  --error-color: #{$color-base-red-500};
+  --error-background: #{$color-base-red-alpha-15};
+  --warning-color: #{$color-base-orange-500};
+  --warning-color-hover: #{$color-base-orange-600};
+  --warning-background: #{$color-base-orange-alpha-15};
+  --info-color: #{$color-base-blue-400};
+  --info-background: #{$color-base-blue-alpha-15};
+  --disabled-color: #{$color-base-disabled};
+  --gold-color: #{$color-base-gold};
+
+  /* Font Families */
+  --native-font-family: "Noto Sans Gurmukhi", sans-serif;
+
+  /* stylelint-disable-next-line sh-waqar/declaration-use-variable */
+  color-scheme: dark;
+}
+
+/* Light Theme — Cream paper (explicit override; dark is the default) */
 [data-theme="light"] {
-  /* Primary Colors */
+  /* Action accent: Scholar Blue */
   --primary-color: #{$color-base-blue-600};
   --primary-color-hover: #{$color-base-blue-700};
   --primary-color-rgb: 37, 99, 235;
 
-  /* Text Colors */
-  --text-primary: #{$color-base-gray-900};
-  --text-secondary: #{$color-base-gray-500};
-  --text-tertiary: #{$color-base-gray-400};
+  /* Structural accent: Saffron */
+  --saffron-color: #{$color-base-saffron};
+  --saffron-deep: #{$color-base-saffron-deep};
+  --saffron-wash: #{$color-base-saffron-wash};
+  --saffron-rgb: 231, 111, 58;
 
-  /* Background Colors */
-  --background: #{$color-base-white};
-  --card-background: #{$color-base-gray-50};
-  --hover-background: #{$color-base-gray-100};
-  --button-background: #{$color-base-white};
+  /* Text */
+  --text-primary: #{$color-base-ink};
+  --text-secondary: #{$color-base-ink-soft};
+  --text-tertiary: #6b5e3c;
 
-  /* Border Colors */
-  --border-color: #{$color-base-gray-200};
+  /* Surfaces — cream paper world */
+  --background: #{$color-base-cream};
+  --card-background: #{$color-base-cream-soft};
+  --card-soft: #f3ead0;
+  --hover-background: #{$color-base-ink-alpha-04};
+  --button-background: #{$color-base-cream};
 
-  /* Shadow */
-  --shadow-color: #{$color-base-black-alpha-10};
+  /* Borders / dividers */
+  --border-color: #{$color-base-ink-alpha-10};
 
-  /* Semantic Colors */
+  /* Shadow — single soft drop on hero surfaces only */
+  --shadow-color: #{$color-base-ink-alpha-10};
+
+  /* Semantic */
   --success-color: #{$color-base-green-500};
   --success-background: #{$color-base-green-alpha-10};
   --error-color: #{$color-base-red-500};
@@ -49,44 +109,10 @@
 
   /* Font Families */
   --native-font-family: "Noto Sans Gurmukhi", sans-serif;
-}
 
-/* Dark Theme */
-[data-theme="dark"] {
-  /* Primary Colors */
-  --primary-color: #{$color-base-blue-500};
-  --primary-color-hover: #{$color-base-blue-600};
-  --primary-color-rgb: 59, 130, 246;
-
-  /* Text Colors */
-  --text-primary: #{$color-base-gray-50};
-  --text-secondary: #{$color-base-gray-400};
-  --text-tertiary: #{$color-base-gray-500};
-
-  /* Background Colors */
-  --background: #{$color-base-gray-950};
-  --card-background: #{$color-base-gray-800};
-  --hover-background: #{$color-base-gray-700};
-  --button-background: #{$color-base-gray-800};
-
-  /* Border Colors */
-  --border-color: #{$color-base-gray-700};
-
-  /* Shadow */
-  --shadow-color: #{$color-base-black-alpha-30};
-
-  /* Semantic Colors */
-  --success-color: #{$color-base-green-500};
-  --success-background: #{$color-base-green-alpha-15};
-  --error-color: #{$color-base-red-500};
-  --error-background: #{$color-base-red-alpha-15};
-  --warning-color: #{$color-base-orange-500};
-  --warning-color-hover: #{$color-base-orange-600};
-  --warning-background: #{$color-base-orange-alpha-15};
-  --info-color: #{$color-base-blue-400};
-  --info-background: #{$color-base-blue-alpha-15};
-  --disabled-color: #{$color-base-disabled};
-  --gold-color: #{$color-base-gold};
+  /* Theme color */
+  /* stylelint-disable-next-line sh-waqar/declaration-use-variable */
+  color-scheme: light;
 }
 
 /* Font Size Variables */
@@ -121,16 +147,16 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background-color: $color-background;
   color: $color-text-primary;
-  line-height: 1.6;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Navigation Styles */
+/* Navigation Styles — kept light: cream surface, ink border, sharp edges */
 .main-nav {
   background: $color-card-background;
-  border-bottom: $color-border-thin;
+  border-bottom: 2px solid $color-text-primary;
   padding: 1rem 0;
   position: sticky;
   top: 0;
@@ -149,7 +175,8 @@ body {
 
 .nav-logo {
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   color: $color-text-primary;
   text-decoration: none;
   transition: color 0.2s ease;
@@ -165,7 +192,10 @@ body {
 .nav-link {
   color: $color-text-secondary;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
   padding: 0.75rem 0;
   display: inline-block;
   transition: color 0.2s ease;
