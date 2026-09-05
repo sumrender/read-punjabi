@@ -84,7 +84,7 @@ export class HomeComponent implements OnDestroy {
       next: (groups) => {
         const letters = (groups[0]?.items ?? [])
           .filter((item) => item.type === 'letter')
-          .slice(0, 3);
+          .slice(1, 4);
         if (letters.length > 0) {
           this.specimens.set(letters);
           this.announcedSpecimen.set(letters[0]);
