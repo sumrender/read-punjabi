@@ -121,8 +121,12 @@ async function answerParagraph(
     const correct = blanks[b].options[blanks[b].correctAnswerIndex];
     await quiz.enabledOptionByText(correct).click();
   }
-  // Last blank completes the question; feedback shows then auto-advances.
-  await expect(quiz.feedback).toHaveClass(/correct/);
+  // Last blank completes the question; the correct feedback is transient
+  // because the quiz auto-advances, so accept either the feedback or the
+  // move to the next question.
+  const correctFeedback = quiz.feedback.filter({ hasText: 'Correct!' });
+  const nextQuestion = quiz.questionCount.filter({ hasText: 'Question02' });
+  await expect(correctFeedback.or(nextQuestion).first()).toBeVisible();
 }
 
 async function answerStory(

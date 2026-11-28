@@ -8,7 +8,9 @@ export default defineConfig({
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 4 : undefined,
+  // Cap concurrency: heavy prerendered pages need time to hydrate, and the
+  // default (half the CPU count) can outrun the expect timeout on CI runners.
+  workers: 4,
   reporter: [
     ['html', { open: 'never' }],
     ['list'],

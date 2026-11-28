@@ -31,7 +31,7 @@ export class QuizPage {
     this.errorState = page.locator('.quiz-sheet .sheet-state', {
       has: page.locator('.button-primary'),
     });
-    this.questionCount = page.locator('.question-count');
+    this.questionCount = page.locator('.question-block');
     this.scoreLine = page.locator('.score-line');
     this.stopButton = page.locator('.stop-btn');
     this.prompt = page.locator('.prompt h2');
@@ -51,7 +51,7 @@ export class QuizPage {
   }
 
   async expectQuestionLoaded(): Promise<void> {
-    await expect(this.questionCount).toContainText('Question 1 of');
+    await expect(this.questionCount).toContainText('Question01');
     await expect(this.stopButton).toBeVisible();
   }
 

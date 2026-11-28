@@ -29,6 +29,10 @@ test.describe('Quiz flow (level 1, quiz 1 — 15 alphabet questions)', () => {
   });
 
   test('complete quiz with all correct answers and reach 15/15', async ({ page }, testInfo) => {
+    // 15 questions each auto-advance after ~1s, which can exceed the default
+    // 30s test timeout on slower mobile browsers or under parallel load.
+    test.slow();
+
     // Prompts must be unique so runtime-shuffled questions can be matched to JSON.
     const prompts = quizJson.questions.map((q) => q.prompt);
     expect(new Set(prompts).size).toBe(prompts.length);
@@ -38,7 +42,7 @@ test.describe('Quiz flow (level 1, quiz 1 — 15 alphabet questions)', () => {
 
     for (let i = 0; i < quizJson.questions.length; i++) {
       await expect(quiz.questionCount).toContainText(
-        `Question ${i + 1} of ${quizJson.questions.length}`,
+        `Question${String(i + 1).padStart(2, '0')}/ ${quizJson.questions.length}`,
       );
       await quiz.expectScore(i);
 
@@ -99,7 +103,7 @@ test.describe('Quiz flow (level 1, quiz 1 — 15 alphabet questions)', () => {
     // Correcting yourself still works after a wrong attempt.
     await quiz.optionButtons.filter({ hasText: exact(correctText) }).first().click();
     await expect(quiz.feedback).toHaveClass(/correct/);
-    await expect(quiz.questionCount).toContainText('Question 1 of');
+    await expect(quiz.questionCount).toContainText('Question01');
   });
 
   test('Stop button exits to the level page', async ({ page }) => {

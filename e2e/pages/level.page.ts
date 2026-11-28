@@ -13,7 +13,7 @@ export class LevelPage {
     this.page = page;
     this.backButton = page.locator('.unit-top .back-button');
     this.unitTitle = page.locator('.unit-title');
-    this.unitNumeral = page.locator('.unit-numeral');
+    this.unitNumeral = page.locator('.unit-numeral-value');
     this.lessonCells = page.locator('.specimen-cell');
     this.exerciseRows = page.locator('.exercise-row');
     this.practiceButton = page.locator('.unit-practice');
@@ -25,7 +25,7 @@ export class LevelPage {
 
   async expectLoaded(level: number): Promise<void> {
     await expect(this.unitTitle).toBeVisible();
-    await expect(this.unitNumeral).toHaveText(String(level));
+    await expect(this.unitNumeral).toHaveText(String(level).padStart(2, '0'));
     await expect(this.lessonCells.first()).toBeVisible();
   }
 
