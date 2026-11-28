@@ -21,7 +21,8 @@ test.describe('Home page', () => {
     await expect(app.appContent).toHaveAttribute('lang', 'pa');
     await expect(home.subtitle).toContainText('Gurmukhi');
     await expect(home.beginButton).toHaveText('Begin Level 1');
-    await expect(home.pageBadge).toHaveText('Level 1 · Letters');
+    await expect(home.pageBadge).toContainText('Chapter');
+    await expect(home.pageBadge).toContainText('01');
     await expect(home.specimen).toBeVisible();
     await expect(home.specimenDots.first()).toBeVisible();
 

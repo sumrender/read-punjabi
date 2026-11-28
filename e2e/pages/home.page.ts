@@ -12,13 +12,13 @@ export class HomePage {
 
   constructor(page: Page) {
     this.page = page;
-    this.heading = page.locator('main.home-container h1');
-    this.subtitle = page.locator('.subtitle');
+    this.heading = page.locator('main.home-page .home-title');
+    this.subtitle = page.locator('.home-subtitle');
     this.chapterLinks = page.locator('.chapter-link');
-    this.beginButton = page.locator('a.begin-button');
+    this.beginButton = page.locator('a.poster-begin');
     this.specimen = page.locator('.specimen');
-    this.specimenDots = page.locator('.specimen-dot');
-    this.pageBadge = page.locator('.page-badge');
+    this.specimenDots = page.locator('.poster-dot');
+    this.pageBadge = page.locator('.poster-numeral');
   }
 
   async goto(): Promise<void> {
